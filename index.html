@@ -1,1439 +1,161 @@
-
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>DigiDZN</title>
-    <meta name="author" content="themeholy">
-    <meta name="description" content="Saor - SEO Digital Marketing Agency HTML Template">
-    <meta name="keywords" content="Saor - SEO Digital Marketing Agency HTML Template">
-    <meta name="robots" content="INDEX,FOLLOW">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>GOBRO MEDIA</title>
 
-    <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon/logo.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/icon/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icon/logo.png">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <!--==============================
-	  Google Fonts
-	============================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<style>
 
-    <!--==============================
-	    All CSS File
-	============================== -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-    <!-- Swiper Slider -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <!-- imageRevealHover -->
-    <link rel="stylesheet" href="assets/css/imageRevealHover.css">
-    <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+body{
+margin:0;
+font-family:Poppins;
+background:black;
+color:white;
+}
 
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+.logo{
+color:#D4AF37;
+font-size:24px;
+font-weight:bold;
+}
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MSTR7N8');</script>
-<!-- End Google Tag Manager -->
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+}
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+color:#D4AF37;
+}
+
+.hero p{
+font-size:18px;
+width:60%;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 30px;
+background:#D4AF37;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+.services{
+padding:80px;
+text-align:center;
+}
+
+.service-box{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:10px;
+width:250px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#111;
+margin-top:50px;
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSTR7N8"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<header>
 
+<div class="logo">GOBRO MEDIA</div>
 
-    <!--[if lte IE 9]>
-    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Portfolio</a>
+<a href="#">Contact</a>
+</nav>
 
-
-
-    <!--********************************
-   		Code Start From Here 
-	******************************** -->
-
-    <!--==============================
-     Preloader
-  ==============================-->
-    <!-- <div class="preloader ">
-        <button class="th-btn style1 preloaderCls">Cancel Preloader </button>
-        <div class="preloader-inner">
-            <img src="assets/img/logo.svg" alt="Rasm">
-            <span class="loader"></span>
-        </div>
-    </div> -->
-    <div class="popup-search-box d-none d-lg-block">
-        <button class="searchClose"><i class="fal fa-times"></i></button>
-        <form action="#">
-            <input type="text" placeholder="What are you looking for?">
-            <button type="submit"><i class="fal fa-search"></i></button>
-        </form>
-    </div><!--==============================
-    Mobile Menu
-  ============================== -->
-    <div class="th-menu-wrapper">
-        <div class="th-menu-area text-center">
-            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo">
-                <a href=""><img src="assets/img/logo.svg" alt="Saor"></a>
-            </div>
-
-            <div class="th-mobile-menu">
-                <ul>
-                    <li class="menu-item-has-children">
-                        <a href="home-seo-agency.html">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="home-seo-agency.html">Home SEO Agency</a></li>
-                            <li><a href="home-digital-agency.html">Home Digital Agency</a></li>
-                            <li><a href="home-seo-analysis.html">Home SEO Analysis Agency</a></li>
-                            <li><a href="home-seo-marketing.html">Home SEO Analysis Agency</a></li>
-                            <li><a href="home-digital-growth-hub.html">Home Digital Growth Hub</a></li>
-                            <li><a href="home-seo-boost-experts.html">Home SEO Boost Experts</a></li>
-                            <li><a href="home-digital-marketing.html">Home Digital Marketing Experts</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Portfolio</a>
-                        <ul class="sub-menu">
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item-has-children">
-                                <a href="#">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                    <li><a href="cart.html">Cart Page</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="service.html">Service</a></li>
-                            <li><a href="service-details.html">Service Details</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="pricing.html">Price Table</a></li>
-                            <li><a href="testimonial.html">Testimonial</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="error.html">Error Page</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </div><!--==============================
-	Header Area
-==============================-->
- <header class="th-header header-layout1 header-layout2 header-absolute onepage-nav">
-    <div class="sticky-wrapper">
-        <div class="container th-container">
-            <div class="menu-area">
-                <div class="row align-items-center justify-content-between">
-
-                    <!-- Logo -->
-                    <div class="col-auto">
-                        <div class="header-logo">
-                            <a href="">
-                                <img src="assets/img/icon/logo.png" alt="Saor">
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Email + Phone -->
-                    <div class="col-auto">
-                        <div class="header-button">
-                            <a href="mailto:admin@digidzn.com" class="text-dark email-link">
-                                <i class="bi bi-envelope-fill"></i> admin@digidzn.com
-                            </a>
-
-                            <a href="tel:9289745760" class="th-btn style1 th-icon phone-link">
-                               <b><i class="bi bi-phone"></i></b> 9289745760
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 </header>
 
-    
-    <!--==============================
-Hero Area
-==============================-->
-    <div class="th-hero-wrapper hero-2" id="hero"  style="background-color: black !important;">
-        <div class="container" >
-            <div class="row align-items-center ">
-                <div class="col-xl-8">
-                    <div class="hero-style2">
-                        <span class="sub-title text-ani-style2"><span class="square-text">
-                                <span class="dot1"></span>
-                                <span class="dot2"></span>Digital Marketing Agency</span></span>
-                        <h1 class="hero-title text-ani-style3"><span>Digital Marketing That Delivers ROI
-<span class="hero-box">
-                                    <!-- <span class="client-thumb-group">
-                                        <span class="thumb"><img src="assets/img/shape/client-1-1.png" alt="avater"></span>
-                                        <span class="thumb"><img src="assets/img/shape/client-1-2.png" alt="avater"></span>
-                                        <span class="thumb"><img src="assets/img/shape/client-1-3.png" alt="avater"></span>
-                                        <span class="thumb icon"><span>10k+ Customer</span></span>
-                                    </span> -->
-                                </span></span></h1>
-                                <h5 class="text-white"  id="form" >Performance-driven strategies for <span style="color: #fed91f;">leads</span> and <span style="color: #fed91f;"> sales</span></h5>
-                        <!-- <p class="hero-text wow fadeInUp" data-wow-delay=".2s">We design exceptional brands, products, web apps, mobile apps, websites for
-                            startups and enterprises.a</p> -->
-                        <!-- <div class="btn-group justify-content-center justify-content-xl-start wow fadeInUp" data-wow-delay=".4s">
-                            <a href="contact.html" class="th-btn style1 th-icon">Get Started<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        </div> -->
-                        <div class="shape jump"><img src="assets/img/shape/shape-10.png" alt=""></div>
-                    </div>
-                </div>
-              <div class="form col-xl-4 d-flex align-items-center justify-content-center  " >
-<form 
-    action="mail.php" 
-    method="POST" 
-    class="bg-white p-4 rounded shadow w-100" 
-    style="max-width: 420px;"
-   
->
+<section class="hero">
 
-    <div class="mb-3">
-        <input 
-            type="text" 
-            class="form-control" 
-            name="name" 
-            placeholder="Name" 
-            required
-        >
-    </div>
+<h1>Creative Digital Agency</h1>
 
-    <div class="mb-3">
-        <input 
-            type="email" 
-            class="form-control" 
-            name="email" 
-            placeholder="Email" 
-            required
-        >
-    </div>
+<p>We create premium websites, branding, and digital marketing solutions to grow your business.</p>
 
-    <div class="mb-3">
-        <input 
-            type="tel" 
-            class="form-control" 
-            name="phone" 
-            placeholder="Phone number" 
-            required
-        >
-    </div>
+<a href="#" class="btn">Get Started</a>
 
-    <div class="mb-3">
-        <textarea 
-            class="form-control" 
-            name="message" 
-            rows="4" 
-            placeholder="Enter your message" 
-            required
-        ></textarea>
-    </div>
-
-    <button 
-        type="submit" 
-        class="btn d-block mx-auto rounded-2"
-        style="width:80%; background-color:#fed91f; font-weight:600;"
-    >
-        Submit
-    </button>
-
-</form>
-
-</div>
-
-
-            </div>
-        </div>
-        <div class="shape-mockup" data-top="0%" data-left="0%"><img src="assets/img/shape/shape-11.png" alt=""></div>
-        <div class="shape-mockup z-index-3 spin d-none d-md-inline-block" data-top="-4%" data-right="-4%"><img src="assets/img/shape/shape-12.png" alt="">
-        </div>
-    </div>
-    <!--======== / Hero Section ========--><!--==============================
-Brand Area  
-==============================-->
-    <div class="brand-sec pt-60 pb-60 bg-theme overflow-hidden">
-        <div class="container th-container">
-            <div class="slider-area text-center">
-                <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"476":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"6"}}}'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/fligh-ticket.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/fligh-ticket.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/seaways.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/seaways.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/modmobile.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/modmobile.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/masala-tree.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/masala-tree.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/pick.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/pick.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/se.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/se.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/taan.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/taan.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/ganpati.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/ganpati.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                       
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/edusoft.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/edusoft.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item  style5">
-                                <a href="">
-                                    <img class="gray" src="assets/img/brand/eagle.png" alt="Brand Logo">
-                                    <img class="original" src="assets/img/brand/eagle.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/madish.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/madish.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/naturals.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/naturals.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/yonkers.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/yonkers.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/grodo.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/grodo.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/asso.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/asso.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/surface.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/surface.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/fit.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/fit.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/ishima.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/ishima.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style5">
-                                <a href="">
-                                    <img class="gray" src="assets/img/brand/chang.png" alt="Brand Logo">
-                                    <img class="original" src="assets/img/brand/chang.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/shiv-naresh.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/shiv-naresh.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/matrix.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/matrix.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-item style3">
-                                <a href="">
-                                    <img class="original" src="assets/img/brand/faytect.png" alt="Brand Logo">
-                                    <img class="gray" src="assets/img/brand/faytect.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div><!--==============================
-About Area  
-==============================-->
-    <div class="about-area2 overflow-hidden space" id="about-sec">
-        <div class="container">
-            <div class="row align-items-end">
-                <div class="col-lg-4 mb-30 mb-xl-0">
-                    <div class="img-box2 me-xl-4 mt-lg-60">
-                        <!-- <div class="img1 th-anim mb-35">
-                            <img src="assets/img/normal/about_2_1.png" alt="About">
-                        </div> -->
-                        <!-- <div class="checklist me-xl-5">
-                            <ul>
-                                <li class="wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-circle-check"></i>Stating the agency’s primary services..</li>
-                                <li class="wow fadeInUp" data-wow-delay=".3s"><i class="fa-solid fa-circle-check"></i>Creative Minds Crafting Digital Masterpieces
-                                </li>
-                                <li class="wow fadeInUp" data-wow-delay=".4s"><i class="fa-solid fa-circle-check"></i>Trusted Experts in Comprehensive
-                                    Digital Solutions</li>
-                                <li class="wow fadeInUp" data-wow-delay=".5s"><i class="fa-solid fa-circle-check"></i>Transforming Ideas into Digital Success
-                                    Stories agency.</li>
-                            </ul>
-                        </div> -->
-                        <!-- <div class="sec-btn mt-50 mb-0 wow fadeInUp" data-wow-delay=".6s">
-                            <a href="about.html" class="th-btn ser-btn style3 th-icon">More About<i class="fa-regular fa-arrow-right ms-2"></i> </a>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="title-area mb-25 mt-n1">
-                        <span class="sub-title sub-title4 style1 text-ani-style2">About Us</span>
-                        <h2 class="sec-title text-ani-style3">We are a team of experts, growth hackers and creative minds! </h2>
-                    </div>
-                    <p class="mt-n2 mb-25 wow fadeInUp text-dark" data-wow-delay=".7s">Content is the voice of your brand, and at Digidzn, we make sure it speaks with clarity, creativity, and purpose. Our content marketing strategies are designed to define who you are, connect with your audience, and drive measurable business growth across digital platforms. <br>We create content that informs, engages, and converts. From website copy and blogs to social media content and ad creatives, every piece is crafted to reflect your brand’s identity while supporting your marketing goals. Our focus is not just on creating content, but on delivering value that builds trust and long-term relationships with your audience. <br>Our content marketing approach is deeply integrated with SEO, social media, and paid campaigns. By combining creativity with data-driven insights, we ensure your content reaches the right audience at the right time. This results in higher visibility, better engagement, and improved conversion rates. <br>At Digidzn, we believe consistency is key. We develop structured content strategies and calendars to maintain a steady brand presence across all digital touchpoints. Whether you are building awareness, generating leads, or scaling your business, our content marketing solutions are tailored to support every stage of your growth journey.</p>
-                    <!-- <div class="img-box3">
-                        <div class="img1 th-anim">
-                            <img src="assets/img/normal/about_2_2.png" alt="About">
-                        </div>
-                        <div class="counter-box-wrap">
-                            <div class="counter-box wow fadeInUp" data-wow-delay=".3s">
-                                <div class="box-icon"><img src="assets/img/icon/counter_1_1.png" alt=""></div>
-                                <h3 class="box-number"><span class="counter-number">200</span></h3>
-                                <div class="media-body">
-                                    <p class=" counter-text mb-n1">Experienced Team</p>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-
-                            <div class="counter-box wow fadeInUp" data-wow-delay=".5s">
-                                <div class="box-icon"><img src="assets/img/icon/counter_1_2.png" alt=""></div>
-                                <h3 class="box-number"><span class="counter-number">3</span>k<span class="plus">+</span></h3>
-                                <div class="media-body">
-                                    <p class=" counter-text mb-n1">Successful Project</p>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-
-    </div><!--==============================
-Service Area  
-==============================-->
-    <section class=" service-section overflow-hidden mb-3 bg-smoke2 space" id="service-sec">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8">
-                    <div class="title-area text-center">
-                        <div class="shadow-title">Services</div>
-                        <span class="sub-title sub-title4  text-ani-style2">Our Services<span></span></span>
-                        <h2 class="sec-title  text-ani-style3">Trusted Experts in Comprehensive Digital Solutions</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="according-list-area">
-                <div class="according-list hover-item item-active">
-                    <div class="accordion-item2">
-                        <h3 class="box-title">Website Design & Development</h3>
-                    </div>
-                    <div class="according-img">
-                        <img src="assets/img/bg/website.png" alt="">
-                        <p class="text">An online store to buy and sell products. We systematically optimize your e-commerce store, integrating the right approach and strategy to help you grow. Worried about if we can handle all your e-commerce platforms? Well, worry not! We are professionals in handling and developing our own custom e-commerce, which includes cataloguing of products, warehousing, and much more!
-                            
-
-                        </p>
-                        <p>
-                            We focus on delivering end-to-end e-commerce solutions tailored to your business needs. From designing user-friendly interfaces to implementing efficient product management systems, we ensure every aspect of your online store works smoothly. Our expertise spans across multiple platforms, allowing us to manage complex operations such as inventory tracking, order processing, secure payment integration, and backend optimization.
-                        </p>
-                        <!-- <div class="sec-btn">
-                            <a href="service.html" class="th-btn ser-btn th-icon">More About<i class="fa-regular fa-arrow-right ms-2"></i> </a>
-                        </div> -->
-                    </div>
-
-                </div>
-                <div class="according-list hover-item">
-                    <div class="accordion-item2">
-                        <h3 class="box-title">Search Engine Optimisation – SEO</h3>
-                    </div>
-                    <div class="according-img">
-                        <img src="assets/img/bg/seo-img.png" alt="">
-                        <p class="text">The role here is played by Meta tags, Meta description, page title, URL structure, keyword density and H1 – H6 tags. Once you optimize them frequently, then you can improve the search ranking results of your website on the search engine as well. To get more relevant traffic on your web pages, we highly recommend On-Page optimization activities while keeping up with the latest trends and updates.
-                        </p>
-                        <p>
-                            Our on-page optimization approach focuses on aligning content structure with search engine algorithms while maintaining readability and engagement for users. Regular optimization ensures your website adapts to algorithm changes and evolving search behaviors. By strategically implementing these elements, we help improve page relevance, enhance crawlability, and drive high-quality traffic that is more likely to convert.
-                        </p>
-                        <!-- <div class="sec-btn">
-                            <a href="service.html" class="th-btn ser-btn th-icon">More About<i class="fa-regular fa-arrow-right ms-2"></i> </a>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="according-list hover-item">
-                    <div class="accordion-item2">
-                        <h3 class="box-title">Pay Per Click – PPC</h3>
-                    </div>
-                    <div class="according-img">
-                        <img src="assets/img/bg/payper-img.png" alt="">
-                        <p class="text">As we call ourselves experts in campaigns, we leverage our skills to understand the interest and behaviour of the audience, which is really helpful in setting up the right target audience to run the campaigns successfully. Be it Facebook Ads or Google Ads, we are pro in handling and managing your campaigns following the right strategy!
-                        </p>
-                        <p>
-                            Our team uses data-driven insights and advanced tools to continuously monitor, optimize, and refine campaigns. This includes analyzing user behavior, identifying high-performing segments, adjusting bidding strategies, and A/B testing ad creatives to achieve maximum results. Whether your goal is brand awareness, lead generation, or e-commerce sales, our structured approach ensures every campaign is aligned with your business objectives.
-                        </p>
-                        <!-- <div class="sec-btn">
-                            <a href="service.html" class="th-btn ser-btn th-icon">More About<i class="fa-regular fa-arrow-right ms-2"></i> </a>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="according-list hover-item">
-                    <div class="accordion-item2">
-                        <h3 class="box-title">Social Media Marketing – SMM</h3>
-                    </div>
-                    <div class="according-img">
-                        <img src="assets/img/bg/socila-media.png" alt="">
-                        <p class="text">For brand awareness and visibility among the targeted audience, branding is essential. Let's build a unique identity of your brand to give an edge to edge competition in the market. A brand is all about bridging the gap between the market and the ability of your dreams to push harder. A compelling approach is what requires to build a brand that lives up to the expectations of customers and the company's own ethics.
-
-
-                        </p>
-                        <p>
-                            Effective branding goes beyond just a logo or tagline—it encompasses the voice, message, and experiences associated with your business. By developing a consistent and authentic brand identity, you create trust, emotional connection, and recognition among your target audience. From visual elements and messaging to customer interactions and social presence, every touchpoint should reflect your brand’s values and mission.
-                        </p>
-                        <!-- <div class="sec-btn">
-                            <a href="service.html" class="th-btn ser-btn th-icon">More About<i class="fa-regular fa-arrow-right ms-2"></i> </a>
-                        </div> -->
-                    </div>
-                </div>
-               
-                <div class="according-list hover-item">
-                    <div class="accordion-item2">
-                        <h3 class="box-title">E-commerce Marketing</h3>
-                    </div>
-                    <div class="according-img">
-                        <img src="assets/img/bg/eccomerce-img.png" alt="">
-                        <p class="text">To stand out in this competitive market, online businesses have to drive more brand recall and revenue-generating strategies. The primary aspect of any business be it in product selling or services is providing a great customer experience. And, CRM is a great strategy to integrate into e-commerce. From tracking, managing customer data to revert to their feedback, we can handle it all!
-                        </p>
-                        <p>
-                            Customer Relationship Management (CRM) is a critical tool for achieving this. By centralizing customer data, tracking purchase behavior, and managing interactions effectively, CRM allows businesses to deliver personalized experiences that increase satisfaction and loyalty. Additionally, responding to customer feedback promptly helps build trust and strengthens long-term relationships.
-                        </p>
-                        <!-- <div class="sec-btn">
-                            <a href="service.html" class="th-btn ser-btn th-icon">More About<i class="fa-regular fa-arrow-right ms-2"></i> </a>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="shape-mockup spin d-none d-lg-block" data-top="5%" data-right="2%"><img src="assets/img/shape/shape-9.png" alt=""></div>
-        <div class="shape-mockup d-none d-lg-block" data-top="2%" data-left="0%"><img src="assets/img/shape/shape-13.png" alt=""></div>
-        <div class="shape-mockup d-none d-lg-block" data-bottom="0%" data-left="50%"><img src="assets/img/shape/shape-14.png" alt=""></div>
-
-    </section><!--==============================
-Project Area  
-==============================-->
-    <section class="project-area bg-title position-relative space overflow-hidden" id="project-sec">
-        <div class="container">
-            <div class="row justify-content-lg-between justify-content-center align-items-end">
-                <div class="col-lg-7">
-                    <div class="title-area text-center text-lg-start pe-xl-5">
-                       
-                        <span class="sub-title sub-title5 style1 text-white text-ani-style2">Our Work</span>
-                        <h2 class="sec-title text-white text-ani-style3">Our Recent Work Gallerys</h2>
-                    </div>
-                </div>
-                <!-- <div class="col-auto">
-                    <div class="sec-btn">
-                        <a href="portfolio.html" class="th-btn ser-btn th-icon style2">View All Work<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div> -->
-            </div> <!-- / Title row -->
-            <div class="row gx-80">
-                <div class="col-md-6 project-box_wrapp">
-                    <div class="project-box">
-                        <div class="box-img global-img">
-                            <img src="assets/img/bg/creative1.jpg" alt="project image">
-                        </div>
-                        <!-- <div class="box-wrapp">
-                            <div class="project-content">
-                                <p class="box-subtitle">Solution</p>
-                                <h3 class="box-title"><a href="portfolio-details.html">Creative Design</a></h3>
-                            </div>
-                            <span class="icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class="col-md-6 project-box_wrapp">
-                    <div class="project-box">
-                        <div class="box-img global-img">
-                            <img src="assets/img/bg/creative2.jpg" alt="project image">
-                        </div>
-                        <!-- <div class="box-wrapp">
-                            <div class="project-content">
-                                <p class="box-subtitle">Solution</p>
-                                <h3 class="box-title"><a href="portfolio-details.html">App Developments</a></h3>
-                            </div>
-                            <span class="icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                        </div> -->
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="shape-mockup spin z-index-3 d-none d-lg-block" data-top="50%" data-left="2%"><img src="assets/img/shape/project-shape1.png" alt=""></div>
-        <div class="shape-mockup z-index-3 d-none d-lg-block" data-bottom="12%" data-right="0%"><img src="assets/img/shape/project-shape2.png" alt=""></div>
-    </section><!--==============================
-Process Area  
-==============================-->
-
-<section>
-    <div class="container-fluid p-0">
-        <img src="./assets/img/bg/map.png" alt="" srcset="">
-    </div>
 </section>
 
+<section class="services">
 
-    <section class="position-relative overflow-hidden space overflow-hidden" id="process-sec">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="title-area text-center">
-                        <div class="shadow-title">Process</div>
-                        <span class="sub-title sub-title4   text-ani-style2">Work Process <span></span></span>
-                        <h2 class="sec-title  text-ani-style3">The work process of our agency</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="step-wrap">
-                <div class="process-card_wrapp">
-                    <div class="process-card">
-                        <div class="box-wrapp">
-                            <div class="box-icon">
-                                <img src="assets/img/icon/process_1_1.svg" alt="icon">
-                            </div>
-                            <div class="box-shape"><img src="assets/img/icon/arrow.png" alt=""></div>
-                            <div class="box-number">
-                                01 </div>
-                        </div>
-                        <div class="box-content">
-                            <h2 class="box-title">Research and Strategy</h2>
-                            <p class="box-text">Conduct thorough market of the research to the fast target audience behaviors. Submit as many design tasks</p>
+<h2 style="color:#D4AF37;">Our Services</h2>
 
-                        </div>
-                    </div>
-                    <div class="process-card">
-                        <div class="box-wrapp">
-                            <div class="box-icon">
-                                <img src="assets/img/icon/process_1_2.svg" alt="icon">
-                            </div>
-                            <div class="box-shape"><img src="assets/img/icon/arrow.png" alt=""></div>
-                            <div class="box-number">
-                                02 </div>
-                        </div>
-                        <div class="box-content">
-                            <h2 class="box-title">Plan Customization</h2>
-                            <p class="box-text">Conduct thorough market of the research to the fast target audience behaviors. Submit as many design tasks</p>
+<div class="service-box">
 
-                        </div>
-                    </div>
-                    <div class="process-card">
-                        <div class="box-wrapp">
-                            <div class="box-icon">
-                                <img src="assets/img/icon/process_1_3.svg" alt="icon">
-                            </div>
-                            <div class="box-shape"><img src="assets/img/icon/arrow.png" alt=""></div>
-                            <div class="box-number">
-                                03 </div>
-                        </div>
-                        <div class="box-content">
-                            <h2 class="box-title">Finished & User Testing</h2>
-                            <p class="box-text">Conduct thorough market of the research to the fast target audience behaviors. Submit as many design tasks</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="overflow-hidden bg-smoke2 space">
-        <div class="container">
-            <div class="row gy-5 align-items-center">
-                <div class="col-xl-6">
-                    <div class="">
-                        <div class="title-area mb-35">
-                            <div class="shadow-title style3">Choose Us</div>
-                            <span class="sub-title sub-title4 style1 text-ani-style2">Why Choose DigiDZN</span>
-                            <h2 class="sec-title text-ani-style3">Your Trusted Partner for Global Digital Success</h2>
-                            <p class="mb-30 wow fadeInUp" data-wow-delay=".3s">At DigiDZN, we don’t just deliver digital services — we build long-term growth partnerships. With years of hands-on experience in the ever-evolving digital landscape, we help brands navigate complexity, unlock opportunities, and achieve measurable success across global markets.</p>
-                        </div>
-                        <div class="choose-wrapper">
-                            <div class="">
-                                <img src="assets/img/bg/small-img.png" class="img-fluid" alt="video">
-                               
-                            </div>
-                            <div class="circle-counter ">
-                                <div class="feature-circle">
-                                    <svg class="radial-progress" data-countervalue="80" viewBox="0 0 80 80">
-                                        <circle class="bar-static" cx="40" cy="40" r="35"></circle>
-                                        <circle class="bar--animated" cx="40" cy="40" r="35" style="stroke-dashoffset: 217.8;">
-                                        </circle>
-                                        <text class="countervalue start" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">85</text>
-                                    </svg>
-
-                                    <h3 class="feature-circle_title">Management success</h3>
-                                </div>
-                                <div class="feature-circle">
-                                    <svg class="radial-progress" data-countervalue="80" viewBox="0 0 80 80">
-                                        <circle class="bar-static" cx="40" cy="40" r="35"></circle>
-                                        <circle class="bar--animated" cx="40" cy="40" r="35" style="stroke-dashoffset: 217.8;">
-                                        </circle>
-                                        <text class="countervalue start" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">95</text>
-                                    </svg>
-
-                                    <h3 class="feature-circle_title">SEO Optimization</h3>
-                                </div>
-                                <div class="feature-circle">
-                                    <svg class="radial-progress" data-countervalue="80" viewBox="0 0 80 80">
-                                        <circle class="bar-static" cx="40" cy="40" r="35"></circle>
-                                        <circle class="bar--animated" cx="40" cy="40" r="35" style="stroke-dashoffset: 217.8;">
-                                        </circle>
-                                        <text class="countervalue start" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">80</text>
-                                    </svg>
-
-                                    <h3 class="feature-circle_title">Marketing Automation</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="accordion-area accordion style2" id="faqAccordion">
-
-                        <div class="accordion-wrapp">
-                            <span class="number">01</span>
-                            <div class="accordion-card style2 ">
-                                <div class="accordion-header" id="collapse-item-1">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
-                                        What services does Digidzn offer?</button>
-                                </div>
-                                <div id="collapse-1" class="accordion-collapse collapse " aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <p class="faq-text">Digidzn offers complete digital growth solutions including Search Engine Optimisation (SEO), Pay Per Click (PPC) advertising, Website Design & Development, Social Media Marketing (SMM), Content Marketing, and eCommerce Marketing.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-wrapp">
-                            <span class="number">02</span>
-                            <div class="accordion-card style2 active">
-                                <div class="accordion-header" id="collapse-item-2">
-                                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="true" aria-controls="collapse-2">
-                                        Who can benefit from your digital marketing services?</button>
-                                </div>
-                                <div id="collapse-2" class="accordion-collapse collapse show" aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <p class="faq-text">We mainly handhold medium-sized businesses that want to grow their brand, leads, and revenue through online mediums with structured and result-driven strategies.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-wrapp">
-                            <span class="number">03</span>
-                            <div class="accordion-card style2 ">
-                                <div class="accordion-header" id="collapse-item-3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-                                        How does your SEO service help businesses grow?</button>
-                                </div>
-                                <div id="collapse-3" class="accordion-collapse collapse " aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <p class="faq-text">Our SEO strategies improve your website’s visibility on search engines, helping you gain more organic traffic, better rankings, and higher-quality leads.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-wrapp">
-                            <span class="number">04</span>
-                            <div class="accordion-card style2 ">
-                                <div class="accordion-header" id="collapse-item-4">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
-                                       How does social media marketing help my brand?</button>
-                                </div>
-                                <div id="collapse-4" class="accordion-collapse collapse " aria-labelledby="collapse-item-4" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <p class="faq-text">Our SMM strategies help your brand communicate effectively, increase engagement, and establish a strong presence in the digital marketing ecosystem.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--==============================
-Testimonial Area  
-==============================-->
-    <section class="space overflow-hidden overflow-hidden">
-        <div class="container">
-            <div class="title-area text-center">
-                <div class="shadow-title">Testimonial</div>
-                <span class="sub-title sub-title4  text-ani-style2">Testimonials<span></span></span>
-                <h2 class="sec-title text-ani-style3">What Our Clients Say About Us?</h2>
-            </div>
-            <div class="slider-area testi-box-area">
-                <div class="swiper th-slider has-shadow testiSlider2" id="testiSlide2" data-slider-options='{"effect":"fade","loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"1"},"1200":{"slidesPerView":"1"}}}'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testi-grid">
-                                <div class="box-content">
-                                     <div class="testi-logo">
-                                        <img src="assets/img/brand/brownstrap.png" alt="">
-                                    </div> 
-                                    <h3 class="box-title2">Having a trusted partner like digiDZN</h3>
-                                    <p class="box-text">Digidzn took our digital presence to the next level. From a modern, user-friendly website to top-rank SEO strategies, they delivered exceptional results. Their professionalism and attention to detail helped grow our online sales and brand visibility. We couldn’t be happier!
-
-</p>
-                                    <h3 class="box-title">Ananaya Aggrwal</h3>
-                                    <span class="box-desig">Brownstrap</span>
-                                </div>
-                                <div class="box-img">
-                                    <img src="assets/img/bg/ananaya.png" alt="image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testi-grid">
-                                <div class="box-content">
-                                    <div class="testi-logo">
-                                        <img src="assets/img/brand/arshiya.png" alt="">
-                                    </div>
-                                    <h3 class="box-title2">It is truly amazing to work with digiDZN team</h3>
-                                    <p class="box-text">They work very efficiently and complete all deliverables on time...The best part about them is their in-depth knowledge about their subject, they are highly professional !!!</p>
-                                    <h3 class="box-title">Aashirya</h3>
-                                    <span class="box-desig">Aashirya Dental Care
-
-</span>
-                                </div>
-                                <div class="box-img">
-                                    <img src="assets/img/bg/aarshirya.jpg" alt="image">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="swiper-slide">
-                            <div class="testi-grid">
-                                <div class="box-content">
-                                    <div class="testi-logo">
-                                        <img src="assets/img/shape/logo.svg" alt="">
-                                    </div>
-                                    <h3 class="box-title2">Kornix is the best digital agency i have ever seen! Highly Recommended!</h3>
-                                    <p class="box-text">It sounds like you're expressing positive feedback or a statement about a product or service being loved by customers worldwide. If this is a statement you want to share or discuss, it's great to highlight positive feedback! Customer satisfaction and positive testimonials can be powerful assets for a product or services businesses I'm here to help!</p>
-                                    <h3 class="box-title">Jenny Wilson</h3>
-                                    <span class="box-desig">Project Manager</span>
-                                </div>
-                                <div class="box-img">
-                                    <img src="assets/img/testimonial/testi_2_3.jpg" alt="image">
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-                <button data-slider-prev="#testiSlide2" class="slider-arrow style3 slider-prev"><i class="far fa-arrow-left"></i></button>
-                <button data-slider-next="#testiSlide2" class="slider-arrow style3 slider-next"><i class="far fa-arrow-right"></i></button>
-            </div>
-        </div>
-    </section><!--==============================
-Price Area  
-==============================-->
-    <!-- <section class="space overflow-hidden" data-bg-src="assets/img/bg/pricing_bg_1.png">
-        <div class="container">
-            <div class="title-area text-center">
-                <div class="shadow-title">Testimonial</div>
-                <span class="sub-title sub-title5 text-white text-ani-style2">Pricing Plan<span></span></span>
-                <h2 class="sec-title text-white text-ani-style3">Choose the plans that suits you!</h2>
-                <p class="text-white wow fadeInUp">Choose a plan that suits your business needs</p>
-                <div class="pricing-tabs">
-                    <div class="switch-area">
-                        <label class="toggler toggler--is-active ms-0 text-white" id="filt-monthly">Monthly</label>
-                        <div class="toggle">
-                            <input type="checkbox" id="switcher" class="check">
-                            <b class="b switch"></b>
-                        </div>
-                        <label class="toggler text-white" id="filt-yearly">Yearly</label>
-                    </div>
-                </div>
-            </div>
-            <div id="monthly" class="wrapper-full">
-                <div class="row gy-4 justify-content-center">
-
-                    <div class="col-xl-4 col-md-6">
-                        <div class="price-item th-ani ">
-                            <h3 class="box-title">Basic Plan</h3>
-                            <p class="box-text">Perfect plan to get started</p>
-                            <h4 class="box-price">$9.99<span class="duration">/month</span></h4>
-                            <div class="box-content">
-                                <div class="available-list">
-                                    <ul>
-                                        <li>Limited Access Library</li>
-                                        <li>Commercia License</li>
-                                        <li>Hotline Support 24/7</li>
-                                        <li class="unavailable">100+ HTML UI Elements</li>
-                                        <li class="unavailable">WooCommerce Builder</li>
-                                        <li class="unavailable">Updates for 1 Year</li>
-                                    </ul>
-                                </div>
-                                <a href="contact.html" class="th-btn style1 btn-fw">Choose Your Plan</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-md-6">
-                        <div class="price-item th-ani active">
-                            <h3 class="box-title">Premium Plan</h3>
-                            <p class="box-text">Best suits for great company!</p>
-                            <h4 class="box-price">$79.99<span class="duration">/month</span></h4>
-                            <div class="box-content">
-                                <div class="available-list">
-                                    <ul>
-                                        <li>Limited Access Library</li>
-                                        <li>Commercia License</li>
-                                        <li>Hotline Support 24/7</li>
-                                        <li>100+ HTML UI Elements</li>
-                                        <li class="unavailable">WooCommerce Builder</li>
-                                        <li class="unavailable">Updates for 1 Year</li>
-                                    </ul>
-                                </div>
-                                <a href="contact.html" class="th-btn style1 btn-fw">Choose Your Plan</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-md-6">
-                        <div class="price-item th-ani ">
-                            <h3 class="box-title">Unlimited Plan</h3>
-                            <p class="box-text">Perfect plan for professionals!</p>
-                            <h4 class="box-price">$129.99<span class="duration">/month</span></h4>
-                            <div class="box-content">
-                                <div class="available-list">
-                                    <ul>
-                                        <li>Limited Access Library</li>
-                                        <li>Commercia License</li>
-                                        <li>Hotline Support 24/7</li>
-                                        <li>100+ HTML UI Elements</li>
-                                        <li>WooCommerce Builder</li>
-                                        <li>Updates for 1 Year</li>
-                                    </ul>
-                                </div>
-                                <a href="contact.html" class="th-btn style1 btn-fw">Choose Your Plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="yearly" class="wrapper-full hide">
-                <div class="row gy-4 justify-content-center">
-
-                    <div class="col-xl-4 col-md-6">
-                        <div class="price-item th-ani ">
-                            <h3 class="box-title">Basic Plan</h3>
-                            <p class="box-text">Perfect plan to get started</p>
-                            <h4 class="box-price">$99.99<span class="duration">/month</span></h4>
-                            <div class="box-content">
-                                <div class="available-list">
-                                    <ul>
-                                        <li>Limited Access Library</li>
-                                        <li>Commercia License</li>
-                                        <li>Hotline Support 24/7</li>
-                                        <li class="unavailable">100+ HTML UI Elements</li>
-                                        <li class="unavailable">WooCommerce Builder</li>
-                                        <li class="unavailable">Updates for 1 Year</li>
-                                    </ul>
-                                </div>
-                                <a href="contact.html" class="th-btn style7 btn-fw">Choose Your Plan</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-md-6">
-                        <div class="price-item th-ani active">
-                            <h3 class="box-title">Premium Plan</h3>
-                            <p class="box-text">Best suits for great company!</p>
-                            <h4 class="box-price">$179.99<span class="duration">/month</span></h4>
-                            <div class="box-content">
-                                <div class="available-list">
-                                    <ul>
-                                        <li>Limited Access Library</li>
-                                        <li>Commercia License</li>
-                                        <li>Hotline Support 24/7</li>
-                                        <li>100+ HTML UI Elements</li>
-                                        <li class="unavailable">WooCommerce Builder</li>
-                                        <li class="unavailable">Updates for 1 Year</li>
-                                    </ul>
-                                </div>
-                                <a href="contact.html" class="th-btn style7 btn-fw">Choose Your Plan</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-md-6">
-                        <div class="price-item th-ani ">
-                            <h3 class="box-title">Unlimited Plan</h3>
-                            <p class="box-text">Perfect plan for professionals!</p>
-                            <h4 class="box-price">$229.99<span class="duration">/month</span></h4>
-                            <div class="box-content">
-                                <div class="available-list">
-                                    <ul>
-                                        <li>Limited Access Library</li>
-                                        <li>Commercia License</li>
-                                        <li>Hotline Support 24/7</li>
-                                        <li>100+ HTML UI Elements</li>
-                                        <li>WooCommerce Builder</li>
-                                        <li>Updates for 1 Year</li>
-                                    </ul>
-                                </div>
-                                <a href="contact.html" class="th-btn style7 btn-fw">Choose Your Plan</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="shape-mockup" data-top="0%" data-right="0%"><img src="assets/img/shape/shape-15.png" alt=""></div>
-        <div class="shape-mockup spin" data-bottom="15%" data-left="3%"><img src="assets/img/shape/shape-16.png" alt=""></div>
-    </section> -->
-    <div class="marquee-area2 bg-theme position-relative overflow-hidden pt-60 pb-60">
-        <div class="marquee">
-            <div class="marquee-group style4">
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Website Design & Development</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>Search Engine Optimisation – SEO</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Pay Per Click – PPC</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>Data Security</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Social Media Marketing – SMM</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>E-commerce Marketing</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Website Design & Development</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>Search Engine Optimisation – SEO</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Pay Per Click – PPC</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>Data Security</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Social Media Marketing – SMM</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>E-commerce Marketing</span></div>
-              
-
-            </div>
-            <!-- <div aria-hidden="true" class="marquee-group style4">
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Technology</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>IT Solution</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Network Security</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>Data Security</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Technology</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>IT Solution</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Network Security</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>Data Security</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Technology</span></div>
-                <div class="item "><img src="assets/img/icon/star2.svg" alt=""><span>Technology</span></div>
-                <div class="item"><img src="assets/img/icon/star2.svg" alt=""><span>IT Solution</span></div>
-            </div> -->
-        </div>
-    </div><!--==============================
-Team Area  
-==============================-->
-   
-
-   
-
-    <!-- <div class="contact-area5 overflow-hidden space" id="contact-sec" data-bg-src="assets/img/bg/contact_bg_1.png">
-        <div class="container th-container4">
-            <div class="title-area text-center">
-                <div class="shadow-title">Blog</div>
-                <span class="sub-title sub-title4  text-ani-style2">Grow Your Business <span></span></span>
-                <h2 class="sec-title  text-ani-style3">Boosts Your Site Visits</h2>
-            </div>
-            <div class="search-contact text-center">
-                <form action="mail.php" method="POST" class="search-form ajax-contact">
-                    <div class="row gx-30">
-                        <div class="form-group col-md-4">
-                            <input type="text" class="form-control" name="text" id="text" placeholder="Web URL">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <div class="form-btn text-xl-start text-center col-12">
-                                <button class="th-btn th-black th-icon btn-fw">Check Now<i class="fa-regular fa-arrow-right ms-2"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="form-messages mb-0 mt-3"></p>
-                </form>
-                <p>Refer to our Privacy Policy for data management specifics</p>
-                <div class="sec-btn mt-40 mb-0 d-flex justify-content-center">
-                    <a href="contact.html" class="th-btn ser-btn style5 th-icon">Let’s Talk Us<i class="fa-regular fa-arrow-right ms-2"></i> </a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    
-    <!--==============================
-	Footer Area
-==============================-->
-    <footer class="footer-wrapper bg-title footer-layout1 footer-layout2">
-       <div class="widget-area">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            
-            <div class="col-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
-                <div class="widget footer-widget text-center">
-                    <div class="th-widget-about">
-                        
-                        <div class="about-logo mb-3" >
-                            <a class="icon-masking" href="index.html">
-                                <img src="assets/img/icon/logo.png" alt="Digidzn" style="background-color: white !important;">
-                            </a>
-                        </div>
-
-                        <p class="px-5">
-                            Don’t let your business be lost. Start your digital success story today with our six-year experience and expertise in accelerating brands' growth. Digidzn is the best digital marketing agency in Delhi, India, that you'll find. Don’t let your business be lost. Start your digital success story today with our six-year experience and expertise in accelerating brands' growth. Digidzn is the best digital marketing agency in Delhi, India, that you'll find. Don’t let your business be lost. Start your digital success story today with our six-year experience and expertise in accelerating brands' growth. Digidzn is the best digital marketing agency in Delhi, India, that you'll find.
-                        </p>
-
-                        <div class="th-social mt-3">
-                            <a href="https://www.facebook.com/digiDZN" target="_blank">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://x.com/digi_dzn?lang=en" target="_blank">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/digidzn/" target="_blank">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://www.instagram.com/digi_dzn/" target="_blank">
-    <i class="fab fa-instagram"></i>
-</a>
-
-                           
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+<div class="card">
+<h3>Website Design</h3>
+<p>Modern responsive website design.</p>
 </div>
 
-        </div>
-        <div class="copyright-wrap">
-            <div class="container d-flex align-items-center justify-content-center">
-                <div class="row gy-2 align-items-center justify-content-center">
-                    <div class="col-lg-12">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a href="https://themeforest.net/user/themeholy">DigiDZN</a>. All Rights Reserved.</p>
-                    </div>
-                    <!-- <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-links">
-                            <ul>
-                                <li><a href="contact.html">Privacy Policy</a></li>
-                                <li><a href="contact.html">Terms & Condition</a></li>
-                            </ul>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!--********************************
-			Code End  Here 
-	******************************** -->
-
-
-    <a 
-  href="https://wa.me/9289745760?text=Hey%20I%20have%20a%20query%20...." 
-  target="_blank" 
-  class="whatsapp-float">
-  <img 
-    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-    alt="WhatsApp">
-</a>
-
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 55px;
-  height: 55px;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 999;
-}
-
-.whatsapp-float img {
-  width: 28px;
-  height: 28px;
-}
-</style>
-
-
-<!-- Mobile Bottom Bar -->
-<div class="mobile-cta" id="mobileCTA">
-  <a href="#form" class="cta-call">
-    <i class="fas fa-comment-dots"></i> Get a Free Consultation
-  </a>
+<div class="card">
+<h3>Digital Marketing</h3>
+<p>Grow your brand with marketing strategies.</p>
 </div>
-<style>
-    /* Mobile CTA Bar */
-.mobile-cta {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #fed91f;
-  display: flex;
-  justify-content: center;
-  padding: 12px 15px;
-  z-index: 9999;
-  border-radius: 12px 12px 0 0;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
-}
 
-/* CTA Text */
-.mobile-cta .cta-call {
-  color: #000;
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+<div class="card">
+<h3>Branding</h3>
+<p>Premium brand identity solutions.</p>
+</div>
 
-/* Hide on Large Screens */
-@media (min-width: 992px) {
-  .mobile-cta {
-    display: none;
-  }
-}
+</div>
 
-</style>
+</section>
 
+<footer>
 
+<p>© 2026 GOBRO MEDIA | All Rights Reserved</p>
 
-<script>
-document.addEventListener("scroll", function () {
-  const cta = document.getElementById("mobileCTA");
-
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-
-  if (scrollPercent > 20) {
-    cta.classList.add("show");
-  } else {
-    cta.classList.remove("show");
-  }
-});
-</script>
-
-
-
-
-
-    <!-- Scroll To Top -->
-    <div class="scroll-top d-none">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg>
-    </div>
-
-    <!--==============================
-    All Js File
-============================== -->
-    <!-- Jquery -->
-    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-    <!-- Swiper Slider -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Magnific Popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- Counter Up -->
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <!-- Circle Progress -->
-    <script src="assets/js/circle-progress.js"></script>
-    <!-- Range Slider -->
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <!-- Imagesloadedr -->
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <!-- isotope -->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <!-- Tilt.jquery -->
-    <script src="assets/js/tilt.jquery.min.js"></script>
-    <!-- Nice-select -->
-    <script src="assets/js/nice-select.min.js"></script>
-    <!-- wow -->
-    <script src="assets/js/wow.min.js"></script>
-    <!-- Particles JS -->
-    <script src="assets/js/particles.min.js"></script>
-
-
-    <script src="assets/js/particles-config.js"></script>
-
-    <!-- Gsap JS -->
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/SplitText.js"></script>
-
-    <!-- imageRevealHover JS -->
-    <script src="assets/js/imageRevealHover.js"></script>
-
-    <!-- Main Js File -->
-    <script src="assets/js/main.js"></script>
+</footer>
 
 </body>
-
 </html>
