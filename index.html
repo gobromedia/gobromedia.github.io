@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOBRO MEDIA | Premium Digital Agency</title>
+    <title>GOBRO MEDIA | Digital Marketing & Content Agency</title>
     
-    <!-- Google Fonts for Professional Look -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- AOS Animation Library CSS -->
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* --- CSS VARIABLES & RESET --- */
+        /* --- CSS VARIABLES --- */
         :root {
             --bg-color: #050505;
             --card-bg: #111111;
@@ -198,7 +198,7 @@
             line-height: 1.6;
         }
 
-        /* --- PORTFOLIO / STATS --- */
+        /* --- STATS SECTION --- */
         .stats {
             background: #0a0a0a;
             display: flex;
@@ -226,6 +226,34 @@
             letter-spacing: 2px;
             font-size: 0.8rem;
             color: #fff;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact {
+            text-align: center;
+            padding: 100px 10%;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold-solid);
         }
 
         /* --- FOOTER --- */
@@ -259,8 +287,9 @@
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified for demo */
+            .nav-links { display: none; }
             .logo { font-size: 22px; }
+            .services-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -272,16 +301,21 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1 data-aos="fade-up" data-aos-duration="1000">Elevate Your <br><span class="gold-text">Brand Identity</span></h1>
-        <p data-aos="fade-up" data-aos-delay="200">We craft premium digital experiences with a touch of luxury. Professional, Attractive, and Unforgettable.</p>
-        <a href="#contact" class="btn-gold" data-aos="zoom-in" data-aos-delay="400">Start Project</a>
+        <h1 data-aos="fade-up" data-aos-duration="1000">
+            <span class="gold-text">GOBRO MEDIA</span><br>
+            Digital Excellence
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="200">
+            We specialize in Digital Marketing, Content Creation, Video Editing & Networking Solutions.
+        </p>
+        <a href="#contact" class="btn-gold" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
     </section>
 
     <!-- Stats Section -->
@@ -304,45 +338,74 @@
     <section class="section" id="services">
         <h2 class="section-title gold-text" data-aos="fade-up">Our Services</h2>
         <div class="services-grid">
-            <!-- Service 1 -->
+            
+            <!-- Service 1: Digital Marketing -->
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-video"></i>
-                <h3>Video Production</h3>
-                <p>High-end commercial and social media video editing that captures attention instantly.</p>
-            </div>
-            <!-- Service 2 -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Graphic Design</h3>
-                <p>Logo design, branding kits, and visual assets that scream luxury and professionalism.</p>
-            </div>
-            <!-- Service 3 -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-bullhorn"></i>
                 <h3>Digital Marketing</h3>
-                <p>Strategic campaigns to grow your audience and convert leads into loyal customers.</p>
+                <p>Strategic campaigns to grow your audience and convert leads into loyal customers through SEO, PPC & Social Media.</p>
             </div>
+
+            <!-- Service 2: Content Creation -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-pen-nib"></i>
+                <h3>Content Creation</h3>
+                <p>Engaging written & visual content that tells your brand story and connects with your target audience effectively.</p>
+            </div>
+
+            <!-- Service 3: Video Editor -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-video"></i>
+                <h3>Video Editor</h3>
+                <p>Professional video editing services including commercials, social media reels, YouTube videos & corporate content.</p>
+            </div>
+
+            <!-- Service 4: Content Creator -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-camera"></i>
+                <h3>Content Creator</h3>
+                <p>Expert content creators who produce high-quality photos, graphics & multimedia for your digital presence.</p>
+            </div>
+
+            <!-- Service 5: Networking -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking Solutions</h3>
+                <p>Business networking strategies, professional connections & partnership development for sustainable growth.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title gold-text" data-aos="fade-up">Contact Us</h2>
+        <div class="contact-form" data-aos="fade-up">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button class="btn-gold">Send Message</button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="social-icons">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2023 GOBRO MEDIA. All Rights Reserved.</p>
+        <p>&copy; 2024 GOBRO MEDIA. All Rights Reserved.</p>
     </footer>
 
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize Animations
         AOS.init({
-            once: true, // Animation happens only once while scrolling down
-            offset: 100, // Offset (in px) from the original trigger point
+            once: true,
+            offset: 100,
         });
     </script>
 </body>
