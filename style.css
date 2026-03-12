@@ -89,18 +89,24 @@ text-align:center;
 
 /* FIX FOR TESTIMONIAL */
 
+.testimonials-section{
+padding:120px 10%;
+text-align:center;
+}
+
 .testimonial-slider{
 max-width:700px;
 margin:60px auto;
-text-align:center;
+position:relative;
 }
 
 .testimonial-slide{
 display:none;
 background:#111;
-padding:40px;
+padding:50px;
 border-radius:12px;
 border:1px solid #333;
+text-align:center;
 }
 
 .testimonial-slide.active{
@@ -127,6 +133,19 @@ font-size:14px;
 color:#D4AF37;
 font-size:20px;
 margin-top:15px;
+}
+
+.testimonial-buttons{
+margin-top:30px;
+}
+
+.testimonial-buttons button{
+background:#D4AF37;
+border:none;
+padding:10px 16px;
+margin:5px;
+cursor:pointer;
+border-radius:6px;
 }
 
 /* BLOG SECTION */
