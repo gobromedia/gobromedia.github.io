@@ -385,22 +385,54 @@
         
     </section>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="testimonials-section">
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
 
-    <h2 class="section-title gold-text" data-aos="fade-up">
-        What Clients Say
-    </h2>
+<h2 class="section-title gold-text">What Clients Say</h2>
 
-    <div class="testimonial-card" data-aos="flip-left">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+<div class="testimonial-slider">
 
-        <p>
-        "Gobro Media helped us grow our brand online. Their marketing strategies and video editing are top-notch."
-        </p>
+<div class="testimonial-slide active">
+<p>
+"Gobro Media helped us grow our brand online. Their marketing strategies and video editing are top-notch."
+</p>
 
-        <h4>- Rahul Sharma, Business Owner</h4>
-    </div>
+<h4>Rahul Sharma</h4>
+<span>Business Owner</span>
+
+<div class="stars">★★★★★</div>
+</div>
+
+
+<div class="testimonial-slide">
+<p>
+"Working with Gobro Media has transformed our digital presence. Highly professional team."
+</p>
+
+<h4>Neha Verma</h4>
+<span>Marketing Head</span>
+
+<div class="stars">★★★★★</div>
+</div>
+
+
+<div class="testimonial-slide">
+<p>
+"They created amazing content for our brand and our engagement increased drastically."
+</p>
+
+<h4>Amit Mehta</h4>
+<span>Startup Founder</span>
+
+<div class="stars">★★★★★</div>
+</div>
+
+</div>
+
+<div class="testimonial-buttons">
+<button onclick="prevSlide()">❮</button>
+<button onclick="nextSlide()">❯</button>
+</div>
 
 </section>
     
@@ -427,7 +459,7 @@
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2024 GOBRO MEDIA. All Rights Reserved.</p>
+        <p>&copy; 2026 GOBRO MEDIA. All Rights Reserved.</p>
     </footer>
 
     <!-- AOS Animation Script -->
@@ -438,5 +470,31 @@
             offset: 100,
         });
     </script>
+<!-- TESTIMONIAL SLIDER SCRIPT -->
+
+<script>
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".testimonial-slide");
+
+function showSlide(index){
+slides.forEach(slide => slide.classList.remove("active"));
+slides[index].classList.add("active");
+}
+
+function nextSlide(){
+currentSlide = (currentSlide + 1) % slides.length;
+showSlide(currentSlide);
+}
+
+function prevSlide(){
+currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+showSlide(currentSlide);
+}
+
+setInterval(nextSlide,4000);
+
+</script>    
 </body>
 </html>
