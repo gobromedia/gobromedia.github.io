@@ -18,134 +18,36 @@ body {
 
 /* TESTIMONIAL SLIDER */
 
-.testimonials-section{
-padding:120px 10%;
-text-align:center;
+.testimonial-section {
+  background-color: #f39c12; /* Orange background */
+  padding: 50px 0;
+  text-align: center;
 }
 
-.testimonial-slider{
-max-width:700px;
-margin:60px auto;
-position:relative;
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.testimonial-slide{
-display:none;
-background:#111;
-padding:40px;
-border-radius:12px;
-border:1px solid #222;
+.testimonial-card {
+  background: #333; /* Dark card color */
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.testimonial-slide.active{
-display:block;
-}
-
-.testimonial-slide p{
-color:#ccc;
-line-height:1.7;
-margin-bottom:20px;
-}
-
-.testimonial-slide h4{
-color:#fff;
-margin-bottom:5px;
-}
-
-.testimonial-slide span{
-color:#aaa;
-font-size:14px;
-}
-
-.stars{
-color:#D4AF37;
-font-size:20px;
-margin-top:15px;
-}
-
-.testimonial-buttons{
-margin-top:30px;
-}
-
-.testimonial-buttons button{
-background:#D4AF37;
-border:none;
-padding:10px 16px;
-margin:5px;
-cursor:pointer;
-border-radius:6px;
-}
-
-.testimonial-slide{
-display:none;
-background:#111;
-padding:40px;
-border-radius:12px;
-border:1px solid #222;
-max-width:700px;
-margin:auto;
-text-align:center;
-}
-
-/* FIX FOR TESTIMONIAL */
-
-.testimonials-section{
-padding:120px 10%;
-text-align:center;
-}
-
-.testimonial-slider{
-max-width:700px;
-margin:60px auto;
-position:relative;
-}
-
-.testimonial-slide{
-display:none;
-background:#111;
-padding:50px;
-border-radius:12px;
-border:1px solid #333;
-text-align:center;
-}
-
-.testimonial-slide.active{
-display:block;
-}
-
-.testimonial-slide p{
-color:#ccc;
-font-size:18px;
-line-height:1.7;
-}
-
-.testimonial-slide h4{
-margin-top:20px;
-color:#fff;
-}
-
-.testimonial-slide span{
-color:#aaa;
-font-size:14px;
-}
-
-.stars{
-color:#D4AF37;
-font-size:20px;
-margin-top:15px;
-}
-
-.testimonial-buttons{
-margin-top:30px;
-}
-
-.testimonial-buttons button{
-background:#D4AF37;
-border:none;
-padding:10px 16px;
-margin:5px;
-cursor:pointer;
-border-radius:6px;
+/* Arrow styling */
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+  background: rgba(0,0,0,0.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 /* BLOG SECTION */
