@@ -386,54 +386,32 @@
     </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials-section">
+<div class="testimonial-section">
+  <h2>TESTIMONIALS</h2>
+  
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <div class="profile-icon">Logo</div>
+          <h3>MILAN DEEP</h3>
+          <p>Director</p>
+          <p class="text">"I have been working with this agency for 5 years..."</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
 
-<h2 class="section-title gold-text">What Clients Say</h2>
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          </div>
+      </div>
 
-<div class="testimonial-slider">
+    </div>
 
-<div class="testimonial-slide active">
-<p>
-"Gobro Media helped us grow our brand online. Their marketing strategies and video editing are top-notch."
-</p>
-
-<h4>Rahul Sharma</h4>
-<span>Business Owner</span>
-
-<div class="stars">★★★★★</div>
-</div>
-
-
-<div class="testimonial-slide">
-<p>
-"Working with Gobro Media has transformed our digital presence. Highly professional team."
-</p>
-
-<h4>Neha Verma</h4>
-<span>Marketing Head</span>
-
-<div class="stars">★★★★★</div>
-</div>
-
-
-<div class="testimonial-slide">
-<p>
-"They created amazing content for our brand and our engagement increased drastically."
-</p>
-
-<h4>Amit Mehta</h4>
-<span>Startup Founder</span>
-
-<div class="stars">★★★★★</div>
-</div>
-
-
-<div class="testimonial-buttons">
-<button onclick="prevSlide()">❮</button>
-<button onclick="nextSlide()">❯</button>
-</div>
-
-</div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
 
 </section>
     
@@ -470,32 +448,18 @@
             once: true,
             offset: 100,
         });
-        
-    </script>
     
 <script>
-
-let currentSlide = 0;
-
-const slides = document.querySelectorAll(".testimonial-slide");
-
-function showSlide(index){
-slides.forEach(slide => slide.classList.remove("active"));
-slides[index].classList.add("active");
-}
-
-function nextSlide(){
-currentSlide = (currentSlide + 1) % slides.length;
-showSlide(currentSlide);
-}
-
-function prevSlide(){
-currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-showSlide(currentSlide);
-}
-
-setInterval(nextSlide,4000);
-
+  var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    loop: true, // Slides khatam hone par wapas start ho jayein
+    centeredSlides: true,
+    slidesPerView: 1, // Ek baar mein 1 dikhega
+    spaceBetween: 30,
+  });
 </script>
     
 </body>
