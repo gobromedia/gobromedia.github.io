@@ -15,3 +15,35 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* TESTIMONIALS SECTION */
+
+.testimonials-section{
+    padding:120px 10%;
+    text-align:center;
+}
+
+.testimonial-card{
+    max-width:700px;
+    margin:50px auto;
+    padding:40px;
+    background:#111;
+    border:1px solid #222;
+    border-radius:12px;
+}
+
+.testimonial-card p{
+    font-size:18px;
+    line-height:1.7;
+    color:#ccc;
+}
+
+.testimonial-card h4{
+    margin-top:15px;
+    font-weight:500;
+}
+
+.stars{
+    font-size:22px;
+    margin-bottom:15px;
+}
