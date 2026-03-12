@@ -3,418 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOBRO MEDIA | Digital Marketing & Content Agency</title>
-
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <meta name="description" content="Gobro Media is a digital marketing and content creation agency offering video editing, marketing strategies, and networking solutions.">
-
-<meta name="keywords" content="Digital Marketing, Video Editing, Social Media Management, Content Creation, Gobro Media">
+    <title>GOBRO MEDIA | Digital Marketing Agency Delhi</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="GOBRO MEDIA - Digital Marketing Services in Delhi for Faster Business Growth. SEO, SMM, PPC, Content Marketing & More.">
+    <meta name="keywords" content="Digital Marketing Delhi, SEO Services, SMM, PPC, Content Marketing, GOBRO MEDIA">
+    <meta name="author" content="GOBRO MEDIA">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        /* --- CSS VARIABLES --- */
-        :root {
-            --bg-color: #050505;
-            --card-bg: #111111;
-            --text-color: #ffffff;
-            --gold-gradient: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-            --gold-solid: #D4AF37;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-    
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
-
-        /* --- GOLD TEXT EFFECT --- */
-        .gold-text {
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-        }
-
-        /* --- NAVBAR --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold-solid);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #ccc;
-            max-width: 600px;
-            margin-bottom: 40px;
-        }
-
-        .btn-gold {
-            padding: 15px 40px;
-            background: var(--gold-gradient);
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 50px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* --- SERVICES SECTION --- */
-        .section {
-            padding: 100px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            padding: 40px;
-            border: 1px solid #222;
-            border-radius: 10px;
-            text-align: center;
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gold-gradient);
-            transform: scaleX(0);
-            transition: 0.4s;
-            transform-origin: left;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold-solid);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card i {
-            font-size: 40px;
-            color: var(--gold-solid);
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .service-card p {
-            color: #aaa;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* --- STATS SECTION --- */
-        .stats {
-            background: #0a0a0a;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 60px 10%;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-        }
-
-        .stat-item {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--gold-solid);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .stat-label {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            color: #fff;
-        }
-
-        /* --- CONTACT SECTION --- */
-        .contact {
-            text-align: center;
-            padding: 100px 10%;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: #111;
-            border: 1px solid #333;
-            color: #fff;
-            border-radius: 5px;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--gold-solid);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 50px 10%;
-            text-align: center;
-            background: #000;
-            border-top: 1px solid #222;
-        }
-
-        .social-icons {
-            margin-bottom: 20px;
-        }
-
-        .social-icons a {
-            color: #fff;
-            font-size: 20px;
-            margin: 0 15px;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: var(--gold-solid);
-        }
-
-        footer p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            .logo { font-size: 22px; }
-            .services-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo gold-text">GOBRO MEDIA</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <a href="blog.html">Blog</a>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo" data-aos="fade-right">
+                    <h2>GOBRO <span class="gold-text">MEDIA</span></h2>
+                </div>
+                <ul class="nav-menu" data-aos="fade-left">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#testimonial" class="nav-link">Testimonial</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1 data-aos="fade-up" data-aos-duration="1000">
-            <span class="gold-text">GOBRO MEDIA</span><br>
-            Digital Excellence
-        </h1>
-        <p data-aos="fade-up" data-aos-delay="200">
-            We specialize in Digital Marketing, Content Creation, Video Editing & Networking Solutions.
-        </p>
-        <a href="#contact" class="btn-gold" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="zoom-in">
+                <h1 class="hero-title">
+                    <span class="gold-text">GOBRO MEDIA</span>
+                </h1>
+                <h2 class="hero-subtitle">Digital Marketing Services in Delhi for Faster Business Growth</h2>
+                <p class="hero-description">A Results-Driven Digital Marketing Company in Delhi for Growing Brands</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
-
-    <!-- Stats Section -->
-    <div class="stats">
-        <div class="stat-item" data-aos="fade-up">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">Projects Done</div>
-        </div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Client Satisfaction</div>
-        </div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Support</div>
-        </div>
-    </div>
 
     <!-- Services Section -->
-    <section class="section" id="services">
-        <h2 class="section-title gold-text" data-aos="fade-up">Our Services</h2>
-        <div class="services-grid">
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gold-text">Our</span> Services
+            </h2>
+            <p class="section-subtitle" data-aos="fade-up">We provide complete digital solutions for your business growth</p>
             
-            <!-- Service 1: Digital Marketing -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Digital Marketing</h3>
-                <p>Strategic campaigns to grow your audience and convert leads into loyal customers through SEO, PPC & Social Media.</p>
-            </div>
+            <div class="services-grid">
+                <!-- SEO Services -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Services</h3>
+                    <h4>Search Engine Optimization</h4>
+                    <p>Boost your visibility and drive targeted traffic with our data-driven search strategies. We help clients strengthen their online presence through expert SEO strategies and tailored services.</p>
+                </div>
 
-            <!-- Service 2: Content Creation -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-pen-nib"></i>
-                <h3>Content Creation</h3>
-                <p>Engaging written & visual content that tells your brand story and connects with your target audience effectively.</p>
-            </div>
+                <!-- SMM Services -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>SMM Services</h3>
+                    <h4>Social Media Marketing</h4>
+                    <p>We offer tailored social media strategies to ensure your brand stands out on all social media platforms, including Instagram, Facebook, LinkedIn, YouTube, and more.</p>
+                </div>
 
-            <!-- Service 3: Video Editor -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-video"></i>
-                <h3>Video Editor</h3>
-                <p>Professional video editing services including commercials, social media reels, YouTube videos & corporate content.</p>
-            </div>
+                <!-- PPC Services -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>PPC Services</h3>
+                    <h4>PPC & Performance Marketing</h4>
+                    <p>Partner with us to unlock the full potential of paid advertising, maximize your revenue and accelerate business growth with our expertly crafted, results-driven PPC campaigns.</p>
+                </div>
 
-            <!-- Service 4: Content Creator -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                <i class="fas fa-camera"></i>
-                <h3>Content Creator</h3>
-                <p>Expert content creators who produce high-quality photos, graphics & multimedia for your digital presence.</p>
-            </div>
+                <!-- Website Design -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Display Advertising</h3>
+                    <h4>Website Design & Development</h4>
+                    <p>We offer website design and development services to help clients have fast, responsive, user-friendly and search engine optimized websites to attract and engage audience.</p>
+                </div>
 
-            <!-- Service 5: Networking -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                <i class="fas fa-network-wired"></i>
-                <h3>Networking Solutions</h3>
-                <p>Business networking strategies, professional connections & partnership development for sustainable growth.</p>
-            </div>
-    </section>
-   
-<!-- Contact Section -->
-<section class="contact" id="contact">
+                <!-- Content Marketing -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3>Content Marketing</h3>
+                    <h4>Content Creation</h4>
+                    <p>We help businesses bring their brands to life with our expertly crafted content that tells their story to the world in an exciting and engaging way.</p>
+                </div>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="section-title gold-text" data-aos="fade-up">Contact Us</h2>
-        <div class="contact-form" data-aos="fade-up">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea rows="5" placeholder="Your Message"></textarea>
-            <button class="btn-gold">Send Message</button>
+                <!-- ORM Services -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ORM Services</h3>
+                    <h4>Online Reputation Management</h4>
+                    <p>Our comprehensive Online Reputation Management (ORM) services are designed to help you monitor, manage, and shape your digital presence more effectively and intelligently.</p>
+                </div>
+
+                <!-- Social Media Listening -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="service-icon">
+                        <i class="fas fa-ear-listen"></i>
+                    </div>
+                    <h3>Social Media Listening</h3>
+                    <h4>Brand Monitoring</h4>
+                    <p>Monitor your online conversations like never before. We offer specialized social media listening services to help you track your brand, product or industry across social media platforms.</p>
+                </div>
+
+                <!-- CRO Services -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>CRO Services</h3>
+                    <h4>Conversion Rate Optimisation</h4>
+                    <p>We offer Conversion Rate Optimization (CRO) services designed specifically to elevate your website's user experience and turn your potential customers into actual ones effortlessly.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2 class="section-title">
+                        <span class="gold-text">About</span> GOBRO MEDIA
+                    </h2>
+                    <p class="about-description">
+                        GOBRO MEDIA is a leading digital marketing services company in Delhi, created to help ambitious brands to conquer every searchable platform in this age of AI and response marketing. We utilize the most advanced and cutting-edge digital marketing tools and techniques to elevate your social media listings and online performance across platforms. From PPC and AI SEO to social media, content, website development, social listening and influencer marketing, we blend data and technology to help brands make smarter decisions and unlock new opportunities.
+                    </p>
+                    <p class="about-description">
+                        Incepted in the year 2016, GOBRO MEDIA has been shaping the digital marketing space with creative solutions. We have helped numerous local and global brands make a solid impact in this AI-driven digital marketing landscape. We can help you as well – to evolve, elevate and lead in this digital-first world.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <h3>500+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <h3>1000+</h3>
+                            <p>Projects Done</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-award"></i>
+                            <h3>10+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="about-placeholder">
+                        <i class="fas fa-rocket"></i>
+                        <h3>GOBRO MEDIA</h3>
+                        <p>Digital Marketing Excellence</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2026 GOBRO MEDIA. All Rights Reserved.</p>
-    </footer>
+    </section>
 
-    <!-- AOS Animation Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            offset: 100,
-        });
-</script>
-</body>
-</html>
+    <!-- Statistics Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gold-text">But what hasn't changed is the value of</span> <span class="gold-text">Visibility</span>
+            </h2>
+            <p class="section-subtitle" data-aos="fade-up">The search you knew for decades has changed and nothing is same anymore.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-text">of Indian shoppers check online before making an actual purchase.</div>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number">52%</div>
+                    <div class="stat-text">of Indian shoppers now start their product searches on Instagram, YouTube, or Amazon.</div>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number">61%</div>
+                    <div class="stat-text">of Indian users trust Google results for brands that shine on social media platforms.</div>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-number">44%</div>
+                    <div class="stat-text">of young users turn to AI-generated over-views instead of scrolling through traditional search results.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonial" class="testimonial-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gold-text">What</span> Clients Say
+            </h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="flip-left">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"GOBRO MEDIA helped us grow our brand online. Their marketing strategies and video editing are top-notch."</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>Rahul Sharma</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The SEO services transformed our online presence. We saw 200% increase in organic traffic within 3 months."</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>Priya Verma</h4>
+                            <p>Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Professional team with amazing results. Their PPC campaigns gave us the best ROI we've ever seen."</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>Amit Kumar</h4>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gold-text">Latest</span> Insights
+            </h2>
+            <div class="blog-grid">
+                <div class="blog-card" data-aos="fade-up">
+                    <div class="blog-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Instagram Growth Strategy 2024</h3>
+                    <p>Learn how to gain real followers and increase engagement on Instagram with proven strategies.</p>
+                    <a href="blog.html" class="read-more">Read More →</a>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube Growth Guide</h3>
+                    <p>Keep your audience hooked with these video editing tricks and content strategies.</p>
+                    <a href="blog.html" class="read-more">Read More →</a>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Tips for 2024</h3>
+                    <p>Rank higher on Google with these latest SEO techniques and best practices.</p>
+                    <a href="blog.html" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="zoom-in">Ready to Grow Your Brand?</h2>
+            <p class="cta-description" data-aos="fade-up">Let's build something amazing together. Contact us today for a free consultation.</p>
+            <div class="cta-buttons" data-aos="fade
