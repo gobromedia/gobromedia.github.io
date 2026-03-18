@@ -249,6 +249,57 @@
     /* RESPONSIVE */
     @media(max-width:1024px){nav{padding:18px 30px;}nav.scrolled{padding:14px 30px;}.nav-links{display:none;}.hamburger{display:flex;}section{padding:80px 30px;}.stats-bar{grid-template-columns:repeat(2,1fr);padding:40px 30px;}#about{grid-template-columns:1fr;}.about-visual{display:none;}.services-grid{grid-template-columns:1fr 1fr;}.service-card:nth-child(3n){border-right:1px solid rgba(201,168,76,0.08);}.process-steps{grid-template-columns:1fr 1fr;}.process-steps::before{display:none;}.portfolio-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.portfolio-item:first-child{grid-row:auto;}.testimonials-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}.modal-box{padding:36px 28px;}}
     @media(max-width:600px){section{padding:60px 20px;}.stats-bar{grid-template-columns:repeat(2,1fr);padding:30px 20px;gap:20px;}.services-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.portfolio-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;gap:30px;}nav{padding:18px 20px;}.modal-box{padding:28px 20px;}}
+
+    /* PARTNERSHIP MODAL EXTRAS */
+    .p-intro{font-size:0.85rem;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:32px;}
+    .p-types-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+    .p-type-card{background:var(--dark3);border:1px solid rgba(201,168,76,0.12);border-radius:4px;padding:20px 22px;transition:border-color 0.3s;}
+    .p-type-card:hover{border-color:rgba(201,168,76,0.35);}
+    .p-type-icon{font-size:1.5rem;margin-bottom:8px;}
+    .p-type-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold);margin-bottom:6px;}
+    .p-type-desc{font-size:0.75rem;color:var(--text-muted);line-height:1.6;}
+    .p-benefits{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+    .p-benefit{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--dark3);border-radius:4px;border:1px solid rgba(201,168,76,0.08);}
+    .p-benefit-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px;}
+    .p-benefit-title{font-size:0.8rem;font-weight:600;color:var(--white);margin-bottom:3px;}
+    .p-benefit-desc{font-size:0.74rem;color:var(--text-muted);line-height:1.6;}
+    .p-steps{display:flex;flex-direction:column;gap:0;margin-top:12px;}
+    .p-step{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid rgba(201,168,76,0.07);}
+    .p-step:last-child{border-bottom:none;}
+    .p-step-num{width:36px;height:36px;border-radius:50%;border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;}
+    .p-step-title{font-size:0.82rem;font-weight:600;color:var(--white);margin-bottom:3px;}
+    .p-step-desc{font-size:0.74rem;color:var(--text-muted);line-height:1.6;}
+    .p-req-list{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
+    .p-req-item{display:flex;align-items:center;gap:10px;font-size:0.8rem;color:rgba(245,240,232,0.7);}
+    .p-req-item::before{content:'\2713';color:var(--gold);font-weight:700;flex-shrink:0;}
+    .p-testimonials{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+    .p-testi{background:var(--dark3);border:1px solid rgba(201,168,76,0.1);border-radius:4px;padding:18px 20px;}
+    .p-testi-text{font-size:0.77rem;color:rgba(245,240,232,0.65);font-style:italic;line-height:1.7;margin-bottom:12px;}
+    .p-testi-name{font-size:0.72rem;font-weight:600;color:var(--gold);}
+    .p-testi-role{font-size:0.67rem;color:var(--text-muted);}
+    .p-stats{display:flex;gap:0;border:1px solid rgba(201,168,76,0.12);border-radius:4px;overflow:hidden;margin-top:12px;}
+    .p-stat{flex:1;text-align:center;padding:20px 10px;background:var(--dark3);border-right:1px solid rgba(201,168,76,0.1);}
+    .p-stat:last-child{border-right:none;}
+    .p-stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:300;}
+    .p-stat-label{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;}
+    .p-faqs{display:flex;flex-direction:column;gap:0;margin-top:12px;}
+    .p-faq{border-bottom:1px solid rgba(201,168,76,0.08);overflow:hidden;}
+    .p-faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:500;text-align:left;padding:16px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .p-faq-q:hover{color:var(--gold);}
+    .p-faq-arrow{color:var(--gold);font-size:1rem;transition:transform 0.3s;flex-shrink:0;}
+    .p-faq-a{font-size:0.79rem;color:var(--text-muted);line-height:1.8;padding-bottom:14px;display:none;}
+    .p-faq.open .p-faq-arrow{transform:rotate(180deg);}
+    .p-faq.open .p-faq-a{display:block;}
+    .p-cta-box{background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.03));border:1px solid rgba(201,168,76,0.2);border-radius:4px;padding:32px 28px;text-align:center;margin-top:12px;}
+    .p-cta-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:8px;}
+    .p-cta-title em{color:var(--gold);font-style:italic;}
+    .p-cta-desc{font-size:0.8rem;color:var(--text-muted);margin-bottom:24px;line-height:1.6;}
+    .p-apply-form{display:flex;flex-direction:column;gap:12px;text-align:left;}
+    .p-apply-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .p-contact-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+    .p-contact-item{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:var(--text-muted);}
+    .p-contact-icon{color:var(--gold);font-size:1rem;}
+    @media(max-width:700px){.p-types-grid{grid-template-columns:1fr;}.p-testimonials{grid-template-columns:1fr;}.p-apply-row{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -651,10 +702,11 @@
     <div class="footer-col reveal reveal-delay-2">
       <h4>Legal</h4>
       <ul class="footer-links">
-        <li><a href="mailto:gobromedia@outlook.com">gobromedia&#64;outlook.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#f99e969b8b96949c9d9098b9968c8d95969692d79a9694">gobromedia&#64;outlook.com</a></li>
         <li><a href="#contact">Get a Quote</a></li>
         <li><button onclick="openModal('privacy')">Privacy Policy</button></li>
         <li><button onclick="openModal('terms')">Terms &amp; Conditions</button></li>
+        <li><button onclick="openModal('partnership')">Partnership</button></li>
       </ul>
     </div>
   </div>
@@ -663,6 +715,7 @@
     <div class="footer-bottom-links">
       <button onclick="openModal('privacy')">Privacy Policy</button>
       <button onclick="openModal('terms')">Terms &amp; Conditions</button>
+      <button onclick="openModal('partnership')">Partnership</button>
     </div>
   </div>
 </footer>
@@ -785,6 +838,253 @@
   </div>
 </div>
 
+
+<!-- PARTNERSHIP MODAL -->
+<div class="modal-overlay" id="modal-partnership" onclick="closeModalOutside(event, 'partnership')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('partnership')">&#10005;</button>
+    <span class="modal-tag">Grow Together</span>
+    <h2 class="modal-title">Become a <em>Partner</em></h2>
+    <span class="modal-updated">Gobro Media Partnership Program</span>
+    <div class="modal-divider"></div>
+
+    <!-- 1. INTRODUCTION -->
+    <div class="modal-section">
+      <h3>1. Introduction</h3>
+      <p class="p-intro">We collaborate with brands, businesses, and individuals to build mutually beneficial partnerships that drive growth and long-term success. Our partnership programs are designed to create value for both sides through strategic collaboration, performance-based rewards, and continuous support.</p>
+    </div>
+
+    <!-- 2. PARTNERSHIP TYPES -->
+    <div class="modal-section">
+      <h3>2. Partnership Types</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:14px;">We offer multiple partnership opportunities tailored to different needs:</p>
+      <div class="p-types-grid">
+        <div class="p-type-card">
+          <div class="p-type-icon">&#129309;</div>
+          <div class="p-type-name">Affiliate Partner</div>
+          <p class="p-type-desc">Earn commissions by promoting our services to your network and audience.</p>
+        </div>
+        <div class="p-type-card">
+          <div class="p-type-icon">&#128101;</div>
+          <div class="p-type-name">Reseller / Distributor</div>
+          <p class="p-type-desc">Sell our services and products under your network with competitive margins.</p>
+        </div>
+        <div class="p-type-card">
+          <div class="p-type-icon">&#127775;</div>
+          <div class="p-type-name">Collaboration Partner</div>
+          <p class="p-type-desc">Ideal for influencers, creators, and brand collaborations seeking mutual growth.</p>
+        </div>
+        <div class="p-type-card">
+          <div class="p-type-icon">&#128200;</div>
+          <div class="p-type-name">Strategic Partner</div>
+          <p class="p-type-desc">Long-term partnerships focused on business expansion and joint growth initiatives.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. BENEFITS -->
+    <div class="modal-section">
+      <h3>3. Benefits</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:14px;">Partnering with us comes with a range of advantages:</p>
+      <div class="p-benefits">
+        <div class="p-benefit">
+          <div class="p-benefit-icon">&#128176;</div>
+          <div>
+            <div class="p-benefit-title">Attractive Earning Potential</div>
+            <p class="p-benefit-desc">Competitive commission structures with transparent, timely payouts and no hidden deductions.</p>
+          </div>
+        </div>
+        <div class="p-benefit">
+          <div class="p-benefit-icon">&#128640;</div>
+          <div>
+            <div class="p-benefit-title">Business Growth Opportunities</div>
+            <p class="p-benefit-desc">Scalable models that grow with you &mdash; whether you are an individual or an established business.</p>
+          </div>
+        </div>
+        <div class="p-benefit">
+          <div class="p-benefit-icon">&#127891;</div>
+          <div>
+            <div class="p-benefit-title">Dedicated Support</div>
+            <p class="p-benefit-desc">Full onboarding training, marketing tools, and a dedicated support team at every step.</p>
+          </div>
+        </div>
+        <div class="p-benefit">
+          <div class="p-benefit-icon">&#127942;</div>
+          <div>
+            <div class="p-benefit-title">Strong Brand Association</div>
+            <p class="p-benefit-desc">Enhance your credibility and reach by associating with a growing and trusted digital agency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. HOW IT WORKS -->
+    <div class="modal-section">
+      <h3>4. How It Works</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:14px;">Our partnership process is simple and transparent:</p>
+      <div class="p-steps">
+        <div class="p-step">
+          <div class="p-step-num">01</div>
+          <div>
+            <div class="p-step-title">Submit Your Application</div>
+            <p class="p-step-desc">Fill out the application form below or reach out to us directly. We respond within 24 hours.</p>
+          </div>
+        </div>
+        <div class="p-step">
+          <div class="p-step-num">02</div>
+          <div>
+            <div class="p-step-title">Get Approval from Our Team</div>
+            <p class="p-step-desc">We review your profile and discuss the best partnership type suited to your goals.</p>
+          </div>
+        </div>
+        <div class="p-step">
+          <div class="p-step-num">03</div>
+          <div>
+            <div class="p-step-title">Complete Onboarding &amp; Training</div>
+            <p class="p-step-desc">Access free training sessions, marketing materials, and your partner dashboard.</p>
+          </div>
+        </div>
+        <div class="p-step">
+          <div class="p-step-num">04</div>
+          <div>
+            <div class="p-step-title">Start Working &amp; Earning</div>
+            <p class="p-step-desc">Begin referring clients or selling services and receive your earnings on a regular schedule.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. REQUIREMENTS -->
+    <div class="modal-section">
+      <h3>5. Requirements &amp; Eligibility</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:14px;">To become a partner, you should meet the following criteria:</p>
+      <div class="p-req-list">
+        <div class="p-req-item">Individuals, businesses, or agencies can apply</div>
+        <div class="p-req-item">Basic understanding of sales, marketing, or networking is preferred</div>
+        <div class="p-req-item">Specific requirements may vary depending on the partnership type</div>
+        <div class="p-req-item">No strict experience required for certain programs</div>
+        <div class="p-req-item">A growth-focused mindset and professional attitude are essential</div>
+      </div>
+    </div>
+
+    <!-- 6. PROOF & TRUST -->
+    <div class="modal-section">
+      <h3>6. Proof &amp; Trust</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:14px;">We believe in building trust through results:</p>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-num">50+</div><div class="p-stat-label">Active Partners</div></div>
+        <div class="p-stat"><div class="p-stat-num">30+</div><div class="p-stat-label">Cities Covered</div></div>
+        <div class="p-stat"><div class="p-stat-num">95%</div><div class="p-stat-label">Satisfaction Rate</div></div>
+        <div class="p-stat"><div class="p-stat-num">24hr</div><div class="p-stat-label">Support Response</div></div>
+      </div>
+      <div class="p-testimonials" style="margin-top:16px;">
+        <div class="p-testi">
+          <p class="p-testi-text">"Joining Gobro Media&rsquo;s affiliate program was the best decision. The process is transparent and the commissions are paid on time, every time."</p>
+          <div class="p-testi-name">Vikram Singh</div>
+          <div class="p-testi-role">Affiliate Partner, Delhi</div>
+        </div>
+        <div class="p-testi">
+          <p class="p-testi-text">"As a reseller partner, I doubled my freelance income within two months. The support team is always available and genuinely helpful."</p>
+          <div class="p-testi-name">Neha Gupta</div>
+          <div class="p-testi-role">Reseller Partner, Mumbai</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. FAQ -->
+    <div class="modal-section">
+      <h3>7. Frequently Asked Questions</h3>
+      <div class="p-faqs">
+        <div class="p-faq">
+          <button class="p-faq-q" onclick="toggleFaq(this)">
+            How will I get paid? <span class="p-faq-arrow">&#9660;</span>
+          </button>
+          <div class="p-faq-a">Payments are processed through secure and transparent methods &mdash; bank transfer or UPI &mdash; as per the agreed terms. Payouts happen on a regular monthly schedule.</div>
+        </div>
+        <div class="p-faq">
+          <button class="p-faq-q" onclick="toggleFaq(this)">
+            How long does it take to start earning? <span class="p-faq-arrow">&#9660;</span>
+          </button>
+          <div class="p-faq-a">You can start earning as soon as your onboarding is complete and you begin working. Most partners make their first referral within the first week.</div>
+        </div>
+        <div class="p-faq">
+          <button class="p-faq-q" onclick="toggleFaq(this)">
+            Is there any risk involved? <span class="p-faq-arrow">&#9660;</span>
+          </button>
+          <div class="p-faq-a">Our partnership models are designed to be low-risk and performance-driven. The affiliate program requires zero investment &mdash; you simply refer and earn.</div>
+        </div>
+        <div class="p-faq">
+          <button class="p-faq-q" onclick="toggleFaq(this)">
+            Can I work part-time as a partner? <span class="p-faq-arrow">&#9660;</span>
+          </button>
+          <div class="p-faq-a">Absolutely. Many of our partners work alongside their full-time jobs. There are no fixed hours &mdash; work at your own pace and convenience.</div>
+        </div>
+        <div class="p-faq">
+          <button class="p-faq-q" onclick="toggleFaq(this)">
+            What kind of support will I receive? <span class="p-faq-arrow">&#9660;</span>
+          </button>
+          <div class="p-faq-a">Every partner receives an onboarding session, access to marketing materials, and a dedicated point of contact. Our team is available to support you throughout your journey.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. GET STARTED / APPLY -->
+    <div class="modal-section">
+      <h3>8. Get Started</h3>
+      <div class="p-cta-box">
+        <h3 class="p-cta-title">Ready to <em>Grow With Us?</em></h3>
+        <p class="p-cta-desc">Apply now and our team will get back to you within 24 hours.</p>
+        <div class="p-apply-form">
+          <div class="p-apply-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="Your Full Name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile / WhatsApp</label>
+              <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Partnership Type</label>
+            <select class="form-input" style="cursor:pointer;">
+              <option value="" style="background:#141414">Select Partnership Type</option>
+              <option style="background:#141414">Affiliate Partner</option>
+              <option style="background:#141414">Reseller / Distributor</option>
+              <option style="background:#141414">Collaboration Partner</option>
+              <option style="background:#141414">Strategic Partner</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tell Us About Yourself</label>
+            <textarea class="form-textarea" style="min-height:90px;" placeholder="Share your background, current work, and why you want to partner with us..."></textarea>
+          </div>
+          <button class="btn-primary" style="width:100%;padding:15px;font-size:0.7rem;" onclick="handlePartnerApply(this)">Submit Application</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. CONTACT & SUPPORT -->
+    <div class="modal-section">
+      <h3>9. Contact &amp; Support</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">For any queries or assistance, reach out to us directly:</p>
+      <div class="p-contact-row" style="justify-content:flex-start;flex-direction:column;gap:12px;">
+        <div class="p-contact-item"><span class="p-contact-icon">&#9993;</span> gobromedia&#64;outlook.com</div>
+        <div class="p-contact-item"><span class="p-contact-icon">&#128205;</span> India, New Delhi</div>
+        <div class="p-contact-item"><span class="p-contact-icon">&#9889;</span> Quick response guaranteed within 24 hours</div>
+        <div class="p-contact-item"><span class="p-contact-icon">&#128222;</span> WhatsApp or email &mdash; whichever is convenient for you</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
 <script>
   var cursor = document.getElementById('cursor');
   var ring = document.getElementById('cursorRing');
@@ -823,6 +1123,21 @@
       setTimeout(function() { btn.textContent='Send Message'; btn.disabled=false; btn.style.background=''; }, 3000);
     }, 1500);
   }
+  
+  function toggleFaq(btn) {
+    var faq = btn.parentElement;
+    var isOpen = faq.classList.contains('open');
+    document.querySelectorAll('.p-faq').forEach(function(f){ f.classList.remove('open'); });
+    if (!isOpen) faq.classList.add('open');
+  }
+  function handlePartnerApply(btn) {
+    btn.textContent = 'Submitting...'; btn.disabled = true;
+    setTimeout(function() {
+      btn.textContent = 'Application Submitted!';
+      btn.style.background = 'linear-gradient(135deg,#2d6a4f,#52b788)';
+      setTimeout(function() { btn.textContent='Submit Application'; btn.disabled=false; btn.style.background=''; }, 3000);
+    }, 1500);
+  }
   function openModal(type) {
     document.getElementById('modal-' + type).classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -840,6 +1155,7 @@
     if (e.key === 'Escape') {
       closeModal('privacy');
       closeModal('terms');
+      closeModal('partnership');
     }
   });
 </script>
