@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/png" href="favicon.png"/>
   <link rel="apple-touch-icon" href="favicon.png"/>
-  <title>Blog | GOBRO MEDIA</title>
+  <title>Partnership | GOBRO MEDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root{--gold:#c9a84c;--gold-light:#e8c96d;--gold-dim:#8a6f30;--black:#050505;--dark2:#141414;--dark3:#1a1a1a;--white:#f5f0e8;--text-muted:#8a8a8a;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;cursor:none;}
+
+    /* CURSOR */
     .cursor{width:10px;height:10px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:difference;}
     .cursor-ring{width:36px;height:36px;border:1px solid rgba(201,168,76,0.5);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all 0.35s cubic-bezier(0.23,1,0.32,1);}
+
+    /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(5,5,5,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.15);}
     .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:0.12em;color:var(--gold);text-decoration:none;}
     .logo span{color:var(--white);}
@@ -32,24 +36,148 @@
     .mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);text-decoration:none;letter-spacing:0.05em;transition:color 0.3s;}
     .mobile-menu a:hover{color:var(--gold);}
     .close-menu{position:absolute;top:25px;right:30px;background:none;border:none;color:var(--gold);font-size:2rem;cursor:pointer;}
+
+    /* COMMON */
     .section-tag{display:inline-block;font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding:6px 14px;border:1px solid rgba(201,168,76,0.25);border-radius:2px;}
-    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.15;margin-bottom:20px;}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:18px;}
     .section-title em{color:var(--gold);font-style:italic;}
-    .section-desc{color:var(--text-muted);font-size:0.88rem;line-height:1.8;max-width:520px;font-weight:300;}
-    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black);padding:14px 36px;border:none;font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s ease;box-shadow:0 0 30px rgba(201,168,76,0.25);}
+    .section-desc{color:var(--text-muted);font-size:0.88rem;line-height:1.9;max-width:680px;font-weight:300;}
+    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black);padding:14px 40px;border:none;font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s ease;box-shadow:0 0 30px rgba(201,168,76,0.25);}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(201,168,76,0.4);}
-    .btn-outline{background:transparent;color:var(--white);padding:14px 36px;border:1px solid rgba(245,240,232,0.2);font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s ease;}
-    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .divider{width:60px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:20px 0 28px;}
     .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
-    .reveal-delay-1{transition-delay:0.1s;}
-    .reveal-delay-2{transition-delay:0.2s;}
-    .reveal-delay-3{transition-delay:0.3s;}
-    .page-hero{padding:160px 60px 80px;text-align:center;position:relative;overflow:hidden;}
-    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(201,168,76,0.05) 0%,transparent 70%);}
-    .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:300;line-height:1.1;position:relative;}
-    .page-hero h1 em{color:var(--gold);font-style:italic;}
-    .page-hero p{color:var(--text-muted);font-size:0.88rem;line-height:1.8;max-width:520px;margin:16px auto 0;font-weight:300;}
+    .reveal-delay-1{transition-delay:0.15s;}
+    .reveal-delay-2{transition-delay:0.25s;}
+    .reveal-delay-3{transition-delay:0.35s;}
+
+    /* PAGE HERO */
+    .page-hero{padding:160px 60px 90px;text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(201,168,76,0.06) 0%,transparent 70%);}
+    .page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 70%);}
+    .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:300;line-height:1.05;position:relative;}
+    .page-hero h1 em{color:var(--gold);font-style:italic;font-weight:600;}
+    .page-hero p{color:var(--text-muted);font-size:0.9rem;line-height:1.85;max-width:560px;margin:20px auto 0;font-weight:300;position:relative;}
+
+    /* STATS BAR */
+    .stats-bar{background:var(--dark2);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);padding:44px 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+    .stat{text-align:center;}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:7px;}
+    .stat-label{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);}
+
+    /* OVERVIEW SECTION */
+    .overview-section{padding:90px 60px;background:var(--dark2);}
+    .overview-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .overview-visual{position:relative;height:380px;}
+    .ov-card{position:absolute;background:var(--dark3);border:1px solid rgba(201,168,76,0.12);border-radius:4px;padding:28px 30px;}
+    .ov-card-main{width:76%;height:78%;top:0;left:0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+    .ov-card-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.05),transparent);}
+    .ov-big{font-family:'Cormorant Garamond',serif;font-size:7rem;font-weight:300;color:rgba(201,168,76,0.07);line-height:1;position:absolute;top:16px;right:16px;}
+    .ov-label{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+    .ov-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;line-height:1.45;}
+    .ov-card-accent{width:52%;bottom:0;right:0;}
+    .ov-accent-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold);}
+    .ov-accent-desc{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;}
+
+    /* TYPES SECTION */
+    .types-section{padding:90px 60px;background:var(--black);}
+    .types-header{text-align:center;margin-bottom:56px;}
+    .types-header .section-desc{margin:0 auto;text-align:center;}
+    .types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;border:1px solid rgba(201,168,76,0.1);}
+    .type-card{background:var(--dark2);padding:44px 32px;position:relative;overflow:hidden;transition:all 0.4s ease;border-right:1px solid rgba(201,168,76,0.08);}
+    .type-card:last-child{border-right:none;}
+    .type-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(to right,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.5s ease;}
+    .type-card:hover{background:var(--dark3);}
+    .type-card:hover::before{transform:scaleX(1);}
+    .type-icon{font-size:2.2rem;margin-bottom:20px;}
+    .type-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--white);margin-bottom:12px;}
+    .type-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.8;font-weight:300;}
+    .type-tag{display:inline-block;margin-top:18px;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.25);padding:4px 10px;border-radius:2px;}
+
+    /* BENEFITS SECTION */
+    .benefits-section{padding:90px 60px;background:var(--dark2);}
+    .benefits-header{text-align:center;margin-bottom:56px;}
+    .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1000px;margin:0 auto;}
+    .benefit-card{background:var(--dark3);border:1px solid rgba(201,168,76,0.08);border-radius:4px;padding:34px 30px;display:flex;gap:22px;align-items:flex-start;transition:border-color 0.3s;}
+    .benefit-card:hover{border-color:rgba(201,168,76,0.28);}
+    .benefit-icon-wrap{width:54px;height:54px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;transition:all 0.3s;}
+    .benefit-card:hover .benefit-icon-wrap{background:rgba(201,168,76,0.15);border-color:var(--gold);}
+    .benefit-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:8px;}
+    .benefit-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.8;font-weight:300;}
+
+    /* PROCESS SECTION */
+    .process-section{padding:90px 60px;background:var(--black);}
+    .process-header{text-align:center;margin-bottom:60px;}
+    .process-header .section-desc{margin:0 auto;text-align:center;}
+    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+    .process-steps::before{content:'';position:absolute;top:34px;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);}
+    .process-step{text-align:center;padding:0 24px;}
+    .step-circle{width:68px;height:68px;border:1px solid rgba(201,168,76,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;background:var(--black);font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);position:relative;z-index:1;transition:all 0.3s;}
+    .process-step:hover .step-circle{background:rgba(201,168,76,0.1);border-color:var(--gold);box-shadow:0 0 28px rgba(201,168,76,0.2);}
+    .step-title{font-size:0.84rem;font-weight:600;letter-spacing:0.04em;margin-bottom:10px;}
+    .step-desc{font-size:0.74rem;color:var(--text-muted);line-height:1.7;font-weight:300;}
+
+    /* ELIGIBILITY */
+    .eligibility-section{padding:90px 60px;background:var(--dark2);}
+    .eligibility-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+    .elig-list{display:flex;flex-direction:column;gap:14px;margin-top:4px;}
+    .elig-item{display:flex;align-items:flex-start;gap:16px;padding:16px 20px;background:var(--dark3);border:1px solid rgba(201,168,76,0.08);border-radius:4px;transition:border-color 0.3s;}
+    .elig-item:hover{border-color:rgba(201,168,76,0.25);}
+    .elig-check{width:28px;height:28px;border-radius:50%;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gold);flex-shrink:0;margin-top:1px;}
+    .elig-text{font-size:0.82rem;color:rgba(245,240,232,0.75);line-height:1.6;font-weight:300;}
+    .elig-note{background:linear-gradient(135deg,rgba(201,168,76,0.07),rgba(201,168,76,0.02));border:1px solid rgba(201,168,76,0.18);border-radius:4px;padding:28px 26px;margin-top:4px;}
+    .elig-note-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);margin-bottom:12px;}
+    .elig-note p{font-size:0.8rem;color:var(--text-muted);line-height:1.8;font-weight:300;}
+
+    /* TESTIMONIALS */
+    .testi-section{padding:90px 60px;background:var(--black);}
+    .testi-header{text-align:center;margin-bottom:56px;}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+    .testi-card{background:var(--dark2);border:1px solid rgba(201,168,76,0.08);padding:36px 32px;border-radius:4px;transition:border-color 0.3s;}
+    .testi-card:hover{border-color:rgba(201,168,76,0.25);}
+    .testi-quote{font-family:'Cormorant Garamond',serif;font-size:4.5rem;line-height:0.7;color:rgba(201,168,76,0.15);margin-bottom:20px;display:block;}
+    .testi-text{font-size:0.83rem;color:rgba(245,240,232,0.68);line-height:1.8;font-style:italic;margin-bottom:24px;}
+    .testi-author{display:flex;align-items:center;gap:13px;}
+    .testi-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dim),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--black);font-weight:600;}
+    .testi-name{font-size:0.8rem;font-weight:600;color:var(--white);}
+    .testi-role{font-size:0.67rem;color:var(--gold);letter-spacing:0.08em;}
+    .testi-stars{color:var(--gold);font-size:0.7rem;margin-bottom:3px;}
+
+    /* FAQ */
+    .faq-section{padding:90px 60px;background:var(--dark2);}
+    .faq-header{text-align:center;margin-bottom:56px;}
+    .faq-wrap{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:0;}
+    .faq-item{border-bottom:1px solid rgba(201,168,76,0.1);}
+    .faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Montserrat',sans-serif;font-size:0.85rem;font-weight:500;text-align:left;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color 0.3s;}
+    .faq-q:hover{color:var(--gold);}
+    .faq-arrow{color:var(--gold);font-size:0.9rem;transition:transform 0.3s;flex-shrink:0;}
+    .faq-a{font-size:0.81rem;color:var(--text-muted);line-height:1.85;padding-bottom:18px;display:none;font-weight:300;}
+    .faq-item.open .faq-arrow{transform:rotate(180deg);}
+    .faq-item.open .faq-a{display:block;}
+
+    /* APPLY / CTA SECTION */
+    .apply-section{padding:90px 60px;background:var(--black);}
+    .apply-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:70px;align-items:start;}
+    .apply-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;margin-bottom:16px;}
+    .apply-left h2 em{color:var(--gold);font-style:italic;}
+    .apply-left p{font-size:0.84rem;color:var(--text-muted);line-height:1.85;font-weight:300;margin-bottom:30px;}
+    .contact-items{display:flex;flex-direction:column;gap:20px;}
+    .contact-item{display:flex;gap:16px;align-items:flex-start;}
+    .contact-icon-box{width:44px;height:44px;flex-shrink:0;border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;}
+    .contact-item-label{font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+    .contact-item-value{font-size:0.84rem;color:var(--white);font-weight:300;}
+    .apply-form{display:flex;flex-direction:column;gap:16px;background:var(--dark2);border:1px solid rgba(201,168,76,0.12);padding:40px;border-radius:4px;}
+    .apply-form-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);margin-bottom:4px;}
+    .apply-form-sub{font-size:0.74rem;color:var(--text-muted);margin-bottom:8px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .form-group{display:flex;flex-direction:column;gap:7px;}
+    .form-label{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+    .form-input,.form-textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.12);padding:13px 16px;color:var(--white);font-family:'Montserrat',sans-serif;font-size:0.81rem;font-weight:300;outline:none;transition:border-color 0.3s;border-radius:2px;}
+    .form-input:focus,.form-textarea:focus{border-color:rgba(201,168,76,0.4);}
+    .form-textarea{resize:vertical;min-height:110px;}
+    ::placeholder{color:rgba(245,240,232,0.2);}
+
+    /* FOOTER */
     footer{background:var(--black);border-top:1px solid rgba(201,168,76,0.1);padding:60px 60px 30px;}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:50px;}
     .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;letter-spacing:0.1em;color:var(--gold);margin-bottom:16px;}
@@ -63,30 +191,19 @@
     .footer-links a:hover{color:var(--white);}
     .footer-bottom{border-top:1px solid rgba(201,168,76,0.06);padding-top:26px;display:flex;justify-content:space-between;align-items:center;}
     .footer-copy{font-size:0.72rem;color:rgba(245,240,232,0.25);letter-spacing:0.05em;}
-    @media(max-width:1024px){nav{padding:18px 30px;}.nav-links{display:none;}.hamburger{display:flex;}.footer-top{grid-template-columns:1fr 1fr;}.page-hero{padding:130px 30px 60px;}}
-    @media(max-width:600px){.footer-top{grid-template-columns:1fr;gap:30px;}nav{padding:18px 20px;}}
-    
-    .blog-section{padding:60px 60px 100px;}
-    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto;}
-    .blog-card{background:var(--dark2);border:1px solid rgba(201,168,76,0.08);border-radius:4px;overflow:hidden;transition:all 0.3s;}
-    .blog-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-4px);}
-    .blog-card-top{height:180px;background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(201,168,76,0.02));display:flex;align-items:center;justify-content:center;font-size:3rem;border-bottom:1px solid rgba(201,168,76,0.08);}
-    .blog-card-body{padding:30px 28px;}
-    .blog-cat{font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-    .blog-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--white);margin-bottom:12px;line-height:1.3;}
-    .blog-excerpt{font-size:0.78rem;color:var(--text-muted);line-height:1.7;font-weight:300;}
-    .blog-footer{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.08);}
-    .blog-date{font-size:0.65rem;color:var(--text-muted);letter-spacing:0.1em;}
-    .blog-link{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:opacity 0.3s;}
-    .blog-link:hover{opacity:0.7;}
-    @media(max-width:1024px){.blog-section{padding:40px 30px 80px;}.blog-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:600px){.blog-grid{grid-template-columns:1fr;}}
 
+    /* RESPONSIVE */
+    @media(max-width:1024px){nav{padding:18px 30px;}.nav-links{display:none;}.hamburger{display:flex;}.page-hero{padding:130px 30px 70px;}.stats-bar{grid-template-columns:repeat(2,1fr);padding:40px 30px;}.overview-section,.types-section,.benefits-section,.process-section,.eligibility-section,.testi-section,.faq-section,.apply-section{padding:70px 30px;}.overview-inner{grid-template-columns:1fr;}.overview-visual{display:none;}.types-grid{grid-template-columns:1fr 1fr;}.type-card:nth-child(2){border-right:none;}.type-card:nth-child(3){border-top:1px solid rgba(201,168,76,0.08);}.benefits-grid{grid-template-columns:1fr;}.process-steps{grid-template-columns:1fr 1fr;}.process-steps::before{display:none;}.eligibility-inner{grid-template-columns:1fr;}.testi-grid{grid-template-columns:1fr;}.apply-inner{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.types-grid{grid-template-columns:1fr;}.type-card{border-right:none !important;border-top:1px solid rgba(201,168,76,0.08);}.form-row{grid-template-columns:1fr;}.apply-form{padding:26px 20px;}.footer-top{grid-template-columns:1fr;gap:30px;}nav{padding:18px 20px;}.process-steps{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
+
 <div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div><div class="mobile-menu" id="mobileMenu">
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" onclick="toggleMenu()">&#10005;</button>
   <a href="index.html" onclick="toggleMenu()">Home</a>
   <a href="about.html" onclick="toggleMenu()">About</a>
@@ -94,6 +211,8 @@
   <a href="blog.html" onclick="toggleMenu()">Blog</a>
   <a href="contact.html" onclick="toggleMenu()">Contact</a>
 </div>
+
+<!-- NAV -->
 <nav>
   <a href="index.html" class="logo">GOBRO <span>MEDIA</span></a>
   <ul class="nav-links">
@@ -105,41 +224,357 @@
   </ul>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
+
+<!-- PAGE HERO -->
 <div class="page-hero">
-  <span class="section-tag">Growth Insights</span>
-  <h1>Our <em>Blog</em></h1>
-  <p>Expert insights on digital marketing, content strategy, and brand growth to help your business thrive.</p>
+  <div class="page-hero-grid"></div>
+  <span class="section-tag" style="position:relative;">Collaborate With Us</span>
+  <h1>Become a <em>Partner</em></h1>
+  <p>Join hands with GOBRO MEDIA and unlock new growth opportunities through strategic collaboration, performance-driven models, and long-term success.</p>
 </div>
-<section class="blog-section">
-  <div class="blog-grid">
-    <div class="blog-card reveal">
-      <div class="blog-card-top">&#128202;</div>
-      <div class="blog-card-body"><div class="blog-cat">Digital Marketing</div><div class="blog-title">Understanding Digital Marketing Funnels</div><p class="blog-excerpt">Learn how awareness, consideration, and conversion stages work together to generate qualified leads and improve sales consistency.</p><div class="blog-footer"><span class="blog-date">Jan 2026</span><a href="#" class="blog-link">Read More &#8594;</a></div></div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat reveal"><div class="stat-num">50+</div><div class="stat-label">Active Partners</div></div>
+  <div class="stat reveal reveal-delay-1"><div class="stat-num">30+</div><div class="stat-label">Cities Covered</div></div>
+  <div class="stat reveal reveal-delay-2"><div class="stat-num">95%</div><div class="stat-label">Partner Satisfaction</div></div>
+  <div class="stat reveal reveal-delay-3"><div class="stat-num">24hr</div><div class="stat-label">Response Time</div></div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="overview-section">
+  <div class="overview-inner">
+    <div class="overview-visual reveal">
+      <div class="ov-card ov-card-main">
+        <div class="ov-big">P</div>
+        <div class="ov-label">Our Mission</div>
+        <div class="ov-text">Building partnerships that create real value and drive measurable long-term growth.</div>
+      </div>
+      <div class="ov-card ov-card-accent">
+        <div class="ov-accent-num">4+</div>
+        <div class="ov-accent-desc">Partnership Models</div>
+      </div>
     </div>
-    <div class="blog-card reveal reveal-delay-1">
-      <div class="blog-card-top">&#128269;</div>
-      <div class="blog-card-body"><div class="blog-cat">SEO &amp; PPC</div><div class="blog-title">The SEO + PPC Combination That Works</div><p class="blog-excerpt">Discover why combining organic visibility with paid campaigns creates faster growth while building long-term brand authority.</p><div class="blog-footer"><span class="blog-date">Feb 2026</span><a href="#" class="blog-link">Read More &#8594;</a></div></div>
-    </div>
-    <div class="blog-card reveal reveal-delay-2">
-      <div class="blog-card-top">&#9997;&#65039;</div>
-      <div class="blog-card-body"><div class="blog-cat">Content Strategy</div><div class="blog-title">Content That Converts: Reels, Ads &amp; Copy</div><p class="blog-excerpt">Practical best practices for reels, ad copy, and landing page messaging that turn audience attention into real inquiries.</p><div class="blog-footer"><span class="blog-date">Mar 2026</span><a href="#" class="blog-link">Read More &#8594;</a></div></div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-card-top">&#127916;</div>
-      <div class="blog-card-body"><div class="blog-cat">Video Marketing</div><div class="blog-title">Why Video is King in 2026</div><p class="blog-excerpt">Short-form video dominates every platform. Here is how brands can leverage Reels, Shorts, and TikTok-style content for growth.</p><div class="blog-footer"><span class="blog-date">Mar 2026</span><a href="#" class="blog-link">Read More &#8594;</a></div></div>
-    </div>
-    <div class="blog-card reveal reveal-delay-1">
-      <div class="blog-card-top">&#129309;</div>
-      <div class="blog-card-body"><div class="blog-cat">Networking</div><div class="blog-title">Building Business Connections That Last</div><p class="blog-excerpt">Strategic networking is about quality over quantity. Learn how to build partnerships that generate real business value.</p><div class="blog-footer"><span class="blog-date">Feb 2026</span><a href="#" class="blog-link">Read More &#8594;</a></div></div>
-    </div>
-    <div class="blog-card reveal reveal-delay-2">
-      <div class="blog-card-top">&#127991;&#65039;</div>
-      <div class="blog-card-body"><div class="blog-cat">Brand Strategy</div><div class="blog-title">How to Build a Brand Identity That Stands Out</div><p class="blog-excerpt">A strong brand identity goes beyond a logo. Discover the key elements that make brands memorable and trustworthy.</p><div class="blog-footer"><span class="blog-date">Jan 2026</span><a href="#" class="blog-link">Read More &#8594;</a></div></div>
+    <div class="reveal reveal-delay-2">
+      <span class="section-tag">Partnership Overview</span>
+      <h2 class="section-title">Partnership <em>Overview</em></h2>
+      <div class="divider"></div>
+      <p class="section-desc">We collaborate with businesses, creators, and professionals to build mutually beneficial partnerships that drive measurable growth. Whether you are looking to earn, expand, or scale, our partnership programs are designed to deliver real value for both sides.</p>
+      <p class="section-desc" style="margin-top:16px;">Our models are performance-based, transparent, and built for long-term success &mdash; not just short-term transactions.</p>
     </div>
   </div>
-</section><footer>
+</section>
+
+<!-- PARTNERSHIP TYPES -->
+<section class="types-section">
+  <div class="types-header reveal">
+    <span class="section-tag">Choose Your Model</span>
+    <h2 class="section-title">Partnership <em>Types</em></h2>
+    <p class="section-desc">We offer multiple partnership opportunities tailored to different goals and backgrounds.</p>
+  </div>
+  <div class="types-grid">
+    <div class="type-card reveal">
+      <div class="type-icon">&#129309;</div>
+      <div class="type-name">Affiliate Partner</div>
+      <p class="type-desc">Earn commissions by referring clients to our services. Simple, low-effort, and highly rewarding for those with an existing network.</p>
+      <span class="type-tag">Earn Per Referral</span>
+    </div>
+    <div class="type-card reveal reveal-delay-1">
+      <div class="type-icon">&#128101;</div>
+      <div class="type-name">Reseller / Distributor</div>
+      <p class="type-desc">Sell our services and products under your own network with competitive wholesale margins and full back-end support.</p>
+      <span class="type-tag">Sell &amp; Scale</span>
+    </div>
+    <div class="type-card reveal reveal-delay-2">
+      <div class="type-icon">&#127775;</div>
+      <div class="type-name">Collaboration Partner</div>
+      <p class="type-desc">Ideal for influencers, content creators, and brands looking for co-marketing opportunities and joint campaigns.</p>
+      <span class="type-tag">Co-Create</span>
+    </div>
+    <div class="type-card reveal reveal-delay-3">
+      <div class="type-icon">&#128200;</div>
+      <div class="type-name">Strategic Partner</div>
+      <p class="type-desc">Long-term alliances focused on business expansion, joint growth initiatives, and shared market opportunities.</p>
+      <span class="type-tag">Long-Term Growth</span>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="benefits-header reveal">
+    <span class="section-tag">What You Get</span>
+    <h2 class="section-title">Partner <em>Benefits</em></h2>
+    <p class="section-desc" style="margin:0 auto;text-align:center;">Partnering with us comes with a range of real, measurable advantages.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal">
+      <div class="benefit-icon-wrap">&#128176;</div>
+      <div>
+        <div class="benefit-title">Attractive Earning Potential</div>
+        <p class="benefit-desc">Competitive commission structures with transparent, on-time payouts. No hidden deductions, no delays &mdash; just straightforward earnings.</p>
+      </div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-1">
+      <div class="benefit-icon-wrap">&#128640;</div>
+      <div>
+        <div class="benefit-title">Business Growth Opportunities</div>
+        <p class="benefit-desc">Scalable models designed to grow alongside you &mdash; whether you are an individual freelancer or an established business.</p>
+      </div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-1">
+      <div class="benefit-icon-wrap">&#127891;</div>
+      <div>
+        <div class="benefit-title">Dedicated Support &amp; Training</div>
+        <p class="benefit-desc">Full onboarding sessions, ready-to-use marketing materials, and a dedicated support contact to guide you at every stage.</p>
+      </div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <div class="benefit-icon-wrap">&#127942;</div>
+      <div>
+        <div class="benefit-title">Strong Brand Association</div>
+        <p class="benefit-desc">Boost your professional credibility and reach by partnering with a trusted, growing digital agency in India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="process-header reveal">
+    <span class="section-tag">Step by Step</span>
+    <h2 class="section-title">How It <em>Works</em></h2>
+    <p class="section-desc">Our partnership process is simple, transparent, and designed to get you started fast.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-circle">01</div>
+      <div class="step-title">Apply for Partnership</div>
+      <p class="step-desc">Fill out the application form at the bottom of this page or reach out directly. We respond within 24 hours.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-circle">02</div>
+      <div class="step-title">Get Approval</div>
+      <p class="step-desc">Our team reviews your profile and connects with you to discuss the best-fit partnership model for your goals.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-circle">03</div>
+      <div class="step-title">Onboarding &amp; Guidance</div>
+      <p class="step-desc">Complete a free onboarding session and receive all the tools, materials, and guidance needed to get started confidently.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-circle">04</div>
+      <div class="step-title">Start Working &amp; Earning</div>
+      <p class="step-desc">Begin referring, reselling, or collaborating and receive your earnings on a regular, predictable schedule.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="eligibility-section">
+  <div class="eligibility-inner">
+    <div class="reveal">
+      <span class="section-tag">Who Can Join</span>
+      <h2 class="section-title">Eligibility <em>Criteria</em></h2>
+      <div class="divider"></div>
+      <div class="elig-list">
+        <div class="elig-item">
+          <div class="elig-check">&#10003;</div>
+          <div class="elig-text">Open for individuals, freelancers, agencies, and established businesses</div>
+        </div>
+        <div class="elig-item">
+          <div class="elig-check">&#10003;</div>
+          <div class="elig-text">Basic understanding of sales, marketing, or networking is preferred</div>
+        </div>
+        <div class="elig-item">
+          <div class="elig-check">&#10003;</div>
+          <div class="elig-text">No strict experience required for beginner-level partnership programs</div>
+        </div>
+        <div class="elig-item">
+          <div class="elig-check">&#10003;</div>
+          <div class="elig-text">Specific requirements may vary depending on the partnership type selected</div>
+        </div>
+        <div class="elig-item">
+          <div class="elig-check">&#10003;</div>
+          <div class="elig-text">A professional attitude and growth-focused mindset are essential</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <span class="section-tag">Good to Know</span>
+      <h2 class="section-title">No <em>Barriers</em> to Entry</h2>
+      <div class="divider"></div>
+      <div class="elig-note">
+        <div class="elig-note-title">Anyone can start</div>
+        <p>Our affiliate program requires zero upfront investment. If you have a network, a platform, or simply the drive to refer clients, you qualify. We will guide you through the rest from day one.</p>
+        <p style="margin-top:12px;">For reseller and strategic partnerships, we look at intent and commitment more than credentials. If you are serious about growth, we want to work with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER TESTIMONIALS -->
+<section class="testi-section">
+  <div class="testi-header reveal">
+    <span class="section-tag">Proof &amp; Trust</span>
+    <h2 class="section-title">What Our <em>Partners Say</em></h2>
+    <p class="section-desc" style="margin:0 auto;text-align:center;">Real results from real partners in our growing network.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <span class="testi-quote">&ldquo;</span>
+      <p class="testi-text">Joining the Gobro Media affiliate program was one of the best decisions I made this year. The process is completely transparent and commissions are always paid on time.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">V</div>
+        <div>
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-name">Vikram Singh</div>
+          <div class="testi-role">Affiliate Partner, Delhi</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-1">
+      <span class="testi-quote">&ldquo;</span>
+      <p class="testi-text">As a reseller partner I doubled my freelance income within two months. The support team is genuinely helpful and the onboarding was smooth from day one.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">N</div>
+        <div>
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-name">Neha Gupta</div>
+          <div class="testi-role">Reseller Partner, Mumbai</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <span class="testi-quote">&ldquo;</span>
+      <p class="testi-text">The collaboration partnership gave my brand real visibility. Gobro Media is professional, reliable, and genuinely invested in mutual success. Highly recommended.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-name">Aryan Mehta</div>
+          <div class="testi-role">Collaboration Partner, Bangalore</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-header reveal">
+    <span class="section-tag">Common Questions</span>
+    <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">How will I get paid? <span class="faq-arrow">&#9660;</span></button>
+      <div class="faq-a">Payments are processed through secure and transparent methods &mdash; bank transfer or UPI &mdash; as per your agreed terms. Payouts follow a regular monthly schedule with no hidden deductions.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">How long does it take to start earning? <span class="faq-arrow">&#9660;</span></button>
+      <div class="faq-a">You can start earning as soon as your onboarding is complete and you make your first referral or sale. Most partners see their first results within the first week of going active.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">Is there any financial risk involved? <span class="faq-arrow">&#9660;</span></button>
+      <div class="faq-a">Our partnership models are designed to be low-risk and performance-driven. The affiliate program requires zero investment. You only earn &mdash; there is nothing to lose.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I work as a partner part-time? <span class="faq-arrow">&#9660;</span></button>
+      <div class="faq-a">Absolutely. Many of our partners work alongside their full-time jobs or businesses. There are no fixed hours or targets &mdash; work at your own pace and convenience.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">What support will I receive after joining? <span class="faq-arrow">&#9660;</span></button>
+      <div class="faq-a">Every partner receives a dedicated onboarding session, access to marketing materials, and a direct point of contact on our team. We are available via email or WhatsApp throughout your journey with us.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">Is there a minimum requirement to join? <span class="faq-arrow">&#9660;</span></button>
+      <div class="faq-a">For the affiliate program there are no minimum requirements. For reseller and collaboration partnerships a small existing network or audience is helpful, but we evaluate each application individually.</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY SECTION -->
+<section class="apply-section">
+  <div class="apply-inner">
+    <div class="reveal">
+      <span class="section-tag">Get Started</span>
+      <h2 class="apply-left" style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;margin-bottom:16px;">Ready to <em style="color:var(--gold);font-style:italic;">Grow Together?</em></h2>
+      <div class="divider"></div>
+      <p style="font-size:0.84rem;color:var(--text-muted);line-height:1.85;font-weight:300;margin-bottom:30px;">Take the next step and become a part of our growing network of partners. Fill out the form and our team will get back to you within 24 hours.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon-box">&#9993;</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">gobromedia&#64;outlook.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-box">&#128222;</div>
+          <div>
+            <div class="contact-item-label">WhatsApp / Phone</div>
+            <div class="contact-item-value">Available on request</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-box">&#128205;</div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">India, New Delhi</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-box">&#9889;</div>
+          <div>
+            <div class="contact-item-label">Response Time</div>
+            <div class="contact-item-value">Within 24 hours, guaranteed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="apply-form">
+        <div class="apply-form-title">Apply Now</div>
+        <div class="apply-form-sub">Submit your application &mdash; we will reach out shortly.</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="Your Full Name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mobile / WhatsApp</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Partnership Type</label>
+          <select class="form-input" style="cursor:pointer;">
+            <option value="" style="background:#141414">Select Partnership Type</option>
+            <option style="background:#141414">Affiliate Partner</option>
+            <option style="background:#141414">Reseller / Distributor</option>
+            <option style="background:#141414">Collaboration Partner</option>
+            <option style="background:#141414">Strategic Partner</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell Us About Yourself</label>
+          <textarea class="form-textarea" placeholder="Share your background, current work, and why you want to partner with us..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;padding:15px;font-size:0.7rem;" onclick="handleApply(this)">Submit Application</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
   <div class="footer-top">
-    <div class="footer-brand">
+    <div>
       <div class="footer-logo">GOBRO MEDIA</div>
       <p class="footer-tagline">A modern digital agency transforming ideas into impactful digital experiences that drive real results.</p>
       <div class="footer-social">
@@ -173,9 +608,9 @@
       <ul class="footer-links">
         <li><a href="mailto:gobromedia@outlook.com">gobromedia&#64;outlook.com</a></li>
         <li><a href="contact.html">Get a Quote</a></li>
-        <li><a href="contact.html">Partnership</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="index.html">Privacy Policy</a></li>
+        <li><a href="index.html">Terms &amp; Conditions</a></li>
       </ul>
     </div>
   </div>
@@ -183,20 +618,37 @@
     <span class="footer-copy">&#169; 2026 GOBRO MEDIA. All Rights Reserved.</span>
     <span class="footer-copy">Made with &#10022; for Digital Excellence</span>
   </div>
-</footer><script>
+</footer>
+
+<script>
   var cursor = document.getElementById('cursor');
-  var ring = document.getElementById('cursorRing');
-  var mx=0, my=0, rx=0, ry=0;
-  document.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; cursor.style.left=(mx-5)+'px'; cursor.style.top=(my-5)+'px'; });
-  function animRing(){ rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12; ring.style.left=(rx-18)+'px'; ring.style.top=(ry-18)+'px'; requestAnimationFrame(animRing); }
+  var ring   = document.getElementById('cursorRing');
+  var mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cursor.style.left=(mx-5)+'px';cursor.style.top=(my-5)+'px';});
+  function animRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=(rx-18)+'px';ring.style.top=(ry-18)+'px';requestAnimationFrame(animRing);}
   animRing();
-  document.querySelectorAll('a,button').forEach(function(el){
-    el.addEventListener('mouseenter',function(){ ring.style.transform='scale(2)'; ring.style.borderColor='rgba(201,168,76,0.6)'; });
-    el.addEventListener('mouseleave',function(){ ring.style.transform='scale(1)'; ring.style.borderColor='rgba(201,168,76,0.5)'; });
+  document.querySelectorAll('a,button,.type-card,.benefit-card,.testi-card').forEach(function(el){
+    el.addEventListener('mouseenter',function(){ring.style.transform='scale(2)';ring.style.borderColor='rgba(201,168,76,0.6)';});
+    el.addEventListener('mouseleave',function(){ring.style.transform='scale(1)';ring.style.borderColor='rgba(201,168,76,0.5)';});
   });
-  function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
-  var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); } }); },{ threshold:0.1 });
-  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  function toggleFaq(btn){
+    var item=btn.parentElement;
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(f){f.classList.remove('open');});
+    if(!open)item.classList.add('open');
+  }
+  function handleApply(btn){
+    btn.textContent='Submitting...';btn.disabled=true;
+    setTimeout(function(){
+      btn.textContent='Application Submitted!';
+      btn.style.background='linear-gradient(135deg,#2d6a4f,#52b788)';
+      setTimeout(function(){btn.textContent='Submit Application';btn.disabled=false;btn.style.background='';},3000);
+    },1500);
+  }
 </script>
+
 </body>
 </html>
