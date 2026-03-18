@@ -82,12 +82,18 @@
     #about{background:var(--dark2);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
     .about-visual{position:relative;height:500px;}
     .about-card{position:absolute;background:var(--dark3);border:1px solid rgba(201,168,76,0.12);padding:30px;border-radius:4px;}
-    .about-card-main{width:75%;height:75%;top:0;left:0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-    .about-card-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.05),transparent);}
-    .about-card-accent{width:55%;bottom:0;right:0;}
+    .about-card-main{width:75%;height:75%;top:0;left:0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background-image:url('about-image.png');background-size:cover;background-position:center;border:none;}
+    .about-card-main::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,5,0.92) 0%,rgba(5,5,5,0.55) 50%,rgba(5,5,5,0.2) 100%);}
+    .about-card-accent{width:55%;bottom:0;right:0;background-image:url('about-image.png');background-size:cover;background-position:center 30%;overflow:hidden;border:none;}
     .about-big-num{font-family:'Cormorant Garamond',serif;font-size:8rem;font-weight:300;color:rgba(201,168,76,0.08);line-height:1;position:absolute;top:20px;right:20px;}
     .about-card-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
     .about-card-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;line-height:1.4;}
+    
+    .about-card-accent::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,5,5,0.7) 0%,rgba(5,5,5,0.4) 100%);z-index:0;}
+    .about-accent-icon,.about-accent-stat,.about-accent-desc{position:relative;z-index:1;}
+    .about-big-num{position:relative;z-index:1;}
+    .about-card-label{position:relative;z-index:1;}
+    .about-card-text{position:relative;z-index:1;}
     .about-accent-icon{font-size:2rem;color:var(--gold);margin-bottom:12px;}
     .about-accent-stat{font-family:'Libre Baskerville',serif;font-size:1.9rem;color:var(--gold);}
     .about-accent-desc{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);}
@@ -202,7 +208,7 @@
     /* FOOTER */
     footer{background:var(--black);border-top:1px solid rgba(201,168,76,0.1);padding:60px 60px 30px;}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:50px;}
-    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;letter-spacing:0.1em;color:var(--gold);margin-bottom:16px;}
+    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;letter-spacing:0.1em;color:var(--gold);margin-bottom:16px;}.footer-logo span{color:var(--white);}
     .footer-tagline{font-size:0.78rem;color:var(--text-muted);line-height:1.7;font-weight:300;max-width:280px;}
     .footer-social{display:flex;gap:12px;margin-top:28px;}
     .social-link{width:38px;height:38px;border:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.85rem;text-decoration:none;transition:all 0.3s;}
@@ -754,7 +760,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand reveal">
-      <div class="footer-logo">GOBRO MEDIA</div>
+      <div class="footer-logo">GOBRO <span style="color:var(--white);">MEDIA</span></div>
       <p class="footer-tagline">A modern digital agency transforming ideas into impactful digital experiences that drive real results.</p>
       <div class="footer-social">
         <a href="#" class="social-link">in</a>
