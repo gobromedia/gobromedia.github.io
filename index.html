@@ -139,18 +139,78 @@
     .portfolio-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:2px;}
     .portfolio-item{background:var(--dark3);position:relative;overflow:hidden;cursor:pointer;}
     .portfolio-item:first-child{grid-row:span 2;}
-    .portfolio-bg{position:absolute;inset:0;transition:transform 0.6s ease;}
+    .portfolio-bg{position:absolute;inset:0;transition:transform 0.6s ease;}.portfolio-bg::after{position:absolute;inset:0;}
     .portfolio-item:hover .portfolio-bg{transform:scale(1.05);}
-    .pi1 .portfolio-bg{background:linear-gradient(135deg,rgba(201,168,76,0.15),rgba(201,168,76,0.03));}
-    .pi2 .portfolio-bg{background:linear-gradient(135deg,rgba(201,168,76,0.1),transparent);}
-    .pi3 .portfolio-bg{background:linear-gradient(135deg,rgba(201,168,76,0.12),transparent);}
-    .pi4 .portfolio-bg{background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent);}
-    .pi5 .portfolio-bg{background:linear-gradient(135deg,rgba(201,168,76,0.14),transparent);}
+    .pi1 .portfolio-bg{
+      background:
+        radial-gradient(ellipse 60% 50% at 30% 60%, rgba(201,168,76,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(201,168,76,0.10) 0%, transparent 55%),
+        linear-gradient(160deg, #0e0c07 0%, #141108 40%, #0a0a0a 100%);
+    }
+    .pi1 .portfolio-bg::after{
+      content:'';position:absolute;inset:0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size:40px 40px;
+    }
+    .pi2 .portfolio-bg{
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 80%, rgba(201,168,76,0.14) 0%, transparent 65%),
+        linear-gradient(135deg, #080a0e 0%, #0d0f14 50%, #0a0a0a 100%);
+    }
+    .pi2 .portfolio-bg::after{
+      content:'';position:absolute;inset:0;
+      background:repeating-linear-gradient(
+        0deg, transparent, transparent 3px,
+        rgba(201,168,76,0.025) 3px, rgba(201,168,76,0.025) 4px
+      );
+    }
+    .pi3 .portfolio-bg{
+      background:
+        radial-gradient(ellipse 55% 55% at 70% 40%, rgba(201,168,76,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 20% 80%, rgba(120,80,180,0.08) 0%, transparent 50%),
+        linear-gradient(145deg, #0b090f 0%, #111015 60%, #0a0a0a 100%);
+    }
+    .pi3 .portfolio-bg::after{
+      content:'';position:absolute;inset:0;
+      background-image:radial-gradient(circle, rgba(201,168,76,0.06) 1px, transparent 1px);
+      background-size:28px 28px;
+    }
+    .pi4 .portfolio-bg{
+      background:
+        radial-gradient(ellipse 60% 50% at 40% 50%, rgba(201,168,76,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 35% 35% at 85% 85%, rgba(180,120,50,0.08) 0%, transparent 50%),
+        linear-gradient(160deg, #0d0b08 0%, #131008 50%, #0a0a0a 100%);
+    }
+    .pi4 .portfolio-bg::after{
+      content:'';position:absolute;inset:0;
+      background:repeating-linear-gradient(
+        45deg, transparent, transparent 18px,
+        rgba(201,168,76,0.025) 18px, rgba(201,168,76,0.025) 19px
+      );
+    }
+    .pi5 .portfolio-bg{
+      background:
+        radial-gradient(ellipse 65% 55% at 60% 40%, rgba(201,168,76,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 10% 70%, rgba(40,120,100,0.07) 0%, transparent 50%),
+        linear-gradient(140deg, #080d0b 0%, #0e1310 50%, #0a0a0a 100%);
+    }
+    .pi5 .portfolio-bg::after{
+      content:'';position:absolute;inset:0;
+      background-image:
+        radial-gradient(circle, rgba(201,168,76,0.05) 1px, transparent 1px),
+        radial-gradient(circle, rgba(201,168,76,0.03) 1px, transparent 1px);
+      background-size:50px 50px, 25px 25px;
+      background-position:0 0, 12px 12px;
+    }
     .portfolio-overlay{position:absolute;inset:0;background:rgba(5,5,5,0.6);display:flex;flex-direction:column;justify-content:flex-end;padding:30px;opacity:0;transition:opacity 0.4s;}
+
+    .portfolio-placeholder{position:absolute;top:16px;left:16px;font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,168,76,0.4);border:1px solid rgba(201,168,76,0.15);padding:4px 10px;border-radius:2px;z-index:2;}
     .portfolio-item:hover .portfolio-overlay{opacity:1;}
     .portfolio-cat{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
     .portfolio-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;}
-    .portfolio-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:rgba(201,168,76,0.2);transition:all 0.4s;}
+    .portfolio-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3.5rem;color:rgba(201,168,76,0.35);transition:all 0.4s;filter:drop-shadow(0 0 12px rgba(201,168,76,0.2));}
     .portfolio-item:hover .portfolio-icon{transform:translate(-50%,-50%) scale(1.2);color:rgba(201,168,76,0.4);}
 
     /* TESTIMONIALS */
@@ -411,9 +471,10 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" onclick="toggleMenu()">&#10005;</button>
   <a href="#home" onclick="toggleMenu()">Home</a>
-  <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#services" onclick="toggleMenu()">Services</a>
   <a href="#portfolio" onclick="toggleMenu()">Work</a>
+  <a href="blog.html" onclick="toggleMenu()">Blog</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#pricing" onclick="toggleMenu()">Pricing</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
 </div>
@@ -423,9 +484,10 @@
   <a href="#home" class="logo">GOBRO <span>MEDIA</span></a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#portfolio">Work</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact" class="nav-cta">Get Started</a></li>
   </ul>
@@ -591,26 +653,31 @@
   <div class="portfolio-grid reveal">
     <div class="portfolio-item pi1">
       <div class="portfolio-bg"></div>
+      <div class="portfolio-placeholder">Digital Marketing</div>
       <div class="portfolio-icon">&#127919;</div>
       <div class="portfolio-overlay"><div class="portfolio-cat">Digital Marketing</div><div class="portfolio-title">Brand Growth Campaign</div></div>
     </div>
     <div class="portfolio-item pi2">
       <div class="portfolio-bg"></div>
+      <div class="portfolio-placeholder">Video Production</div>
       <div class="portfolio-icon">&#127916;</div>
       <div class="portfolio-overlay"><div class="portfolio-cat">Video Production</div><div class="portfolio-title">Corporate Reel</div></div>
     </div>
     <div class="portfolio-item pi3">
       <div class="portfolio-bg"></div>
+      <div class="portfolio-placeholder">Social Media</div>
       <div class="portfolio-icon">&#128241;</div>
       <div class="portfolio-overlay"><div class="portfolio-cat">Social Media</div><div class="portfolio-title">Content Strategy</div></div>
     </div>
     <div class="portfolio-item pi4">
       <div class="portfolio-bg"></div>
+      <div class="portfolio-placeholder">Content Creation</div>
       <div class="portfolio-icon">&#9997;&#65039;</div>
       <div class="portfolio-overlay"><div class="portfolio-cat">Content Creation</div><div class="portfolio-title">Blog &amp; Copy</div></div>
     </div>
     <div class="portfolio-item pi5">
       <div class="portfolio-bg"></div>
+      <div class="portfolio-placeholder">Networking</div>
       <div class="portfolio-icon">&#129309;</div>
       <div class="portfolio-overlay"><div class="portfolio-cat">Networking</div><div class="portfolio-title">Partnership Program</div></div>
     </div>
