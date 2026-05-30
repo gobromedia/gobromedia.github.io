@@ -503,8 +503,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // ==========================================================================
-  // 9. AJAX LEAD FORM SUBMISSION WITH WEB3FORMS INTEGRATION
+   // ==========================================================================
+  // 9. AJAX LEAD FORM SUBMISSION WITH WHATSAPP & BACKUP EMAIL
   // ==========================================================================
   const contactForm = document.getElementById('agencyForm');
   const formStatus = document.getElementById('formStatus');
@@ -516,19 +516,50 @@ document.addEventListener('DOMContentLoaded', function() {
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
       
-      submitBtn.innerHTML = 'Sending Lead...';
+      submitBtn.innerHTML = 'Connecting to WhatsApp...';
       submitBtn.disabled = true;
       formStatus.className = 'form-status'; // Reset status classes
       formStatus.style.display = 'none';
       
-      // Collect form data
+      // Get all values from the form inputs
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const website = document.getElementById('website').value || 'Not Provided';
+      
+      const serviceSelect = document.getElementById('service');
+      const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+      
+      const budgetSelect = document.getElementById('budget');
+      const budget = budgetSelect.options[budgetSelect.selectedIndex].text;
+      
+      const message = document.getElementById('message').value || 'Not Provided';
+      
+      // Format the WhatsApp message beautifully
+      const waMessage = `*🔥 NEW LEAD - GOBRO MEDIA *%0A` +
+                        `-----------------------------%0A` +
+                        `*👤 Name:* ${encodeURIComponent(name)}%0A` +
+                        `*📧 Email:* ${encodeURIComponent(email)}%0A` +
+                        `*📞 WhatsApp:* ${encodeURIComponent(phone)}%0A` +
+                        `*🌐 Website:* ${encodeURIComponent(website)}%0A` +
+                        `*💼 Service:* ${encodeURIComponent(service)}%0A` +
+                        `*💰 Budget:* ${encodeURIComponent(budget)}%0A` +
+                        `*📝 Project Goals:* ${encodeURIComponent(message)}%0A` +
+                        `-----------------------------`;
+      
+      // Create the WhatsApp API Link
+      const waLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${waMessage}`;
+      
+      // Show local success state
+      formStatus.className = 'form-status success';
+      formStatus.innerHTML = '<strong>Success!</strong> Redirecting you to WhatsApp to send your details instantly...';
+      formStatus.style.display = 'block';
+      
+      // Send Email backup in background
       const formData = new FormData(contactForm);
       const jsonObject = {};
       formData.forEach((value, key) => jsonObject[key] = value);
       
-      // Set Web3Forms Public Access Key if not present (handled inside HTML template)
-      
-      // Perform AJAX POST
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -536,37 +567,20 @@ document.addEventListener('DOMContentLoaded', function() {
           'Accept': 'application/json'
         },
         body: JSON.stringify(jsonObject)
-      })
-      .then(async (response) => {
-        let res = await response.json();
-        if (response.status == 200) {
-          formStatus.className = 'form-status success';
-          formStatus.innerHTML = '<strong>Success!</strong> Your growth audit request has been received. We will contact you within the next 24 hours!';
-          contactForm.reset(); // Clear all form inputs
-        } else {
-          console.log(response);
-          formStatus.className = 'form-status error';
-          formStatus.innerHTML = '<strong>Error!</strong> Submission failed: ' + res.message;
-        }
-      })
-      .catch(error => {
-        console.log(error);
-        formStatus.className = 'form-status error';
-        formStatus.innerHTML = '<strong>Network Error!</strong> An error occurred while submitting the form. Please check your internet connection and try again.';
-      })
-      .then(() => {
+      }).catch(err => console.log('Email backup failed:', err));
+      
+      // Redirect to WhatsApp after 800ms
+      setTimeout(() => {
+        window.open(waLink, '_blank');
+        contactForm.reset();
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
-        formStatus.style.display = 'block';
-        
-        // Auto scroll to status message
-        formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
+      }, 800);
     });
   }
 
   // ==========================================================================
-  // 10. PARTNERSHIP MODAL LEAD FORM SUBMISSION
+  // 10. PARTNERSHIP MODAL LEAD FORM SUBMISSION WITH WHATSAPP & BACKUP EMAIL
   // ==========================================================================
   const pmForm = document.getElementById('pmForm');
   const pmFormStatus = document.getElementById('pmFormStatus');
@@ -578,11 +592,40 @@ document.addEventListener('DOMContentLoaded', function() {
       const submitBtn = pmForm.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
       
-      submitBtn.innerHTML = 'Submitting Application...';
+      submitBtn.innerHTML = 'Connecting to WhatsApp...';
       submitBtn.disabled = true;
       pmFormStatus.className = 'form-status';
       pmFormStatus.style.display = 'none';
       
+      // Get all values from the form inputs
+      const pName = pmForm.querySelector('input[name="partner_name"]').value;
+      const pPhone = pmForm.querySelector('input[name="partner_phone"]').value;
+      const pEmail = pmForm.querySelector('input[name="partner_email"]').value;
+      
+      const pModelSelect = pmForm.querySelector('select[name="partner_model"]');
+      const pModel = pModelSelect.options[pModelSelect.selectedIndex].text;
+      
+      const pDetails = pmForm.querySelector('textarea[name="partner_details"]').value || 'Not Provided';
+      
+      // Format the WhatsApp message beautifully
+      const waMessage = `*🤝 NEW PARTNERSHIP APPLICATION *%0A` +
+                        `-----------------------------%0A` +
+                        `*👤 Name:* ${encodeURIComponent(pName)}%0A` +
+                        `*📞 WhatsApp:* ${encodeURIComponent(pPhone)}%0A` +
+                        `*📧 Email:* ${encodeURIComponent(pEmail)}%0A` +
+                        `*💼 Model:* ${encodeURIComponent(pModel)}%0A` +
+                        `*📝 Background:* ${encodeURIComponent(pDetails)}%0A` +
+                        `-----------------------------`;
+      
+      // Create the WhatsApp API Link
+      const waLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${waMessage}`;
+      
+      // Show local success state
+      pmFormStatus.className = 'form-status success';
+      pmFormStatus.innerHTML = '<strong>Success!</strong> Connecting you to WhatsApp to submit your partner application...';
+      pmFormStatus.style.display = 'block';
+      
+      // Send Email backup in background
       const formData = new FormData(pmForm);
       const jsonObject = {};
       formData.forEach((value, key) => jsonObject[key] = value);
@@ -594,37 +637,17 @@ document.addEventListener('DOMContentLoaded', function() {
           'Accept': 'application/json'
         },
         body: JSON.stringify(jsonObject)
-      })
-      .then(async (response) => {
-        let res = await response.json();
-        if (response.status == 200) {
-          pmFormStatus.className = 'form-status success';
-          pmFormStatus.innerHTML = '<strong>Application Received!</strong> Your partnership request has been successfully submitted. We will contact you via WhatsApp or Email.';
-          pmForm.reset();
-        } else {
-          pmFormStatus.className = 'form-status error';
-          pmFormStatus.innerHTML = '<strong>Error!</strong> Submission failed: ' + res.message;
-        }
-      })
-      .catch(error => {
-        pmFormStatus.className = 'form-status error';
-        pmFormStatus.innerHTML = '<strong>Network Error!</strong> Please check your internet connection and try again.';
-      })
-      .then(() => {
+      }).catch(err => console.log('Partnership email backup failed:', err));
+      
+      // Redirect to WhatsApp after 800ms
+      setTimeout(() => {
+        window.open(waLink, '_blank');
+        pmForm.reset();
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
-        pmFormStatus.style.display = 'block';
-        pmFormStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
+      }, 800);
     });
-  }
-
-  // ==========================================================================
-  // 11. AUTOMATIC HERO BACKGROUND IMAGE SLIDER
-  // ==========================================================================
-  const heroSlides = document.querySelectorAll('.hero-slider .slide');
-  let currentHeroSlide = 0;
-  
+  }  
   if (heroSlides.length > 0) {
     setInterval(() => {
       heroSlides[currentHeroSlide].classList.remove('active');
