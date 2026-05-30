@@ -1,6 +1,11 @@
 /**
  * GOBRO MEDIA - PREMIUM INTERACTION SCRIPT
+ * 
+ * CONFIGURATION:
+ * Change the WHATSAPP_NUMBER below to your own WhatsApp number (with country code, no "+" or spaces).
+ * Example: "919999999999" (91 is the country code for India, followed by the 10-digit mobile number).
  */
+const WHATSAPP_NUMBER = "919999999999"; 
 
 document.addEventListener('DOMContentLoaded', function() {
   
@@ -220,138 +225,10 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // ==========================================================================
-  // 6. DETAILED BLOG / INSIGHT READ-MORE MODALS (Hinglish Blogs)
+  // 6. DETAILED BLOG / INSIGHT READ-MORE MODALS (Backup for legacy triggers)
   // ==========================================================================
   window.openBlogModal = function(blogKey) {
-    const modal = document.getElementById('modal-blog');
-    const modalTitle = document.getElementById('blog-modal-title');
-    const modalMeta = document.getElementById('blog-modal-meta');
-    const modalBody = document.getElementById('blog-modal-body');
-    
-    if (!modal || !modalTitle || !modalMeta || !modalBody) return;
-    
-    const blogsData = {
-      'seo-vs-ads': {
-        title: 'SEO vs Google Ads: <em>Konsa kab choose karein?</em>',
-        meta: 'March 15, 2026 &bull; 6 min read &bull; Digital Growth',
-        image: 'blog1.png',
-        content: `
-          <div class="modal-section">
-            <p>Digital marketing start karte hi har business owner ke mind me sabse bada sawal yahi aata hai: <strong>"Mujhe Google Ads chalana chahiye ya SEO par dhyan dena chahiye?"</strong>. Dono platforms Google search queries par hi targeted hain, par dono ka kaam karne ka tarika, cost aur timeline bilkul alag hai.</p>
-            <p>Chalo is guide me simple language me samjhte hain ki aapke business ke liye konsa option kab best rahega.</p>
-          </div>
-          
-          <div class="modal-section">
-            <h3>1. SEO (Search Engine Optimization) Kya hai?</h3>
-            <p>SEO ek organic strategy hai jahan hum apni website ko Google ki guidelines ke hisab se optimize karte hain taaki jab koi aapke business se related keywords search kare, toh aapki website Google ke pehle page par rank kare.</p>
-            <ul>
-              <li><strong>Pros:</strong> Ek baar organic rankings mil gayi, toh traffic bilkul free hota hai. Long-term me iska ROI (Return on Investment) sabse high hota hai.</li>
-              <li><strong>Cons:</strong> Isme time lagta hai. Google ke competitive keywords par rank hone me 3 se 6 months tak ka technical work lag sakta hai.</li>
-              <li><strong>Kab Choose Karein?</strong> Jab aapke paas long-term goals hain aur aap har click ke liye Google ko paise diye bina constant lead flow chahte hain.</li>
-            </ul>
-          </div>
-
-          <div class="modal-section">
-            <h3>2. Google Ads (PPC - Pay-Per-Click) Kya hai?</h3>
-            <p>Google Ads ek paid method hai. Aap Google ko paise dete hain aur Google aapki website ko Google Search ke sabse upar "Sponsored" section me dikhane lagta hai. Jab koi user click karega, tabhi aapke account se paise katenge.</p>
-            <ul>
-              <li><strong>Pros:</strong> Instant Results. Aaj ad setup karo aur aaj se hi customers aapki website par aana start ho jayenge. Kal se leads collect karo!</li>
-              <li><strong>Cons:</strong> Expensive. Jab tak aap ad account me paise daalte rahenge tabhi tak traffic milega. Ad band, customers band.</li>
-              <li><strong>Kab Choose Karein?</strong> Jab aapko naya product launch karna hai, instantly leads chahiye, ya festival season me promotions karne hain.</li>
-            </ul>
-          </div>
-
-          <div class="modal-section">
-            <h3>The Hybrid Approach: GOBRO MEDIA Recommendation</h3>
-            <p>Agar aapka budget allow karta hai, toh hum recommend karte hain ek <strong>Hybrid Approach</strong>:</p>
-            <p>Pehle 90 days ke liye <strong>Google Ads</strong> chalayein taaki immediate sales aur high-intent customer feedback mil sake. Usi ke sath back-end me <strong>SEO campaign</strong> chalu rakhein. Jaise hi 4-6 months me aapka organic traffic rank karne lage, aap paid ads ka budget thoda kam karke organic profits enjoy kar sakte hain!</p>
-          </div>
-        `
-      },
-      'roas-guide': {
-        title: 'E-commerce ke liye <em>ROAS 3x kaise layein</em>',
-        meta: 'March 12, 2026 &bull; 8 min read &bull; Performance Ads',
-        image: 'blog2.png',
-        content: `
-          <div class="modal-section">
-            <p>E-commerce brands ke liye sabse bada metric hota hai <strong>ROAS (Return on Ad Spend)</strong>. Agar aap ₹10,000 ads me lagate hain aur aapko ₹30,000 ki sale milti hai, toh aapka ROAS hai 3.0x. Lekin competitive market me Facebook aur Google Ads par 3.0x ROAS lana mushkil hota ja raha hai.</p>
-            <p>Is short guide me hum wahi blueprint share kar rahe hain jisse humne 50+ brands ko scale kiya hai.</p>
-          </div>
-
-          <div class="modal-section">
-            <h3>Step 1: Conversion-Focused Landing Pages</h3>
-            <p>Ad click hone ke baad agar aapka user slow ya complex website par jata hai toh ad budget barbaad ho jata hai. Hamesha dhyaan rakhein:</p>
-            <ul>
-              <li>Website page speed 2 seconds se kam honi chahiye.</li>
-              <li>Sleek product graphics aur visible <strong>"Add To Cart / Buy Now"</strong> button.</li>
-              <li>Cart abandonment messages setup karein (SMS & WhatsApp automated workflows).</li>
-            </ul>
-          </div>
-
-          <div class="modal-section">
-            <h3>Step 2: Micro-Creative Testing Framework</h3>
-            <p>Ek hi ad image ko mahino chalane se 'Ad Fatigue' aata hai aur costs badh jati hain. Hamein constantly weekly base par test karna chahiye:</p>
-            <ul>
-              <li>**UGC Videos (User Generated Content):** Real log jab product use karte hue review dikhate hain, toh clicks 40% badh jate hain.</li>
-              <li>**Offer angles:** "Buy 1 Get 1" vs "Flat 30% Off" - dono ko aapas me test karein.</li>
-            </ul>
-          </div>
-
-          <div class="modal-section">
-            <h3>Step 3: Advanced Retargeting Funnels</h3>
-            <p>98% log pehli baar website par aakar purchase nahi karte. ROAS badhane ka asly secret retargeting me hai. Facebook Custom Audiences aur Google Retargeting Ads setup karein jo sirf un logon ko target karein jinhone "Add To Cart" kiya par checkout nahi kiya. Unhe 10% extra discount dekar close karein!</p>
-          </div>
-        `
-      },
-      'local-seo': {
-        title: 'Local SEO Checklist for <em>Small Businesses</em>',
-        meta: 'March 10, 2026 &bull; 5 min read &bull; Local SEO',
-        image: 'blog3.png',
-        content: `
-          <div class="modal-section">
-            <p>Kya aapka physical store, cafe, gym, clinic, ya localized business hai? Google Maps par rank karna aapke liye free leads ka sabse bada source ban sakta hai. Jab koi search karta hai "best digital agency near me" toh pehle teen results Maps par dikhte hain. Ise kehte hain <strong>Google Map Pack</strong>.</p>
-            <p>Chalo is free organic checklist ko step-by-step complete karte hain.</p>
-          </div>
-
-          <div class="modal-section">
-            <h3>1. Claim & Verify Google Business Profile (GBP)</h3>
-            <p>Sabse pehle <a href="https://business.google.com" target="_blank" style="color:var(--gold);">Google Business Profile</a> par jaakar apne business ko claim aur verify karein via post postcard or video verification.</p>
-          </div>
-
-          <div class="modal-section">
-            <h3>2. Optimize NAP Consistency</h3>
-            <p><strong>NAP</strong> ka matlab hai: <strong>Name, Address, Phone Number</strong>. Ensure karein ki aapka NAP information waisa hi likha ho har jagah jaise website, Google Maps, Facebook aur local listings directories (e.g., JustDial, Sulekha).</p>
-          </div>
-
-          <div class="modal-section">
-            <h3>3. Collect Real Customer Reviews Weekly</h3>
-            <p>Google Maps ranking me 'Reviews count' aur 'Keywords inside reviews' sabse bada factor hai. Har happy customer ko check-out time par QR code scan karwayein jo directly aapke GBP review box par le jaye. Unhe reviews me specific service names likhne ke liye kahein.</p>
-          </div>
-
-          <div class="modal-section">
-            <h3>4. Keep Post Updates Active</h3>
-            <p>Jaise aap Instagram par posts daalte hain, Google Maps profile par bhi offers, photos, aur small weekly updates daalein. Google active profiles ko dynamic ranking advantages deta hai.</p>
-          </div>
-        `
-      }
-    };
-    
-    const details = blogsData[blogKey];
-    if (!details) return;
-    
-    modalTitle.innerHTML = details.title;
-    modalMeta.innerHTML = details.meta;
-    
-    const coverImageHtml = details.image
-      ? `<div style="width:100%; max-height:360px; overflow:hidden; border-radius:4px; margin-bottom:24px;">
-           <img src="${details.image}" alt="${details.title}" style="width:100%; height:100%; object-fit:cover;" />
-         </div>`
-      : '';
-      
-    modalBody.innerHTML = coverImageHtml + details.content;
-    
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    readLocalBlog(blogKey);
   };
 
   // ==========================================================================
@@ -503,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-   // ==========================================================================
+  // ==========================================================================
   // 9. AJAX LEAD FORM SUBMISSION WITH WHATSAPP & BACKUP EMAIL
   // ==========================================================================
   const contactForm = document.getElementById('agencyForm');
@@ -647,7 +524,14 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = false;
       }, 800);
     });
-  }  
+  }
+
+  // ==========================================================================
+  // 11. AUTOMATIC HERO BACKGROUND IMAGE SLIDER
+  // ==========================================================================
+  const heroSlides = document.querySelectorAll('.hero-slider .slide');
+  let currentHeroSlide = 0;
+  
   if (heroSlides.length > 0) {
     setInterval(() => {
       heroSlides[currentHeroSlide].classList.remove('active');
@@ -657,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ==========================================================================
-  // 12. DYNAMIC LOCAL BLOG SYSTEM (localStorage Persisted)
+  // 12. DYNAMIC LOCAL BLOG SYSTEM (localStorage Persisted & Translated)
   // ==========================================================================
   
   // Default Seed Blogs (Loaded if localStorage is empty)
