@@ -52,6 +52,7 @@ html {
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--gold) var(--bg-deep);
+  font-size: 18px;
 }
 
 body {
@@ -685,7 +686,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.15) 100%), url('about-image.jpg');
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.15) 100%), url('assets/about-image.jpg');
   background-size: cover;
   background-position: center;
   border-color: rgba(201, 168, 76, 0.2);
@@ -830,12 +831,12 @@ section {
 }
 
 /* Service Card Background assignments */
-.service-card:nth-child(1) { background-image: url('service1.jpg'); }
-.service-card:nth-child(2) { background-image: url('service2.jpg'); }
-.service-card:nth-child(3) { background-image: url('service3.jpg'); }
-.service-card:nth-child(4) { background-image: url('service4.jpg'); }
-.service-card:nth-child(5) { background-image: url('service5.jpg'); }
-.service-card:nth-child(6) { background-image: url('service6.jpg'); }
+.service-card:nth-child(1) { background-image: url('assets/service1.jpg'); }
+.service-card:nth-child(2) { background-image: url('assets/service2.jpg'); }
+.service-card:nth-child(3) { background-image: url('assets/service3.jpg'); }
+.service-card:nth-child(4) { background-image: url('assets/service4.jpg'); }
+.service-card:nth-child(5) { background-image: url('assets/service5.jpg'); }
+.service-card:nth-child(6) { background-image: url('assets/service6.jpg'); }
 
 .service-card::before {
   content: '';
@@ -1048,27 +1049,27 @@ section {
 
 /* Custom visual backgrounds with AI generated images for portfolio covers */
 .pi1 .portfolio-bg {
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('portfolio1.jpg');
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('assets/portfolio1.jpg');
   background-size: cover;
   background-position: center;
 }
 .pi2 .portfolio-bg {
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('portfolio2.jpg');
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('assets/portfolio2.jpg');
   background-size: cover;
   background-position: center;
 }
 .pi3 .portfolio-bg {
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('portfolio3.jpg');
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('assets/portfolio3.jpg');
   background-size: cover;
   background-position: center;
 }
 .pi4 .portfolio-bg {
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('portfolio4.jpg');
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('assets/portfolio4.jpg');
   background-size: cover;
   background-position: center;
 }
 .pi5 .portfolio-bg {
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('portfolio5.jpg');
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.1) 100%), url('assets/portfolio5.jpg');
   background-size: cover;
   background-position: center;
 }

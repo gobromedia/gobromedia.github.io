@@ -527,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function() {
       author: "GOBRO MEDIA Team",
       date: "March 15, 2026",
       desc: "Complete guide on when to invest in organic SEO vs paid Google Ads based on your business timeline, budget, and commercial goals.",
-      image: "blog1.jpg",
+      image: "assets/blog1.jpg",
       content: `
         <div class="modal-section">
           <p>When starting digital marketing, every business owner faces the ultimate question: <strong>"Should I run Google Ads or focus on organic SEO?"</strong>. Both options target Google search queries, but their workflows, costs, and timelines are entirely different.</p>
@@ -567,7 +567,7 @@ document.addEventListener('DOMContentLoaded', function() {
       author: "GOBRO MEDIA Team",
       date: "March 12, 2026",
       desc: "Proven strategies to scale to a 3.0x Return on Ad Spend (ROAS) using conversion landing pages and advanced retargeting funnels.",
-      image: "blog2.jpg",
+      image: "assets/blog2.jpg",
       content: `
         <div class="modal-section">
           <p>For e-commerce brands, the single most critical metric is <strong>ROAS (Return on Ad Spend)</strong>. If you invest $1,000 in ads and generate $3,000 in revenue, your ROAS is 3.0x. In today's competitive landscape, hitting 3.0x ROAS requires strategic optimization.</p>
@@ -607,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function() {
       author: "GOBRO MEDIA Team",
       date: "March 10, 2026",
       desc: "Step-by-step organic search mapping checklist every local business, showroom, or store should execute to rank on Google Maps.",
-      image: "blog3.jpg",
+      image: "assets/blog3.jpg",
       content: `
         <div class="modal-section">
           <p>Do you own a physical store, cafe, gym, or medical clinic? Ranking high on Google Maps can become your primary source of free inbound leads. When customers search for terms like "best digital agency near me," Google presents the **Google Map Pack** (the top 3 local business results).</p>
