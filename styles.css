@@ -3799,7 +3799,7 @@ img[loading="lazy"].loaded {
   height: 480px;
   border-radius: 16px;
   object-fit: cover;
-  object-position: center top;
+  object-position: 50% 20%;
   border: 1px solid rgba(201, 168, 76, 0.3);
   box-shadow: 0 24px 60px rgba(201, 168, 76, 0.28), inset 0 0 0 6px rgba(255, 255, 255, 0.1);
 }
