@@ -1904,6 +1904,11 @@ section {
   font-weight: 600;
   color: var(--white);
   margin-bottom: 16px;
+  transition: color 0.4s ease;
+}
+
+.identity-card:hover h3 {
+  color: var(--gold);
 }
 
 .identity-card p {
