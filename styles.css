@@ -977,7 +977,13 @@ section {
   transition: background 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Service cards now use inline SVG illustrations (.service-icon) instead of background photos */
+/* Service Card Background assignments */
+.service-card:nth-child(1) { background-image: url('assets/images/service1.webp'); }
+.service-card:nth-child(2) { background-image: url('assets/images/service2.webp'); }
+.service-card:nth-child(3) { background-image: url('assets/images/service3.webp'); }
+.service-card:nth-child(4) { background-image: url('assets/images/service4.webp'); }
+.service-card:nth-child(5) { background-image: url('assets/images/service5.webp'); }
+.service-card:nth-child(6) { background-image: url('assets/images/service6.webp'); }
 
 .service-card::before {
   content: '';
@@ -1035,8 +1041,6 @@ section {
   overflow: hidden;
   margin-bottom: 36px;
   border: 2px solid rgba(201, 168, 76, 0.3);
-  background: rgba(201, 168, 76, 0.06);
-  color: var(--gold);
   transition: all 0.3s;
   z-index: 2;
 }
@@ -1046,14 +1050,6 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.service-icon svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 22px;
-  box-sizing: border-box;
 }
 
 .service-card:hover .service-icon {
