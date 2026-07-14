@@ -219,6 +219,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
   }
 
+  // Homepage FAQ toggle
+  window.toggleFaq = function(btn) {
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(f) {
+      f.classList.remove('open');
+      var q = f.querySelector('.faq-q');
+      if (q) q.setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  // Sticky mini CTA show/hide on scroll
+  var stickyCta = document.getElementById('stickyCta');
+  if (stickyCta) {
+    var sTicking = false;
+    window.addEventListener('scroll', function() {
+      if (!sTicking) {
+        requestAnimationFrame(function() {
+          var show = window.scrollY > 600;
+          stickyCta.classList.toggle('visible', show);
+          document.body.classList.toggle('sticky-cta-on', show);
+          sTicking = false;
+        });
+        sTicking = true;
+      }
+    }, { passive: true });
+  }
+
   // ==========================================================================
   // 5. EVENT DELEGATION - SERVICE MODAL TRIGGERS
   // ==========================================================================
