@@ -306,51 +306,51 @@ document.addEventListener('DOMContentLoaded', function() {
       'growth-campaign': {
         title: 'Brand <em>Growth Campaign</em>',
         meta: 'Category: Sample Demo &bull; Digital Marketing &bull; Illustrative',
-        desc: 'Is sample campaign me hum Google Ads aur Meta accounts ko zero se optimized structure par transition karte hain. Content creative maps banate hain aur conversion copy ko completely overhaul karte hain.',
+        desc: 'In this sample campaign we transition your Google Ads and Meta accounts to a clean, optimized structure from scratch. We build content creative maps and completely overhaul the conversion copy.',
         bullets: [
-          '**Sample Outcome:** 90 days ke andar **3.2x ROAS** aur 300%+ monthly sales growth ka illustrative target.',
-          '**Ad Spend Optimization:** Ad CTR ko 1.2% se badhakar **4.5%** tak pahuchane ka sample target.',
-          '**SEO Integration:** High-intent local keywords par standard landing pages ko rank karaya, jisse permanent organic leads milti rahein.'
+          '**Sample Outcome:** An illustrative target of **3.2x ROAS** and 300%+ monthly sales growth within 90 days.',
+          '**Ad Spend Optimization:** An illustrative target of lifting ad CTR from 1.2% to **4.5%**.',
+          '**SEO Integration:** Ranking standard landing pages on high-intent local keywords for permanent organic leads.'
         ]
       },
       'ads-reel': {
         title: 'Corporate <em>Ads Reel</em>',
         meta: 'Category: Sample Demo &bull; Video Production &bull; Illustrative',
-        desc: 'Gobro Media ki high-retention video production team ne is cinematic product commercial aur advertising reel ko screenplays se lekar dynamic sound effect mapping tak execute kiya.',
+        desc: 'Our high-retention video production team executes cinematic product commercials and advertising reels — from screenplay to dynamic sound-effect mapping.',
         bullets: [
-          '**Retention Success:** Reels video me first 3-second hook rate **84%** cross kiya aur average watch-time metrics **92%** tak rise hua.',
-          '**Cinematic Post Production:** High-end motion typography, color correction, sound grading, aur targeted hooks build kiye.',
-          '**Organic Reach:** Is professional reel setup ne client ke social handle par organic impressions ko **2.4M views** tak touch kiya.'
+          '**Retention Goal:** An illustrative target of an **84%** first-3-second hook rate and **92%** average watch-time.',
+          '**Cinematic Post Production:** High-end motion typography, color correction, sound grading, and targeted hooks.',
+          '**Organic Reach:** An illustrative target of up to **2.4M views** on the brand\'s social handle.'
         ]
       },
       'social-strategy': {
         title: 'Content <em>Strategy</em>',
         meta: 'Category: Sample Demo &bull; Social Media &bull; Illustrative',
-        desc: 'Is sample me hum ek brand ke pure social grid layout aur aesthetics ko custom gold-black palettes me design karte hain, targeted content grids schedule karte hain, aur YouTube growth strategy execute karte hain.',
+        desc: 'In this sample we design a brand\'s full social grid and aesthetics in custom gold-black palettes, schedule targeted content grids, and execute a YouTube growth strategy.',
         bullets: [
-          '**Followers Scaling:** 6 months me **50,000 se 5,00,000+** tak pahuchne ka illustrative sample.',
-          '**Content Pillar Setup:** High-retention micro-content Reels ka sample setup jo organic algos me viral rating tak drop ho sakta hai.',
-          '**Monetization Hub:** 3 major high-ticket paid sponsor brands onboarding deal confirm karwayi.'
+          '**Followers Goal:** An illustrative target of growing from **50,000 to 5,00,000+** in 6 months.',
+          '**Content Pillar Setup:** A sample high-retention micro-content Reels setup positioned to perform well in organic algorithms.',
+          '**Monetization Hub:** An illustrative target of 3 major high-ticket paid sponsor deals.'
         ]
       },
       'copywriting': {
         title: 'Blog &amp; <em>Copywriting</em>',
         meta: 'Category: Sample Demo &bull; Content Creation &bull; Illustrative',
-        desc: 'Humne pure brand website landing page and blogs ecosystem ki organic copy likhi. High-intent, rich copywriting frameworks aur local search key integration par focus kiya.',
+        desc: 'We write organic copy for your full website, landing pages, and blog ecosystem — focused on high-intent, rich copywriting frameworks and local search keyword integration.',
         bullets: [
-          '**Organic Traffic Gains:** Content strategies launch karne ke bad, monthly unique search hits **400%** up scale huye.',
-          '**High Conversion Rates:** Copy updates ke bad direct sign-up actions **2.8% to 6.2%** range me growth huye.',
-          '**Topic Dominance:** Important industry topics par 15+ rich blog guides Google search map me pehle page par position huye.'
+          '**Organic Traffic:** An illustrative target of **400%** growth in monthly unique search visits after launch.',
+          '**High Conversion:** An illustrative target of direct sign-up actions rising from **2.8% to 6.2%**.',
+          '**Topic Dominance:** An illustrative target of 15+ rich blog guides ranking on Google\'s first page.'
         ]
       },
       'partnership-program': {
         title: 'Partnership <em>Program</em>',
         meta: 'Category: Sample Demo &bull; Networking &bull; Illustrative',
-        desc: 'Hamare strategic networking modules ke through hum aapke brand ke liye exclusive warm business networking and affiliate referral pipelines build karte hain.',
+        desc: 'Through our strategic networking modules we build exclusive warm business networking and affiliate referral pipelines for your brand.',
         bullets: [
-          '**B2B Partnerships:** Top digital agency founders aur premium content creators ke sath **50+ active alliances** confirm kiye.',
-          '**Revenue Share Setup:** Joint venture partnerships create kiye jisse monthly residual leads aur passive revenue stream map hui.',
-          '**Brand Authority:** Premium B2B networking networks build karke niche me 100% professional dominance lock kiya.'
+          '**B2B Partnerships:** An illustrative target of **50+ active alliances** with agency founders and premium creators.',
+          '**Revenue Share:** Joint-venture partnerships creating monthly residual leads and passive revenue.',
+          '**Brand Authority:** Premium B2B networking to build professional dominance in your niche.'
         ]
       }
     };
