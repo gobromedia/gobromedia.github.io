@@ -2377,6 +2377,7 @@ footer {
 
 .modal-section {
   margin-bottom: 36px;
+  text-align: left;
 }
 
 .modal-section h3 {
@@ -2401,25 +2402,25 @@ footer {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   margin-top: 8px;
+  padding-left: 0;
 }
 
 .modal-section ul li {
   font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.7;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  position: relative;
 }
 
 .modal-section ul li::before {
   content: '\25C6';
-  font-size: 0.35rem;
+  font-size: 0.45rem;
   color: var(--gold);
-  flex-shrink: 0;
-  margin-top: 6px;
+  position: absolute;
+  left: -20px;
+  top: 0.62em;
 }
 
 /* ==========================================================================
