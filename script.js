@@ -144,6 +144,81 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ==========================================================================
+  // 4b. MICRO-ANIMATIONS — count-up, scroll progress, hero parallax
+  // ==========================================================================
+  const counters = document.querySelectorAll('.count');
+  if (!reduceMotion && counters.length) {
+    counters.forEach(function(el) {
+      el.textContent = (el.dataset.prefix || '') + '0' + (el.dataset.suffix || '');
+    });
+    const animateCount = function(el) {
+      const target = parseFloat(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const dur = 1200;
+      let startTs = null;
+      const step = function(ts) {
+        if (startTs === null) startTs = ts;
+        const p = Math.min((ts - startTs) / dur, 1);
+        const val = Math.floor(p * target);
+        el.textContent = prefix + val.toLocaleString('en-IN') + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = prefix + target.toLocaleString('en-IN') + suffix;
+      };
+      requestAnimationFrame(step);
+    };
+    if ('IntersectionObserver' in window) {
+      const countObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            countObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.6 });
+      counters.forEach(function(el) { countObserver.observe(el); });
+    } else {
+      counters.forEach(animateCount);
+    }
+  }
+
+  // Scroll progress bar
+  const progressBar = document.querySelector('.scroll-progress');
+  if (progressBar) {
+    let pTicking = false;
+    window.addEventListener('scroll', function() {
+      if (!pTicking) {
+        requestAnimationFrame(function() {
+          const doc = document.documentElement;
+          const max = doc.scrollHeight - window.innerHeight;
+          const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+          progressBar.style.width = pct + '%';
+          pTicking = false;
+        });
+        pTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  // Hero parallax (subtle, throttled)
+  const heroSlider = document.querySelector('.hero-slider');
+  if (heroSlider && !reduceMotion) {
+    let hTicking = false;
+    window.addEventListener('scroll', function() {
+      if (!hTicking) {
+        requestAnimationFrame(function() {
+          const y = window.scrollY;
+          if (y < window.innerHeight * 1.2) {
+            heroSlider.style.transform = 'translateY(' + (y * 0.25) + 'px)';
+          }
+          hTicking = false;
+        });
+        hTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  // ==========================================================================
   // 5. EVENT DELEGATION - SERVICE MODAL TRIGGERS
   // ==========================================================================
   document.addEventListener('click', function(e) {
@@ -389,16 +464,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.pm-faq').forEach(function(f) {
       f.classList.remove('open');
-      var ans = f.querySelector('.pm-faq-a');
-      if (ans) ans.style.display = 'none';
       var qBtn = f.querySelector('.pm-faq-q');
       if (qBtn) qBtn.setAttribute('aria-expanded', 'false');
     });
 
     if (!isOpen) {
       faq.classList.add('open');
-      var ans = faq.querySelector('.pm-faq-a');
-      if (ans) ans.style.display = 'block';
       btn.setAttribute('aria-expanded', 'true');
     }
   };
@@ -680,7 +751,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var coverImageHtml = blog.image
           ? '<div class="blog-image"><img src="' + sanitize(blog.image) + '" alt="' + sanitize(blog.title) + '" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>'
           : '';
-        htmlContent2 += '<article class="blog-card">' +
+        htmlContent2 += '<article class="blog-card reveal">' +
           coverImageHtml +
           '<div class="blog-content">' +
           '<div class="blog-date">' + sanitize(blog.date) + ' &bull; ' + sanitize(blog.category) + '</div>' +

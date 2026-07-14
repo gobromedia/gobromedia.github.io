@@ -3912,3 +3912,114 @@ img[loading="lazy"].loaded {
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   MICRO-ANIMATIONS  (scroll-triggered where possible; minimal infinite loops)
+   ========================================================================== */
+
+/* Numeric counters — tabular numerals to avoid width jitter while counting */
+.count { font-variant-numeric: tabular-nums; }
+
+/* (3) Section title gold underline draw-in on scroll */
+.section-title { position: relative; }
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(to right, var(--gold), transparent);
+  transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible .section-title::after { width: 72px; }
+
+/* (4) Process connector line draw-in */
+.process-steps::before {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.process-steps.reveal.visible::before { transform: scaleX(1); }
+
+/* (6) Footer logo glow on hover */
+.footer-logo:hover { text-shadow: 0 0 18px rgba(201, 168, 76, 0.45); transition: text-shadow 0.35s ease; }
+
+/* (7) Blog / portfolio image zoom on hover */
+.blog-card { overflow: hidden; }
+.blog-card img { transition: transform 0.5s ease; }
+.blog-card:hover img { transform: scale(1.06); }
+
+/* (8) Partnership FAQ smooth slide (replaces display toggle) */
+.pm-faq-a {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-bottom: 0 !important;
+  transition: max-height 0.35s ease, opacity 0.35s ease, padding-bottom 0.35s ease;
+}
+.pm-faq.open .pm-faq-a {
+  max-height: 400px;
+  opacity: 1;
+  padding-bottom: 16px !important;
+}
+
+/* (9) CTA band one-time gold shimmer sweep */
+.cta-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.10) 50%, transparent 100%);
+  transform: translateX(-160%);
+  pointer-events: none;
+  z-index: 1;
+}
+.cta-band.premium-cta.reveal.visible .cta-shimmer {
+  animation: gbmSweep 1.8s ease-out 0.35s 1;
+}
+@keyframes gbmSweep { to { transform: translateX(320%); } }
+
+/* (10) Form input focus glow (enhanced) */
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.14), 0 0 18px rgba(201, 168, 76, 0.25);
+}
+
+/* (12) Gold em shimmer — limited to hero + CTA headline em (subtle, infinite) */
+.hero-title .gold-italic {
+  background-size: 200% auto;
+  animation: gbmShimmer 5s linear infinite;
+}
+.cta-band.premium-cta h2 em {
+  background: var(--gold-gradient);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gbmShimmer 5s linear infinite;
+}
+@keyframes gbmShimmer { to { background-position: 200% center; } }
+
+/* (13) Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--gold), #ffffff);
+  z-index: 10010;
+  transition: width 0.1s linear;
+}
+
+/* Subtle primary-button pulse — only hero + CTA primaries (limited infinite loops) */
+.hero-buttons .btn-primary,
+.cta-band .btn-primary {
+  animation: gbmPulse 3s ease-in-out infinite;
+}
+@keyframes gbmPulse {
+  0%, 100% { box-shadow: 0 10px 30px rgba(201, 168, 76, 0.22); }
+  50% { box-shadow: 0 12px 46px rgba(201, 168, 76, 0.5); }
+}

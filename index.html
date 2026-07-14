@@ -410,7 +410,7 @@
         <p class="section-desc">A streamlined approach designed to deliver exceptional results every single time.</p>
       </div>
       
-      <div class="process-steps">
+      <div class="process-steps reveal">
         <article class="process-step reveal">
           <div class="step-circle" aria-hidden="true">01</div>
           <h3 class="step-title">Discovery</h3>
@@ -567,7 +567,7 @@
           <div class="pricing-tier">Starter</div>
           <div class="pricing-price">
             <span class="price-currency">₹</span>
-            <span class="price-num">24,999</span>
+            <span class="price-num count" data-count="24999">24,999</span>
             <span class="price-period">/month</span>
           </div>
           <p class="pricing-desc">Perfect for small businesses just starting their digital journey.</p>
@@ -589,7 +589,7 @@
           <div class="pricing-tier">Growth</div>
           <div class="pricing-price">
             <span class="price-currency">₹</span>
-            <span class="price-num">49,999</span>
+            <span class="price-num count" data-count="49999">49,999</span>
             <span class="price-period">/month</span>
           </div>
           <p class="pricing-desc">For growing businesses that want to scale their digital presence fast.</p>
@@ -687,7 +687,8 @@
     </section>
 
     <!-- PREMIUM DARK CTA BAND -->
-    <section class="cta-band premium-cta" aria-labelledby="cta-title">
+    <section class="cta-band premium-cta reveal" aria-labelledby="cta-title">
+      <div class="cta-shimmer" aria-hidden="true"></div>
       <div class="cta-content">
         <span class="cta-badge">Limited Onboarding</span>
         <h2 id="cta-title">Ready to <em>scale</em> your brand?</h2>
@@ -740,7 +741,7 @@
               </div>
               <div>
                 <div class="contact-item-label">Response Time</div>
-                <div class="contact-item-value">Within 24 hours</div>
+                <div class="contact-item-value">Within <span class="count" data-count="24">24</span> hours</div>
               </div>
             </div>
           </div>
@@ -1042,11 +1043,11 @@
       <!-- PM Stats -->
       <div class="pm-stats" aria-label="Partnership statistics">
         <div class="pm-stat">
-          <div class="pm-stat-num">&#8377;0</div>
+          <div class="pm-stat-num count" data-count="0" data-prefix="₹">&#8377;0</div>
           <div class="pm-stat-label">Joining Fee</div>
         </div>
         <div class="pm-stat">
-          <div class="pm-stat-num">100%</div>
+          <div class="pm-stat-num count" data-count="100" data-suffix="%">100%</div>
           <div class="pm-stat-label">Transparent Payouts</div>
         </div>
         <div class="pm-stat">
@@ -1054,7 +1055,7 @@
           <div class="pm-stat-label">India-based, Global Reach</div>
         </div>
         <div class="pm-stat">
-          <div class="pm-stat-num">24hr</div>
+          <div class="pm-stat-num count" data-count="24" data-suffix="hr">24hr</div>
           <div class="pm-stat-label">Response Time</div>
         </div>
       </div>
@@ -1130,7 +1131,7 @@
             <button class="pm-faq-q" onclick="openPMFaq(this)" aria-expanded="false" aria-controls="faq-answer-1" style="width:100%; background:none; border:none; color:var(--white); padding:16px 0; text-align:left; cursor:pointer; font-weight:600; display:flex; justify-content:space-between;">
               When and how are commission payouts processed? <span class="pm-faq-arrow" aria-hidden="true">&#9660;</span>
             </button>
-            <div id="faq-answer-1" class="pm-faq-a" style="display:none; color:var(--text-muted); font-size:0.82rem; padding-bottom:16px; font-weight:300;">
+            <div id="faq-answer-1" class="pm-faq-a" style="color:var(--text-muted); font-size:0.82rem; font-weight:300;">
               Commissions are verified automatically and paid out in the <strong>first week of every month</strong> directly via Bank Transfer or UPI.
             </div>
           </div>
@@ -1139,7 +1140,7 @@
             <button class="pm-faq-q" onclick="openPMFaq(this)" aria-expanded="false" aria-controls="faq-answer-2" style="width:100%; background:none; border:none; color:var(--white); padding:16px 0; text-align:left; cursor:pointer; font-weight:600; display:flex; justify-content:space-between;">
               Is there any registration fee to join the partner program? <span class="pm-faq-arrow" aria-hidden="true">&#9660;</span>
             </button>
-            <div id="faq-answer-2" class="pm-faq-a" style="display:none; color:var(--text-muted); font-size:0.82rem; padding-bottom:16px; font-weight:300;">
+            <div id="faq-answer-2" class="pm-faq-a" style="color:var(--text-muted); font-size:0.82rem; font-weight:300;">
               No, GOBRO MEDIA's partner program is completely <strong>FREE</strong>. There are zero registration fees or upfront setup costs to become an affiliate partner.
             </div>
           </div>
@@ -1285,5 +1286,6 @@
 
   <!-- Script Modules -->
   <script src="script.js" defer></script>
+  <div class="scroll-progress" aria-hidden="true"></div>
 </body>
 </html>
