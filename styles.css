@@ -3688,6 +3688,7 @@ img[loading="lazy"].loaded {
   padding: 56px 48px;
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   background-size: cover;
   background-position: center;
@@ -3764,9 +3765,14 @@ img[loading="lazy"].loaded {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.85rem;
   font-weight: 600;
-  color: #9a7b1e;
+  color: #1a1a1a;
   margin-bottom: 20px;
   line-height: 1.2;
+  transition: color 0.4s ease;
+}
+
+.guarantee-card:hover h3 {
+  color: var(--gold);
 }
 
 .guarantee-card p {
