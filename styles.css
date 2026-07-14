@@ -65,6 +65,12 @@ html {
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--gold) #e8e4de;
+  scroll-snap-type: y proximity;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-margin-top: 80px;
 }
 
 body {
@@ -3862,6 +3868,9 @@ img[loading="lazy"].loaded {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  html {
+    scroll-snap-type: none;
   }
   #cursor, #cursorRing, .cursor, .cursorRing {
     display: none !important;
