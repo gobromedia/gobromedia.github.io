@@ -1567,7 +1567,7 @@ section {
   gap: 32px;
   max-width: 1560px;
   margin: 0 auto;
-  align-items: start;
+  align-items: stretch;
 }
 
 .pricing-card {
