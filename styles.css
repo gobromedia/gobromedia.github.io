@@ -2221,6 +2221,9 @@ footer {
 .social-link.sl-youtube:hover { border-color: #FF0000; }
 .social-link.sl-youtube:hover svg { fill: #FF0000; }
 
+.social-link.sl-linkedin:hover { border-color: #0A66C2; }
+.social-link.sl-linkedin:hover svg { fill: #0A66C2; }
+
 .footer-heading {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
