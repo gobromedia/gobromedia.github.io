@@ -3753,6 +3753,11 @@ img[loading="lazy"].loaded {
   flex-grow: 1;
 }
 
+.guarantee-body p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
 .guarantee-card::before {
   content: '';
   position: absolute;
