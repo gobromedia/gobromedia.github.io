@@ -854,47 +854,73 @@ document.addEventListener('DOMContentLoaded', function() {
     var dotsContainer = document.querySelector(dotsSelector);
     if (!track || !dotsContainer) return;
 
-    var cards = track.children;
-    var total = cards.length;
+    var gap = 30;
+    var total = track.children.length; // number of real cards (before cloning)
     if (total < 2) return;
 
+    var visible = 0;
     var current = 0;
-    var visible = window.innerWidth < 680 ? 1 : window.innerWidth < 1024 ? 2 : 3;
     var timer;
+
+    function getVisible() {
+      return window.innerWidth < 680 ? 1 : (window.innerWidth < 1024 ? 2 : 3);
+    }
+
+    // Strip any previously appended clones, then append `visible` clones of the
+    // first cards so the track can scroll seamlessly past the real end.
+    function buildClones() {
+      while (track.children.length > total) {
+        track.removeChild(track.lastChild);
+      }
+      visible = getVisible();
+      var reals = Array.prototype.slice.call(track.children, 0, total);
+      for (var i = 0; i < visible; i++) {
+        track.appendChild(reals[i].cloneNode(true));
+      }
+    }
 
     function buildDots() {
       dotsContainer.innerHTML = '';
       for (var i = 0; i < total; i++) {
-        var btn = document.createElement('button');
-        btn.setAttribute('role', 'tab');
-        btn.setAttribute('aria-label', 'Slide ' + (i + 1));
-        if (i === 0) btn.classList.add('active');
-        btn.addEventListener('click', function() { goTo(this); });
-        dotsContainer.appendChild(btn);
+        (function(idx) {
+          var btn = document.createElement('button');
+          btn.setAttribute('role', 'tab');
+          btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+          if (idx === 0) btn.classList.add('active');
+          btn.addEventListener('click', function() {
+            current = idx;
+            update(true);
+            resetTimer();
+          });
+          dotsContainer.appendChild(btn);
+        })(i);
       }
     }
 
-    function goTo(btn) {
-      var idx = Array.prototype.indexOf.call(dotsContainer.children, btn);
-      if (idx < 0) return;
-      current = idx;
-      update();
-      resetTimer();
+    function cardWidth() {
+      return track.children[0].getBoundingClientRect().width;
     }
 
-    function update() {
-      var gap = 30;
-      var cardWidth = cards[0].getBoundingClientRect().width;
-      var offset = current * (cardWidth + gap);
+    function update(animate) {
+      track.style.transition = animate === false ? 'none' : 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';
+      var offset = current * (cardWidth() + gap);
       track.style.transform = 'translateX(-' + offset + 'px)';
+      var active = ((current % total) + total) % total;
       Array.prototype.forEach.call(dotsContainer.children, function(d, i) {
-        d.classList.toggle('active', i === current);
+        d.classList.toggle('active', i === active);
       });
     }
 
     function next() {
-      current = (current + 1) % total;
-      update();
+      current++;
+      update(true);
+      // When we reach the cloned tail, snap back to the real start seamlessly.
+      if (current >= total) {
+        setTimeout(function() {
+          current = current % total;
+          update(false);
+        }, 620);
+      }
     }
 
     function resetTimer() {
@@ -902,18 +928,19 @@ document.addEventListener('DOMContentLoaded', function() {
       timer = setInterval(next, interval);
     }
 
-    function handleResize() {
-      var newVisible = window.innerWidth < 680 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-      if (newVisible !== visible) {
-        visible = newVisible;
-        current = 0;
-        track.style.transform = 'translateX(0)';
-      }
-    }
-
+    buildClones();
     buildDots();
+    current = 0;
+    update(false);
     timer = setInterval(next, interval);
-    window.addEventListener('resize', handleResize);
+
+    window.addEventListener('resize', function() {
+      clearInterval(timer);
+      buildClones();
+      current = 0;
+      update(false);
+      timer = setInterval(next, interval);
+    });
 
     track.parentElement.addEventListener('mouseenter', function() { clearInterval(timer); });
     track.parentElement.addEventListener('mouseleave', function() { resetTimer(); });
