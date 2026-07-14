@@ -3764,7 +3764,7 @@ img[loading="lazy"].loaded {
    FOUNDER SECTION
    ========================================================================== */
 #founder {
-  background: #faf8f5;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f2ea 100%);
   padding: 120px 40px;
 }
 
