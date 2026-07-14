@@ -2550,8 +2550,9 @@ footer {
 }
 
 .pm-hero p {
+  font-family: 'Lora', Georgia, serif;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.8;
   max-width: 580px;
   margin: 0 auto;
@@ -2707,10 +2708,11 @@ footer {
 }
 
 .pm-type-desc {
-  font-size: 0.78rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .pm-type-tag {
@@ -2780,10 +2782,15 @@ footer {
 }
 
 .pm-benefit-desc {
-  font-size: 0.78rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.pm-faq-a {
+  font-family: 'Lora', Georgia, serif;
 }
 
 /* ==========================================================================
