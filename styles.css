@@ -2144,13 +2144,15 @@ footer {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 48px;
-  margin-bottom: 60px;
+  align-items: start;
+  max-width: 1560px;
+  margin: 0 auto 60px;
 }
 
 .footer-brand {
-  max-width: 320px;
+  min-width: 0;
 }
 
 .footer-logo {
