@@ -2225,7 +2225,7 @@ footer {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--gold);
   margin-bottom: 10px;
   letter-spacing: 0.02em;
 }
@@ -2239,10 +2239,10 @@ footer {
 
 .footer-links a,
 .footer-links button {
-  color: var(--gold);
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.5;
   transition: color 0.3s ease;
   background: none;
@@ -2257,8 +2257,6 @@ footer {
 .footer-links a:hover,
 .footer-links button:hover {
   color: var(--gold);
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .footer-bottom {
