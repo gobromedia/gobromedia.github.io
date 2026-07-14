@@ -1654,22 +1654,24 @@ section {
 .price-currency {
   font-size: 1.5rem;
   color: var(--gold-light);
-  font-weight: 600;
+  font-family: 'Geist Pixel', monospace;
+  font-weight: 400;
 }
 
 .price-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Geist Pixel', 'Cormorant Garamond', serif;
   font-size: 3.4rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--white);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .price-period {
   font-size: 0.95rem;
   color: var(--text-dim);
-  font-weight: 500;
+  font-family: 'Geist Pixel', monospace;
+  font-weight: 400;
 }
 
 .pricing-desc {
