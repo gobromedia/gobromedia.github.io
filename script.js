@@ -123,11 +123,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // 4. INTERSECTION OBSERVER - REVEAL ON SCROLL ANIMATIONS
   // ==========================================================================
   const revealElements = document.querySelectorAll('.reveal');
+  let revealObserver = null;
 
   if (reduceMotion) {
     revealElements.forEach(function(el) { el.classList.add('visible'); });
   } else if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(function(entries) {
+    revealObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -761,6 +762,14 @@ document.addEventListener('DOMContentLoaded', function() {
           '</div></article>';
       });
       homepageGrid.innerHTML = htmlContent2;
+      var newReveals = homepageGrid.querySelectorAll('.reveal');
+      if (reduceMotion) {
+        newReveals.forEach(function(el) { el.classList.add('visible'); });
+      } else if (revealObserver) {
+        newReveals.forEach(function(el) { revealObserver.observe(el); });
+      } else {
+        newReveals.forEach(function(el) { el.classList.add('visible'); });
+      }
     }
   };
 
