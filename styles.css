@@ -61,6 +61,7 @@
 }
 
 html {
+  font-size: 81.25%;
   scroll-behavior: smooth;
   overflow-x: hidden;
   scrollbar-width: thin;
