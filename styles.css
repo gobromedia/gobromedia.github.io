@@ -797,6 +797,7 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+  padding: 90px 40px;
 }
 
 .about-visual {
@@ -941,7 +942,7 @@ section {
    ========================================================================== */
 #services {
   background: #f0ede8;
-  padding: 120px 40px;
+  padding: 90px 40px;
 }
 
 .services-grid {
@@ -1125,6 +1126,7 @@ section {
    ========================================================================== */
 #process {
   background: #faf8f5;
+  padding: 90px 40px;
 }
 
 .process-steps {
@@ -1195,7 +1197,7 @@ section {
    ========================================================================== */
 #portfolio {
   background: #f0ede8;
-  padding: 120px 40px;
+  padding: 90px 40px;
 }
 
 #portfolio .section-header {
@@ -1370,6 +1372,7 @@ section {
    ========================================================================== */
 #insights {
   background: #faf8f5;
+  padding: 90px 40px;
 }
 
 .blog-grid {
@@ -1570,7 +1573,7 @@ section {
    ========================================================================== */
 #pricing {
   background: #faf8f5;
-  padding: 140px 40px 160px;
+  padding: 90px 40px 90px;
   border-bottom: 1px solid rgba(201, 168, 76, 0.12);
 }
 
@@ -1779,7 +1782,7 @@ section {
    IDENTITY SECTION (REPLACED FAQ)
    ========================================================================== */
 #identity {
-  padding: 120px 40px;
+  padding: 90px 40px;
   position: relative;
   background-color: #f0ede8;
 }
@@ -1939,6 +1942,7 @@ section {
    ========================================================================== */
 #contact {
   background: #ffffff;
+  padding: 90px 40px;
 }
 
 .contact-grid {
@@ -2991,7 +2995,7 @@ img[loading="lazy"].loaded {
     padding: 70px 20px;
   }
   #pricing {
-    padding: 100px 20px 120px;
+    padding: 70px 20px;
   }
   .services-grid {
     grid-template-columns: 1fr;
@@ -3501,7 +3505,7 @@ img[loading="lazy"].loaded {
 /* Premium CTA Section */
 .cta-band.premium-cta {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-  padding: 100px 60px;
+  padding: 90px 60px;
   position: relative;
   overflow: hidden;
 }
@@ -3680,7 +3684,7 @@ img[loading="lazy"].loaded {
    ========================================================================== */
 #guarantees {
   background: #f0ede8;
-  padding: 120px 40px;
+  padding: 90px 40px;
 }
 
 .guarantees-grid {
@@ -3794,7 +3798,7 @@ img[loading="lazy"].loaded {
    ========================================================================== */
 #founder {
   background: linear-gradient(180deg, #ffffff 0%, #f7f2ea 100%);
-  padding: 120px 40px;
+  padding: 90px 40px;
 }
 
 .founder-grid {
