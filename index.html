@@ -1,736 +1,954 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="GOBRO MEDIA delivers premium ROI-focused digital marketing - SEO, Google Ads, social media strategy, professional video editing, and high-converting web design." />
-  <meta name="keywords" content="digital marketing, video editing, social media agency, content creation, B2B networking, New Delhi, India, SEO agency, meta ads" />
-  <meta name="author" content="GOBRO MEDIA" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GOBRO MEDIA - Premium Digital Marketing Agency. Transforming brands through ROI-focused digital marketing, professional video editing, organic search dominance, and premium web designs that convert visitors into revenue.">
+  <meta name="keywords" content="digital marketing agency, video editing, content creation, SEO services, brand strategy, growth marketing">
+  <meta name="author" content="GOBRO MEDIA">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gobromedia.github.io/">
+  <title>GOBRO MEDIA | Digital Growth Agency</title>
   
-  <!-- Open Graph / Social Share Card Previews -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gobro Media &ndash; Digital Excellence" />
-  <meta property="og:description" content="Transforming brands and driving real ROI through luxury design, performance ads, video editing, and high-impact B2B networking solutions." />
-  <meta property="og:url" content="https://gobromedia.github.io/" />
-  <meta property="og:image" content="https://gobromedia.github.io/favicon.png" />
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gobromedia.github.io/">
+  <meta property="og:title" content="GOBRO MEDIA | Digital Growth Agency">
+  <meta property="og:description" content="Transforming Brands • Creating Real ROI. Digital marketing, video editing, content creation & brand strategy.">
+  <meta property="og:image" content="https://gobromedia.github.io/assets/images/hero_bg1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="GOBRO MEDIA">
+  <meta property="og:locale" content="en_US">
   
-  <!-- Twitter Card Previews -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Gobro Media &ndash; Digital Excellence" />
-  <meta name="twitter:description" content="Transforming brands and driving real ROI through luxury design, performance ads, video editing, and B2B networking." />
-  <meta name="twitter:image" content="https://gobromedia.github.io/favicon.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://gobromedia.github.io/">
+  <meta name="twitter:title" content="GOBRO MEDIA | Digital Growth Agency">
+  <meta name="twitter:description" content="Transforming Brands • Creating Real ROI. Digital marketing, video editing, content creation & brand strategy.">
+  <meta name="twitter:image" content="https://gobromedia.github.io/assets/images/hero_bg1.jpg">
+  <meta name="twitter:site" content="@Gobro_Media">
   
-  <link rel="icon" type="image/png" href="favicon.png"/>
-  <link rel="apple-touch-icon" href="favicon.png"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="manifest" href="site.webmanifest">
   
-  <title>Gobro Media &ndash; Digital Excellence | SEO, Performance Ads & Video Editing</title>
-  
-  <!-- Premium Fonts Imports -->
+  <!-- Preconnect to font origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- Preload critical fonts (handled by Google Fonts stylesheet) -->
+  
+  <!-- Fonts: Cormorant Garamond (headings) + Plus Jakarta Sans (UI) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"></noscript>
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="styles.css">
   
   <!-- Preload Critical Above-the-Fold Assets -->
-  <link rel="preload" as="image" href="hero_bg1.jpg" />
+  <link rel="preload" as="image" href="assets/images/hero_bg1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/logo.webp?v=2" fetchpriority="high">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GOBRO MEDIA",
+    "url": "https://gobromedia.github.io/",
+    "logo": "https://gobromedia.github.io/assets/images/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/gobro-media",
+      "https://www.instagram.com/gobromedia_digitalmarketing/",
+      "https://x.com/Gobro_Media"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-99907-37306",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Delhi",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://gobromedia.github.io/",
+    "name": "GOBRO MEDIA",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://gobromedia.github.io/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Digital Marketing Agency",
+    "name": "Digital Marketing Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "GOBRO MEDIA"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Marketing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO & Technical Optimization"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Google Ads & Meta Advertising"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Content Creation & Copywriting"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Video Editing & Production"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Brand Strategy & Positioning"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business Networking Solutions"
+          }
+        }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
-
-
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- FIXED NAVIGATION BAR -->
-  <header id="header">
-    <a href="#home" class="logo">GOBRO <span>MEDIA</span></a>
-    
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Work</a></li>
-      <li><a href="#insights">Insights</a></li>
-      <li><a href="javascript:void(0)" onclick="openBlogHub()">Blog</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-    </ul>
-    
-    <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-      <span></span><span></span><span></span>
-    </button>
+  <header id="header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="GOBRO MEDIA Home">
+        <img src="assets/images/logo.webp?v=2" alt="GOBRO MEDIA" width="1160" height="1192" loading="eager" fetchpriority="high" style="height: 80px; width: auto;">
+      </a>
+      
+      <ul class="nav-links" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#modal-bloghub" onclick="openBlogHub(); return false;" aria-label="Open Blog Hub">Blog</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
   </header>
 
-  <!-- MOBILE MENUS OVERLAY -->
-  <nav class="mobile-menu-overlay" id="mobileMenu">
+  <!-- MOBILE MENU OVERLAY -->
+  <nav class="mobile-menu-overlay" id="mobileMenu" role="navigation" aria-label="Mobile navigation" hidden>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#portfolio">Work</a>
     <a href="#insights">Insights</a>
-    <a href="javascript:void(0)" onclick="openBlogHub()">Blog</a>
+    <a href="#modal-bloghub" onclick="openBlogHub(); return false;">Blog</a>
     <a href="#about">About</a>
     <a href="#pricing">Pricing</a>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero">
-    <!-- Automatic Background Slideshow -->
-    <div class="hero-slider">
-      <div class="slide active" style="background-image: url('hero_bg1.jpg');"></div>
-      <div class="slide" style="background-image: url('about-image.jpg');"></div>
-      <div class="slide" style="background-image: url('service1.jpg');"></div>
-      <div class="slide" style="background-image: url('service2.jpg');"></div>
-      <div class="slide" style="background-image: url('service3.jpg');"></div>
-      <div class="slide" style="background-image: url('service4.jpg');"></div>
-      <div class="slide" style="background-image: url('service5.jpg');"></div>
-      <div class="slide" style="background-image: url('service6.jpg');"></div>
-    </div>
-    <!-- Legibility Overlay for Text Clarity -->
-    <div class="hero-overlay-dark"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-orb orb-rose"></div>
-    <div class="hero-orb orb-gold"></div>
-    
-    <div class="hero-content">
-      <div class="hero-eyebrow">Digital Growth Agency</div>
-      <h1 class="hero-title">
-        <span class="gold-italic">Gobro</span> Media
-        <span class="bold-white">Digital Excellence</span>
-      </h1>
-      <p class="hero-subtitle">Transforming Brands &bull; Creating Real ROI</p>
-      <p class="hero-desc">We deliver ROI-focused digital marketing campaigns, professional video editing, organic search dominance, and premium web designs that convert visitors into revenue.</p>
-      
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Get Free Growth Audit</a>
-        <a href="#services" class="btn btn-outline">Our Services</a>
-      </div>
-    </div>
-    
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- BRANDS SLIDER TICKER -->
-  <div class="brands-ticker">
-    <div class="ticker-wrap">
-      <span>Trusted by 50+ Brands</span>
-      <span>Performance Ads Specialist</span>
-      <span>Technical SEO Experts</span>
-      <span>Cinematic Post Production</span>
-      <span>B2B Partnership Ecosystems</span>
-      <span>Conversion Web Designs</span>
-      <!-- Loop Items for seamless scroll animation -->
-      <span>Trusted by 50+ Brands</span>
-      <span>Performance Ads Specialist</span>
-      <span>Technical SEO Experts</span>
-      <span>Cinematic Post Production</span>
-      <span>B2B Partnership Ecosystems</span>
-      <span>Conversion Web Designs</span>
-    </div>
-  </div>
-
-  <!-- STATS COUNTER BAR -->
-  <div class="stats-bar">
-    <div class="stat reveal">
-      <div class="stat-num">50+</div>
-      <div class="stat-label">Happy Clients</div>
-    </div>
-    <div class="stat reveal reveal-delay-1">
-      <div class="stat-num">150+</div>
-      <div class="stat-label">Projects Completed</div>
-    </div>
-    <div class="stat reveal reveal-delay-2">
-      <div class="stat-num">300%</div>
-      <div class="stat-label">Avg. ROI Increase</div>
-    </div>
-    <div class="stat reveal reveal-delay-3">
-      <div class="stat-num">4+</div>
-      <div class="stat-label">Years Experience</div>
-    </div>
-  </div>
-
-  <!-- ABOUT US SECTION -->
-  <section id="about">
-    <div class="about-visual reveal">
-      <div class="about-card about-card-main">
-        <div class="about-big-num">G</div>
-        <div class="about-card-content">
-          <div class="about-card-label">Our Vision</div>
-          <div class="about-card-text">Transforming ideas into impactful digital experiences that drive real results.</div>
-        </div>
-      </div>
-      <div class="about-card about-card-accent">
-        <div class="about-card-content">
-          <div class="about-accent-icon">&#10022;</div>
-          <div class="about-accent-stat">50+</div>
-          <div class="about-accent-desc">Brands Elevated</div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="reveal reveal-delay-1">
-      <span class="section-tag">About Us</span>
-      <h2 class="section-title">A Modern <em>Digital Agency</em><br/>Built for Growth</h2>
-      <div class="about-divider"></div>
-      <p class="section-desc">Gobro Media is a modern digital agency focused on helping brands grow through powerful digital marketing, creative content production, and professional video editing. Our mission is to transform ideas into impactful digital experiences.</p>
-      
-      <div class="about-features">
-        <div class="about-feat">Strategic digital campaigns tailored to your brand</div>
-        <div class="about-feat">High-quality content that converts audiences</div>
-        <div class="about-feat">Professional video production &amp; editing</div>
-        <div class="about-feat">Business networking &amp; partnership development</div>
-      </div>
-      <a href="#contact" class="btn btn-primary" style="margin-top: 36px;">Work With Us</a>
-    </div>
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section id="services">
-    <div class="section-header reveal">
-      <span class="section-tag">What We Do</span>
-      <h2 class="section-title">Our <em>Core Services</em></h2>
-      <p class="section-desc">Comprehensive digital solutions designed to grow your brand and maximize your online presence.</p>
-    </div>
-    
-    <div class="services-grid">
-      <!-- Card 01: Digital Marketing -->
-      <div class="service-card reveal">
-        <div class="service-num">01</div>
-        <div class="service-icon">&#128227;</div>
-        <h3 class="service-name">Digital Marketing</h3>
-        <p class="service-desc">Strategic campaigns to grow your audience and convert leads into loyal customers through SEO, PPC &amp; Social Media.</p>
-        <button onclick="openServiceModal('marketing')" class="service-link">Learn More &#8594;</button>
+  <main id="main-content" role="main">
+    <!-- HERO SECTION -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <!-- Automatic Background Slideshow -->
+      <div class="hero-slider" aria-hidden="true">
+        <div class="slide active" style="background-image: url('assets/images/hero_bg1.webp');" role="img" aria-label="Hero background: Digital agency workspace"></div>
+        <div class="slide" style="background-image: url('assets/images/about-image.webp');" role="img" aria-label="Hero background: Team collaboration"></div>
+        <div class="slide" style="background-image: url('assets/images/service1.webp');" role="img" aria-label="Hero background: Digital marketing concept"></div>
+        <div class="slide" style="background-image: url('assets/images/service2.webp');" role="img" aria-label="Hero background: Content creation process"></div>
+        <div class="slide" style="background-image: url('assets/images/service3.webp');" role="img" aria-label="Hero background: Video editing suite"></div>
+        <div class="slide" style="background-image: url('assets/images/service4.webp');" role="img" aria-label="Hero background: Creator content production"></div>
+        <div class="slide" style="background-image: url('assets/images/service5.webp');" role="img" aria-label="Hero background: Business networking event"></div>
+        <div class="slide" style="background-image: url('assets/images/service6.webp');" role="img" aria-label="Hero background: Brand strategy workshop"></div>
       </div>
       
-      <!-- Card 02: Content Creation -->
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-num">02</div>
-        <div class="service-icon">&#9997;&#65039;</div>
-        <h3 class="service-name">Content Creation</h3>
-        <p class="service-desc">Engaging written &amp; visual content that tells your brand story and connects with your target audience effectively.</p>
-        <button onclick="openServiceModal('creation')" class="service-link">Learn More &#8594;</button>
-      </div>
+      <!-- Legibility Overlay for Text Clarity -->
+      <div class="hero-overlay-dark" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orb orb-rose" aria-hidden="true"></div>
+      <div class="hero-orb orb-gold" aria-hidden="true"></div>
       
-      <!-- Card 03: Video Editing -->
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-num">03</div>
-        <div class="service-icon">&#127916;</div>
-        <h3 class="service-name">Video Editing</h3>
-        <p class="service-desc">Professional video editing including commercials, social media reels, YouTube videos &amp; corporate content.</p>
-        <button onclick="openServiceModal('editing')" class="service-link">Learn More &#8594;</button>
-      </div>
-      
-      <!-- Card 04: Content Creator -->
-      <div class="service-card reveal">
-        <div class="service-num">04</div>
-        <div class="service-icon">&#128247;</div>
-        <h3 class="service-name">Content Creator</h3>
-        <p class="service-desc">Expert content creators producing high-quality photos, graphics &amp; multimedia for your digital presence.</p>
-        <button onclick="openServiceModal('creator')" class="service-link">Learn More &#8594;</button>
-      </div>
-      
-      <!-- Card 05: Networking Solutions -->
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-num">05</div>
-        <div class="service-icon">&#128279;</div>
-        <h3 class="service-name">Networking Solutions</h3>
-        <p class="service-desc">Business networking strategies, professional connections &amp; partnership development for sustainable growth.</p>
-        <button onclick="openServiceModal('networking')" class="service-link">Learn More &#8594;</button>
-      </div>
-      
-      <!-- Card 06: Brand Strategy -->
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-num">06</div>
-        <div class="service-icon">&#128202;</div>
-        <h3 class="service-name">Brand Strategy</h3>
-        <p class="service-desc">Comprehensive brand positioning, identity development, and strategic roadmaps to dominate your market.</p>
-        <button onclick="openServiceModal('strategy')" class="service-link">Learn More &#8594;</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS TIMELINE SECTION -->
-  <section id="process">
-    <div class="section-header reveal">
-      <span class="section-tag">How We Work</span>
-      <h2 class="section-title">Our <em>Process</em></h2>
-      <p class="section-desc">A streamlined approach designed to deliver exceptional results every single time.</p>
-    </div>
-    
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="step-circle">01</div>
-        <div class="step-title">Discovery</div>
-        <p class="step-desc">We learn your business, goals, audience, and competition to build a solid foundation.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-1">
-        <div class="step-circle">02</div>
-        <div class="step-title">Strategy</div>
-        <p class="step-desc">We craft a custom digital strategy tailored specifically to your brand and objectives.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="step-circle">03</div>
-        <div class="step-title">Execution</div>
-        <p class="step-desc">Our team executes with precision &mdash; on time, on brand, and within budget.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="step-circle">04</div>
-        <div class="step-title">Growth</div>
-        <p class="step-desc">We track, analyze and optimize continuously to ensure long-term growth and ROI.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MOSAIC PORTFOLIO SECTION -->
-  <section id="portfolio">
-    <div class="section-header reveal">
-      <span class="section-tag">Our Work</span>
-      <h2 class="section-title">Featured <em>Projects</em></h2>
-      <p class="section-desc">A selection of projects that showcase our creative capability and strategic thinking.</p>
-    </div>
-    
-    <div class="portfolio-grid reveal">
-      <!-- Item 01 -->
-      <div class="portfolio-item pi1" onclick="openPortfolioModal('growth-campaign')">
-        <div class="portfolio-bg"></div>
-        <div class="portfolio-placeholder">Digital Marketing</div>
-        <div class="portfolio-icon">&#127919;</div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-cat">Digital Marketing</div>
-          <div class="portfolio-title">Brand Growth Campaign</div>
-        </div>
-      </div>
-      
-      <!-- Item 02 -->
-      <div class="portfolio-item pi2" onclick="openPortfolioModal('ads-reel')">
-        <div class="portfolio-bg"></div>
-        <div class="portfolio-placeholder">Video Production</div>
-        <div class="portfolio-icon">&#127916;</div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-cat">Video Production</div>
-          <div class="portfolio-title">Corporate Ads Reel</div>
-        </div>
-      </div>
-      
-      <!-- Item 03 -->
-      <div class="portfolio-item pi3" onclick="openPortfolioModal('social-strategy')">
-        <div class="portfolio-bg"></div>
-        <div class="portfolio-placeholder">Social Media</div>
-        <div class="portfolio-icon">&#128241;</div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-cat">Social Media</div>
-          <div class="portfolio-title">Content Strategy</div>
-        </div>
-      </div>
-      
-      <!-- Item 04 -->
-      <div class="portfolio-item pi4" onclick="openPortfolioModal('copywriting')">
-        <div class="portfolio-bg"></div>
-        <div class="portfolio-placeholder">Content Creation</div>
-        <div class="portfolio-icon">&#9997;&#65039;</div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-cat">Content Creation</div>
-          <div class="portfolio-title">Blog &amp; Copywriting</div>
-        </div>
-      </div>
-      
-      <!-- Item 05 -->
-      <div class="portfolio-item pi5" onclick="openPortfolioModal('partnership-program')">
-        <div class="portfolio-bg"></div>
-        <div class="portfolio-placeholder">Networking</div>
-        <div class="portfolio-icon">&#129309;</div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-cat">Networking</div>
-          <div class="portfolio-title">Partnership Program</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LATEST INSIGHTS (HINGLISH BLOG) SECTION -->
-  <section id="insights">
-    <div class="section-header reveal">
-      <span class="section-tag">Latest Insights</span>
-      <h2 class="section-title">Digital Marketing <em>Guide</em></h2>
-      <p class="section-desc">Digital marketing tips, growth strategies, and industry insights in simple language to scale your business.</p>
-    </div>
-    
-    <div class="blog-grid" id="homepageBlogGrid">
-      <!-- Dynamically generated blog posts will render here -->
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS SECTION -->
-  <section id="testimonials">
-    <div class="section-header reveal">
-      <span class="section-tag">Client Reviews</span>
-      <h2 class="section-title">What Our <em>Clients Say</em></h2>
-    </div>
-    
-    <div class="testimonials-grid">
-      <!-- Card 01 -->
-      <div class="testimonial-card reveal">
-        <span class="quote-icon">&ldquo;</span>
-        <p class="testimonial-text">Gobro Media completely transformed our online presence. Their digital marketing strategy increased our leads by 300% in just 3 months. Truly exceptional work.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">R</div>
-          <div>
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="author-name">Rahul Sharma</div>
-            <div class="author-role">CEO, TechStartup India</div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 02 -->
-      <div class="testimonial-card reveal reveal-delay-1">
-        <span class="quote-icon">&ldquo;</span>
-        <p class="testimonial-text">Their video editing skills are world-class. Our YouTube channel grew from 500 to 50,000 subscribers after they took over our content production.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">P</div>
-          <div>
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="author-name">Priya Mehta</div>
-            <div class="author-role">Content Creator</div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 03 -->
-      <div class="testimonial-card reveal reveal-delay-2">
-        <span class="quote-icon">&ldquo;</span>
-        <p class="testimonial-text">Professional, responsive, and incredibly talented. Gobro Media delivered beyond our expectations and helped us build meaningful industry connections.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">A</div>
-          <div>
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="author-name">Arjun Kapoor</div>
-            <div class="author-role">Marketing Director</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRANSPARENT PACKAGES (PRICING) SECTION -->
-  <section id="pricing">
-    <div class="section-header reveal">
-      <span class="section-tag">Investment</span>
-      <h2 class="section-title">Transparent <em>Packages</em></h2>
-      <p class="section-desc">Choose the plan that fits your business goals. Premium growth solutions, tailored for you.</p>
-    </div>
-    
-    <div class="pricing-grid">
-      <!-- Tier 01: Starter -->
-      <div class="pricing-card reveal">
-        <div class="pricing-tier">Starter</div>
-        <p class="pricing-desc">Perfect for small businesses just starting their digital journey.</p>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li>Social Media Management (2 platforms)</li>
-          <li>8 Content Posts per Month</li>
-          <li>Basic Video Editing (2 videos)</li>
-          <li>Monthly Performance Report</li>
-          <li class="off">Paid Ad Campaigns (Meta/Google)</li>
-          <li class="off">Dedicated Account Manager</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;">Get Started</a>
-      </div>
-      
-      <!-- Tier 02: Growth (Featured) -->
-      <div class="pricing-card featured reveal reveal-delay-1">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier">Growth</div>
-        <p class="pricing-desc">For growing businesses that want to scale their digital presence fast.</p>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li>Social Media Management (4 platforms)</li>
-          <li>20 Content Posts per Month</li>
-          <li>Professional Video Editing (6 videos)</li>
-          <li>Paid Ad Campaigns (Meta + Google)</li>
-          <li>On-Page SEO Optimization</li>
-          <li>Dedicated Account Manager</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;">Get Started</a>
-      </div>
-      
-      <!-- Tier 03: Enterprise -->
-      <div class="pricing-card reveal reveal-delay-2">
-        <div class="pricing-tier">Enterprise</div>
-        <p class="pricing-desc">Complete digital domination for established brands and enterprises.</p>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li>Full-Suite Digital Marketing</li>
-          <li>Unlimited Content Creation</li>
-          <li>Premium Video Production &amp; Reel VFX</li>
-          <li>Multi-Platform High-Budget Ads</li>
-          <li>B2B Partnership Networking</li>
-          <li>24/7 Priority Support &amp; Slack Loop</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;">Get Started</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- IDENTITY / WHO WE ARE SECTION -->
-  <section id="identity">
-    <div class="identity-container container">
-      <div class="identity-header reveal">
-        <span class="section-tag">Who We Are</span>
-        <h2 class="section-title">Our Identity &amp; <em>Core Focus</em></h2>
-        <p class="section-desc">At GOBRO MEDIA, we do not believe in vanity metrics. We care about one thing only: scaling your brand and delivering real ROI.</p>
-      </div>
-
-      <div class="identity-grid reveal">
-        <!-- Identity Pillar 1: Who We Are -->
-        <div class="identity-card">
-          <div class="identity-icon">&#10022;</div>
-          <h3>Who We Are</h3>
-          <p>We are a high-performance team of digital marketers, creative strategists, video editors, and design innovators. We combine high-end design aesthetics with performance engineering to elevate brands from simple players to industry leaders.</p>
-        </div>
-
-        <!-- Identity Pillar 2: What We Provide -->
-        <div class="identity-card">
-          <div class="identity-icon">&#9889;</div>
-          <h3>What We Provide</h3>
-          <p>We provide conversion-focused digital marketing campaigns, cinematic-grade video editing, organic search dominance (SEO), and custom high-converting web designs. Our services are tailored to generate qualified B2B/B2C leads and drive customer conversions.</p>
-        </div>
-
-        <!-- Identity Pillar 3: Our Core Philosophy -->
-        <div class="identity-card">
-          <div class="identity-icon">&#128202;</div>
-          <h3>Why We Stand Out</h3>
-          <p>We operate on absolute transparency, lightning-fast execution (48-hour post-production turnarounds), and direct WhatsApp/Slack access. We don't hide behind complex contracts—our month-to-month value speaks for itself.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT & LEAD GENERATION FORM SECTION -->
-  <section id="contact">
-    <div class="contact-grid">
-      <div class="reveal">
-        <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Let's Build<br/>Something <em>Great</em></h2>
-        <p class="section-desc">Ready to elevate your brand? Let's talk about how Gobro Media can transform your digital presence.</p>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Digital Growth Agency</div>
+        <h1 id="hero-title" class="hero-title">
+          <span class="gold-italic">Transform</span> Your Brand
+          <span class="bold-white">Into a Digital Powerhouse</span>
+        </h1>
+        <p class="hero-subtitle">We don't just market — we <span class="highlight">scale</span> brands</p>
+        <p class="hero-desc">ROI-focused digital campaigns, cinematic video production, and SEO strategies that generate <strong>real revenue</strong>, not just vanity metrics.</p>
         
-        <div class="contact-info">
-          <!-- Email Info -->
-          <div class="contact-item">
-            <div class="contact-icon">&#9993;</div>
-            <div>
-              <div class="contact-item-label">Email</div>
-              <div class="contact-item-value">
-                <a href="mailto:gobromedia@outlook.com" style="color: inherit; text-decoration: none;">gobromedia@outlook.com</a>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Get Free Growth Audit</a>
+          <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+
+        <div class="hero-trust">
+          <span class="hero-trust-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            150+ Projects Delivered
+          </span>
+          <span class="hero-trust-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            98% Client Retention
+          </span>
+          <span class="hero-trust-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            4.9/5 Star Rating
+          </span>
+          <span class="hero-trust-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            4+ Years Excellence
+          </span>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- BRANDS SLIDER TICKER -->
+    <div class="brands-ticker" aria-hidden="true">
+      <div class="ticker-wrap">
+        <span>Trusted by 50+ Brands</span>
+        <span>Performance Ads Specialist</span>
+        <span>Technical SEO Experts</span>
+        <span>Cinematic Post Production</span>
+        <span>B2B Partnership Ecosystems</span>
+        <span>Conversion Web Designs</span>
+        <!-- Loop Items for seamless scroll animation -->
+        <span>Trusted by 50+ Brands</span>
+        <span>Performance Ads Specialist</span>
+        <span>Technical SEO Experts</span>
+        <span>Cinematic Post Production</span>
+        <span>B2B Partnership Ecosystems</span>
+        <span>Conversion Web Designs</span>
+      </div>
+    </div>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="about-visual reveal" aria-hidden="true">
+        <div class="about-card about-card-main">
+          <div class="about-big-num" aria-hidden="true">G</div>
+          <div class="about-card-content">
+            <div class="about-card-label">Our Vision</div>
+            <div class="about-card-text">Transforming ideas into impactful digital experiences that drive real results.</div>
+          </div>
+        </div>
+        <div class="about-card about-card-accent">
+          <div class="about-card-content">
+            <div class="about-accent-icon" aria-hidden="true">&#10022;</div>
+            <div class="about-accent-stat">50+</div>
+            <div class="about-accent-desc">Brands Elevated</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="reveal reveal-delay-1">
+        <span class="section-tag">About Us</span>
+        <h2 id="about-title" class="section-title">A Modern <em>Digital Agency</em><br/>Built for Growth</h2>
+        <div class="about-divider" aria-hidden="true"></div>
+        <p class="section-desc">Gobro Media is a modern digital agency focused on helping brands grow through powerful digital marketing, creative content production, and professional video editing. Our mission is to transform ideas into impactful digital experiences.</p>
+        
+        <div class="about-features">
+          <div class="about-feat">Strategic digital campaigns tailored to your brand</div>
+          <div class="about-feat">High-quality content that converts audiences</div>
+          <div class="about-feat">Professional video production & editing</div>
+          <div class="about-feat">Business networking & partnership development</div>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="margin-top: 36px;">Work With Us</a>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" aria-labelledby="services-title">
+      <div class="section-header reveal">
+        <span class="section-tag">What We Do</span>
+        <h2 id="services-title" class="section-title">Our <em>Core Services</em></h2>
+        <p class="section-desc">Comprehensive digital solutions designed to grow your brand and maximize your online presence.</p>
+      </div>
+      
+      <div class="services-grid">
+        <!-- Card 01: Digital Marketing -->
+        <article class="service-card reveal">
+          <div class="service-num" aria-hidden="true">01</div>
+          <div class="service-icon" aria-hidden="true"><img src="assets/images/services/service-icon-1.webp" alt="" width="800" height="800"></div>
+          <h3 class="service-name">Digital Marketing</h3>
+          <p class="service-desc">ROI-focused digital campaigns across search, social & display. Data-driven strategies to maximize your brand's reach and conversions.</p>
+          <button type="button" onclick="openServiceModal('marketing')" class="service-link">Learn More &#8594;</button>
+        </article>
+        
+        <!-- Card 02: Content Creation -->
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-num" aria-hidden="true">02</div>
+          <div class="service-icon" aria-hidden="true"><img src="assets/images/services/service-icon-2.webp" alt="" width="800" height="800"></div>
+          <h3 class="service-name">Content Creation</h3>
+          <p class="service-desc">Engaging written & visual content that tells your brand story and connects with your target audience effectively.</p>
+          <button type="button" onclick="openServiceModal('creation')" class="service-link">Learn More &#8594;</button>
+        </article>
+        
+        <!-- Card 03: Video Editing -->
+        <article class="service-card reveal reveal-delay-2">
+          <div class="service-num" aria-hidden="true">03</div>
+          <div class="service-icon" aria-hidden="true"><img src="assets/images/services/service-icon-3.webp" alt="" width="800" height="800"></div>
+          <h3 class="service-name">Video Editing</h3>
+          <p class="service-desc">Professional video editing including commercials, social media reels, YouTube videos & corporate content.</p>
+          <button type="button" onclick="openServiceModal('editing')" class="service-link">Learn More &#8594;</button>
+        </article>
+        
+        <!-- Card 04: Content Creator -->
+        <article class="service-card reveal">
+          <div class="service-num" aria-hidden="true">04</div>
+          <div class="service-icon" aria-hidden="true"><img src="assets/images/services/service-icon-4.webp" alt="" width="800" height="800"></div>
+          <h3 class="service-name">Content Creator</h3>
+          <p class="service-desc">Expert content creators producing high-quality photos, graphics & multimedia for your digital presence.</p>
+          <button type="button" onclick="openServiceModal('creator')" class="service-link">Learn More &#8594;</button>
+        </article>
+        
+        <!-- Card 05: Networking Solutions -->
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-num" aria-hidden="true">05</div>
+          <div class="service-icon" aria-hidden="true"><img src="assets/images/services/service-icon-5.webp" alt="" width="800" height="800"></div>
+          <h3 class="service-name">Networking Solutions</h3>
+          <p class="service-desc">Business networking strategies, professional connections & partnership development for sustainable growth.</p>
+          <button type="button" onclick="openServiceModal('networking')" class="service-link">Learn More &#8594;</button>
+        </article>
+        
+        <!-- Card 06: Brand Strategy -->
+        <article class="service-card reveal reveal-delay-2">
+          <div class="service-num" aria-hidden="true">06</div>
+          <div class="service-icon" aria-hidden="true"><img src="assets/images/services/service-icon-6.webp" alt="" width="800" height="800"></div>
+          <h3 class="service-name">Brand Strategy</h3>
+          <p class="service-desc">Comprehensive brand positioning, identity development, and strategic roadmaps to dominate your market.</p>
+          <button type="button" onclick="openServiceModal('strategy')" class="service-link">Learn More &#8594;</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS TIMELINE SECTION -->
+    <section id="process" aria-labelledby="process-title">
+      <div class="section-header reveal">
+        <span class="section-tag">How We Work</span>
+        <h2 id="process-title" class="section-title">Our <em>Process</em></h2>
+        <p class="section-desc">A streamlined approach designed to deliver exceptional results every single time.</p>
+      </div>
+      
+      <div class="process-steps">
+        <article class="process-step reveal">
+          <div class="step-circle" aria-hidden="true">01</div>
+          <h3 class="step-title">Discovery</h3>
+          <p class="step-desc">We learn your business, goals, audience, and competition to build a solid foundation.</p>
+        </article>
+        <article class="process-step reveal reveal-delay-1">
+          <div class="step-circle" aria-hidden="true">02</div>
+          <h3 class="step-title">Strategy</h3>
+          <p class="step-desc">We craft a custom digital strategy tailored specifically to your brand and objectives.</p>
+        </article>
+        <article class="process-step reveal reveal-delay-2">
+          <div class="step-circle" aria-hidden="true">03</div>
+          <h3 class="step-title">Execution</h3>
+          <p class="step-desc">Our team executes with precision &mdash; on time, on brand, and within budget.</p>
+        </article>
+        <article class="process-step reveal reveal-delay-3">
+          <div class="step-circle" aria-hidden="true">04</div>
+          <h3 class="step-title">Growth</h3>
+          <p class="step-desc">We track, analyze and optimize continuously to ensure long-term growth and ROI.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MOSAIC PORTFOLIO SECTION -->
+    <section id="portfolio" aria-labelledby="portfolio-title">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Work</span>
+        <h2 id="portfolio-title" class="section-title">Featured <em>Projects</em></h2>
+        <p class="section-desc">A selection of projects that showcase our creative capability and strategic thinking.</p>
+      </div>
+      
+      <div class="portfolio-grid reveal">
+        <!-- Item 01 -->
+        <article class="portfolio-item pi1" tabindex="0" aria-label="Brand Growth Campaign - Digital Marketing case study">
+          <div class="portfolio-bg" role="img" aria-label="Digital marketing campaign dashboard showing growth metrics"></div>
+          <div class="portfolio-placeholder">Digital Marketing</div>
+          <div class="portfolio-icon" aria-hidden="true">&#127919;</div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-cat">Digital Marketing</div>
+            <div class="portfolio-title">Brand Growth Campaign</div>
+          </div>
+        </article>
+        
+        <!-- Item 02 -->
+        <article class="portfolio-item pi2" tabindex="0" aria-label="Corporate Ads Reel - Video Production case study">
+          <div class="portfolio-bg" role="img" aria-label="Video production frames showing corporate advertisement"></div>
+          <div class="portfolio-placeholder">Video Production</div>
+          <div class="portfolio-icon" aria-hidden="true">&#127916;</div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-cat">Video Production</div>
+            <div class="portfolio-title">Corporate Ads Reel</div>
+          </div>
+        </article>
+        
+        <!-- Item 03 -->
+        <article class="portfolio-item pi3" tabindex="0" aria-label="Content Strategy - Social Media case study">
+          <div class="portfolio-bg" role="img" aria-label="Social media content grid showing strategy execution"></div>
+          <div class="portfolio-placeholder">Social Media</div>
+          <div class="portfolio-icon" aria-hidden="true">&#128241;</div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-cat">Social Media</div>
+            <div class="portfolio-title">Content Strategy</div>
+          </div>
+        </article>
+        
+        <!-- Item 04 -->
+        <article class="portfolio-item pi4" tabindex="0" aria-label="Blog & Copywriting - Content Creation case study">
+          <div class="portfolio-bg" role="img" aria-label="Content creation workspace with blog articles"></div>
+          <div class="portfolio-placeholder">Content Creation</div>
+          <div class="portfolio-icon" aria-hidden="true">&#9997;&#65039;</div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-cat">Content Creation</div>
+            <div class="portfolio-title">Blog & Copywriting</div>
+          </div>
+        </article>
+        
+        <!-- Item 05 -->
+        <article class="portfolio-item pi5" tabindex="0" aria-label="Partnership Program - Networking case study">
+          <div class="portfolio-bg" role="img" aria-label="Business networking event with partnership agreements"></div>
+          <div class="portfolio-placeholder">Networking</div>
+          <div class="portfolio-icon" aria-hidden="true">&#129309;</div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-cat">Networking</div>
+            <div class="portfolio-title">Partnership Program</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LATEST INSIGHTS (BLOG) SECTION -->
+    <section id="insights" aria-labelledby="insights-title">
+      <div class="section-header reveal">
+        <span class="section-tag">Latest Insights</span>
+        <h2 id="insights-title" class="section-title">Digital Marketing <em>Guide</em></h2>
+        <p class="section-desc">Digital marketing tips, growth strategies, and industry insights in simple language to scale your business.</p>
+      </div>
+      
+      <div class="blog-grid" id="homepageBlogGrid">
+        <!-- Dynamically generated blog posts will render here -->
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" aria-labelledby="testimonials-title">
+      <div class="section-header reveal">
+        <span class="section-tag">Client Reviews</span>
+        <h2 id="testimonials-title" class="section-title">What Our <em>Clients Say</em></h2>
+      </div>
+      
+      <div class="testimonials-carousel reveal" role="region" aria-label="Testimonials carousel">
+        <div class="testimonials-track">
+          <!-- Card 01 -->
+          <article class="testimonial-card">
+            <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"><img src="https://i.pravatar.cc/150?img=1" alt="" loading="lazy"></div>
+              <div>
+                <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="author-name">Rahul Sharma</div>
+                <div class="author-role">CEO, TechStartup India</div>
+              </div>
+            </div>
+            <p class="testimonial-text">Gobro Media completely transformed our online presence. Their digital marketing strategy increased our leads by 300% in just 3 months. Truly exceptional work.</p>
+          </article>
+          
+          <!-- Card 02 -->
+          <article class="testimonial-card">
+            <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"><img src="https://i.pravatar.cc/150?img=5" alt="" loading="lazy"></div>
+              <div>
+                <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="author-name">Priya Mehta</div>
+                <div class="author-role">Content Creator</div>
+              </div>
+            </div>
+            <p class="testimonial-text">Their video editing skills are world-class. Our YouTube channel grew from 500 to 50,000 subscribers after they took over our content production.</p>
+          </article>
+          
+          <!-- Card 03 -->
+          <article class="testimonial-card">
+            <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"><img src="https://i.pravatar.cc/150?img=3" alt="" loading="lazy"></div>
+              <div>
+                <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="author-name">Arjun Kapoor</div>
+                <div class="author-role">Marketing Director</div>
+              </div>
+            </div>
+            <p class="testimonial-text">Professional, responsive, and incredibly talented. Gobro Media delivered beyond our expectations and helped us build meaningful industry connections.</p>
+          </article>
+
+          <!-- Card 04 -->
+          <article class="testimonial-card">
+            <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"><img src="https://i.pravatar.cc/150?img=9" alt="" loading="lazy"></div>
+              <div>
+                <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="author-name">Sneha Patel</div>
+                <div class="author-role">Founder, UrbanCart</div>
+              </div>
+            </div>
+            <p class="testimonial-text">Gobro Media's SEO expertise took our e-commerce store from page 10 to page 1 for over 40 keywords. Our organic revenue has tripled since we started working with them.</p>
+          </article>
+          
+          <!-- Card 05 -->
+          <article class="testimonial-card">
+            <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"><img src="https://i.pravatar.cc/150?img=11" alt="" loading="lazy"></div>
+              <div>
+                <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="author-name">Vikram Singh</div>
+                <div class="author-role">Director, BuildRight Corp</div>
+              </div>
+            </div>
+            <p class="testimonial-text">Their B2B networking strategies opened doors we never knew existed. Within 6 months we secured 3 major partnership deals worth over 2Cr in pipeline revenue.</p>
+          </article>
+          
+          <!-- Card 06 -->
+          <article class="testimonial-card">
+            <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"><img src="https://i.pravatar.cc/150?img=16" alt="" loading="lazy"></div>
+              <div>
+                <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="author-name">Ananya Reddy</div>
+                <div class="author-role">CMO, NexGenTech</div>
+              </div>
+            </div>
+            <p class="testimonial-text">The Gobro team handled our complete brand overhaul — from visual identity to ad campaigns. Our engagement rates shot up by 400% and we are now the market leader in our niche.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSPARENT PACKAGES (PRICING) SECTION -->
+    <section id="pricing" aria-labelledby="pricing-title">
+      <div class="section-header reveal">
+        <span class="section-tag">Investment</span>
+        <h2 id="pricing-title" class="section-title">Transparent <em>Packages</em></h2>
+        <p class="section-desc">Choose the plan that fits your business goals. Premium growth solutions, tailored for you.</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <!-- Tier 01: Starter -->
+        <article class="pricing-card reveal">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">
+            <span class="price-currency">₹</span>
+            <span class="price-num">49,999</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">Perfect for small businesses just starting their digital journey.</p>
+          <div class="pricing-divider" aria-hidden="true"></div>
+          <ul class="pricing-features" role="list">
+            <li>Social Media Management (2 platforms)</li>
+            <li>8 Content Posts per Month</li>
+            <li>Basic Video Editing (2 videos)</li>
+            <li>Monthly Performance Report</li>
+            <li class="off" aria-label="Not included">Paid Ad Campaigns (Meta/Google)</li>
+            <li class="off" aria-label="Not included">Dedicated Account Manager</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="width:100%;">Get Started</a>
+        </article>
+        
+        <!-- Tier 02: Growth (Featured) -->
+        <article class="pricing-card featured reveal reveal-delay-1">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Growth</div>
+          <div class="pricing-price">
+            <span class="price-currency">₹</span>
+            <span class="price-num">99,999</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">For growing businesses that want to scale their digital presence fast.</p>
+          <div class="pricing-divider" aria-hidden="true"></div>
+          <ul class="pricing-features" role="list">
+            <li>Social Media Management (4 platforms)</li>
+            <li>20 Content Posts per Month</li>
+            <li>Professional Video Editing (6 videos)</li>
+            <li>Paid Ad Campaigns (Meta + Google)</li>
+            <li>On-Page SEO Optimization</li>
+            <li>Dedicated Account Manager</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%;">Get Started</a>
+        </article>
+        
+        <!-- Tier 03: Enterprise -->
+        <article class="pricing-card reveal reveal-delay-2">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-price">
+            <span class="price-num" style="font-size:2.2rem;">Custom</span>
+            <span class="price-period" style="margin-left:6px;">Contact us</span>
+          </div>
+          <p class="pricing-desc">Complete digital domination for established brands and enterprises.</p>
+          <div class="pricing-divider" aria-hidden="true"></div>
+          <ul class="pricing-features" role="list">
+            <li>Full-Suite Digital Marketing</li>
+            <li>Unlimited Content Creation</li>
+            <li>Premium Video Production & Reel VFX</li>
+            <li>Multi-Platform High-Budget Ads</li>
+            <li>B2B Partnership Networking</li>
+            <li>24/7 Priority Support & Slack Loop</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="width:100%;">Get Started</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- IDENTITY / WHO WE ARE SECTION -->
+    <section id="identity" aria-labelledby="identity-title">
+      <div class="identity-container">
+        <div class="identity-header reveal">
+          <span class="section-tag">Who We Are</span>
+          <h2 id="identity-title" class="section-title">Our Identity & <em>Core Focus</em></h2>
+          <p class="section-desc">At GOBRO MEDIA, we do not believe in vanity metrics. We care about one thing only: scaling your brand and delivering real ROI.</p>
+        </div>
+
+        <div class="identity-carousel reveal" role="region" aria-label="Who We Are carousel">
+          <div class="identity-track">
+            <!-- Identity Pillar 1: Who We Are -->
+            <article class="identity-card">
+              <div class="identity-icon" aria-hidden="true"><img src="assets/images/services/identity-team.webp" alt="" width="800" height="800"></div>
+              <h3>Who We Are</h3>
+              <p>We are a high-performance team of digital marketers, creative strategists, video editors, and design innovators. We combine high-end design aesthetics with performance engineering to elevate brands from simple players to industry leaders.</p>
+            </article>
+
+            <!-- Identity Pillar 2: What We Provide -->
+            <article class="identity-card">
+              <div class="identity-icon" aria-hidden="true"><img src="assets/images/services/identity-speed.webp" alt="" width="800" height="800"></div>
+              <h3>What We Provide</h3>
+              <p>We provide conversion-focused digital marketing campaigns, cinematic-grade video editing, organic search dominance (SEO), and custom high-converting web designs.</p>
+            </article>
+
+            <!-- Identity Pillar 3: Why We Stand Out -->
+            <article class="identity-card">
+              <div class="identity-icon" aria-hidden="true"><img src="assets/images/services/service-icon-6.webp" alt="" width="800" height="800"></div>
+              <h3>Why We Stand Out</h3>
+              <p>We operate on absolute transparency, lightning-fast execution (48-hour post-production turnarounds), and direct WhatsApp/Slack access. No complex contracts—our month-to-month value speaks for itself.</p>
+            </article>
+
+            <!-- Identity Pillar 4: Our Mission -->
+            <article class="identity-card">
+              <div class="identity-icon" aria-hidden="true"><img src="assets/images/services/identity-team.webp" alt="" width="800" height="800"></div>
+              <h3>Our Mission</h3>
+              <p>To democratize premium digital marketing for businesses of all sizes. We believe every brand deserves cinematic content, data-driven strategy, and a team that genuinely cares about their growth.</p>
+            </article>
+
+            <!-- Identity Pillar 5: Our Commitment -->
+            <article class="identity-card">
+              <div class="identity-icon" aria-hidden="true"><img src="assets/images/services/identity-speed.webp" alt="" width="800" height="800"></div>
+              <h3>Our Commitment</h3>
+              <p>Every campaign we run is backed by transparent reporting, measurable KPIs, and a relentless focus on ROI. We do not rest until your brand sees tangible, scalable results.</p>
+            </article>
+          </div>
+          <div class="carousel-dots identity-dots" role="tablist" aria-label="Carousel navigation"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & LEAD GENERATION FORM SECTION -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="contact-grid">
+        <div class="reveal">
+          <span class="section-tag">Get In Touch</span>
+          <h2 id="contact-title" class="section-title">Let's Build<br/>Something <em>Great</em></h2>
+          <p class="section-desc">Ready to elevate your brand? Let's talk about how Gobro Media can transform your digital presence.</p>
+          
+          <div class="contact-info">
+            <!-- Email Info -->
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">
+                  <a href="mailto:gobromedia@outlook.com" style="color: inherit; text-decoration: none;">gobromedia@outlook.com</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Location Info -->
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-value">India, New Delhi</div>
+              </div>
+            </div>
+            
+            <!-- Speed Info -->
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Response Time</div>
+                <div class="contact-item-value">Within 24 hours, guaranteed</div>
               </div>
             </div>
           </div>
-          
-          <!-- Location Info -->
-          <div class="contact-item">
-            <div class="contact-icon">&#128205;</div>
-            <div>
-              <div class="contact-item-label">Location</div>
-              <div class="contact-item-value">India, New Delhi</div>
-            </div>
-          </div>
-          
-          <!-- Speed Info -->
-          <div class="contact-item">
-            <div class="contact-icon">&#128336;</div>
-            <div>
-              <div class="contact-item-label">Response Time</div>
-              <div class="contact-item-value">Within 24 hours, guaranteed</div>
-            </div>
-          </div>
         </div>
-      </div>
-      
-      <!-- Lead Capture Form -->
-      <div class="reveal reveal-delay-1">
-        <form class="contact-form" id="agencyForm">
-          <!-- Web3Forms API Configuration -->
-          <!-- NOTE: Get your FREE Access Key on https://web3forms.com/ (It takes 10 seconds, no registration needed!) -->
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-          <input type="hidden" name="subject" content="New Client Growth Lead - GOBRO MEDIA" />
-          <input type="checkbox" name="botcheck" id="" style="display: none;" />
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="name">Your Name*</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Rahul Goswami" required />
+        
+        <!-- Lead Capture Form -->
+        <div class="reveal reveal-delay-1">
+          <form class="contact-form" id="agencyForm" novalidate>
+            <!-- Web3Forms API Configuration -->
+            <input type="hidden" name="access_key" value="" id="formAccessKey">
+            <input type="hidden" name="subject" value="New Client Growth Lead - GOBRO MEDIA">
+            <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Your Name<span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Rahul Goswami" required autocomplete="name" aria-required="true">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Your Email<span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="rahul@example.com" required autocomplete="email" aria-required="true">
+              </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="email">Your Email*</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="rahul@example.com" required />
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="phone">WhatsApp Number<span class="required" aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" aria-required="true">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="website">Website URL (Optional)</label>
+                <input type="url" id="website" name="website" class="form-input" placeholder="https://mybrand.com" autocomplete="url">
+              </div>
             </div>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="phone">WhatsApp Number*</label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="website">Website URL (Optional)</label>
-              <input type="url" id="website" name="website" class="form-input" placeholder="https://mybrand.com" />
-            </div>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="service">Service Needed</label>
-              <select id="service" name="service" class="form-select">
-                <option value="digital-marketing" style="background:#0d0d0d">Digital Marketing</option>
-                <option value="content-creation" style="background:#0d0d0d">Content Creation</option>
-                <option value="video-editing" style="background:#0d0d0d">Video Editing</option>
-                <option value="creator-backing" style="background:#0d0d0d">Creator Backing</option>
-                <option value="networking-solutions" style="background:#0d0d0d">Networking Solutions</option>
-                <option value="full-package" style="background:#0d0d0d">Full Premium Package</option>
-              </select>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="service">Service Needed</label>
+                <select id="service" name="service" class="form-select">
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="content-creation">Content Creation</option>
+                  <option value="video-editing">Video Editing</option>
+                  <option value="creator-backing">Creator Backing</option>
+                  <option value="networking-solutions">Networking Solutions</option>
+                  <option value="full-package">Full Premium Package</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="budget">Monthly Budget Bracket</label>
+                <select id="budget" name="budget" class="form-select">
+                  <option value="15k-25k">₹15,000 - ₹25,000</option>
+                  <option value="25k-50k">₹25,000 - ₹50,000</option>
+                  <option value="50k-100k">₹50,000 - ₹1,00,000</option>
+                  <option value="100k+">₹1,00,000+ (Enterprise)</option>
+                </select>
+              </div>
             </div>
             
             <div class="form-group">
-              <label class="form-label" for="budget">Monthly Budget Bracket</label>
-              <select id="budget" name="budget" class="form-select">
-                <option value="15k-25k" style="background:#0d0d0d">₹15,000 - ₹25,000</option>
-                <option value="25k-50k" style="background:#0d0d0d">₹25,000 - ₹50,000</option>
-                <option value="50k-100k" style="background:#0d0d0d">₹50,000 - ₹1,00,000</option>
-                <option value="100k+" style="background:#0d0d0d">₹1,00,000+ (Enterprise)</option>
-              </select>
+              <label class="form-label" for="message">Share Your Project Goals</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your business, current marketing challenges, and how we can help you grow..."></textarea>
             </div>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label" for="message">Share Your Project Goals</label>
-            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your business, current marketing challenges, and how we can help you grow..."></textarea>
-          </div>
-          
-          <!-- Submit Lead Response Status Container -->
-          <div class="form-status" id="formStatus"></div>
-          
-          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">
-            Get Free Growth Audit
-          </button>
-        </form>
+            
+            <!-- Submit Lead Response Status Container -->
+            <div class="form-status" id="formStatus" aria-live="polite" role="status"></div>
+            
+            <button type="submit" class="btn btn-primary">
+              Get Free Growth Audit
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer role="contentinfo">
     <div class="footer-top">
       <div class="footer-brand reveal">
         <div class="footer-logo">GOBRO <span>MEDIA</span></div>
         <p class="footer-tagline">A modern digital agency transforming ideas into impactful digital experiences that drive real results.</p>
         
-        <div class="footer-social">
-          <a href="#" class="social-link sl-linkedin" title="LinkedIn" style="opacity: 0.35; pointer-events: none;">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://www.linkedin.com/company/gobro-media" class="social-link sl-linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span class="sr-only">LinkedIn</span>
           </a>
           <a href="https://www.facebook.com/profile.php?id=61581537060142" class="social-link sl-facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <span class="sr-only">Facebook</span>
           </a>
           <a href="https://www.instagram.com/gobromedia_digitalmarketing/" class="social-link sl-instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <span class="sr-only">Instagram</span>
           </a>
-          <a href="#" class="social-link sl-youtube" title="YouTube" style="opacity: 0.35; pointer-events: none;">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <a href="https://www.youtube.com/@gobromedia" class="social-link sl-youtube" title="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span class="sr-only">YouTube</span>
           </a>
           <a href="https://x.com/Gobro_Media" class="social-link sl-twitter" title="X / Twitter" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span class="sr-only">X / Twitter</span>
           </a>
         </div>
       </div>
       
       <!-- Services Navigation -->
-      <div class="footer-col reveal">
-        <h4>Services</h4>
-        <ul class="footer-links">
+      <nav class="footer-col reveal" aria-label="Services">
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links" role="list">
           <li><a href="#services">Digital Marketing</a></li>
           <li><a href="#services">Content Creation</a></li>
           <li><a href="#services">Video Editing</a></li>
           <li><a href="#services">Brand Strategy</a></li>
         </ul>
-      </div>
+      </nav>
       
       <!-- Company Navigation -->
-      <div class="footer-col reveal reveal-delay-1">
-        <h4>Company</h4>
-        <ul class="footer-links">
+      <nav class="footer-col reveal reveal-delay-1" aria-label="Company">
+        <h3 class="footer-heading">Company</h3>
+        <ul class="footer-links" role="list">
           <li><a href="#about">About Us</a></li>
           <li><a href="#portfolio">Our Work</a></li>
-          <li><a href="javascript:void(0)" onclick="openBlogHub()">Blog Hub</a></li>
+          <li><a href="#modal-bloghub" onclick="openBlogHub(); return false;">Blog Hub</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#insights">Insights Blog</a></li>
         </ul>
-      </div>
+      </nav>
       
       <!-- Legal Links -->
-      <div class="footer-col reveal reveal-delay-2">
-        <h4>Legal Links</h4>
-        <ul class="footer-links">
+      <nav class="footer-col reveal reveal-delay-2" aria-label="Legal">
+        <h3 class="footer-heading">Legal Links</h3>
+        <ul class="footer-links" role="list">
           <li><a href="mailto:gobromedia@outlook.com">Support Help</a></li>
-          <li><button onclick="openModal('privacy')">Privacy Policy</button></li>
-          <li><button onclick="openModal('terms')">Terms &amp; Conditions</button></li>
-          <li><button onclick="openModal('partnership')">Partnership Hub</button></li>
+          <li><button type="button" onclick="openModal('privacy')">Privacy Policy</button></li>
+          <li><button type="button" onclick="openModal('terms')">Terms & Conditions</button></li>
+          <li><button type="button" onclick="openModal('partnership')">Partnership Hub</button></li>
         </ul>
-      </div>
+      </nav>
     </div>
     
     <div class="footer-bottom">
-      <span class="footer-copy">&#169; 2026 GOBRO MEDIA. All Rights Reserved.</span>
+      <span class="footer-copy">&copy; 2026 GOBRO MEDIA. All Rights Reserved.</span>
       <div class="footer-bottom-links">
-        <button onclick="openModal('privacy')">Privacy Policy</button>
-        <button onclick="openModal('terms')">Terms &amp; Conditions</button>
-        <button onclick="openModal('partnership')">Partnership</button>
+        <button type="button" onclick="openModal('privacy')">Privacy Policy</button>
+        <button type="button" onclick="openModal('terms')">Terms & Conditions</button>
+        <button type="button" onclick="openModal('partnership')">Partnership</button>
       </div>
     </div>
   </footer>
 
   <!-- DYNAMIC SPECIFICATIONS MODAL FOR SERVICES -->
-  <div class="modal-overlay" id="modal-service" onclick="closeModalOutside(event, 'service')">
+  <div class="modal-overlay" id="modal-service" role="dialog" aria-modal="true" aria-labelledby="service-modal-title" hidden>
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('service')">&#10005;</button>
+      <button class="modal-close" onclick="closeModal('service')" aria-label="Close service details modal">&#10005;</button>
       <span class="modal-tag">Specifications</span>
       <h2 class="modal-title" id="service-modal-title">Service Details</h2>
-      <div class="modal-divider"></div>
+      <div class="modal-divider" aria-hidden="true"></div>
       <div id="service-modal-body"></div>
     </div>
   </div>
 
   <!-- DYNAMIC READ-MORE MODAL FOR BLOG INSIGHTS -->
-  <div class="modal-overlay" id="modal-blog" onclick="closeModalOutside(event, 'blog')">
+  <div class="modal-overlay" id="modal-blog" role="dialog" aria-modal="true" aria-labelledby="blog-modal-title" hidden>
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('blog')">&#10005;</button>
+      <button class="modal-close" onclick="closeModal('blog')" aria-label="Close blog modal">&#10005;</button>
       <span class="modal-tag">Agency Insights</span>
       <h2 class="modal-title" id="blog-modal-title">Blog Title</h2>
       <span class="modal-meta" id="blog-modal-meta">Metadata</span>
-      <div class="modal-divider"></div>
+      <div class="modal-divider" aria-hidden="true"></div>
       <div id="blog-modal-body"></div>
     </div>
   </div>
 
   <!-- DYNAMIC CASE STUDY MODAL FOR PORTFOLIO -->
-  <div class="modal-overlay" id="modal-portfolio" onclick="closeModalOutside(event, 'portfolio')">
+  <div class="modal-overlay" id="modal-portfolio" role="dialog" aria-modal="true" aria-labelledby="portfolio-modal-title" hidden>
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('portfolio')">&#10005;</button>
+      <button class="modal-close" onclick="closeModal('portfolio')" aria-label="Close portfolio modal">&#10005;</button>
       <span class="modal-tag">Case Study</span>
       <h2 class="modal-title" id="portfolio-modal-title">Project Details</h2>
       <span class="modal-meta" id="portfolio-modal-meta">Metrics Overview</span>
-      <div class="modal-divider"></div>
+      <div class="modal-divider" aria-hidden="true"></div>
       <div id="portfolio-modal-body"></div>
     </div>
   </div>
 
   <!-- PRIVACY POLICY MODAL -->
-  <div class="modal-overlay" id="modal-privacy" onclick="closeModalOutside(event, 'privacy')">
+  <div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" hidden>
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('privacy')">&#10005;</button>
+      <button class="modal-close" onclick="closeModal('privacy')" aria-label="Close privacy policy modal">&#10005;</button>
       <span class="modal-tag">Legal Documents</span>
-      <h2 class="modal-title"><em>Privacy</em> Policy</h2>
+      <h2 id="privacy-modal-title" class="modal-title"><em>Privacy</em> Policy</h2>
       <span class="modal-meta">Last Updated: March 2026</span>
-      <div class="modal-divider"></div>
+      <div class="modal-divider" aria-hidden="true"></div>
 
       <div class="modal-section">
         <h3>1. Information Protection</h3>
@@ -757,13 +975,13 @@
   </div>
 
   <!-- TERMS & CONDITIONS MODAL -->
-  <div class="modal-overlay" id="modal-terms" onclick="closeModalOutside(event, 'terms')">
+  <div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" hidden>
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('terms')">&#10005;</button>
+      <button class="modal-close" onclick="closeModal('terms')" aria-label="Close terms modal">&#10005;</button>
       <span class="modal-tag">Legal Documents</span>
-      <h2 class="modal-title">Terms &amp; <em>Conditions</em></h2>
+      <h2 id="terms-modal-title" class="modal-title">Terms & <em>Conditions</em></h2>
       <span class="modal-meta">Last Updated: March 2026</span>
-      <div class="modal-divider"></div>
+      <div class="modal-divider" aria-hidden="true"></div>
 
       <div class="modal-section">
         <h3>1. Usage Terms</h3>
@@ -771,7 +989,7 @@
       </div>
 
       <div class="modal-section">
-        <h3>2. Project Retainers &amp; Scope</h3>
+        <h3>2. Project Retainers & Scope</h3>
         <ul>
           <li>Complete service specs, timelines, milestones, and ad spends are detailed in custom contracts before work commences.</li>
           <li>Payments follow month-to-month retainers billed upfront. Delayed payments will trigger automatic campaign pauses.</li>
@@ -787,18 +1005,18 @@
   </div>
 
   <!-- IMMERSIVE PARTNERSHIP MODAL -->
-  <div class="pm-overlay" id="modal-partnership">
-    <button class="pm-close-btn" onclick="closeModal('partnership')">&#10005;</button>
+  <div class="pm-overlay" id="modal-partnership" role="dialog" aria-modal="true" aria-labelledby="partnership-modal-title" hidden>
+    <button class="pm-close-btn" onclick="closeModal('partnership')" aria-label="Close partnership modal">&#10005;</button>
     <div class="pm-page">
       <!-- PM Hero -->
       <div class="pm-hero">
         <span class="pm-tag">Collaborate With Us</span>
-        <h1>Become a <em>Partner</em></h1>
+        <h1 id="partnership-modal-title">Become a <em>Partner</em></h1>
         <p>Join hands with GOBRO MEDIA and unlock new growth opportunities through strategic collaboration, performance-driven models, and long-term success.</p>
       </div>
 
       <!-- PM Stats -->
-      <div class="pm-stats">
+      <div class="pm-stats" aria-label="Partnership statistics">
         <div class="pm-stat">
           <div class="pm-stat-num">50+</div>
           <div class="pm-stat-label">Active Partners</div>
@@ -821,36 +1039,36 @@
       <div class="pm-section">
         <span class="pm-section-label">Choose Your Model</span>
         <h2>Partnership <em>Types</em></h2>
-        <div class="pm-divider"></div>
+        <div class="pm-divider" aria-hidden="true"></div>
         
-        <div class="pm-types">
-          <div class="pm-type">
-            <div class="pm-type-icon">&#129309;</div>
+        <div class="pm-types" role="list">
+          <article class="pm-type">
+            <div class="pm-type-icon" aria-hidden="true"><img src="assets/images/services/service-icon-5.webp" alt="" width="800" height="800"></div>
             <div class="pm-type-name">Affiliate Partner</div>
             <p class="pm-type-desc">Earn generous commissions by referring prospective clients to our growth services. Low-friction referral payouts.</p>
             <span class="pm-type-tag">Earn Per Lead</span>
-          </div>
+          </article>
           
-          <div class="pm-type">
-            <div class="pm-type-icon">&#128101;</div>
+          <article class="pm-type">
+            <div class="pm-type-icon" aria-hidden="true"><img src="assets/images/services/partner-team.webp" alt="" width="800" height="800"></div>
             <div class="pm-type-name">Reseller Program</div>
-            <p class="pm-type-desc">Sell GOBRO MEDIA post-production &amp; SEO services under your own logo brand with wholesales margins.</p>
+            <p class="pm-type-desc">Sell GOBRO MEDIA post-production & SEO services under your own logo brand with wholesales margins.</p>
             <span class="pm-type-tag">Full Back-end Support</span>
-          </div>
+          </article>
           
-          <div class="pm-type">
-            <div class="pm-type-icon">&#127775;</div>
+          <article class="pm-type">
+            <div class="pm-type-icon" aria-hidden="true"><img src="assets/images/services/partner-success.webp" alt="" width="800" height="800"></div>
             <div class="pm-type-name">Collaboration</div>
             <p class="pm-type-desc">Ideal for influencers and YouTubers seeking cross-promotions, sponsors, or high-end post production backing.</p>
             <span class="pm-type-tag">Co-marketing Plan</span>
-          </div>
+          </article>
           
-          <div class="pm-type">
-            <div class="pm-type-icon">&#128200;</div>
+          <article class="pm-type">
+            <div class="pm-type-icon" aria-hidden="true"><img src="assets/images/services/service-icon-1.webp" alt="" width="800" height="800"></div>
             <div class="pm-type-name">Strategic Partner</div>
             <p class="pm-type-desc">Deep B2B alliances focused on complete market expansions, cross-service packaging, and mutual scaling.</p>
             <span class="pm-type-tag">Corporate Growth</span>
-          </div>
+          </article>
         </div>
       </div>
 
@@ -858,22 +1076,22 @@
       <div class="pm-section">
         <span class="pm-section-label">What You Get</span>
         <h2>Partner <em>Benefits</em></h2>
-        <div class="pm-divider"></div>
-        <div class="pm-benefits">
-          <div class="pm-benefit">
-            <div class="pm-benefit-icon">&#128176;</div>
+        <div class="pm-divider" aria-hidden="true"></div>
+        <div class="pm-benefits" role="list">
+          <article class="pm-benefit">
+            <div class="pm-benefit-icon" aria-hidden="true"><img src="assets/images/services/partner-finance.webp" alt="" width="800" height="800"></div>
             <div>
               <div class="pm-benefit-title">High Residual Commissions</div>
               <p class="pm-benefit-desc">Receive competitive margins paid monthly. Enjoy fully transparent client retention and invoice logs with zero delayed payouts.</p>
             </div>
-          </div>
-          <div class="pm-benefit">
-            <div class="pm-benefit-icon">&#128640;</div>
+          </article>
+          <article class="pm-benefit">
+            <div class="pm-benefit-icon" aria-hidden="true"><img src="assets/images/services/partner-growth.webp" alt="" width="800" height="800"></div>
             <div>
               <div class="pm-benefit-title">Scale Without Overhead</div>
               <p class="pm-benefit-desc">Offer technical SEO and high-retention video editing services to your clients without hiring and training production teams.</p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
 
@@ -881,24 +1099,24 @@
       <div class="pm-section">
         <span class="pm-section-label">Common Questions</span>
         <h2>Partnership <em>FAQ</em></h2>
-        <div class="pm-divider"></div>
+        <div class="pm-divider" aria-hidden="true"></div>
         
         <div style="max-width: 800px; display: flex; flex-direction: column;">
           <div class="pm-faq" style="border-bottom:1px solid rgba(201,168,76,0.08);">
-            <button class="pm-faq-q" onclick="openPMFaq(this)" style="width:100%; background:none; border:none; color:var(--white); padding:16px 0; text-align:left; cursor:pointer; font-weight:600; display:flex; justify-content:space-between;">
-              When and how are commission payouts processed? <span class="pm-faq-arrow">&#9660;</span>
+            <button class="pm-faq-q" onclick="openPMFaq(this)" aria-expanded="false" aria-controls="faq-answer-1" style="width:100%; background:none; border:none; color:var(--white); padding:16px 0; text-align:left; cursor:pointer; font-weight:600; display:flex; justify-content:space-between;">
+              When and how are commission payouts processed? <span class="pm-faq-arrow" aria-hidden="true">&#9660;</span>
             </button>
-            <div class="pm-faq-a" style="display:none; color:var(--text-muted); font-size:0.82rem; padding-bottom:16px; font-weight:300;">
-              Commissions are verified automatically and paid out in the **first week of every month** directly via Bank Transfer or UPI.
+            <div id="faq-answer-1" class="pm-faq-a" style="display:none; color:var(--text-muted); font-size:0.82rem; padding-bottom:16px; font-weight:300;">
+              Commissions are verified automatically and paid out in the <strong>first week of every month</strong> directly via Bank Transfer or UPI.
             </div>
           </div>
           
           <div class="pm-faq" style="border-bottom:1px solid rgba(201,168,76,0.08);">
-            <button class="pm-faq-q" onclick="openPMFaq(this)" style="width:100%; background:none; border:none; color:var(--white); padding:16px 0; text-align:left; cursor:pointer; font-weight:600; display:flex; justify-content:space-between;">
-              Is there any registration fee to join the partner program? <span class="pm-faq-arrow">&#9660;</span>
+            <button class="pm-faq-q" onclick="openPMFaq(this)" aria-expanded="false" aria-controls="faq-answer-2" style="width:100%; background:none; border:none; color:var(--white); padding:16px 0; text-align:left; cursor:pointer; font-weight:600; display:flex; justify-content:space-between;">
+              Is there any registration fee to join the partner program? <span class="pm-faq-arrow" aria-hidden="true">&#9660;</span>
             </button>
-            <div class="pm-faq-a" style="display:none; color:var(--text-muted); font-size:0.82rem; padding-bottom:16px; font-weight:300;">
-              No, GOBRO MEDIA's partner program is completely **FREE**. There are zero registration fees or upfront setup costs to become an affiliate partner.
+            <div id="faq-answer-2" class="pm-faq-a" style="display:none; color:var(--text-muted); font-size:0.82rem; padding-bottom:16px; font-weight:300;">
+              No, GOBRO MEDIA's partner program is completely <strong>FREE</strong>. There are zero registration fees or upfront setup costs to become an affiliate partner.
             </div>
           </div>
         </div>
@@ -908,26 +1126,26 @@
       <div class="pm-section">
         <span class="pm-section-label">Get Started</span>
         <h2>Partner <em>Application</em></h2>
-        <div class="pm-divider"></div>
+        <div class="pm-divider" aria-hidden="true"></div>
         
-        <form class="pm-form" id="pmForm">
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-          <input type="hidden" name="subject" content="New Partnership Application - GOBRO MEDIA" />
+        <form class="pm-form" id="pmForm" novalidate>
+          <input type="hidden" name="access_key" value="" id="pmFormAccessKey">
+          <input type="hidden" name="subject" value="New Partnership Application - GOBRO MEDIA">
           
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Full Name</label>
-              <input type="text" name="partner_name" class="form-input" placeholder="Rahul Goswami" required />
+              <input type="text" name="partner_name" class="form-input" placeholder="Rahul Goswami" required autocomplete="name" aria-required="true">
             </div>
             <div class="form-group">
               <label class="form-label">WhatsApp Number</label>
-              <input type="tel" name="partner_phone" class="form-input" placeholder="+91 XXXXX XXXXX" required />
+              <input type="tel" name="partner_phone" class="form-input" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" aria-required="true">
             </div>
           </div>
           
           <div class="form-group" style="margin-top:14px;">
             <label class="form-label">Email Address</label>
-            <input type="email" name="partner_email" class="form-input" placeholder="partner@gmail.com" required />
+            <input type="email" name="partner_email" class="form-input" placeholder="partner@gmail.com" required autocomplete="email" aria-required="true">
           </div>
           
           <div class="form-group" style="margin-top:14px;">
@@ -946,7 +1164,7 @@
           </div>
           
           <!-- Submit Partnership Response Status -->
-          <div class="form-status" id="pmFormStatus"></div>
+          <div class="form-status" id="pmFormStatus" aria-live="polite" role="status"></div>
           
           <button type="submit" class="btn btn-primary" style="width:100%; padding: 15px;">
             Submit Application
@@ -958,13 +1176,13 @@
   </div>
 
   <!-- IMMERSIVE STANDALONE BLOG HUB -->
-  <div class="pm-overlay" id="modal-bloghub">
-    <button class="pm-close-btn" onclick="closeBlogHub()">&#10005;</button>
+  <div class="pm-overlay" id="modal-bloghub" role="dialog" aria-modal="true" aria-labelledby="bloghub-modal-title" hidden>
+    <button class="pm-close-btn" onclick="closeBlogHub()" aria-label="Close blog hub">&#10005;</button>
     <div class="pm-page">
       <!-- Blog Hub Hero -->
       <div class="pm-hero">
         <span class="pm-tag" ondblclick="promptAdminAccess()" style="cursor: pointer; user-select: none;">Gobro Media Publications</span>
-        <h1>Welcome to our <em>Blog Hub</em></h1>
+        <h1 id="bloghub-modal-title">Welcome to our <em>Blog Hub</em></h1>
         <p>Explore high-impact digital marketing blueprints, professional video editing guides, and startup scale secrets.</p>
         <button class="btn btn-primary" id="adminUploadBtn" onclick="toggleBlogCreator()" style="margin-top:24px; padding: 10px 24px; display: none;">+ Upload New Blog</button>
       </div>
@@ -973,37 +1191,37 @@
       <div class="pm-section" id="blogCreatorContainer" style="display:none; max-width:800px; margin: 0 auto 48px;">
         <span class="pm-section-label">Create Blog Post</span>
         <h2>Publish <em>New Blog</em></h2>
-        <div class="pm-divider"></div>
+        <div class="pm-divider" aria-hidden="true"></div>
         
         <form class="pm-form" id="localBlogForm" onsubmit="publishLocalBlog(event)">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Blog Title</label>
-              <input type="text" id="blogTitle" class="form-input" placeholder="e.g., SEO vs PPC: Ultimate Comparison" required />
+              <input type="text" id="blogTitle" class="form-input" placeholder="e.g., SEO vs PPC: Ultimate Comparison" required autocomplete="off">
             </div>
             <div class="form-group">
               <label class="form-label">Category</label>
-              <input type="text" id="blogCategory" class="form-input" placeholder="e.g., Digital Marketing" required />
+              <input type="text" id="blogCategory" class="form-input" placeholder="e.g., Digital Marketing" required autocomplete="off">
             </div>
           </div>
           <div class="form-row" style="margin-top:14px;">
             <div class="form-group">
               <label class="form-label">Author Name</label>
-              <input type="text" id="blogAuthor" class="form-input" placeholder="e.g., Gobro Media Team" required />
+              <input type="text" id="blogAuthor" class="form-input" placeholder="e.g., Gobro Media Team" required autocomplete="name">
             </div>
             <div class="form-group">
               <label class="form-label">Short Description</label>
-              <input type="text" id="blogDesc" class="form-input" placeholder="Brief summary of the article..." required />
+              <input type="text" id="blogDesc" class="form-input" placeholder="Brief summary of the article..." required autocomplete="off">
             </div>
           </div>
           <div class="form-row" style="margin-top:14px;">
             <div class="form-group">
               <label class="form-label">Upload Cover Image (Recommended under 500KB)</label>
-              <input type="file" id="blogImageFile" class="form-input" accept="image/*" style="padding: 10px 18px;" />
+              <input type="file" id="blogImageFile" class="form-input" accept="image/*" style="padding: 10px 18px;">
             </div>
             <div class="form-group">
               <label class="form-label">Or Paste Image Asset Name / Online Link</label>
-              <input type="text" id="blogImageUrl" class="form-input" placeholder="e.g., blog3.png or an online image link..." />
+              <input type="text" id="blogImageUrl" class="form-input" placeholder="e.g., blog1.jpg or an online image link...">
             </div>
           </div>
           <div class="form-group" style="margin-top:14px; margin-bottom:20px;">
@@ -1018,8 +1236,8 @@
       <div class="pm-section">
         <span class="pm-section-label">Read Articles</span>
         <h2>Published <em>Articles</em></h2>
-        <div class="pm-divider"></div>
-        <div class="blog-grid" id="localBlogGrid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap:30px;">
+        <div class="pm-divider" aria-hidden="true"></div>
+        <div class="blog-grid" id="localBlogGrid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap:30px;" role="list">
           <!-- Dynamically generated blog cards will render here -->
         </div>
       </div>
@@ -1027,23 +1245,21 @@
   </div>
 
   <!-- DYNAMIC LOCAL BLOG READER OVERLAY -->
-  <div class="modal-overlay" id="modal-localreader" onclick="closeModalOutside(event, 'localreader')">
+  <div class="modal-overlay" id="modal-localreader" role="dialog" aria-modal="true" aria-labelledby="readerTitle" hidden>
     <div class="modal-box" style="max-width:850px;">
-      <button class="modal-close" onclick="closeModal('localreader')">&#10005;</button>
+      <button class="modal-close" onclick="closeModal('localreader')" aria-label="Close blog reader">&#10005;</button>
       <span class="modal-tag" id="readerCategory">Blog Post</span>
       <h2 class="modal-title" id="readerTitle">Title</h2>
       <span class="modal-meta" id="readerMeta">Metadata</span>
-      <div class="modal-divider"></div>
+      <div class="modal-divider" aria-hidden="true"></div>
       <div id="readerContent" style="color:var(--text-muted); font-size:0.9rem; line-height:1.8; font-weight:300; max-height:480px; overflow-y:auto; padding-right:10px;"></div>
     </div>
   </div>
 
   <!-- STICKY SCROLL TO TOP BUTTON -->
-  <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll To Top">
-    &#8593;
-  </button>
+  <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top" hidden>&#8593;</button>
 
   <!-- Script Modules -->
-  <script src="./script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

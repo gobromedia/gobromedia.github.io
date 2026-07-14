@@ -1,9 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for GOBRO MEDIA
+# https://gobromedia.github.io/
+
 User-agent: *
 Allow: /
+Disallow: /404.html
 
-# Host
-Host: https://gobromedia.github.io
-
-# Sitemap
 Sitemap: https://gobromedia.github.io/sitemap.xml

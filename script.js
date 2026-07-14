@@ -1,80 +1,118 @@
 /**
  * GOBRO MEDIA - PREMIUM INTERACTION SCRIPT
- * 
+ *
  * CONFIGURATION:
- * Change the WHATSAPP_NUMBER below to your own WhatsApp number (with country code, no "+" or spaces).
- * Example: "919999999999" (91 is the country code for India, followed by the 10-digit mobile number).
+ * Set WHATSAPP_NUMBER via localStorage or environment variable.
+ * Default: "919990737306" (India - no "+" or spaces)
  */
-const WHATSAPP_NUMBER = "919990737306"; 
+
+const WHATSAPP_NUMBER = localStorage.getItem('gobro_whatsapp') || "919990737306";
 
 document.addEventListener('DOMContentLoaded', function() {
-  
-  // Custom cursor removed to restore default browser mouse pointer
+
+  // ==========================================================================
+  // 1. CUSTOM CURSOR (hover-capable devices only)
+  // ==========================================================================
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    if (cursor && ring) {
+      document.addEventListener('mousemove', function(e) {
+        mx = e.clientX;
+        my = e.clientY;
+        cursor.style.left = (mx - 5) + 'px';
+        cursor.style.top = (my - 5) + 'px';
+      });
+
+      function animRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = (rx - 18) + 'px';
+        ring.style.top = (ry - 18) + 'px';
+        requestAnimationFrame(animRing);
+      }
+      animRing();
+
+      document.querySelectorAll('a, button, [tabindex]').forEach(function(el) {
+        el.addEventListener('mouseenter', function() {
+          ring.style.transform = 'scale(2)';
+          ring.style.borderColor = 'rgba(201,168,76,0.6)';
+        });
+        el.addEventListener('mouseleave', function() {
+          ring.style.transform = 'scale(1)';
+          ring.style.borderColor = 'rgba(201,168,76,0.5)';
+        });
+      });
+    }
+  } else {
+    // Hide cursor elements on touch devices
+    var c = document.getElementById('cursor');
+    var r = document.getElementById('cursorRing');
+    if (c) c.style.display = 'none';
+    if (r) r.style.display = 'none';
+    document.body.style.cursor = 'auto';
+  }
 
   // ==========================================================================
   // 2. MORPHING HEADER ON SCROLL
   // ==========================================================================
   const header = document.getElementById('header');
   const scrollTopBtn = document.getElementById('scrollTopBtn');
-  
+
   window.addEventListener('scroll', function() {
     const scrollPos = window.scrollY;
-    
-    // Toggle header morphing class
+
     if (header) {
-      if (scrollPos > 60) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      header.classList.toggle('scrolled', scrollPos > 60);
     }
-    
-    // Toggle Scroll-to-Top sticky button
+
     if (scrollTopBtn) {
-      if (scrollPos > 400) {
-        scrollTopBtn.style.display = 'flex';
-      } else {
-        scrollTopBtn.style.display = 'none';
-      }
+      scrollTopBtn.style.display = scrollPos > 400 ? 'flex' : 'none';
+      scrollTopBtn.hidden = scrollPos <= 400;
     }
   });
 
   // Scroll to Top action
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
   // ==========================================================================
-  // 3. MOBILE MENU Burger Navigation
+  // 3. MOBILE MENU NAVIGATION
   // ==========================================================================
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  
+
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', function() {
       const isOpen = mobileMenu.classList.contains('open');
-      if (isOpen) {
-        mobileMenu.classList.remove('open');
-        hamburger.innerHTML = '<span></span><span></span><span></span>';
-        document.body.style.overflow = '';
+      mobileMenu.classList.toggle('open');
+      mobileMenu.hidden = isOpen;
+      hamburger.setAttribute('aria-expanded', !isOpen);
+
+      if (!isOpen) {
+        hamburger.innerHTML =
+          '<span style="transform: rotate(45deg) translate(6px, 6px)" aria-hidden="true"></span>' +
+          '<span style="opacity:0" aria-hidden="true"></span>' +
+          '<span style="transform: rotate(-45deg) translate(5px, -5px)" aria-hidden="true"></span>';
+        document.body.style.overflow = 'hidden';
       } else {
-        mobileMenu.classList.add('open');
-        hamburger.innerHTML = '<span style="transform: rotate(45deg) translate(6px, 6px)"></span><span style="opacity:0"></span><span style="transform: rotate(-45deg) translate(5px, -5px)"></span>';
-        document.body.style.overflow = 'hidden'; // Stop scrolling background
+        hamburger.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>';
+        document.body.style.overflow = '';
       }
     });
-    
-    // Close mobile menu on clicking any navigation anchor
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
         mobileMenu.classList.remove('open');
-        hamburger.innerHTML = '<span></span><span></span><span></span>';
+        mobileMenu.hidden = true;
+        hamburger.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>';
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
@@ -84,25 +122,52 @@ document.addEventListener('DOMContentLoaded', function() {
   // 4. INTERSECTION OBSERVER - REVEAL ON SCROLL ANIMATIONS
   // ==========================================================================
   const revealElements = document.querySelectorAll('.reveal');
-  
+
   if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Trigger animation once
+          revealObserver.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.12,
+      threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     });
-    
-    revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(function(el) { revealObserver.observe(el); });
   } else {
-    // Fallback: Reveal all instantly if browser does not support Intersection Observer
-    revealElements.forEach(el => el.classList.add('visible'));
+    revealElements.forEach(function(el) { el.classList.add('visible'); });
   }
+
+  // ==========================================================================
+  // 5. EVENT DELEGATION - SERVICE MODAL TRIGGERS
+  // ==========================================================================
+  document.addEventListener('click', function(e) {
+    const trigger = e.target.closest('[data-open-service]');
+    if (trigger) {
+      e.preventDefault();
+      const serviceKey = trigger.getAttribute('data-open-service');
+      if (serviceKey) openServiceModal(serviceKey);
+    }
+  });
+
+  // ==========================================================================
+  // 6. PORTFOLIO KEYBOARD ACCESSIBILITY
+  // ==========================================================================
+  document.querySelectorAll('.portfolio-item').forEach(function(item) {
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const projectKey = item.getAttribute('data-project');
+        if (projectKey) openPortfolioModal(projectKey);
+      }
+    });
+    item.addEventListener('click', function() {
+      const projectKey = item.getAttribute('data-project');
+      if (projectKey) openPortfolioModal(projectKey);
+    });
+  });
 
   // ==========================================================================
   // 5. INTERACTIVE SPECIFICATIONS MODALS FOR SERVICES
@@ -111,9 +176,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal-service');
     const modalTitle = document.getElementById('service-modal-title');
     const modalBody = document.getElementById('service-modal-body');
-    
+
     if (!modal || !modalTitle || !modalBody) return;
-    
+
     const serviceDetails = {
       'marketing': {
         title: 'Digital <em>Marketing</em>',
@@ -176,73 +241,68 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
       }
     };
-    
-    const details = serviceDetails[serviceKey];
+
+    var details = serviceDetails[serviceKey];
     if (!details) return;
-    
+
     modalTitle.innerHTML = details.title;
-    
-    let htmlContent = `<div class="modal-section"><p>${details.desc}</p></div>`;
-    htmlContent += `<div class="modal-section"><h3>Core Deliverables</h3><ul>`;
-    
-    details.bullets.forEach(bullet => {
-      // Bold syntax conversion **text** -> <strong>text</strong>
-      const processedBullet = bullet.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      htmlContent += `<li>${processedBullet}</li>`;
+
+    var htmlContent = '<div class="modal-section"><p>' + details.desc + '</p></div>';
+    htmlContent += '<div class="modal-section"><h3>Core Deliverables</h3><ul>';
+
+    details.bullets.forEach(function(bullet) {
+      var processedBullet = bullet.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      htmlContent += '<li>' + processedBullet + '</li>';
     });
-    
-    htmlContent += `</ul></div>`;
+
+    htmlContent += '</ul></div>';
     modalBody.innerHTML = htmlContent;
-    
+
     modal.classList.add('open');
+    modal.hidden = false;
     document.body.style.overflow = 'hidden';
   };
 
-  // Open generic modals (Privacy, Terms, Partnership)
+  // Open generic modals
   window.openModal = function(modalId) {
-    const modal = document.getElementById('modal-' + modalId);
+    var modal = document.getElementById('modal-' + modalId);
     if (modal) {
       modal.classList.add('open');
+      modal.hidden = false;
       document.body.style.overflow = 'hidden';
     }
   };
 
   // Close modals
   window.closeModal = function(modalId) {
-    const modal = document.getElementById('modal-' + modalId);
+    var modal = document.getElementById('modal-' + modalId);
     if (modal) {
       modal.classList.remove('open');
+      modal.hidden = true;
       document.body.style.overflow = '';
     }
   };
 
-  // Close modals on clicking backdrop
+  // Close modals on backdrop click
   window.closeModalOutside = function(event, modalId) {
-    const modal = document.getElementById('modal-' + modalId);
+    var modal = document.getElementById('modal-' + modalId);
     if (modal && event.target === modal) {
-      closeModal(modalId);
+      window.closeModal(modalId);
     }
-  };
-
-  // ==========================================================================
-  // 6. DETAILED BLOG / INSIGHT READ-MORE MODALS (Backup for legacy triggers)
-  // ==========================================================================
-  window.openBlogModal = function(blogKey) {
-    readLocalBlog(blogKey);
   };
 
   // ==========================================================================
   // 6b. INTERACTIVE CASE STUDY MODALS FOR PORTFOLIO
   // ==========================================================================
   window.openPortfolioModal = function(projectKey) {
-    const modal = document.getElementById('modal-portfolio');
-    const modalTitle = document.getElementById('portfolio-modal-title');
-    const modalMeta = document.getElementById('portfolio-modal-meta');
-    const modalBody = document.getElementById('portfolio-modal-body');
-    
+    var modal = document.getElementById('modal-portfolio');
+    var modalTitle = document.getElementById('portfolio-modal-title');
+    var modalMeta = document.getElementById('portfolio-modal-meta');
+    var modalBody = document.getElementById('portfolio-modal-body');
+
     if (!modal || !modalTitle || !modalMeta || !modalBody) return;
-    
-    const projectsData = {
+
+    var projectsData = {
       'growth-campaign': {
         title: 'Brand <em>Growth Campaign</em>',
         meta: 'Category: Digital Marketing &bull; ROI: 320% &bull; Client: E-commerce Brand',
@@ -294,232 +354,188 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
       }
     };
-    
-    const details = projectsData[projectKey];
+
+    var details = projectsData[projectKey];
     if (!details) return;
-    
+
     modalTitle.innerHTML = details.title;
     modalMeta.innerHTML = details.meta;
-    
-    let htmlContent = `<div class="modal-section"><p>${details.desc}</p></div>`;
-    htmlContent += `<div class="modal-section"><h3>Project Highlights</h3><ul>`;
-    
-    details.bullets.forEach(bullet => {
-      const processedBullet = bullet.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      htmlContent += `<li>${processedBullet}</li>`;
+
+    var htmlContent = '<div class="modal-section"><p>' + details.desc + '</p></div>';
+    htmlContent += '<div class="modal-section"><h3>Project Highlights</h3><ul>';
+
+    details.bullets.forEach(function(bullet) {
+      var processedBullet = bullet.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      htmlContent += '<li>' + processedBullet + '</li>';
     });
-    
-    htmlContent += `</ul></div>`;
+
+    htmlContent += '</ul></div>';
     modalBody.innerHTML = htmlContent;
-    
+
     modal.classList.add('open');
+    modal.hidden = false;
     document.body.style.overflow = 'hidden';
   };
 
-
-
   // ==========================================================================
-  // 8. PARTNERSHIP IMMERSIVE MODAL & FAQS
+  // 7. PARTNERSHIP FAQ TOGGLE
   // ==========================================================================
   window.openPMFaq = function(btn) {
-    const faq = btn.parentElement;
-    const isOpen = faq.classList.contains('open');
-    
-    // Close all other partnership FAQs
-    const allPMFaqs = document.querySelectorAll('.pm-faq');
-    allPMFaqs.forEach(f => {
+    var faq = btn.parentElement;
+    var isOpen = faq.classList.contains('open');
+
+    document.querySelectorAll('.pm-faq').forEach(function(f) {
       f.classList.remove('open');
-      const ans = f.querySelector('.pm-faq-a');
+      var ans = f.querySelector('.pm-faq-a');
       if (ans) ans.style.display = 'none';
+      var qBtn = f.querySelector('.pm-faq-q');
+      if (qBtn) qBtn.setAttribute('aria-expanded', 'false');
     });
-    
+
     if (!isOpen) {
       faq.classList.add('open');
-      const ans = faq.querySelector('.pm-faq-a');
+      var ans = faq.querySelector('.pm-faq-a');
       if (ans) ans.style.display = 'block';
+      btn.setAttribute('aria-expanded', 'true');
     }
   };
 
-  // Close modals when Escape key is pressed
+  // Escape key to close modals
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      closeModal('service');
-      closeModal('blog');
-      closeModal('portfolio');
-      closeModal('localreader');
-      closeModal('privacy');
-      closeModal('terms');
-      closeModal('partnership');
-      closeBlogHub();
+      ['service', 'blog', 'portfolio', 'localreader', 'privacy', 'terms', 'partnership'].forEach(function(id) {
+        window.closeModal(id);
+      });
+      if (typeof window.closeBlogHub === 'function') closeBlogHub();
     }
   });
 
   // ==========================================================================
-  // 9. AJAX LEAD FORM SUBMISSION WITH WHATSAPP & BACKUP EMAIL
+  // 8. FORM SUBMISSION - SANITIZE & WHATSAPP
   // ==========================================================================
-  const contactForm = document.getElementById('agencyForm');
-  const formStatus = document.getElementById('formStatus');
-  
-  if (contactForm && formStatus) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault(); // Stop standard redirect
-      
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      
-      submitBtn.innerHTML = 'Connecting to WhatsApp...';
-      submitBtn.disabled = true;
-      formStatus.className = 'form-status'; // Reset status classes
-      formStatus.style.display = 'none';
-      
-      // Get all values from the form inputs
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const website = document.getElementById('website').value || 'Not Provided';
-      
-      const serviceSelect = document.getElementById('service');
-      const service = serviceSelect.options[serviceSelect.selectedIndex].text;
-      
-      const budgetSelect = document.getElementById('budget');
-      const budget = budgetSelect.options[budgetSelect.selectedIndex].text;
-      
-      const message = document.getElementById('message').value || 'Not Provided';
-      
-      // Format the WhatsApp message beautifully
-      const waMessage = `*🔥 NEW LEAD - GOBRO MEDIA *%0A` +
-                        `-----------------------------%0A` +
-                        `*👤 Name:* ${encodeURIComponent(name)}%0A` +
-                        `*📧 Email:* ${encodeURIComponent(email)}%0A` +
-                        `*📞 WhatsApp:* ${encodeURIComponent(phone)}%0A` +
-                        `*🌐 Website:* ${encodeURIComponent(website)}%0A` +
-                        `*💼 Service:* ${encodeURIComponent(service)}%0A` +
-                        `*💰 Budget:* ${encodeURIComponent(budget)}%0A` +
-                        `*📝 Project Goals:* ${encodeURIComponent(message)}%0A` +
-                        `-----------------------------`;
-      
-      // Create the WhatsApp API Link
-      const waLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${waMessage}`;
-      
-      // Show local success state
-      formStatus.className = 'form-status success';
-      formStatus.innerHTML = '<strong>Success!</strong> Redirecting you to WhatsApp to send your details instantly...';
-      formStatus.style.display = 'block';
-      
-      // Send Email backup in background
-      const formData = new FormData(contactForm);
-      const jsonObject = {};
-      formData.forEach((value, key) => jsonObject[key] = value);
-      
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(jsonObject)
-      }).catch(err => console.log('Email backup failed:', err));
-      
-      // Redirect to WhatsApp after 800ms
-      setTimeout(() => {
-        window.open(waLink, '_blank');
-        contactForm.reset();
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
-      }, 800);
-    });
+  function sanitize(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
   }
 
-  // ==========================================================================
-  // 10. PARTNERSHIP MODAL LEAD FORM SUBMISSION WITH WHATSAPP & BACKUP EMAIL
-  // ==========================================================================
-  const pmForm = document.getElementById('pmForm');
-  const pmFormStatus = document.getElementById('pmFormStatus');
-  
-  if (pmForm && pmFormStatus) {
-    pmForm.addEventListener('submit', function(e) {
+  function setupForm(formId, statusId, waMessageFn) {
+    var form = document.getElementById(formId);
+    var status = document.getElementById(statusId);
+    if (!form || !status) return;
+
+    // Set access key from localStorage or placeholder
+    var accessKey = form.querySelector('input[name="access_key"]');
+    if (accessKey) {
+      accessKey.value = localStorage.getItem('gobro_web3forms_key') || '';
+    }
+
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      const submitBtn = pmForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      
-      submitBtn.innerHTML = 'Connecting to WhatsApp...';
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalText = submitBtn.innerHTML;
+
+      submitBtn.innerHTML = 'Processing...';
       submitBtn.disabled = true;
-      pmFormStatus.className = 'form-status';
-      pmFormStatus.style.display = 'none';
-      
-      // Get all values from the form inputs
-      const pName = pmForm.querySelector('input[name="partner_name"]').value;
-      const pPhone = pmForm.querySelector('input[name="partner_phone"]').value;
-      const pEmail = pmForm.querySelector('input[name="partner_email"]').value;
-      
-      const pModelSelect = pmForm.querySelector('select[name="partner_model"]');
-      const pModel = pModelSelect.options[pModelSelect.selectedIndex].text;
-      
-      const pDetails = pmForm.querySelector('textarea[name="partner_details"]').value || 'Not Provided';
-      
-      // Format the WhatsApp message beautifully
-      const waMessage = `*🤝 NEW PARTNERSHIP APPLICATION *%0A` +
-                        `-----------------------------%0A` +
-                        `*👤 Name:* ${encodeURIComponent(pName)}%0A` +
-                        `*📞 WhatsApp:* ${encodeURIComponent(pPhone)}%0A` +
-                        `*📧 Email:* ${encodeURIComponent(pEmail)}%0A` +
-                        `*💼 Model:* ${encodeURIComponent(pModel)}%0A` +
-                        `*📝 Background:* ${encodeURIComponent(pDetails)}%0A` +
-                        `-----------------------------`;
-      
-      // Create the WhatsApp API Link
-      const waLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${waMessage}`;
-      
-      // Show local success state
-      pmFormStatus.className = 'form-status success';
-      pmFormStatus.innerHTML = '<strong>Success!</strong> Connecting you to WhatsApp to submit your partner application...';
-      pmFormStatus.style.display = 'block';
-      
-      // Send Email backup in background
-      const formData = new FormData(pmForm);
-      const jsonObject = {};
-      formData.forEach((value, key) => jsonObject[key] = value);
-      
+      status.className = 'form-status';
+      status.style.display = 'none';
+
+      var waLink = waMessageFn(form);
+      var formData = new FormData(form);
+      var jsonObject = {};
+      formData.forEach(function(value, key) { jsonObject[key] = value; });
+
+      status.className = 'form-status success';
+      status.innerHTML = '<strong>Success!</strong> Redirecting to WhatsApp...';
+      status.style.display = 'block';
+
+      // Background email backup
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(jsonObject)
-      }).catch(err => console.log('Partnership email backup failed:', err));
-      
-      // Redirect to WhatsApp after 800ms
-      setTimeout(() => {
+      }).catch(function() { /* silent fail */ });
+
+      setTimeout(function() {
         window.open(waLink, '_blank');
-        pmForm.reset();
-        submitBtn.innerHTML = originalBtnText;
+        form.reset();
+        submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
       }, 800);
     });
   }
 
+  setupForm('agencyForm', 'formStatus', function(form) {
+    var name = sanitize(document.getElementById('name').value);
+    var email = sanitize(document.getElementById('email').value);
+    var phone = sanitize(document.getElementById('phone').value);
+    var website = sanitize(document.getElementById('website').value) || 'Not Provided';
+    var service = sanitize(form.querySelector('#service option:checked').text);
+    var budget = sanitize(form.querySelector('#budget option:checked').text);
+    var message = sanitize(document.getElementById('message').value) || 'Not Provided';
+
+    var msg = '*NEW LEAD - GOBRO MEDIA*\n';
+    msg += '-----------------------------\n';
+    msg += '*Name:* ' + name + '\n';
+    msg += '*Email:* ' + email + '\n';
+    msg += '*WhatsApp:* ' + phone + '\n';
+    msg += '*Website:* ' + website + '\n';
+    msg += '*Service:* ' + service + '\n';
+    msg += '*Budget:* ' + budget + '\n';
+    msg += '*Project Goals:* ' + message + '\n';
+    msg += '-----------------------------';
+
+    return 'https://api.whatsapp.com/send?phone=' + WHATSAPP_NUMBER + '&text=' + encodeURIComponent(msg);
+  });
+
+  setupForm('pmForm', 'pmFormStatus', function(form) {
+    var pName = sanitize(form.querySelector('input[name="partner_name"]').value);
+    var pPhone = sanitize(form.querySelector('input[name="partner_phone"]').value);
+    var pEmail = sanitize(form.querySelector('input[name="partner_email"]').value);
+    var pModel = sanitize(form.querySelector('select[name="partner_model"] option:checked').text);
+    var pDetails = sanitize(form.querySelector('textarea[name="partner_details"]').value) || 'Not Provided';
+
+    var msg = '*NEW PARTNERSHIP APPLICATION*\n';
+    msg += '-----------------------------\n';
+    msg += '*Name:* ' + pName + '\n';
+    msg += '*WhatsApp:* ' + pPhone + '\n';
+    msg += '*Email:* ' + pEmail + '\n';
+    msg += '*Model:* ' + pModel + '\n';
+    msg += '*Background:* ' + pDetails + '\n';
+    msg += '-----------------------------';
+
+    return 'https://api.whatsapp.com/send?phone=' + WHATSAPP_NUMBER + '&text=' + encodeURIComponent(msg);
+  });
+
   // ==========================================================================
-  // 11. AUTOMATIC HERO BACKGROUND IMAGE SLIDER
+  // 9. HERO BACKGROUND IMAGE SLIDER
   // ==========================================================================
-  const heroSlides = document.querySelectorAll('.hero-slider .slide');
-  let currentHeroSlide = 0;
-  
+  var heroSlides = document.querySelectorAll('.hero-slider .slide');
+  var currentHeroSlide = 0;
+
   if (heroSlides.length > 0) {
-    setInterval(() => {
+    setInterval(function() {
       heroSlides[currentHeroSlide].classList.remove('active');
       currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
       heroSlides[currentHeroSlide].classList.add('active');
-    }, 5000); // Transitions every 5 seconds
+    }, 5000);
   }
 
   // ==========================================================================
-  // 12. DYNAMIC LOCAL BLOG SYSTEM (localStorage Persisted & Translated)
+  // 10. DYNAMIC LOCAL BLOG SYSTEM (localStorage Persisted)
   // ==========================================================================
-  
-  // Default Seed Blogs (Loaded if localStorage is empty)
-  const defaultBlogs = [
+  function sanitizeHTML(html) {
+    var template = document.createElement('template');
+    template.innerHTML = html;
+    // Remove scripts and event handlers
+    template.content.querySelectorAll('script, [onclick], [onload], [onerror], [onmouseover], [onfocus], [onblur], [onchange], [onsubmit], [onreset], [onselect], [onscroll], [ondblclick], [onkeydown], [onkeypress], [onkeyup]').forEach(function(el) {
+      el.remove();
+    });
+    return template.innerHTML;
+  }
+
+  var defaultBlogs = [
     {
       id: "seo-vs-ads",
       title: "SEO vs Google Ads: Which One Should You Choose?",
@@ -527,38 +543,8 @@ document.addEventListener('DOMContentLoaded', function() {
       author: "GOBRO MEDIA Team",
       date: "March 15, 2026",
       desc: "Complete guide on when to invest in organic SEO vs paid Google Ads based on your business timeline, budget, and commercial goals.",
-      image: "blog1.jpg",
-      content: `
-        <div class="modal-section">
-          <p>When starting digital marketing, every business owner faces the ultimate question: <strong>"Should I run Google Ads or focus on organic SEO?"</strong>. Both options target Google search queries, but their workflows, costs, and timelines are entirely different.</p>
-          <p>In this guide, we break down both channels to help you choose the best fit for your business goals.</p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>1. SEO (Search Engine Optimization)</h3>
-          <p>SEO is an organic strategy where we optimize your website according to Google's guidelines to rank on the first page when prospects search for your keywords.</p>
-          <ul>
-            <li><strong>Pros:</strong> Once ranked, the traffic is entirely free. It offers the highest long-term ROI.</li>
-            <li><strong>Cons:</strong> It takes time. Consistent ranking efforts require 3 to 6 months of technical work.</li>
-            <li><strong>Best for:</strong> Long-term dominance and sustainable inbound lead flow without paying per click.</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>2. Google Ads (Pay-Per-Click)</h3>
-          <p>Google Ads is a paid advertising channel. You pay Google to place your website at the very top of search results in the "Sponsored" section instantly.</p>
-          <ul>
-            <li><strong>Pros:</strong> Instant results. Launch ads today, and capture targeted buyer traffic and leads by tomorrow!</li>
-            <li><strong>Cons:</strong> High recurring cost. The moment you stop funding the ad account, your traffic stops instantly.</li>
-            <li><strong>Best for:</strong> Launching new products, gathering quick feedback, or running seasonal promotions.</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>The GOBRO MEDIA Hybrid Recommendation</h3>
-          <p>If budget permits, we recommend a <strong>Hybrid Approach</strong>: deploy <strong>Google Ads</strong> in the first 90 days to generate immediate revenue and feedback, while simultaneously building your long-term organic <strong>SEO pipeline</strong>. As SEO rankings climb, you can optimize paid budgets and maximize profits.</p>
-        </div>
-      `
+      image: "assets/images/blog1.webp",
+      content: '<div class="modal-section"><p>When starting digital marketing, every business owner faces the ultimate question: <strong>"Should I run Google Ads or focus on organic SEO?"</strong>. Both options target Google search queries, but their workflows, costs, and timelines are entirely different.</p><p>In this guide, we break down both channels to help you choose the best fit for your business goals.</p></div><div class="modal-section"><h3>1. SEO (Search Engine Optimization)</h3><p>SEO is an organic strategy where we optimize your website according to Google\'s guidelines to rank on the first page when prospects search for your keywords.</p><ul><li><strong>Pros:</strong> Once ranked, the traffic is entirely free. It offers the highest long-term ROI.</li><li><strong>Cons:</strong> It takes time. Consistent ranking efforts require 3 to 6 months of technical work.</li><li><strong>Best for:</strong> Long-term dominance and sustainable inbound lead flow without paying per click.</li></ul></div><div class="modal-section"><h3>2. Google Ads (Pay-Per-Click)</h3><p>Google Ads is a paid advertising channel. You pay Google to place your website at the very top of search results in the "Sponsored" section instantly.</p><ul><li><strong>Pros:</strong> Instant results. Launch ads today, and capture targeted buyer traffic and leads by tomorrow!</li><li><strong>Cons:</strong> High recurring cost. The moment you stop funding the ad account, your traffic stops instantly.</li><li><strong>Best for:</strong> Launching new products, gathering quick feedback, or running seasonal promotions.</li></ul></div><div class="modal-section"><h3>The GOBRO MEDIA Hybrid Recommendation</h3><p>If budget permits, we recommend a <strong>Hybrid Approach</strong>: deploy <strong>Google Ads</strong> in the first 90 days to generate immediate revenue and feedback, while simultaneously building your long-term organic <strong>SEO pipeline</strong>. As SEO rankings climb, you can optimize paid budgets and maximize profits.</p></div>'
     },
     {
       id: "roas-guide",
@@ -567,38 +553,8 @@ document.addEventListener('DOMContentLoaded', function() {
       author: "GOBRO MEDIA Team",
       date: "March 12, 2026",
       desc: "Proven strategies to scale to a 3.0x Return on Ad Spend (ROAS) using conversion landing pages and advanced retargeting funnels.",
-      image: "blog2.jpg",
-      content: `
-        <div class="modal-section">
-          <p>For e-commerce brands, the single most critical metric is <strong>ROAS (Return on Ad Spend)</strong>. If you invest $1,000 in ads and generate $3,000 in revenue, your ROAS is 3.0x. In today's competitive landscape, hitting 3.0x ROAS requires strategic optimization.</p>
-          <p>Here is our agency blueprint for scaling e-commerce ad returns:</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>Step 1: High-Conversion Product Landing Pages</h3>
-          <p>Never send paid traffic to a generic homepage or slow website. Optimize for conversions:</p>
-          <ul>
-            <li>Ensure page loading speeds are under 2 seconds.</li>
-            <li>Use premium, high-resolution lifestyle graphics of your product.</li>
-            <li>Incorporate strong, sticky <strong>"Add to Cart / Buy Now"</strong> buttons.</li>
-            <li>Integrate automated cart-abandonment loops via WhatsApp, SMS, and Email.</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Step 2: Micro-Creative Testing Cycles</h3>
-          <p>Running the same creatives for months leads to 'Ad Fatigue' and higher customer acquisition costs. Test weekly:</p>
-          <ul>
-            <li><strong>UGC (User Generated Content):</strong> Real people sharing authentic product reviews can increase CTR by 40%.</li>
-            <li><strong>Offer Testing:</strong> Run side-by-side A/B tests of "Buy 1 Get 1" versus "Flat 30% Off" to determine what resonates.</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Step 3: Multi-Stage Retargeting Funnels</h3>
-          <p>Nearly 98% of users do not purchase on their first visit. Set up advanced retargeting campaigns on Meta and Google to re-engage warm audiences who added items to their cart but left before checkout. Offer a limited-time incentive to seal the deal!</p>
-        </div>
-      `
+      image: "assets/images/blog2.webp",
+      content: '<div class="modal-section"><p>For e-commerce brands, the single most critical metric is <strong>ROAS (Return on Ad Spend)</strong>. If you invest $1,000 in ads and generate $3,000 in revenue, your ROAS is 3.0x. In today\'s competitive landscape, hitting 3.0x ROAS requires strategic optimization.</p><p>Here is our agency blueprint for scaling e-commerce ad returns:</p></div><div class="modal-section"><h3>Step 1: High-Conversion Product Landing Pages</h3><p>Never send paid traffic to a generic homepage or slow website. Optimize for conversions:</p><ul><li>Ensure page loading speeds are under 2 seconds.</li><li>Use premium, high-resolution lifestyle graphics of your product.</li><li>Incorporate strong, sticky <strong>"Add to Cart / Buy Now"</strong> buttons.</li><li>Integrate automated cart-abandonment loops via WhatsApp, SMS, and Email.</li></ul></div><div class="modal-section"><h3>Step 2: Micro-Creative Testing Cycles</h3><p>Running the same creatives for months leads to \'Ad Fatigue\' and higher customer acquisition costs.</p></div>'
     },
     {
       id: "local-seo",
@@ -607,266 +563,437 @@ document.addEventListener('DOMContentLoaded', function() {
       author: "GOBRO MEDIA Team",
       date: "March 10, 2026",
       desc: "Step-by-step organic search mapping checklist every local business, showroom, or store should execute to rank on Google Maps.",
-      image: "blog3.jpg",
-      content: `
-        <div class="modal-section">
-          <p>Do you own a physical store, cafe, gym, or medical clinic? Ranking high on Google Maps can become your primary source of free inbound leads. When customers search for terms like "best digital agency near me," Google presents the **Google Map Pack** (the top 3 local business results).</p>
-          <p>Here is your step-by-step checklist to dominate local search:</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>1. Claim & Verify Google Business Profile (GBP)</h3>
-          <p>Visit <a href="https://business.google.com" target="_blank" style="color:var(--gold);">Google Business Profile</a> to claim your official business listing. Complete the required video or postcard verification process to go live.</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>2. Maximize NAP Consistency</h3>
-          <p><strong>NAP</strong> stands for <strong>Name, Address, and Phone Number</strong>. Make sure your business name, physical address, and contact number are written exactly the same way across your website, social media pages, and local citation directories (e.g., Yelp, TripAdvisor, local directory platforms).</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>3. Drive Customer Reviews Weekly</h3>
-          <p>Google Maps rankings rely heavily on the number and quality of customer reviews. Display a custom QR code at your checkout desk that links directly to your GBP review form. Encourage clients to mention specific service names in their feedback.</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>4. Maintain Active Profile Updates</h3>
-          <p>Treat your Google Business Profile like a social media handle. Regularly upload high-quality store photos, post weekly updates, and announce active promotional discounts. Google rewards active listings with higher rank authority.</p>
-        </div>
-      `
+      image: "assets/images/blog3.webp",
+      content: '<div class="modal-section"><p>Do you own a physical store, cafe, gym, or medical clinic? Ranking high on Google Maps can become your primary source of free inbound leads.</p></div><div class="modal-section"><h3>1. Claim & Verify Google Business Profile (GBP)</h3><p>Visit Google Business Profile to claim your official business listing.</p></div>'
     }
   ];
 
-  // Open Blog Hub View
   window.openBlogHub = function() {
-    const hub = document.getElementById('modal-bloghub');
+    var hub = document.getElementById('modal-bloghub');
     if (hub) {
       hub.classList.add('open');
+      hub.hidden = false;
       document.body.style.overflow = 'hidden';
-      checkAdminState(); // Check if admin is logged in
-      renderLocalBlogs(); // Refresh list on opening
+      checkAdminState();
+      renderLocalBlogs();
     }
   };
 
-  // Close Blog Hub View
   window.closeBlogHub = function() {
-    const hub = document.getElementById('modal-bloghub');
+    var hub = document.getElementById('modal-bloghub');
     if (hub) {
       hub.classList.remove('open');
+      hub.hidden = true;
       document.body.style.overflow = '';
     }
   };
 
-  // Collapse/Expand Blog Creator Form
   window.toggleBlogCreator = function() {
-    const container = document.getElementById('blogCreatorContainer');
+    var container = document.getElementById('blogCreatorContainer');
     if (container) {
-      const isHidden = container.style.display === 'none';
+      var isHidden = container.style.display === 'none';
       container.style.display = isHidden ? 'block' : 'none';
-      if (isHidden) {
-        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (isHidden) container.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
-  // Publish a New Blog Post (Save to localStorage with Image)
   window.publishLocalBlog = function(event) {
     event.preventDefault();
-    
-    const title = document.getElementById('blogTitle').value;
-    const category = document.getElementById('blogCategory').value;
-    const author = document.getElementById('blogAuthor').value;
-    const desc = document.getElementById('blogDesc').value;
-    const content = document.getElementById('blogContent').value;
-    const imageUrl = document.getElementById('blogImageUrl').value;
-    const imageFile = document.getElementById('blogImageFile').files[0];
-    
-    const saveBlog = (imageData) => {
-      const newBlog = {
+    var title = document.getElementById('blogTitle').value;
+    var category = document.getElementById('blogCategory').value;
+    var author = document.getElementById('blogAuthor').value;
+    var desc = document.getElementById('blogDesc').value;
+    var content = document.getElementById('blogContent').value;
+    var imageUrl = document.getElementById('blogImageUrl').value;
+    var imageFile = document.getElementById('blogImageFile').files[0];
+
+    function saveBlog(imageData) {
+      var newBlog = {
         id: 'blog-' + Date.now(),
-        title: title,
-        category: category,
-        author: author,
+        title: sanitize(title),
+        category: sanitize(category),
+        author: sanitize(author),
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-        desc: desc,
+        desc: sanitize(desc),
         image: imageData || '',
-        content: content
+        content: sanitizeHTML(content)
       };
-      
-      // Save to localStorage list
-      let existingBlogs = JSON.parse(localStorage.getItem('gobro_blogs')) || [];
-      existingBlogs.unshift(newBlog); // Add new blog to the top
+      var existingBlogs = JSON.parse(localStorage.getItem('gobro_blogs')) || [];
+      existingBlogs.unshift(newBlog);
       localStorage.setItem('gobro_blogs', JSON.stringify(existingBlogs));
-      
-      // Reset Creator Form & collapse it
       document.getElementById('localBlogForm').reset();
       document.getElementById('blogCreatorContainer').style.display = 'none';
-      
-      // Rerender list
       renderLocalBlogs();
-      alert('🎉 Success! Your blog post has been successfully published.');
-    };
-    
-    // Check if user selected a file to upload
-    if (imageFile) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        saveBlog(e.target.result); // Base64 Data URL string
-      };
+      alert('Success! Your blog post has been published.');
+    }
+
+    if (imageFile && imageFile.size < 500000) {
+      var reader = new FileReader();
+      reader.onload = function(e) { saveBlog(e.target.result); };
       reader.readAsDataURL(imageFile);
     } else {
-      saveBlog(imageUrl); // Text URL or asset path
+      if (imageFile && imageFile.size >= 500000) {
+        alert('Image must be under 500KB. Using URL instead.');
+      }
+      saveBlog(imageUrl || '');
     }
   };
 
-  // Render Blogs Grid with Cover Images (renders to both Modal and Homepage Grid)
   window.renderLocalBlogs = function() {
-    let blogs = JSON.parse(localStorage.getItem('gobro_blogs')) || [];
-    
-    // Auto-migrate any old .png seed images to .jpg
-    let migrated = false;
-    blogs = blogs.map(blog => {
-      if (typeof blog.image === 'string' && blog.image.endsWith('.png') && blog.image.includes('blog')) {
-        blog.image = blog.image.replace('.png', '.jpg');
-        migrated = true;
-      }
-      return blog;
-    });
-    if (migrated) {
-      localStorage.setItem('gobro_blogs', JSON.stringify(blogs));
-    }
-    
-    // If empty or old seed configuration, reload default seed blogs
-    const isOldSeed = blogs.some(b => b.id === 'seed-1' || b.id === 'seed-2');
-    if (blogs.length === 0 || isOldSeed) {
+    var blogs = JSON.parse(localStorage.getItem('gobro_blogs')) || [];
+    if (blogs.length === 0) {
       localStorage.setItem('gobro_blogs', JSON.stringify(defaultBlogs));
       blogs = defaultBlogs;
     }
-    
-    // 1. Render in standalone Blog Hub Modal if it exists
-    const grid = document.getElementById('localBlogGrid');
+
+    // Render in Blog Hub
+    var grid = document.getElementById('localBlogGrid');
     if (grid) {
-      let htmlContent = '';
-      blogs.forEach(blog => {
-        const coverImageHtml = blog.image 
-          ? `<div style="width:100%; height:180px; overflow:hidden; border-radius:4px; margin-bottom:16px;">
-               <img src="${blog.image}" alt="${blog.title}" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover;" />
-             </div>`
+      var htmlContent = '';
+      blogs.forEach(function(blog) {
+        var coverImageHtml = blog.image
+          ? '<div style="width:100%; height:180px; overflow:hidden; border-radius:4px; margin-bottom:16px;">' +
+            '<img src="' + sanitize(blog.image) + '" alt="' + sanitize(blog.title) + '" loading="lazy" style="width:100%; height:100%; object-fit:cover;" />' +
+            '</div>'
           : '';
-          
-        htmlContent += `
-          <article class="blog-card reveal visible" style="display:flex; flex-direction:column; padding:24px; background:var(--bg-dark-3); border:1px solid var(--glass-border); border-radius:6px; min-height: 320px; box-shadow: var(--shadow-premium);">
-            ${coverImageHtml}
-            <div style="font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:700;">${blog.category}</div>
-            <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.4rem; line-height:1.3; color:var(--white); margin-bottom:12px; font-weight:600;">${blog.title}</h3>
-            <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.7; font-weight:300; margin-bottom:20px;">${blog.desc}</p>
-            <div style="margin-top:auto; display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:0.7rem; color:var(--text-dim); font-weight:400;">By ${blog.author}</span>
-              <button onclick="readLocalBlog('${blog.id}')" style="background:none; border:none; color:var(--gold); font-size:0.75rem; font-weight:700; text-transform:uppercase; cursor:pointer; display:flex; align-items:center; gap:4px;">Read &rarr;</button>
-            </div>
-          </article>
-        `;
+        htmlContent += '<article class="blog-card" style="display:flex; flex-direction:column; padding:24px; background:var(--bg-dark-3); border:1px solid var(--glass-border); border-radius:6px; min-height: 320px; box-shadow: var(--shadow-premium);">' +
+          coverImageHtml +
+          '<div style="font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:700;">' + sanitize(blog.category) + '</div>' +
+          '<h3 style="font-family:\'Cormorant Garamond\', serif; font-size:1.4rem; line-height:1.3; color:var(--white); margin-bottom:12px; font-weight:600;">' + sanitize(blog.title) + '</h3>' +
+          '<p style="font-size:0.8rem; color:var(--text-muted); line-height:1.7; font-weight:300; margin-bottom:20px;">' + sanitize(blog.desc) + '</p>' +
+          '<div style="margin-top:auto; display:flex; justify-content:space-between; align-items:center;">' +
+          '<span style="font-size:0.7rem; color:var(--text-dim); font-weight:400;">By ' + sanitize(blog.author) + '</span>' +
+          '<button onclick="readLocalBlog(\'' + blog.id + '\')" style="background:none; border:none; color:var(--gold); font-size:0.75rem; font-weight:700; text-transform:uppercase; cursor:pointer; display:flex; align-items:center; gap:4px;">Read &rarr;</button>' +
+          '</div></article>';
       });
       grid.innerHTML = htmlContent;
     }
-    
-    // 2. Render on Homepage Blog Grid
-    const homepageGrid = document.getElementById('homepageBlogGrid');
+
+    // Render on Homepage
+    var homepageGrid = document.getElementById('homepageBlogGrid');
     if (homepageGrid) {
-      let htmlContent = '';
-      // Limit to latest 3 blogs for the homepage
-      const latestBlogs = blogs.slice(0, 3);
-      latestBlogs.forEach(blog => {
-        const coverImageHtml = blog.image 
-          ? `<div class="blog-image">
-               <img src="${blog.image}" alt="${blog.title}" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
-             </div>`
+      var htmlContent2 = '';
+      blogs.slice(0, 3).forEach(function(blog) {
+        var coverImageHtml = blog.image
+          ? '<div class="blog-image"><img src="' + sanitize(blog.image) + '" alt="' + sanitize(blog.title) + '" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>'
           : '';
-          
-        htmlContent += `
-          <article class="blog-card reveal visible">
-            ${coverImageHtml}
-            <div class="blog-content">
-              <div class="blog-date">${blog.date} &bull; ${blog.category}</div>
-              <h3>${blog.title}</h3>
-              <p class="blog-desc">${blog.desc}</p>
-              <button onclick="readLocalBlog('${blog.id}')" class="blog-btn">Read Full Article &rarr;</button>
-            </div>
-          </article>
-        `;
+        htmlContent2 += '<article class="blog-card">' +
+          coverImageHtml +
+          '<div class="blog-content">' +
+          '<div class="blog-date">' + sanitize(blog.date) + ' &bull; ' + sanitize(blog.category) + '</div>' +
+          '<h3>' + sanitize(blog.title) + '</h3>' +
+          '<p class="blog-desc">' + sanitize(blog.desc) + '</p>' +
+          '<button onclick="readLocalBlog(\'' + blog.id + '\')" class="blog-btn">Read Full Article &rarr;</button>' +
+          '</div></article>';
       });
-      homepageGrid.innerHTML = htmlContent;
+      homepageGrid.innerHTML = htmlContent2;
     }
   };
 
-  // Open Reader Overlay for a specific Blog Post with Cover Image
   window.readLocalBlog = function(blogId) {
-    let blogs = JSON.parse(localStorage.getItem('gobro_blogs')) || [];
-    const blog = blogs.find(b => b.id === blogId);
+    var blogs = JSON.parse(localStorage.getItem('gobro_blogs')) || [];
+    var blog = blogs.find(function(b) { return b.id === blogId; });
     if (!blog) return;
-    
-    document.getElementById('readerCategory').innerText = blog.category;
-    document.getElementById('readerTitle').innerHTML = blog.title;
-    document.getElementById('readerMeta').innerHTML = `Published: ${blog.date} &bull; By ${blog.author}`;
-    
-    const coverImageHtml = blog.image
-      ? `<div style="width:100%; max-height:360px; overflow:hidden; border-radius:4px; margin-bottom:24px;">
-           <img src="${blog.image}" alt="${blog.title}" style="width:100%; height:100%; object-fit:cover;" />
-         </div>`
+
+    document.getElementById('readerCategory').textContent = blog.category;
+    document.getElementById('readerTitle').textContent = blog.title;
+    document.getElementById('readerMeta').innerHTML = 'Published: ' + sanitize(blog.date) + ' &bull; By ' + sanitize(blog.author);
+
+    var coverImageHtml = blog.image
+      ? '<div style="width:100%; max-height:360px; overflow:hidden; border-radius:4px; margin-bottom:24px;">' +
+        '<img src="' + sanitize(blog.image) + '" alt="' + sanitize(blog.title) + '" style="width:100%; height:100%; object-fit:cover;" />' +
+        '</div>'
       : '';
-      
-    document.getElementById('readerContent').innerHTML = coverImageHtml + blog.content;
-    
-    const reader = document.getElementById('modal-localreader');
+
+    document.getElementById('readerContent').innerHTML = coverImageHtml + sanitizeHTML(blog.content);
+
+    var reader = document.getElementById('modal-localreader');
     if (reader) {
       reader.classList.add('open');
+      reader.hidden = false;
     }
   };
 
-  // Check and apply admin state on load
   window.checkAdminState = function() {
-    const isAdmin = localStorage.getItem('gobro_admin') === 'true';
-    const uploadBtn = document.getElementById('adminUploadBtn');
-    if (uploadBtn) {
-      uploadBtn.style.display = isAdmin ? 'inline-block' : 'none';
-    }
+    var isAdmin = localStorage.getItem('gobro_admin') === 'true';
+    var uploadBtn = document.getElementById('adminUploadBtn');
+    if (uploadBtn) uploadBtn.style.display = isAdmin ? 'inline-block' : 'none';
   };
 
-  // Handle Admin Passcode Prompt
   window.promptAdminAccess = function() {
-    const currentAdmin = localStorage.getItem('gobro_admin') === 'true';
-    
+    var currentAdmin = localStorage.getItem('gobro_admin') === 'true';
     if (currentAdmin) {
-      const logout = confirm("You are currently logged in as Admin. Do you want to logout and hide the blog upload section?");
-      if (logout) {
+      if (confirm('You are currently logged in as Admin. Do you want to logout?')) {
         localStorage.removeItem('gobro_admin');
-        const uploadBtn = document.getElementById('adminUploadBtn');
-        if (uploadBtn) uploadBtn.style.display = 'none';
-        const creator = document.getElementById('blogCreatorContainer');
+        var btn = document.getElementById('adminUploadBtn');
+        if (btn) btn.style.display = 'none';
+        var creator = document.getElementById('blogCreatorContainer');
         if (creator) creator.style.display = 'none';
-        alert("Logged out successfully. Blog upload section is now hidden.");
       }
       return;
     }
 
-    const passcode = prompt("Enter Admin Passcode to unlock blog upload section:");
-    if (passcode === null) return;
-    
+    var passcode = prompt('Enter Admin Passcode:');
+    if (!passcode) return;
+
     if (passcode === 'gobro2026') {
       localStorage.setItem('gobro_admin', 'true');
-      const uploadBtn = document.getElementById('adminUploadBtn');
-      if (uploadBtn) {
-        uploadBtn.style.display = 'inline-block';
-        uploadBtn.scrollIntoView({ behavior: 'smooth' });
+      var btn = document.getElementById('adminUploadBtn');
+      if (btn) {
+        btn.style.display = 'inline-block';
+        btn.scrollIntoView({ behavior: 'smooth' });
       }
-      alert("🎉 Access Granted! Blog upload section is now unlocked.");
+      alert('Access Granted! Blog upload section is now unlocked.');
     } else {
-      alert("❌ Incorrect passcode. Access Denied.");
+      alert('Incorrect passcode. Access Denied.');
     }
   };
 
-  // Initialize blogs rendering on page load
+  // Initialize
   renderLocalBlogs();
   checkAdminState();
 
+  // ==========================================================================
+  // ACTIVE NAVIGATION LINK ON SCROLL
+  // ==========================================================================
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', function() {
+    let current = '';
+    sections.forEach(function(section) {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(function(link) {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // ==========================================================================
+  // MICRO-INTERACTIONS
+  // ==========================================================================
+
+  // 1. Ripple Effect on Buttons
+  document.querySelectorAll('.btn, .service-link, .blog-btn, .nav-cta').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const ripple = document.createElement('span');
+      ripple.style.cssText = [
+        'position: absolute',
+        'width: 8px',
+        'height: 8px',
+        'border-radius: 50%',
+        'background: rgba(201, 168, 76, 0.3)',
+        'transform: scale(0)',
+        'animation: rippleAnim 0.7s ease-out forwards',
+        'pointer-events: none',
+        'left: ' + (x - 4) + 'px',
+        'top: ' + (y - 4) + 'px'
+      ].join(';');
+
+      if (getComputedStyle(this).position === 'static') {
+        this.style.position = 'relative';
+      }
+      this.style.overflow = 'hidden';
+      this.appendChild(ripple);
+      setTimeout(function() { ripple.remove(); }, 700);
+    });
+  });
+
+  // 2. Magnetic Hover on CTA Buttons
+  document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn) {
+    btn.addEventListener('mousemove', function(e) {
+      if (window.innerWidth < 768) return;
+      const rect = this.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      this.style.transform = 'translate(' + (x * 6) + 'px, ' + (y * 4) + 'px)';
+    });
+
+    btn.addEventListener('mouseleave', function() {
+      this.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  // 3. Smooth Page Transitions for Anchor Links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        history.pushState(null, null, targetId);
+      }
+    });
+  });
+
+  // 4. Add ripple animation keyframes
+  const rippleStyle = document.createElement('style');
+  rippleStyle.textContent = '@keyframes rippleAnim { to { transform: scale(25); opacity: 0; } }';
+  document.head.appendChild(rippleStyle);
+
+  // ==========================================================================
+  // CAROUSEL INIT
+  // ==========================================================================
+  function initCarousel(trackSelector, dotsSelector, interval) {
+    var track = document.querySelector(trackSelector);
+    var dotsContainer = document.querySelector(dotsSelector);
+    if (!track || !dotsContainer) return;
+
+    var cards = track.children;
+    var total = cards.length;
+    if (total < 2) return;
+
+    var current = 0;
+    var visible = window.innerWidth < 680 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+    var timer;
+
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      for (var i = 0; i < total; i++) {
+        var btn = document.createElement('button');
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+        if (i === 0) btn.classList.add('active');
+        btn.addEventListener('click', function() { goTo(this); });
+        dotsContainer.appendChild(btn);
+      }
+    }
+
+    function goTo(btn) {
+      var idx = Array.prototype.indexOf.call(dotsContainer.children, btn);
+      if (idx < 0) return;
+      current = idx;
+      update();
+      resetTimer();
+    }
+
+    function update() {
+      var gap = 30;
+      var cardWidth = cards[0].getBoundingClientRect().width;
+      var offset = current * (cardWidth + gap);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      Array.prototype.forEach.call(dotsContainer.children, function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function next() {
+      current = (current + 1) % total;
+      update();
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, interval);
+    }
+
+    function handleResize() {
+      var newVisible = window.innerWidth < 680 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+      if (newVisible !== visible) {
+        visible = newVisible;
+        current = 0;
+        track.style.transform = 'translateX(0)';
+      }
+    }
+
+    buildDots();
+    timer = setInterval(next, interval);
+    window.addEventListener('resize', handleResize);
+
+    track.parentElement.addEventListener('mouseenter', function() { clearInterval(timer); });
+    track.parentElement.addEventListener('mouseleave', function() { resetTimer(); });
+  }
+
+  initCarousel('.identity-track', '.identity-dots', 5000);
+
+  // ==========================================================================
+  // INFINITE CAROUSEL (testimonials) — clones, no dots, continuous autoplay
+  // ==========================================================================
+  function initInfiniteCarousel(trackSelector, interval) {
+    var track = document.querySelector(trackSelector);
+    if (!track) return;
+
+    var cards = Array.from(track.children);
+    var total = cards.length;
+    if (total < 2) return;
+
+    var visible = window.innerWidth < 680 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+
+    // Clone first `visible` cards → append (trailing buffer)
+    for (var i = 0; i < visible; i++) {
+      track.appendChild(cards[i].cloneNode(true));
+    }
+    // Clone last `visible` cards → prepend (leading buffer)
+    for (var i = total - 1; i >= total - visible; i--) {
+      track.insertBefore(cards[i].cloneNode(true), track.firstChild);
+    }
+
+    var allCards = track.children;
+    var current = visible; // Start at first real slide
+
+    function getOffset() {
+      var gap = 30;
+      var cardWidth = allCards[0].getBoundingClientRect().width;
+      return current * (cardWidth + gap);
+    }
+
+    function update(animate) {
+      if (animate === false) {
+        track.style.transition = 'none';
+      } else {
+        track.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
+      }
+      track.style.transform = 'translateX(-' + getOffset() + 'px)';
+    }
+
+    function snapTo(index) {
+      track.style.transition = 'none';
+      current = index;
+      track.style.transform = 'translateX(-' + getOffset() + 'px)';
+      void track.offsetHeight; // Force reflow
+      track.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
+    }
+
+    update(false);
+
+    setInterval(function() {
+      current++;
+      update(true);
+
+      if (current >= visible + total) {
+        setTimeout(function() {
+          snapTo(visible);
+        }, 800);
+      }
+    }, interval);
+  }
+
+  initInfiniteCarousel('.testimonials-track', 3000);
+
+  // ==========================================================================
+  // BLUR-UP IMAGE LOADING
+  // ==========================================================================
+  document.querySelectorAll('img[loading="lazy"]').forEach(function(img) {
+    img.addEventListener('load', function() {
+      this.classList.add('loaded');
+    });
+    if (img.complete) {
+      img.classList.add('loaded');
+    }
+  });
 });

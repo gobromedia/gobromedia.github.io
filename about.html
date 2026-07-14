@@ -1,288 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="favicon.png">
-<title>About | GOBRO MEDIA</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-
-:root{--gold:#c9a84c;--gold-light:#e8c96d;--gold-dim:#8a6f30;--black:#050505;--dark2:#141414;--dark3:#1a1a1a;--white:#f5f0e8;--text-muted:#8a8a8a;}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;cursor:none;}
-.cursor{width:10px;height:10px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:difference;}
-.cursor-ring{width:36px;height:36px;border:1px solid rgba(201,168,76,0.5);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all 0.35s cubic-bezier(0.23,1,0.32,1);}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(5,5,5,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.15);}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:0.12em;color:var(--gold);text-decoration:none;}
-.logo span{color:var(--white);}
-.nav-links{display:flex;gap:40px;list-style:none;}
-.nav-links a{color:rgba(245,240,232,0.7);text-decoration:none;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.3s;position:relative;}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s ease;}
-.nav-links a:hover{color:var(--gold);}
-.nav-links a:hover::after{width:100%;}
-.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold) !important;padding:8px 22px;border-radius:2px;font-size:0.65rem !important;letter-spacing:0.2em !important;transition:all 0.3s !important;}
-.nav-cta:hover{background:var(--gold) !important;color:var(--black) !important;}
-.nav-cta::after{display:none !important;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
-.hamburger span{width:25px;height:1.5px;background:var(--gold);display:block;}
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--black);z-index:999;flex-direction:column;justify-content:center;align-items:center;gap:40px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);text-decoration:none;letter-spacing:0.05em;transition:color 0.3s;}
-.mobile-menu a:hover{color:var(--gold);}
-.close-menu{position:absolute;top:25px;right:30px;background:none;border:none;color:var(--gold);font-size:2rem;cursor:pointer;}
-.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black);padding:14px 36px;border:none;font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s ease;box-shadow:0 0 30px rgba(201,168,76,0.25);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(201,168,76,0.4);}
-.btn-outline{background:transparent;color:var(--white);padding:14px 36px;border:1px solid rgba(245,240,232,0.2);font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s ease;}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-delay-1{transition-delay:0.1s;}
-.reveal-delay-2{transition-delay:0.2s;}
-.reveal-delay-3{transition-delay:0.3s;}
-.section-tag{display:inline-block;font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding:6px 14px;border:1px solid rgba(201,168,76,0.25);border-radius:2px;}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.15;margin-bottom:20px;}
-.section-title em{color:var(--gold);font-style:italic;}
-.section-desc{color:var(--text-muted);font-size:0.88rem;line-height:1.8;max-width:520px;font-weight:300;}
-footer{background:var(--black);border-top:1px solid rgba(201,168,76,0.1);padding:60px 60px 30px;}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:50px;}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;letter-spacing:0.1em;color:var(--gold);margin-bottom:16px;}.footer-logo span{color:var(--white);}
-.footer-tagline{font-size:0.78rem;color:var(--text-muted);line-height:1.7;font-weight:300;max-width:280px;}
-.footer-social{display:flex;gap:12px;margin-top:28px;}
-.social-link{width:38px;height:38px;border:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.85rem;text-decoration:none;transition:all 0.3s;}
-.social-link:hover{border-color:var(--gold);color:var(--gold);}
-.footer-col h4{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
-.footer-links a{color:var(--text-muted);text-decoration:none;font-size:0.8rem;font-weight:300;transition:color 0.3s;}
-.footer-links a:hover{color:var(--white);}
-.footer-bottom{border-top:1px solid rgba(201,168,76,0.06);padding-top:26px;display:flex;justify-content:space-between;align-items:center;}
-.footer-copy{font-size:0.72rem;color:rgba(245,240,232,0.25);letter-spacing:0.05em;}
-.page-hero{padding:160px 60px 80px;text-align:center;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(201,168,76,0.05) 0%,transparent 70%);}
-.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:300;line-height:1.1;position:relative;}
-.page-hero h1 em{color:var(--gold);font-style:italic;}
-.page-hero p{color:var(--text-muted);font-size:0.88rem;line-height:1.8;max-width:520px;margin:16px auto 0;font-weight:300;}
-@media(max-width:1024px){nav{padding:18px 30px;}.nav-links{display:none;}.hamburger{display:flex;}.footer-top{grid-template-columns:1fr 1fr;}.page-hero{padding:130px 30px 60px;}}
-@media(max-width:600px){.footer-top{grid-template-columns:1fr;gap:30px;}nav{padding:18px 20px;}}
-
-.stats-bar{background:var(--dark2);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);padding:50px 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;}
-.stat{text-align:center;}
-.stat-num{font-family:'Libre Baskerville',serif;font-size:2.2rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:8px;}
-.stat-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);}
-.about-story{padding:80px 60px;background:var(--dark2);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.story-visual{position:relative;height:380px;}
-.story-card{position:absolute;background:var(--dark3);border:1px solid rgba(201,168,76,0.12);padding:30px;border-radius:4px;}
-.story-card-main{width:75%;height:80%;top:0;left:0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-.story-card-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.05),transparent);}
-.story-card-accent{width:55%;bottom:0;right:0;}
-.story-big{font-family:'Cormorant Garamond',serif;font-size:8rem;font-weight:300;color:rgba(201,168,76,0.08);line-height:1;position:absolute;top:20px;right:20px;}
-.story-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.story-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;line-height:1.4;}
-.story-stat{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);}
-.story-desc{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);}
-.gold-line{width:60px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:24px 0;}
-.values-section{padding:80px 60px;background:var(--black);}
-.values-header{text-align:center;margin-bottom:60px;}
-.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.value-card{background:var(--dark2);padding:50px 40px;position:relative;overflow:hidden;transition:all 0.4s;border-right:1px solid rgba(201,168,76,0.08);}
-.value-card:last-child{border-right:none;}
-.value-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(to right,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.5s;}
-.value-card:hover{background:var(--dark3);}
-.value-card:hover::after{transform:scaleX(1);}
-.value-icon{font-size:2rem;margin-bottom:20px;}
-.value-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:14px;}
-.value-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.8;font-weight:300;}
-.team-section{padding:80px 60px;background:var(--dark2);}
-.team-header{text-align:center;margin-bottom:60px;}
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.team-card{background:var(--dark3);border:1px solid rgba(201,168,76,0.08);padding:40px 36px;text-align:center;border-radius:4px;transition:border-color 0.3s;}
-.team-card:hover{border-color:rgba(201,168,76,0.25);}
-.team-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dim),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--black);font-weight:600;margin:0 auto 20px;}
-.team-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:6px;}
-.team-role{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
-.team-bio{font-size:0.78rem;color:var(--text-muted);line-height:1.7;font-weight:300;}
-.cta-band{padding:100px 60px;text-align:center;background:var(--black);position:relative;}
-.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(201,168,76,0.04) 0%,transparent 70%);}
-.cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:300;line-height:1.2;margin-bottom:16px;position:relative;}
-.cta-band h2 em{color:var(--gold);font-style:italic;}
-.cta-band p{color:var(--text-muted);font-size:0.88rem;max-width:440px;margin:0 auto 36px;line-height:1.8;font-weight:300;}
-@media(max-width:1024px){.stats-bar{grid-template-columns:repeat(2,1fr);padding:40px 30px;}.about-story{grid-template-columns:1fr;padding:60px 30px;}.story-visual{display:none;}.values-grid{grid-template-columns:1fr 1fr;}.values-section{padding:60px 30px;}.team-grid{grid-template-columns:1fr;}.team-section{padding:60px 30px;}.cta-band{padding:60px 30px;}}
-@media(max-width:600px){.values-grid{grid-template-columns:1fr;}}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About GOBRO MEDIA - A modern digital agency transforming ideas into impactful digital experiences. Meet our team, values, and story behind 4+ years of digital excellence.">
+  <meta name="keywords" content="about gobro media, digital agency team, digital marketing agency India, video editing company">
+  <meta name="author" content="GOBRO MEDIA">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gobromedia.github.io/about.html">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gobromedia.github.io/about.html">
+  <meta property="og:title" content="About Us | GOBRO MEDIA">
+  <meta property="og:description" content="A modern digital agency transforming ideas into impactful digital experiences that drive real results. Meet our team and values.">
+  <meta property="og:image" content="https://gobromedia.github.io/assets/images/about-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="GOBRO MEDIA">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://gobromedia.github.io/about.html">
+  <meta name="twitter:title" content="About Us | GOBRO MEDIA">
+  <meta name="twitter:description" content="A modern digital agency transforming ideas into impactful digital experiences that drive real results.">
+  <meta name="twitter:image" content="https://gobromedia.github.io/assets/images/about-image.jpg">
+  <meta name="twitter:site" content="@Gobro_Media">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Preconnect to font origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Preload critical fonts (handled by Google Fonts stylesheet) -->
+  
+  <!-- Fonts: Cormorant Garamond (headings) + Montserrat (UI) + Libre Baskerville (numbers) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"></noscript>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About GOBRO MEDIA",
+    "description": "A modern digital agency transforming ideas into impactful digital experiences that drive real results. Meet our team and values.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "GOBRO MEDIA",
+      "url": "https://gobromedia.github.io/",
+      "logo": "https://gobromedia.github.io/assets/images/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/gobro-media",
+        "https://www.instagram.com/gobromedia_digitalmarketing/",
+        "https://x.com/Gobro_Media"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-99907-37306",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Delhi",
+        "addressCountry": "IN"
+      },
+      "foundingDate": "2022",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 3,
+        "maxValue": 10
+      }
+    }
+  }
+  </script>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close-menu" onclick="toggleMenu()">X</button>
-  <a href="index.html" onclick="toggleMenu()">Home</a>
-  <a href="about.html" onclick="toggleMenu()">About</a>
-  <a href="services.html" onclick="toggleMenu()">Services</a>
-  <a href="blog.html" onclick="toggleMenu()">Blog</a>
-  <a href="contact.html" onclick="toggleMenu()">Contact</a>
-</div>
-<nav>
-  <a href="index.html" class="logo">GOBRO <span>MEDIA</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
-  </ul>
-  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-</nav>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="page-hero">
-  <span class="section-tag">About Us</span>
-  <h1>The Team Behind <em>Gobro Media</em></h1>
-  <p>A passionate team of digital marketers, content creators, and strategists committed to growing brands.</p>
-</div>
-<div class="stats-bar">
-  <div class="stat reveal"><div class="stat-num">30+</div><div class="stat-label">Projects Done</div></div>
-  <div class="stat reveal reveal-delay-1"><div class="stat-num">90%</div><div class="stat-label">Client Satisfaction</div></div>
-  <div class="stat reveal reveal-delay-2"><div class="stat-num">24/7</div><div class="stat-label">Support Available</div></div>
-  <div class="stat reveal reveal-delay-3"><div class="stat-num">4+</div><div class="stat-label">Years Experience</div></div>
-</div>
-<section class="about-story">
-  <div class="story-visual reveal">
-    <div class="story-card story-card-main">
-      <div class="story-big">G</div>
-      <div class="story-label">Our Vision</div>
-      <div class="story-text">Transforming ideas into impactful digital experiences that drive real results.</div>
-    </div>
-    <div class="story-card story-card-accent">
-      <div class="story-stat">50+</div>
-      <div class="story-desc">Brands Elevated</div>
-    </div>
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation" hidden>
+    <button class="close-menu" onclick="toggleMenu()" aria-label="Close mobile menu">X</button>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="about.html" onclick="toggleMenu()" aria-current="page">About</a>
+    <a href="index.html#services" onclick="toggleMenu()">Services</a>
+    <a href="index.html#insights" onclick="toggleMenu()">Blog</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
   </div>
-  <div class="reveal reveal-delay-2">
-    <span class="section-tag">Our Story</span>
-    <h2 class="section-title">A Modern <em>Digital Agency</em> Built for Growth</h2>
-    <div class="gold-line"></div>
-    <p class="section-desc">Gobro Media was founded with a single mission: to help brands grow through powerful digital marketing, creative content production, and professional video editing. We believe every brand has a unique story and our job is to tell it beautifully and strategically.</p>
-    <br><br>
-    <p class="section-desc">From small startups to established businesses, we have worked with brands across industries, helping them connect with their audience and achieve measurable results.</p>
-  </div>
-</section>
-<section class="values-section">
-  <div class="values-header reveal">
-    <span class="section-tag">What Drives Us</span>
-    <h2 class="section-title">Our Core <em>Values</em></h2>
-  </div>
-  <div class="values-grid">
-    <div class="value-card reveal">
-      <div class="value-icon">&#127919;</div>
-      <div class="value-name">Results First</div>
-      <p class="value-desc">Every strategy we craft is built around one goal: delivering measurable results that grow your business.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-1">
-      <div class="value-icon">&#10024;</div>
-      <div class="value-name">Creative Excellence</div>
-      <p class="value-desc">We do not settle for average. Every piece of content, every campaign is crafted with precision and creativity.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-2">
-      <div class="value-icon">&#129309;</div>
-      <div class="value-name">Partnership Mindset</div>
-      <p class="value-desc">We work alongside you as true partners, transparent, collaborative, and invested in your success.</p>
-    </div>
-  </div>
-</section>
-<section class="team-section">
-  <div class="team-header reveal">
-    <span class="section-tag">The People</span>
-    <h2 class="section-title">Meet the <em>Team</em></h2>
-  </div>
-  <div class="team-grid">
-    <div class="team-card reveal">
-      <div class="team-avatar">G</div>
-      <div class="team-name">Gobro Founder</div>
-      <div class="team-role">Founder and Creative Director</div>
-      <p class="team-bio">Visionary behind Gobro Media with 4+ years of experience building digital brands across India.</p>
-    </div>
-    <div class="team-card reveal reveal-delay-1">
-      <div class="team-avatar">M</div>
-      <div class="team-name">Marketing Lead</div>
-      <div class="team-role">Head of Digital Marketing</div>
-      <p class="team-bio">Data-driven strategist specializing in SEO, paid campaigns, and growth marketing for brands.</p>
-    </div>
-    <div class="team-card reveal reveal-delay-2">
-      <div class="team-avatar">V</div>
-      <div class="team-name">Video Producer</div>
-      <div class="team-role">Video and Content Production</div>
-      <p class="team-bio">Expert video editor and content creator producing high-impact reels, ads, and brand videos.</p>
-    </div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="reveal">
-    <h2>Ready to Work <em>Together?</em></h2>
-    <p>Let us build something extraordinary. Reach out and let us start a conversation about your brand.</p>
-    <a href="contact.html" class="btn-primary">Start a Project</a>
-  </div>
-</section>
 
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">GOBRO <span style="color:var(--white);">MEDIA</span></div>
-      <p class="footer-tagline">A modern digital agency transforming ideas into impactful digital experiences that drive real results.</p>
-      <div class="footer-social">
-        <a href="#" class="social-link">in</a>
-        <a href="#" class="social-link">fb</a>
-        <a href="#" class="social-link">ig</a>
-        <a href="#" class="social-link">yt</a>
-        <a href="#" class="social-link">tw</a>
+  <header id="header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="GOBRO MEDIA Home">
+        <img src="assets/images/logo.png?v=2" alt="GOBRO MEDIA" loading="eager" style="height: 80px; width: auto;">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#insights">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Get Started</a></li>
+      </ul>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content" role="main">
+    <div class="page-hero">
+      <span class="section-tag">About Us</span>
+      <h1>The Team Behind <em>Gobro Media</em></h1>
+      <p>A passionate team of digital marketers, content creators, and strategists committed to growing brands.</p>
+    </div>
+
+    <div class="stats-bar" aria-label="Company statistics">
+      <div class="stat reveal"><div class="stat-num" aria-label="30 plus">30+</div><div class="stat-label">Projects Done</div></div>
+      <div class="stat reveal reveal-delay-1"><div class="stat-num" aria-label="90 percent">90%</div><div class="stat-label">Client Satisfaction</div></div>
+      <div class="stat reveal reveal-delay-2"><div class="stat-num" aria-label="24 hours 7 days">24/7</div><div class="stat-label">Support Available</div></div>
+      <div class="stat reveal reveal-delay-3"><div class="stat-num" aria-label="4 plus">4+</div><div class="stat-label">Years Experience</div></div>
+    </div>
+
+    <section class="about-story" aria-labelledby="our-story-title">
+      <div class="story-visual reveal" aria-hidden="true">
+        <div class="story-card story-card-main">
+          <div class="story-big" aria-hidden="true">G</div>
+          <div class="story-label">Our Vision</div>
+          <div class="story-text">Transforming ideas into impactful digital experiences that drive real results.</div>
+        </div>
+        <div class="story-card story-card-accent">
+          <div class="story-stat">50+</div>
+          <div class="story-desc">Brands Elevated</div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="section-tag">Our Story</span>
+        <h2 id="our-story-title" class="section-title">A Modern <em>Digital Agency</em> Built for Growth</h2>
+        <div class="gold-line" aria-hidden="true"></div>
+        <p class="section-desc">Gobro Media was founded with a single mission: to help brands grow through powerful digital marketing, creative content production, and professional video editing. We believe every brand has a unique story and our job is to tell it beautifully and strategically.</p>
+        <br><br>
+        <p class="section-desc">From small startups to established businesses, we have worked with brands across industries, helping them connect with their audience and achieve measurable results.</p>
+      </div>
+    </section>
+
+    <section class="values-section" aria-labelledby="values-title">
+      <div class="values-header reveal">
+        <span class="section-tag">What Drives Us</span>
+        <h2 id="values-title" class="section-title">Our Core <em>Values</em></h2>
+      </div>
+      <div class="values-grid" role="list">
+        <article class="value-card reveal" role="listitem">
+          <div class="value-icon" aria-hidden="true"><img src="assets/images/services/value-target.jpg" alt=""></div>
+          <div class="value-name">Results First</div>
+          <p class="value-desc">Every strategy we craft is built around one goal: delivering measurable results that grow your business.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-1" role="listitem">
+          <div class="value-icon" aria-hidden="true"><img src="assets/images/services/value-creative.jpg" alt=""></div>
+          <div class="value-name">Creative Excellence</div>
+          <p class="value-desc">We do not settle for average. Every piece of content, every campaign is crafted with precision and creativity.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-2" role="listitem">
+          <div class="value-icon" aria-hidden="true"><img src="assets/images/services/service-icon-5.jpg" alt=""></div>
+          <div class="value-name">Partnership Mindset</div>
+          <p class="value-desc">We work alongside you as true partners, transparent, collaborative, and invested in your success.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="team-section" aria-labelledby="team-title">
+      <div class="team-header reveal">
+        <span class="section-tag">The People</span>
+        <h2 id="team-title" class="section-title">Meet the <em>Team</em></h2>
+      </div>
+      <div class="team-grid" role="list">
+        <article class="team-card reveal" role="listitem">
+          <div class="team-avatar" aria-hidden="true">G</div>
+          <div class="team-name">Gobro Founder</div>
+          <div class="team-role">Founder and Creative Director</div>
+          <p class="team-bio">Visionary behind Gobro Media with 4+ years of experience building digital brands across India.</p>
+        </article>
+        <article class="team-card reveal reveal-delay-1" role="listitem">
+          <div class="team-avatar" aria-hidden="true">M</div>
+          <div class="team-name">Marketing Lead</div>
+          <div class="team-role">Head of Digital Marketing</div>
+          <p class="team-bio">Data-driven strategist specializing in SEO, paid campaigns, and growth marketing for brands.</p>
+        </article>
+        <article class="team-card reveal reveal-delay-2" role="listitem">
+          <div class="team-avatar" aria-hidden="true">V</div>
+          <div class="team-name">Video Producer</div>
+          <div class="team-role">Video and Content Production</div>
+          <p class="team-bio">Expert video editor and content creator producing high-impact reels, ads, and brand videos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band premium-cta" aria-labelledby="cta-title">
+      <div class="cta-content reveal">
+        <span class="cta-badge">&#128293; Limited Slots Available</span>
+        <h2 id="cta-title">Ready to <em>Scale</em> Your Brand?</h2>
+        <p>Join 50+ brands that trust GOBRO MEDIA for their digital growth. Get a <strong>free growth audit</strong> worth ₹25,000 — completely on us.</p>
+        <div class="cta-buttons">
+          <a href="index.html#contact" class="btn-primary btn-lg">
+            Claim Your Free Audit &rarr;
+          </a>
+          <a href="index.html#services" class="btn-outline btn-lg">
+            Explore Services
+          </a>
+        </div>
+        <div class="cta-urgency">
+          <span>&#128293; Only 5 spots left this month</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">GOBRO <span style="color:var(--white);">MEDIA</span></div>
+        <p class="footer-tagline">A modern digital agency transforming ideas into impactful digital experiences that drive real results.</p>
+        <div class="footer-social" role="list" aria-label="Social media links">
+          <a href="https://www.linkedin.com/company/gobro-media" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer" role="listitem">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61581537060142" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer" role="listitem">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/gobromedia_digitalmarketing/" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer" role="listitem">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@gobromedia" class="social-link" title="YouTube" target="_blank" rel="noopener noreferrer" role="listitem">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://x.com/Gobro_Media" class="social-link" title="X / Twitter" target="_blank" rel="noopener noreferrer" role="listitem">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63z"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html#services">Digital Marketing</a></li>
+          <li><a href="index.html#services">Content Creation</a></li>
+          <li><a href="index.html#services">Video Editing</a></li>
+          <li><a href="index.html#services">Brand Strategy</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#portfolio">Our Work</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#insights">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="mailto:gobromedia@outlook.com">gobromedia@outlook.com</a></li>
+          <li><a href="index.html#contact">Get a Quote</a></li>
+          <li><button onclick="openModal('partnership')">Partnership</button></li>
+          <li><button onclick="openModal('privacy')">Privacy Policy</button></li>
+          <li><button onclick="openModal('terms')">Terms &amp; Conditions</button></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-col"><h4>Services</h4>
-      <ul class="footer-links">
-        <li><a href="services.html">Digital Marketing</a></li>
-        <li><a href="services.html">Content Creation</a></li>
-        <li><a href="services.html">Video Editing</a></li>
-        <li><a href="services.html">Networking</a></li>
-      </ul>
+    
+    <div class="footer-bottom">
+      <span class="footer-copy">&#169; 2026 GOBRO MEDIA. All Rights Reserved.</span>
+      <span class="footer-copy">Made with love for Digital Excellence</span>
     </div>
-    <div class="footer-col"><h4>Company</h4>
-      <ul class="footer-links">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="index.html#portfolio">Our Work</a></li>
-        <li><a href="index.html#pricing">Pricing</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><h4>Contact</h4>
-      <ul class="footer-links">
-        <li><a href="mailto:gobromedia@outlook.com">gobromedia&#64;outlook.com</a></li>
-        <li><a href="contact.html">Get a Quote</a></li>
-        <li><a href="contact.html">Partnership</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">&#169; 2026 GOBRO MEDIA. All Rights Reserved.</span>
-    <span class="footer-copy">Made with love for Digital Excellence</span>
-  </div>
-</footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-var cursor=document.getElementById('cursor');
-var ring=document.getElementById('cursorRing');
-var mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cursor.style.left=(mx-5)+'px';cursor.style.top=(my-5)+'px';});
-function animRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=(rx-18)+'px';ring.style.top=(ry-18)+'px';requestAnimationFrame(animRing);}
-animRing();
-document.querySelectorAll('a,button').forEach(function(el){
-  el.addEventListener('mouseenter',function(){ring.style.transform='scale(2)';ring.style.borderColor='rgba(201,168,76,0.6)';});
-  el.addEventListener('mouseleave',function(){ring.style.transform='scale(1)';ring.style.borderColor='rgba(201,168,76,0.5)';});
-});
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
-</script>
+  </footer>
 
+  <script>
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      var menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+      menu.hidden = !menu.classList.contains('open');
+
+      var hamburger = document.querySelector('.hamburger');
+      var isOpen = menu.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+
+      if (isOpen) {
+        hamburger.innerHTML = '<span style="transform: rotate(45deg) translate(6px, 6px)" aria-hidden="true"></span><span style="opacity:0" aria-hidden="true"></span><span style="transform: rotate(-45deg) translate(5px, -5px)" aria-hidden="true"></span>';
+        document.body.style.overflow = 'hidden';
+      } else {
+        hamburger.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>';
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Header Scroll Morph
+    (function() {
+      var header = document.getElementById('header');
+      if (header) {
+        window.addEventListener('scroll', function() {
+          header.classList.toggle('scrolled', window.scrollY > 60);
+        });
+      }
+    })();
+
+    // Custom Cursor (only on hover-capable devices)
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      var cursor = document.getElementById('cursor');
+      var ring = document.getElementById('cursorRing');
+      var mx = 0, my = 0, rx = 0, ry = 0;
+
+      document.addEventListener('mousemove', function(e) {
+        mx = e.clientX; my = e.clientY;
+        if (cursor) {
+          cursor.style.left = (mx - 5) + 'px';
+          cursor.style.top = (my - 5) + 'px';
+        }
+      });
+
+      function animRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        if (ring) {
+          ring.style.left = (rx - 18) + 'px';
+          ring.style.top = (ry - 18) + 'px';
+        }
+        requestAnimationFrame(animRing);
+      }
+      animRing();
+
+      document.querySelectorAll('a, button, [tabindex]').forEach(function(el) {
+        el.addEventListener('mouseenter', function() {
+          if (ring) {
+            ring.style.transform = 'scale(2)';
+            ring.style.borderColor = 'rgba(201,168,76,0.6)';
+          }
+        });
+        el.addEventListener('mouseleave', function() {
+          if (ring) {
+            ring.style.transform = 'scale(1)';
+            ring.style.borderColor = 'rgba(201,168,76,0.5)';
+          }
+        });
+      });
+    } else {
+      var c = document.getElementById('cursor');
+      var r = document.getElementById('cursorRing');
+      if (c) c.style.display = 'none';
+      if (r) r.style.display = 'none';
+      document.body.style.cursor = 'auto';
+    }
+
+    // Intersection Observer for reveal animations
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, {threshold: 0.1});
+
+    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', toggleMenu);
+    });
+
+    // Modal functions (shared with index.html)
+    window.openModal = function(modalId) {
+      var modal = document.getElementById('modal-' + modalId);
+      if (modal) {
+        modal.classList.add('open');
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
+    window.closeModal = function(modalId) {
+      var modal = document.getElementById('modal-' + modalId);
+      if (modal) {
+        modal.classList.remove('open');
+        modal.hidden = true;
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.closeModalOutside = function(event, modalId) {
+      var modal = document.getElementById('modal-' + modalId);
+      if (modal && event.target === modal) {
+        closeModal(modalId);
+      }
+    };
+
+    // Escape key to close modals
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        ['privacy', 'terms', 'partnership', 'service', 'blog', 'portfolio', 'localreader'].forEach(function(id) {
+          closeModal(id);
+        });
+        if (typeof closeBlogHub === 'function') closeBlogHub();
+      }
+    });
+  </script>
 </body>
 </html>
