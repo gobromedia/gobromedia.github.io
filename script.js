@@ -9,11 +9,12 @@
 const WHATSAPP_NUMBER = localStorage.getItem('gobro_whatsapp') || "919990737306";
 
 document.addEventListener('DOMContentLoaded', function() {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ==========================================================================
   // 1. CUSTOM CURSOR (hover-capable devices only)
   // ==========================================================================
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduceMotion) {
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
     let mx = 0, my = 0, rx = 0, ry = 0;
@@ -123,7 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // ==========================================================================
   const revealElements = document.querySelectorAll('.reveal');
 
-  if ('IntersectionObserver' in window) {
+  if (reduceMotion) {
+    revealElements.forEach(function(el) { el.classList.add('visible'); });
+  } else if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -514,7 +517,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var heroSlides = document.querySelectorAll('.hero-slider .slide');
   var currentHeroSlide = 0;
 
-  if (heroSlides.length > 0) {
+  if (heroSlides.length > 0 && !reduceMotion) {
     setInterval(function() {
       heroSlides[currentHeroSlide].classList.remove('active');
       currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
@@ -946,7 +949,7 @@ document.addEventListener('DOMContentLoaded', function() {
     track.parentElement.addEventListener('mouseleave', function() { resetTimer(); });
   }
 
-  initCarousel('.identity-track', '.identity-dots', 5000);
+  if (!reduceMotion) initCarousel('.identity-track', '.identity-dots', 5000);
 
   // ==========================================================================
   // INFINITE CAROUSEL — generic (testimonials section retired; kept for reuse)
