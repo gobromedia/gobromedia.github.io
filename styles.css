@@ -3674,6 +3674,7 @@ img[loading="lazy"].loaded {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 340px;
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
@@ -3692,12 +3693,13 @@ img[loading="lazy"].loaded {
 }
 
 .guarantee-body {
-  padding: 40px 38px 42px;
+  padding: 48px 40px 52px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   flex-grow: 1;
+  justify-content: center;
 }
 
 .guarantee-card::before {
