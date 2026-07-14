@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Build / local artifacts
+footer-desktop.png
+review-temp.html
