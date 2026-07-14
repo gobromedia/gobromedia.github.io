@@ -3668,7 +3668,7 @@ img[loading="lazy"].loaded {
   position: relative;
   background: #ffffff;
   border: 1px solid rgba(201, 168, 76, 0.14);
-  border-radius: 4px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -3699,6 +3699,8 @@ img[loading="lazy"].loaded {
   padding: 40px 38px 42px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   flex-grow: 1;
 }
 
@@ -3739,7 +3741,7 @@ img[loading="lazy"].loaded {
   color: var(--gold);
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin: 0 auto 24px;
 }
 
 .guarantee-card h3 {
@@ -3784,9 +3786,9 @@ img[loading="lazy"].loaded {
 }
 
 .founder-photo {
-  width: 300px;
-  height: 400px;
-  border-radius: 14px;
+  width: 360px;
+  height: 480px;
+  border-radius: 16px;
   object-fit: cover;
   object-position: center top;
   border: 1px solid rgba(201, 168, 76, 0.3);
@@ -3835,8 +3837,8 @@ img[loading="lazy"].loaded {
     grid-template-columns: 1fr;
   }
   .founder-photo {
-    width: 220px;
-    height: 300px;
+    width: 260px;
+    height: 346px;
     font-size: 4.5rem;
   }
 }
