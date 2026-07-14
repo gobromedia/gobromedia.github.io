@@ -3647,3 +3647,175 @@ img[loading="lazy"].loaded {
     padding: 60px 20px;
   }
 }
+
+/* ==========================================================================
+   GUARANTEES / WHY TRUST US SECTION
+   ========================================================================== */
+#guarantees {
+  background: #f0ede8;
+  padding: 120px 40px;
+}
+
+.guarantees-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  max-width: 1560px;
+  margin: 0 auto;
+}
+
+.guarantee-card {
+  position: relative;
+  padding: 48px 40px;
+  background: #ffffff;
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.guarantee-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  background-size: 200% 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.guarantee-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(201, 168, 76, 0.12), 0 15px 30px rgba(0, 0, 0, 0.04);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.guarantee-card:hover::before {
+  transform: scaleX(1);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.guarantee-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.04));
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--gold);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.guarantee-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.guarantee-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   FOUNDER SECTION
+   ========================================================================== */
+#founder {
+  background: #faf8f5;
+  padding: 120px 40px;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.founder-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.founder-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+  box-shadow: 0 24px 60px rgba(201, 168, 76, 0.28), inset 0 0 0 8px rgba(255, 255, 255, 0.12);
+  letter-spacing: 2px;
+}
+
+.founder-badge {
+  padding: 10px 22px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 40px;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  background: rgba(201, 168, 76, 0.06);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .guarantees-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .founder-visual {
+    flex-direction: column;
+  }
+  .about-features {
+    align-items: flex-start;
+  }
+  #founder .about-features {
+    display: inline-flex;
+    text-align: left;
+  }
+}
+
+@media (max-width: 680px) {
+  #guarantees,
+  #founder {
+    padding: 80px 22px;
+  }
+  .guarantees-grid {
+    grid-template-columns: 1fr;
+  }
+  .founder-photo {
+    width: 200px;
+    height: 200px;
+    font-size: 4rem;
+  }
+}

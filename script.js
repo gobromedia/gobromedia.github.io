@@ -305,17 +305,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var projectsData = {
       'growth-campaign': {
         title: 'Brand <em>Growth Campaign</em>',
-        meta: 'Category: Digital Marketing &bull; ROI: 320% &bull; Client: E-commerce Brand',
-        desc: 'Humne is digital marketing campaign me client ke Google Ads aur Facebook Ads accounts ko zero se optimized structure par transition kiya. Content creative maps banaye aur conversion copy ko completely overhaul kiya.',
+        meta: 'Category: Sample Demo &bull; Digital Marketing &bull; Illustrative',
+        desc: 'Is sample campaign me hum Google Ads aur Meta accounts ko zero se optimized structure par transition karte hain. Content creative maps banate hain aur conversion copy ko completely overhaul karte hain.',
         bullets: [
-          '**Result Achieved:** Just 90 days ke andar **3.2x ROAS (Return on Ad Spend)** aur 300%+ monthly sales order me growth scale kiya.',
-          '**Ad Spend Optimization:** Ad click CTR (Click-Through Rate) ko 1.2% se badhakar **4.5%** tak deliver kiya.',
+          '**Sample Outcome:** 90 days ke andar **3.2x ROAS** aur 300%+ monthly sales growth ka illustrative target.',
+          '**Ad Spend Optimization:** Ad CTR ko 1.2% se badhakar **4.5%** tak pahuchane ka sample target.',
           '**SEO Integration:** High-intent local keywords par standard landing pages ko rank karaya, jisse permanent organic leads milti rahein.'
         ]
       },
       'ads-reel': {
         title: 'Corporate <em>Ads Reel</em>',
-        meta: 'Category: Video Production &bull; Platform: YouTube &amp; Instagram &bull; Client: Tech Brand',
+        meta: 'Category: Sample Demo &bull; Video Production &bull; Illustrative',
         desc: 'Gobro Media ki high-retention video production team ne is cinematic product commercial aur advertising reel ko screenplays se lekar dynamic sound effect mapping tak execute kiya.',
         bullets: [
           '**Retention Success:** Reels video me first 3-second hook rate **84%** cross kiya aur average watch-time metrics **92%** tak rise hua.',
@@ -325,17 +325,17 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       'social-strategy': {
         title: 'Content <em>Strategy</em>',
-        meta: 'Category: Social Media Management &bull; Growth: 10x &bull; Client: Indian Fitness Creator',
-        desc: 'Humne client ke pure social grid layout aur aesthetic aesthetics ko custom gold-black palettes me design kiya, targeted content grids schedule kiye, aur YouTube growth strategy execute ki.',
+        meta: 'Category: Sample Demo &bull; Social Media &bull; Illustrative',
+        desc: 'Is sample me hum ek brand ke pure social grid layout aur aesthetics ko custom gold-black palettes me design karte hain, targeted content grids schedule karte hain, aur YouTube growth strategy execute karte hain.',
         bullets: [
-          '**Followers Scaling:** Client ka follower base just 6 months me **50,000 se 5,00,000+** cross kar gaya.',
-          '**Content Pillar Setup:** High-retention micro-content Reels setup kiya jo organic algos me viral rating tak drop hui.',
+          '**Followers Scaling:** 6 months me **50,000 se 5,00,000+** tak pahuchne ka illustrative sample.',
+          '**Content Pillar Setup:** High-retention micro-content Reels ka sample setup jo organic algos me viral rating tak drop ho sakta hai.',
           '**Monetization Hub:** 3 major high-ticket paid sponsor brands onboarding deal confirm karwayi.'
         ]
       },
       'copywriting': {
         title: 'Blog &amp; <em>Copywriting</em>',
-        meta: 'Category: Content Creation &bull; Traffic: +400% &bull; Client: B2B SaaS Startup',
+        meta: 'Category: Sample Demo &bull; Content Creation &bull; Illustrative',
         desc: 'Humne pure brand website landing page and blogs ecosystem ki organic copy likhi. High-intent, rich copywriting frameworks aur local search key integration par focus kiya.',
         bullets: [
           '**Organic Traffic Gains:** Content strategies launch karne ke bad, monthly unique search hits **400%** up scale huye.',
@@ -345,8 +345,8 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       'partnership-program': {
         title: 'Partnership <em>Program</em>',
-        meta: 'Category: Business Networking &bull; Connections: 50+ &bull; Client: Corporate Agency',
-        desc: 'Hamare strategic networking modules ke through humne client brand ke liye exclusive warm business networking and affiliate referral pipelines build kiye.',
+        meta: 'Category: Sample Demo &bull; Networking &bull; Illustrative',
+        desc: 'Hamare strategic networking modules ke through hum aapke brand ke liye exclusive warm business networking and affiliate referral pipelines build karte hain.',
         bullets: [
           '**B2B Partnerships:** Top digital agency founders aur premium content creators ke sath **50+ active alliances** confirm kiye.',
           '**Revenue Share Setup:** Joint venture partnerships create kiye jisse monthly residual leads aur passive revenue stream map hui.',
@@ -922,7 +922,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initCarousel('.identity-track', '.identity-dots', 5000);
 
   // ==========================================================================
-  // INFINITE CAROUSEL (testimonials) — clones, no dots, continuous autoplay
+  // INFINITE CAROUSEL — generic (testimonials section retired; kept for reuse)
   // ==========================================================================
   function initInfiniteCarousel(trackSelector, interval) {
     var track = document.querySelector(trackSelector);
@@ -983,7 +983,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, interval);
   }
 
-  initInfiniteCarousel('.testimonials-track', 3000);
+  initInfiniteCarousel('.testimonials-track', 3000); // legacy: section removed, no-op if element absent
 
   // ==========================================================================
   // BLUR-UP IMAGE LOADING
