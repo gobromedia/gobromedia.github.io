@@ -2226,7 +2226,7 @@ footer {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--white);
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   letter-spacing: 0.02em;
 }
 
@@ -2239,10 +2239,10 @@ footer {
 
 .footer-links a,
 .footer-links button {
-  color: var(--text-muted);
+  color: var(--gold);
   text-decoration: none;
   font-size: 1.05rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   transition: color 0.3s ease;
   background: none;
@@ -2257,6 +2257,8 @@ footer {
 .footer-links a:hover,
 .footer-links button:hover {
   color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer-bottom {
