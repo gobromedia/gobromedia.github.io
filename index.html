@@ -90,12 +90,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "url": "https://gobromedia.github.io/",
-    "name": "GOBRO MEDIA",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://gobromedia.github.io/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "name": "GOBRO MEDIA"
   }
   </script>
   
@@ -320,7 +315,7 @@
     <section id="founder" aria-labelledby="founder-title">
       <div class="founder-grid">
         <div class="founder-visual reveal" aria-hidden="true">
-          <img class="founder-photo" src="assets/images/founder.jpg" alt="Harish Goswami, Founder of GOBRO MEDIA" loading="lazy">
+          <img class="founder-photo" src="assets/images/founder.jpg" alt="Harish Goswami, Founder of GOBRO MEDIA" width="208" height="208" loading="lazy">
           <div class="founder-badge">Founder &amp; Lead Strategist</div>
         </div>
 
@@ -1114,7 +1109,7 @@
       <!-- PM Hero -->
       <div class="pm-hero">
         <span class="pm-tag">Collaborate With Us</span>
-        <h1 id="partnership-modal-title">Become a <em>Partner</em></h1>
+        <h2 id="partnership-modal-title">Become a <em>Partner</em></h2>
         <p>Join hands with GOBRO MEDIA and unlock new growth opportunities through strategic collaboration, performance-driven models, and long-term success.</p>
       </div>
 
@@ -1237,23 +1232,23 @@
           
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Full Name</label>
-              <input type="text" name="partner_name" class="form-input" placeholder="Rahul Goswami" required autocomplete="name" aria-required="true">
+              <label class="form-label" for="pm-name">Full Name</label>
+              <input type="text" name="partner_name" id="pm-name" class="form-input" placeholder="Rahul Goswami" required autocomplete="name" aria-required="true">
             </div>
             <div class="form-group">
-              <label class="form-label">WhatsApp Number</label>
-              <input type="tel" name="partner_phone" class="form-input" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" aria-required="true">
+              <label class="form-label" for="pm-phone">WhatsApp Number</label>
+              <input type="tel" name="partner_phone" id="pm-phone" class="form-input" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" aria-required="true">
             </div>
           </div>
           
           <div class="form-group" style="margin-top:14px;">
-            <label class="form-label">Email Address</label>
-            <input type="email" name="partner_email" class="form-input" placeholder="partner@gmail.com" required autocomplete="email" aria-required="true">
+            <label class="form-label" for="pm-email">Email Address</label>
+            <input type="email" name="partner_email" id="pm-email" class="form-input" placeholder="partner@gmail.com" required autocomplete="email" aria-required="true">
           </div>
           
           <div class="form-group" style="margin-top:14px;">
-            <label class="form-label">Partnership Model</label>
-            <select name="partner_model" class="form-select">
+            <label class="form-label" for="pm-model">Partnership Model</label>
+            <select name="partner_model" id="pm-model" class="form-select">
               <option value="affiliate" style="background:#141414">Affiliate Partner</option>
               <option value="reseller" style="background:#141414">Reseller Program</option>
               <option value="collaboration" style="background:#141414">Content Collaboration</option>
@@ -1262,8 +1257,8 @@
           </div>
           
           <div class="form-group" style="margin-top:14px; margin-bottom: 20px;">
-            <label class="form-label">Share Your Background</label>
-            <textarea name="partner_details" class="form-textarea" placeholder="Describe your current work, social reach or agency size, and how we can add mutual value together..."></textarea>
+            <label class="form-label" for="pm-details">Share Your Background</label>
+            <textarea name="partner_details" id="pm-details" class="form-textarea" placeholder="Describe your current work, social reach or agency size, and how we can add mutual value together..."></textarea>
           </div>
           
           <!-- Submit Partnership Response Status -->
@@ -1285,7 +1280,7 @@
       <!-- Blog Hub Hero -->
       <div class="pm-hero">
         <span class="pm-tag">Gobro Media Publications</span>
-        <h1 id="bloghub-modal-title">Welcome to our <em>Blog Hub</em></h1>
+        <h2 id="bloghub-modal-title">Welcome to our <em>Blog Hub</em></h2>
         <p>Explore high-impact digital marketing blueprints, professional video editing guides, and startup scale secrets.</p>
       </div>
 

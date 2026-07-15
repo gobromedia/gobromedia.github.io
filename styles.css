@@ -5,10 +5,7 @@
 :root {
   /* Color System */
   --bg-deep: #f8f6f2;
-  --bg-dark-1: #faf8f5;
-  --bg-dark-2: #ffffff;
-  --bg-dark-3: #ffffff;
-  
+
   --gold: #c9a84c;
   --gold-light: #dbb95c;
   --gold-dim: #b89630;
@@ -23,18 +20,10 @@
   
   /* Gradients */
   --gold-gradient: linear-gradient(135deg, var(--gold), var(--gold-light));
-  --rose-gradient: linear-gradient(135deg, var(--neon-pink), var(--sunset-rose));
-  --neon-gradient: linear-gradient(135deg, var(--neon-pink), var(--cyan));
-  --dark-gold-gradient: linear-gradient(160deg, rgba(201, 168, 76, 0.06) 0%, rgba(255, 255, 255, 0.5) 100%);
-  
+
   /* Glassmorphism & Shadow Depth */
-  --glass-panel: rgba(255, 255, 255, 0.85);
   --glass-border: rgba(201, 168, 76, 0.15);
-  --glass-border-hover: rgba(236, 72, 153, 0.25);
-  
-  --shadow-flat: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.05), 0 0 20px rgba(201, 168, 76, 0.04);
-  --shadow-glow-rose: 0 10px 30px rgba(236, 72, 153, 0.12), 0 0 15px rgba(236, 72, 153, 0.06);
   --shadow-glow-gold: 0 8px 25px rgba(201, 168, 76, 0.2), 0 0 15px rgba(201, 168, 76, 0.08);
 }
 
@@ -765,7 +754,8 @@ section {
 }
 
 .section-header {
-  margin-bottom: 70px;
+  max-width: 1560px;
+  margin: 0 auto 70px;
 }
 
 .section-tag {
@@ -1215,6 +1205,8 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   position: relative;
+  max-width: 1560px;
+  margin-inline: auto;
 }
 
 .process-steps::before {
@@ -1462,6 +1454,8 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  max-width: 1560px;
+  margin-inline: auto;
 }
 
 .blog-card {
@@ -1880,14 +1874,14 @@ section {
 }
 
 .identity-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 60px;
 }
 
 .identity-header .section-desc {
   max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   font-size: 1.2rem;
   line-height: 1.65;
   color: var(--text-muted);
@@ -2068,6 +2062,8 @@ section {
   grid-template-columns: 1fr 1.3fr;
   gap: 80px;
   align-items: start;
+  max-width: 1560px;
+  margin-inline: auto;
 }
 
 .contact-info {
@@ -2651,7 +2647,7 @@ footer {
   font-weight: 600;
 }
 
-.pm-hero h1 {
+.pm-hero h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.5rem, 6vw, 4.6rem);
   font-weight: 700;
@@ -2661,7 +2657,7 @@ footer {
   text-shadow: 0 2px 12px rgba(201, 168, 76, 0.22);
 }
 
-.pm-hero h1 em {
+.pm-hero h2 em {
   color: var(--gold);
   font-style: italic;
   font-weight: 500;
@@ -3257,11 +3253,14 @@ img[loading="lazy"].loaded {
   .service-card {
     padding: 36px 24px;
   }
-  .service-card h3 {
-    font-size: 1.5rem;
+  .service-name {
+    font-size: 1.6rem;
   }
   .service-card p {
     font-size: 0.95rem;
+  }
+  .service-illustration {
+    margin: -36px -24px 28px;
   }
 
   /* Brands Ticker */
@@ -3288,14 +3287,6 @@ img[loading="lazy"].loaded {
     gap: 16px;
   }
 
-  /* Services Cards */
-  .service-card {
-    padding: 36px 24px;
-  }
-  .service-card h3 {
-    font-size: 1.6rem;
-  }
-
   /* Testimonials */
   .testimonial-card {
     padding: 36px 24px;
@@ -3311,6 +3302,9 @@ img[loading="lazy"].loaded {
   /* Identity Cards */
   .identity-card {
     padding: 32px 24px;
+  }
+  .identity-illustration {
+    margin: -32px -24px 24px;
   }
   .identity-icon {
     width: 56px;
@@ -3336,7 +3330,7 @@ img[loading="lazy"].loaded {
   .footer-top {
     gap: 36px;
   }
-  .footer-col h4 {
+  .footer-heading {
     font-size: 1.2rem;
   }
   .footer-links a {
@@ -4066,12 +4060,6 @@ img[loading="lazy"].loaded {
    ACCESSIBILITY — RESPECT REDUCED MOTION
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
   html {
     scroll-snap-type: none;
   }
@@ -4089,6 +4077,7 @@ img[loading="lazy"].loaded {
   border-top: 1px solid rgba(201, 168, 76, 0.25);
   border-bottom: 1px solid rgba(201, 168, 76, 0.25);
 }
+.faq-section .section-header { max-width: none; margin: 0 0 40px; }
 .faq-section .section-title { color: #1a1a1a; }
 .faq-section .section-desc { color: #555555; }
 .faq-list {
@@ -4139,7 +4128,7 @@ img[loading="lazy"].loaded {
   max-height: 400px;
   opacity: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 680px) {
   .faq-q { font-size: 0.95rem; }
 }
 
