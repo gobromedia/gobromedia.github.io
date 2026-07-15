@@ -1147,7 +1147,7 @@ section {
 .service-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.25rem;
-  font-weight: 600;
+  font-weight: 300;
   margin-bottom: 20px;
   color: var(--white);
   z-index: 2;
@@ -2022,7 +2022,7 @@ section {
 .identity-card h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.85rem;
-  font-weight: 600;
+  font-weight: 300;
   color: var(--white);
   margin-bottom: 16px;
   transition: color 0.4s ease;
@@ -3961,7 +3961,7 @@ img[loading="lazy"].loaded {
 .guarantee-card h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.85rem;
-  font-weight: 700;
+  font-weight: 300;
   color: #1a1a1a;
   margin-bottom: 20px;
   line-height: 1.2;
