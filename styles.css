@@ -1031,15 +1031,16 @@ section {
 .service-illustration {
   position: relative;
   z-index: 2;
-  height: 158px;
-  margin: -8px 0 34px;
-  border-radius: 14px;
+  height: 210px;
+  /* Full-bleed to the card's top and side edges; bottom stays put */
+  margin: -56px -48px 36px;
+  border-radius: 22px 22px 0 0;
   background: linear-gradient(160deg, #faf7ef 0%, #f3e9cf 100%);
-  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px;
+  padding: 26px;
   overflow: hidden;
 }
 
@@ -1944,15 +1945,16 @@ section {
 .identity-illustration {
   position: relative;
   z-index: 1;
-  height: 132px;
-  margin-bottom: 26px;
-  border-radius: 14px;
+  height: 168px;
+  /* Full-bleed to the card's top and side edges; bottom stays put */
+  margin: -40px -30px 28px;
+  border-radius: 20px 20px 0 0;
   background: linear-gradient(160deg, #faf7ef 0%, #f3e9cf 100%);
-  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
   overflow: hidden;
 }
 
@@ -3868,15 +3870,16 @@ img[loading="lazy"].loaded {
 .guarantee-illustration {
   position: relative;
   z-index: 1;
-  height: 150px;
-  margin: -8px 0 30px;
-  border-radius: 14px;
+  height: 196px;
+  /* Full-bleed to the card's top and side edges; bottom stays put */
+  margin: -56px -48px 32px;
+  border-radius: 12px 12px 0 0;
   background: linear-gradient(160deg, #faf7ef 0%, #f3e9cf 100%);
-  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
+  padding: 24px;
   overflow: hidden;
 }
 
