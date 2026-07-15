@@ -801,6 +801,11 @@ section {
   font-weight: 500;
 }
 
+/* Larger heading for the Core Services section */
+#services .section-title {
+  font-size: clamp(2.7rem, 6vw, 4.8rem);
+}
+
 .section-desc {
   color: var(--text-muted);
   font-size: 1rem;
@@ -1141,7 +1146,7 @@ section {
 
 .service-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.85rem;
+  font-size: 2.25rem;
   font-weight: 600;
   margin-bottom: 20px;
   color: var(--white);
