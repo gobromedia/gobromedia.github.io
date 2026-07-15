@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="48-hour turnaround illustration">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="152" cy="46" r="6" fill="#dbb95c"/>
+  <circle cx="44" cy="120" r="5" fill="#b89630"/>
+  <!-- stopwatch top button + ears -->
+  <rect x="90" y="30" width="20" height="10" rx="3" fill="#b89630"/>
+  <rect x="94" y="24" width="12" height="10" rx="3" fill="#3a3324"/>
+  <line x1="72" y1="40" x2="62" y2="32" stroke="#b89630" stroke-width="6" stroke-linecap="round"/>
+  <line x1="128" y1="40" x2="138" y2="32" stroke="#b89630" stroke-width="6" stroke-linecap="round"/>
+  <!-- dial -->
+  <circle cx="100" cy="94" r="46" fill="#ffffff" stroke="#c9a84c" stroke-width="6"/>
+  <circle cx="100" cy="94" r="46" fill="none" stroke="#dbb95c" stroke-width="6" stroke-dasharray="150 300" stroke-linecap="round" transform="rotate(-90 100 94)"/>
+  <!-- hands -->
+  <line x1="100" y1="94" x2="100" y2="66" stroke="#3a3324" stroke-width="4" stroke-linecap="round"/>
+  <line x1="100" y1="94" x2="122" y2="102" stroke="#c9a84c" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="100" cy="94" r="5" fill="#3a3324"/>
+  <text x="100" y="128" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#b89630" text-anchor="middle">48h</text>
+</svg>

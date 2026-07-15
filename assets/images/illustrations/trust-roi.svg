@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Real ROI focus illustration">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
+  <circle cx="44" cy="118" r="5" fill="#b89630"/>
+  <!-- coin stacks -->
+  <g>
+    <ellipse cx="62" cy="120" rx="18" ry="6" fill="#b89630"/>
+    <rect x="44" y="104" width="36" height="16" fill="#c9a84c"/>
+    <ellipse cx="62" cy="104" rx="18" ry="6" fill="#dbb95c"/>
+    <rect x="44" y="90" width="36" height="16" fill="#c9a84c"/>
+    <ellipse cx="62" cy="90" rx="18" ry="6" fill="#dbb95c"/>
+    <text x="62" y="95" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">₹</text>
+  </g>
+  <!-- upward arrow -->
+  <path d="M78 108 L104 84 L120 96 L146 62" fill="none" stroke="#3a3324" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M136 58 l16 -6 -4 16 z" fill="#3a3324"/>
+  <circle cx="104" cy="84" r="5" fill="#fff" stroke="#3a3324" stroke-width="3"/>
+  <circle cx="120" cy="96" r="5" fill="#fff" stroke="#3a3324" stroke-width="3"/>
+</svg>

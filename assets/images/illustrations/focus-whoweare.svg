@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Who we are — the team">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="152" cy="50" r="6" fill="#dbb95c"/>
+  <circle cx="46" cy="120" r="5" fill="#b89630"/>
+  <!-- left person -->
+  <circle cx="58" cy="78" r="14" fill="#dbb95c"/>
+  <circle cx="58" cy="74" r="6" fill="#fff"/><path d="M44 96 a14 14 0 0 1 28 0 z" fill="#fff"/>
+  <!-- right person -->
+  <circle cx="142" cy="78" r="14" fill="#dbb95c"/>
+  <circle cx="142" cy="74" r="6" fill="#fff"/><path d="M128 96 a14 14 0 0 1 28 0 z" fill="#fff"/>
+  <!-- center person (lead) -->
+  <circle cx="100" cy="72" r="20" fill="#b89630"/>
+  <circle cx="100" cy="66" r="9" fill="#fff"/><path d="M78 100 a22 22 0 0 1 44 0 z" fill="#fff"/>
+  <path d="M78 100 a22 22 0 0 1 44 0 z" fill="#b89630" opacity="0.18"/>
+  <!-- base -->
+  <rect x="46" y="118" width="108" height="10" rx="5" fill="#c9a84c"/>
+</svg>

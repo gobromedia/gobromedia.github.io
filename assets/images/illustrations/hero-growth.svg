@@ -1,0 +1,51 @@
+<svg viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digital growth dashboard illustration">
+  <defs>
+    <radialGradient id="hglow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#dbb95c" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#dbb95c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="230" cy="200" r="200" fill="url(#hglow)"/>
+  <!-- orbit dots -->
+  <circle cx="60" cy="90" r="6" fill="#dbb95c"/>
+  <circle cx="410" cy="300" r="7" fill="#c9a84c"/>
+  <circle cx="392" cy="96" r="5" fill="#b89630"/>
+  <circle cx="70" cy="320" r="5" fill="#dbb95c"/>
+
+  <!-- main dashboard card -->
+  <rect x="96" y="120" width="230" height="176" rx="16" fill="#ffffff"/>
+  <rect x="96" y="120" width="230" height="34" rx="16" fill="#c9a84c"/>
+  <rect x="96" y="140" width="230" height="14" fill="#c9a84c"/>
+  <circle cx="114" cy="137" r="4" fill="#fff"/><circle cx="128" cy="137" r="4" fill="#fff"/><circle cx="142" cy="137" r="4" fill="#fff"/>
+  <!-- bars -->
+  <rect x="120" y="238" width="22" height="38" rx="5" fill="#dbb95c"/>
+  <rect x="152" y="222" width="22" height="54" rx="5" fill="#c9a84c"/>
+  <rect x="184" y="200" width="22" height="76" rx="5" fill="#b89630"/>
+  <rect x="216" y="216" width="22" height="60" rx="5" fill="#dbb95c"/>
+  <rect x="248" y="188" width="22" height="88" rx="5" fill="#c9a84c"/>
+  <!-- trend line -->
+  <path d="M118 214 L160 200 L196 180 L232 190 L284 160" fill="none" stroke="#3a3324" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="118" cy="214" r="5" fill="#fff" stroke="#3a3324" stroke-width="3"/>
+  <circle cx="284" cy="160" r="5" fill="#fff" stroke="#3a3324" stroke-width="3"/>
+
+  <!-- rocket top-right -->
+  <g transform="rotate(38 360 130)">
+    <path d="M360 78 c18 14 26 40 20 66 h-40 c-6 -26 2 -52 20 -66 z" fill="#ffffff" stroke="#c9a84c" stroke-width="3"/>
+    <circle cx="360" cy="122" r="9" fill="#c9a84c"/>
+    <path d="M340 140 l-14 8 14 2 z" fill="#b89630"/>
+    <path d="M380 140 l14 8 -14 2 z" fill="#b89630"/>
+    <path d="M348 146 h24 c-2 18 -10 30 -12 30 s-10 -12 -12 -30 z" fill="#dbb95c"/>
+  </g>
+
+  <!-- magnifier bottom-left -->
+  <g transform="translate(58 296)">
+    <circle cx="34" cy="34" r="30" fill="#faf7f0" stroke="#c9a84c" stroke-width="6"/>
+    <path d="M22 40 l8 -8 8 6 12 -16" fill="none" stroke="#b89630" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="52" y="52" width="34" height="12" rx="6" transform="rotate(45 52 52)" fill="#c9a84c"/>
+  </g>
+
+  <!-- coin / sparkle accents -->
+  <path d="M356 232 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" fill="#dbb95c"/>
+  <circle cx="326" cy="300" r="16" fill="#b89630"/>
+  <text x="326" y="306" font-family="Georgia, serif" font-size="18" fill="#fff" text-anchor="middle">₹</text>
+</svg>

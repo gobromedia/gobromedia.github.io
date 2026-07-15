@@ -1,0 +1,14 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Direct founder access illustration">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="150" cy="120" r="6" fill="#dbb95c"/>
+  <circle cx="48" cy="48" r="5" fill="#b89630"/>
+  <!-- back bubble -->
+  <path d="M108 52 h44 a12 12 0 0 1 12 12 v26 a12 12 0 0 1 -12 12 h-8 l0 12 -14 -12 h-22 a12 12 0 0 1 -12 -12 V64 a12 12 0 0 1 12 -12 z" fill="#efe4c4"/>
+  <!-- front bubble -->
+  <path d="M46 60 h50 a12 12 0 0 1 12 12 v28 a12 12 0 0 1 -12 12 h-24 l-16 14 l0 -14 h-10 a12 12 0 0 1 -12 -12 V72 a12 12 0 0 1 12 -12 z" fill="#c9a84c"/>
+  <circle cx="60" cy="86" r="4.5" fill="#fff"/>
+  <circle cx="76" cy="86" r="4.5" fill="#fff"/>
+  <circle cx="92" cy="86" r="4.5" fill="#fff"/>
+  <!-- lightning = instant/direct -->
+  <path d="M140 66 l-10 16 h7 l-6 14 16 -18 h-7 z" fill="#b89630"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Our mission — flag on target">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
+  <circle cx="46" cy="120" r="5" fill="#b89630"/>
+  <!-- target -->
+  <circle cx="86" cy="96" r="36" fill="#efe4c4"/>
+  <circle cx="86" cy="96" r="36" fill="none" stroke="#b89630" stroke-width="3"/>
+  <circle cx="86" cy="96" r="23" fill="#ffffff"/>
+  <circle cx="86" cy="96" r="23" fill="none" stroke="#dbb95c" stroke-width="3"/>
+  <circle cx="86" cy="96" r="10" fill="#c9a84c"/>
+  <!-- flag pole -->
+  <rect x="112" y="44" width="5" height="70" rx="2" fill="#3a3324"/>
+  <!-- flag -->
+  <path d="M117 46 h34 l-9 12 9 12 h-34 z" fill="#c9a84c"/>
+  <path d="M117 46 h34 l-9 12 9 12 h-34 z" fill="none" stroke="#dbb95c" stroke-width="2"/>
+  <circle cx="114" cy="44" r="4" fill="#b89630"/>
+</svg>

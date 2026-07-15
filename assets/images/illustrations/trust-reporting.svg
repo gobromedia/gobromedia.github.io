@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Transparent reporting illustration">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="150" cy="44" r="6" fill="#dbb95c"/>
+  <circle cx="46" cy="120" r="5" fill="#b89630"/>
+  <!-- report sheet -->
+  <rect x="56" y="42" width="88" height="86" rx="8" fill="#ffffff" stroke="#e7dcc0" stroke-width="2"/>
+  <rect x="68" y="54" width="42" height="7" rx="3.5" fill="#c9a84c"/>
+  <!-- mini bars -->
+  <rect x="68" y="98" width="10" height="18" rx="2" fill="#dbb95c"/>
+  <rect x="82" y="88" width="10" height="28" rx="2" fill="#c9a84c"/>
+  <rect x="96" y="80" width="10" height="36" rx="2" fill="#b89630"/>
+  <rect x="110" y="92" width="10" height="24" rx="2" fill="#dbb95c"/>
+  <!-- pie -->
+  <circle cx="120" cy="72" r="14" fill="#efe4c4"/>
+  <path d="M120 72 L120 58 A14 14 0 0 1 132 79 Z" fill="#c9a84c"/>
+  <!-- verified check badge -->
+  <circle cx="140" cy="112" r="18" fill="#b89630"/>
+  <path d="M131 112 l6 7 12 -13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

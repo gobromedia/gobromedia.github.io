@@ -1,0 +1,13 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="First-month commitment guarantee illustration">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
+  <circle cx="46" cy="118" r="5" fill="#b89630"/>
+  <!-- shield -->
+  <path d="M100 34 l42 16 v34 c0 28 -20 44 -42 54 c-22 -10 -42 -26 -42 -54 V50 z" fill="#c9a84c"/>
+  <path d="M100 34 l42 16 v34 c0 28 -20 44 -42 54 c-22 -10 -42 -26 -42 -54 V50 z" fill="none" stroke="#dbb95c" stroke-width="3"/>
+  <path d="M100 46 l30 11 v27 c0 21 -14 33 -30 41 z" fill="#dbb95c" opacity="0.5"/>
+  <!-- check -->
+  <path d="M80 88 l13 15 26 -30" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 30-day mark -->
+  <text x="100" y="150" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#b89630" text-anchor="middle">30 days</text>
+</svg>

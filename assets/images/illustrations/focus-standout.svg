@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Why we stand out — award">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
+  <circle cx="46" cy="120" r="5" fill="#b89630"/>
+  <!-- trophy handles -->
+  <path d="M66 56 h-14 a10 10 0 0 0 0 28 h6" fill="none" stroke="#b89630" stroke-width="6"/>
+  <path d="M134 56 h14 a10 10 0 0 1 0 28 h-6" fill="none" stroke="#b89630" stroke-width="6"/>
+  <!-- cup -->
+  <path d="M66 48 h68 v16 a34 34 0 0 1 -68 0 z" fill="#c9a84c"/>
+  <path d="M66 48 h68 v16 a34 34 0 0 1 -68 0 z" fill="none" stroke="#dbb95c" stroke-width="3"/>
+  <!-- stem + base -->
+  <rect x="94" y="96" width="12" height="16" fill="#b89630"/>
+  <rect x="78" y="112" width="44" height="10" rx="4" fill="#b89630"/>
+  <rect x="86" y="122" width="28" height="8" rx="3" fill="#c9a84c"/>
+  <!-- star -->
+  <path d="M100 58 l5 11 12 1 -9 8 3 12 -11 -6 -11 6 3 -12 -9 -8 12 -1 z" fill="#fff"/>
+</svg>

@@ -49,6 +49,7 @@
 .team-card,
 .testimonial-card {
   border-radius: 22px;
+  will-change: transform, box-shadow;
 }
 
 /* ==========================================================================
@@ -432,6 +433,7 @@ header.scrolled .logo {
   -webkit-filter: blur(100px);
   pointer-events: none;
   z-index: 3;
+  will-change: transform;
 }
 
 .orb-rose {
@@ -460,6 +462,37 @@ header.scrolled .logo {
 @keyframes floatOrb2 {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(-30px, 30px); }
+}
+
+.hero-illustration {
+  position: absolute;
+  right: 3%;
+  bottom: 7%;
+  width: min(32vw, 420px);
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  animation: heroIlloIn 1.4s 0.8s forwards, heroIlloFloat 9s 2.2s ease-in-out infinite;
+}
+
+.hero-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 26px 50px rgba(120, 95, 30, 0.16));
+}
+
+@keyframes heroIlloIn {
+  to { opacity: 1; }
+}
+
+@keyframes heroIlloFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@media (max-width: 1180px) {
+  .hero-illustration { display: none; }
 }
 
 .hero-content {
@@ -504,6 +537,7 @@ header.scrolled .logo {
   -webkit-text-fill-color: transparent;
   font-weight: 700;
   font-style: italic;
+  will-change: background-position;
 }
 
 .hero-title .bold-white {
@@ -693,6 +727,7 @@ header.scrolled .logo {
   gap: 60px;
   width: max-content;
   animation: tickerScroll 25s linear infinite;
+  will-change: transform;
 }
 
 .ticker-wrap span {
@@ -725,6 +760,8 @@ section {
   padding: 120px 60px;
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 .section-header {
@@ -822,11 +859,24 @@ section {
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.05) 100%), url('assets/images/about-image.webp');
-  background-size: cover;
-  background-position: center;
-  border-color: rgba(201, 168, 76, 0.2);
+  justify-content: space-between;
+  gap: 12px;
+  background: linear-gradient(160deg, #faf7ef 0%, #f3e9cf 100%);
+  border-color: rgba(201, 168, 76, 0.25);
+}
+
+.about-illustration-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.about-card-main .about-card-content {
+  flex: 0 0 auto;
 }
 
 .about-card-main::before {
@@ -838,7 +888,7 @@ section {
 }
 
 .about-card-main .about-card-content .about-card-text {
-  color: #ffffff;
+  color: #2a2620;
 }
 
 .about-card-accent {
@@ -977,13 +1027,38 @@ section {
   transition: background 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Service Card Background assignments */
-.service-card:nth-child(1) { background-image: url('assets/images/service1.webp'); }
-.service-card:nth-child(2) { background-image: url('assets/images/service2.webp'); }
-.service-card:nth-child(3) { background-image: url('assets/images/service3.webp'); }
-.service-card:nth-child(4) { background-image: url('assets/images/service4.webp'); }
-.service-card:nth-child(5) { background-image: url('assets/images/service5.webp'); }
-.service-card:nth-child(6) { background-image: url('assets/images/service6.webp'); }
+/* Service cards now use inline gold flat-vector illustrations (.service-illustration) */
+.service-illustration {
+  position: relative;
+  z-index: 2;
+  height: 158px;
+  margin: -8px 0 34px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #faf7ef 0%, #f3e9cf 100%);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  overflow: hidden;
+}
+
+.service-illustration img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-card:hover .service-illustration img {
+  transform: scale(1.06);
+}
+
+.service-card:hover .service-illustration {
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: inset 0 0 40px rgba(201, 168, 76, 0.08);
+}
 
 .service-card::before {
   content: '';
@@ -1221,6 +1296,7 @@ section {
   border-radius: 22px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform, box-shadow;
 }
 
 .portfolio-item:first-child {
@@ -1862,6 +1938,37 @@ section {
 .identity-card:hover::before {
   transform: scaleX(1);
   animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.identity-illustration {
+  position: relative;
+  z-index: 1;
+  height: 132px;
+  margin-bottom: 26px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #faf7ef 0%, #f3e9cf 100%);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.identity-illustration img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.identity-card:hover .identity-illustration img {
+  transform: scale(1.06);
+}
+
+.identity-card:hover .identity-illustration {
+  border-color: rgba(201, 168, 76, 0.4);
 }
 
 .identity-icon {
@@ -2878,6 +2985,17 @@ img[loading="lazy"].loaded {
     opacity: 1 !important;
     transform: none !important;
   }
+  .hero-orb,
+  .ticker-wrap,
+  .hero-title .gold-italic,
+  .cta-band.premium-cta h2 em,
+  .hero-buttons .btn-primary,
+  .cta-band .btn-primary,
+  .cta-shimmer,
+  .scroll-progress {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -3730,6 +3848,7 @@ img[loading="lazy"].loaded {
   display: flex;
   flex-direction: column;
   min-height: 340px;
+  will-change: transform, box-shadow;
 }
 
 .guarantee-card::after {
@@ -3743,6 +3862,38 @@ img[loading="lazy"].loaded {
 
 .guarantee-card:hover::after {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.92) 100%);
+}
+
+.guarantee-illustration {
+  position: relative;
+  z-index: 1;
+  height: 150px;
+  margin: -8px 0 30px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #faf7ef 0%, #f3e9cf 100%);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.guarantee-illustration img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.guarantee-card:hover .guarantee-illustration img {
+  transform: scale(1.06);
+}
+
+.guarantee-card:hover .guarantee-illustration {
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: inset 0 0 40px rgba(201, 168, 76, 0.08);
 }
 
 .guarantee-body {
@@ -4057,10 +4208,11 @@ img[loading="lazy"].loaded {
   box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.14), 0 0 18px rgba(201, 168, 76, 0.25);
 }
 
-/* (12) Gold em shimmer — limited to hero + CTA headline em (subtle, infinite) */
+/* (12) Gold em shimmer — limited to hero + CTA headline em (subtle, 3 iterations) */
 .hero-title .gold-italic {
   background-size: 200% auto;
-  animation: gbmShimmer 5s linear infinite;
+  animation: gbmShimmer 5s linear 3;
+  will-change: background-position;
 }
 .cta-band.premium-cta h2 em {
   background: var(--gold-gradient);
@@ -4068,7 +4220,8 @@ img[loading="lazy"].loaded {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gbmShimmer 5s linear infinite;
+  animation: gbmShimmer 5s linear 3;
+  will-change: background-position;
 }
 @keyframes gbmShimmer { to { background-position: 200% center; } }
 
@@ -4084,10 +4237,11 @@ img[loading="lazy"].loaded {
   transition: width 0.1s linear;
 }
 
-/* Subtle primary-button pulse — only hero + CTA primaries (limited infinite loops) */
+/* Subtle primary-button pulse — only hero + CTA primaries (3 iterations) */
 .hero-buttons .btn-primary,
 .cta-band .btn-primary {
-  animation: gbmPulse 3s ease-in-out infinite;
+  animation: gbmPulse 3s ease-in-out 3;
+  will-change: box-shadow;
 }
 @keyframes gbmPulse {
   0%, 100% { box-shadow: 0 10px 30px rgba(201, 168, 76, 0.22); }

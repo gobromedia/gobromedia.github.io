@@ -1,0 +1,20 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Video editing illustration">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="152" cy="118" r="6" fill="#dbb95c"/>
+  <circle cx="46" cy="50" r="5" fill="#b89630"/>
+  <!-- film screen -->
+  <rect x="50" y="54" width="100" height="62" rx="9" fill="#ffffff" stroke="#e7dcc0" stroke-width="2"/>
+  <rect x="50" y="54" width="100" height="62" rx="9" fill="none"/>
+  <!-- play button -->
+  <circle cx="100" cy="85" r="20" fill="#c9a84c"/>
+  <circle cx="100" cy="85" r="20" fill="none" stroke="#dbb95c" stroke-width="3"/>
+  <path d="M94 76 L112 85 L94 94 Z" fill="#ffffff"/>
+  <!-- film strip base -->
+  <rect x="44" y="122" width="112" height="20" rx="4" fill="#b89630"/>
+  <rect x="50" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
+  <rect x="66" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
+  <rect x="82" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
+  <rect x="98" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
+  <rect x="114" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
+  <rect x="130" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
+</svg>

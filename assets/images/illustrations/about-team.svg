@@ -1,0 +1,44 @@
+<svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agency growth illustration">
+  <defs>
+    <radialGradient id="aglow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#dbb95c" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#dbb95c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="210" cy="190" r="185" fill="url(#aglow)"/>
+  <circle cx="360" cy="86" r="7" fill="#dbb95c"/>
+  <circle cx="58" cy="280" r="6" fill="#c9a84c"/>
+  <circle cx="70" cy="90" r="5" fill="#b89630"/>
+
+  <!-- back panel -->
+  <rect x="120" y="96" width="210" height="150" rx="14" fill="#efe4c4"/>
+  <!-- monitor / board -->
+  <rect x="96" y="120" width="210" height="150" rx="14" fill="#ffffff" stroke="#e7dcc0" stroke-width="2"/>
+  <rect x="96" y="120" width="210" height="30" rx="14" fill="#c9a84c"/>
+  <rect x="96" y="138" width="210" height="12" fill="#c9a84c"/>
+  <!-- rising arrow -->
+  <path d="M120 240 L168 208 L204 224 L262 176" fill="none" stroke="#b89630" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M250 170 l20 -6 -4 20 z" fill="#b89630"/>
+  <circle cx="120" cy="240" r="6" fill="#dbb95c"/>
+  <circle cx="168" cy="208" r="6" fill="#dbb95c"/>
+  <circle cx="204" cy="224" r="6" fill="#dbb95c"/>
+  <!-- stand -->
+  <rect x="188" y="270" width="26" height="26" fill="#efe4c4"/>
+  <rect x="156" y="296" width="90" height="12" rx="6" fill="#c9a84c"/>
+
+  <!-- two teammates -->
+  <g transform="translate(74 250)">
+    <circle cx="30" cy="26" r="20" fill="#dbb95c"/>
+    <circle cx="30" cy="20" r="9" fill="#fff"/>
+    <path d="M8 54 a22 22 0 0 1 44 0 z" fill="#fff"/>
+    <path d="M8 54 a22 22 0 0 1 44 0 z" fill="#c9a84c" opacity="0.25"/>
+  </g>
+  <g transform="translate(300 246)">
+    <circle cx="30" cy="26" r="22" fill="#b89630"/>
+    <circle cx="30" cy="20" r="10" fill="#fff"/>
+    <path d="M6 58 a24 24 0 0 1 48 0 z" fill="#fff"/>
+    <path d="M6 58 a24 24 0 0 1 48 0 z" fill="#b89630" opacity="0.2"/>
+  </g>
+  <!-- sparkle -->
+  <path d="M338 150 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" fill="#dbb95c"/>
+</svg>

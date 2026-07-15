@@ -1,0 +1,15 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No long-term lock-in illustration">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
+  <circle cx="46" cy="120" r="5" fill="#b89630"/>
+  <!-- open shackle (unlocked, swung open to the left) -->
+  <path d="M92 66 V52 a20 20 0 0 0 -40 0 V70" fill="none" stroke="#b89630" stroke-width="9" stroke-linecap="round"/>
+  <!-- lock body -->
+  <rect x="66" y="66" width="68" height="56" rx="12" fill="#c9a84c"/>
+  <rect x="66" y="66" width="68" height="56" rx="12" fill="none" stroke="#dbb95c" stroke-width="3"/>
+  <!-- keyhole -->
+  <circle cx="100" cy="88" r="8" fill="#fff"/>
+  <rect x="96" y="92" width="8" height="16" rx="3" fill="#fff"/>
+  <!-- freedom sparkle -->
+  <path d="M150 90 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" fill="#dbb95c"/>
+</svg>

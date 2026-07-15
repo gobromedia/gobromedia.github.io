@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What we provide — the toolkit">
+  <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
+  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
+  <circle cx="46" cy="118" r="5" fill="#b89630"/>
+  <!-- big gear -->
+  <g transform="translate(78 60)">
+    <path d="M22 -4 h8 l3 10 8 4 10 -4 6 6 -4 10 4 8 10 3 v8 l-10 3 -4 8 4 10 -6 6 -10 -4 -8 4 -3 10 h-8 l-3 -10 -8 -4 -10 4 -6 -6 4 -10 -4 -8 -10 -3 v-8 l10 -3 4 -8 -4 -10 6 -6 10 4 8 -4 z" fill="#c9a84c"/>
+    <circle cx="26" cy="26" r="12" fill="#f3e9cf"/>
+    <circle cx="26" cy="26" r="12" fill="none" stroke="#b89630" stroke-width="3"/>
+  </g>
+  <!-- small gear -->
+  <g transform="translate(120 96)">
+    <path d="M14 -2 h6 l2 7 6 3 7 -3 4 4 -3 7 3 6 7 2 v6 l-7 2 -3 6 3 7 -4 4 -7 -3 -6 3 -2 7 h-6 l-2 -7 -6 -3 -7 3 -4 -4 3 -7 -3 -6 -7 -2 v-6 l7 -2 3 -6 -3 -7 4 -4 7 3 6 -3 z" fill="#dbb95c"/>
+    <circle cx="17" cy="17" r="7" fill="#f3e9cf"/>
+  </g>
+  <!-- sparkle -->
+  <path d="M52 58 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" fill="#dbb95c"/>
+</svg>
