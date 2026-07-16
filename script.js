@@ -57,23 +57,66 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ==========================================================================
-  // 2. MORPHING HEADER ON SCROLL
+  // 2. MORPHING HEADER ON SCROLL + SCROLL PROGRESS + HERO PARALLAX + ACTIVE NAV
   // ==========================================================================
   const header = document.getElementById('header');
   const scrollTopBtn = document.getElementById('scrollTopBtn');
+  const progressBar = document.querySelector('.scroll-progress');
+  const heroSlider = document.querySelector('.hero-slider');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
 
-  window.addEventListener('scroll', function() {
+  let scrollTicking = false;
+  let lastScrollY = 0;
+
+  function onScroll() {
     const scrollPos = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
+    // Header morphing
     if (header) {
       header.classList.toggle('scrolled', scrollPos > 60);
     }
 
+    // Scroll to top button
     if (scrollTopBtn) {
-      scrollTopBtn.style.display = scrollPos > 400 ? 'flex' : 'none';
-      scrollTopBtn.hidden = scrollPos <= 400;
+      const shouldShow = scrollPos > 400;
+      scrollTopBtn.style.display = shouldShow ? 'flex' : 'none';
+      scrollTopBtn.hidden = !shouldShow;
     }
-  });
+
+    // Scroll progress bar
+    if (progressBar && maxScroll > 0) {
+      progressBar.style.width = ((scrollPos / maxScroll) * 100) + '%';
+    }
+
+    // Hero parallax
+    if (heroSlider && !reduceMotion && scrollPos < window.innerHeight * 1.2) {
+      heroSlider.style.transform = 'translateY(' + (scrollPos * 0.25) + 'px)';
+    }
+
+    // Active navigation link (throttled via scrollTicking)
+    let current = '';
+    sections.forEach(function(section) {
+      const sectionTop = section.offsetTop - 120;
+      if (scrollPos >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(function(link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+
+    lastScrollY = scrollPos;
+    scrollTicking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!scrollTicking) {
+      requestAnimationFrame(onScroll);
+      scrollTicking = true;
+    }
+  }, { passive: true });
 
   // Scroll to Top action
   if (scrollTopBtn) {
@@ -148,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 4b. MICRO-ANIMATIONS — count-up, scroll progress, hero parallax
   // ==========================================================================
   const counters = document.querySelectorAll('.count');
-  if (!reduceMotion && counters.length) {
+if (!reduceMotion && counters.length) {
     counters.forEach(function(el) {
       el.textContent = (el.dataset.prefix || '') + '0' + (el.dataset.suffix || '');
     });
@@ -181,42 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       counters.forEach(animateCount);
     }
-  }
-
-  // Scroll progress bar
-  const progressBar = document.querySelector('.scroll-progress');
-  if (progressBar) {
-    let pTicking = false;
-    window.addEventListener('scroll', function() {
-      if (!pTicking) {
-        requestAnimationFrame(function() {
-          const doc = document.documentElement;
-          const max = doc.scrollHeight - window.innerHeight;
-          const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-          progressBar.style.width = pct + '%';
-          pTicking = false;
-        });
-        pTicking = true;
-      }
-    }, { passive: true });
-  }
-
-  // Hero parallax (subtle, throttled)
-  const heroSlider = document.querySelector('.hero-slider');
-  if (heroSlider && !reduceMotion) {
-    let hTicking = false;
-    window.addEventListener('scroll', function() {
-      if (!hTicking) {
-        requestAnimationFrame(function() {
-          const y = window.scrollY;
-          if (y < window.innerHeight * 1.2) {
-            heroSlider.style.transform = 'translateY(' + (y * 0.25) + 'px)';
-          }
-          hTicking = false;
-        });
-        hTicking = true;
-      }
-    }, { passive: true });
   }
 
   // Homepage FAQ toggle
@@ -374,6 +381,11 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.classList.remove('open');
       modal.hidden = true;
       document.body.style.overflow = '';
+      // Drop focus from the trigger so no focus-visible outline lingers
+      // on the "Learn More" button after closing (e.g. via Escape).
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
+      }
     }
   };
 
@@ -517,42 +529,112 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set access key from localStorage or placeholder
     var accessKey = form.querySelector('input[name="access_key"]');
     if (accessKey) {
-      accessKey.value = localStorage.getItem('gobro_web3forms_key') || '';
+      var storedKey = localStorage.getItem('gobro_web3forms_key');
+      if (storedKey) accessKey.value = storedKey;
     }
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
+      // Validate required fields
+      var requiredFields = form.querySelectorAll('[required]');
+      var isValid = true;
+      var firstInvalid = null;
+
+      requiredFields.forEach(function(field) {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.style.borderColor = '#a83030';
+          field.style.boxShadow = '0 0 0 4px rgba(168, 48, 48, 0.08)';
+          if (!firstInvalid) firstInvalid = field;
+        } else {
+          field.style.borderColor = '';
+          field.style.boxShadow = '';
+        }
+      });
+
+      if (!isValid) {
+        if (firstInvalid) firstInvalid.focus();
+        status.className = 'form-status error';
+        status.innerHTML = '<strong>Error:</strong> Please fill in all required fields.';
+        status.style.display = 'block';
+        return;
+      }
+
+      // Email validation
+      var emailField = form.querySelector('input[type="email"]');
+      if (emailField && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim())) {
+        emailField.style.borderColor = '#a83030';
+        emailField.style.boxShadow = '0 0 0 4px rgba(168, 48, 48, 0.08)';
+        emailField.focus();
+        status.className = 'form-status error';
+        status.innerHTML = '<strong>Error:</strong> Please enter a valid email address.';
+        status.style.display = 'block';
+        return;
+      }
+
       var submitBtn = form.querySelector('button[type="submit"]');
       var originalText = submitBtn.innerHTML;
 
-      submitBtn.innerHTML = 'Processing...';
+      submitBtn.innerHTML = 'Sending...';
       submitBtn.disabled = true;
       status.className = 'form-status';
       status.style.display = 'none';
 
-      var waLink = waMessageFn(form);
       var formData = new FormData(form);
       var jsonObject = {};
       formData.forEach(function(value, key) { jsonObject[key] = value; });
+      
+      console.log('Form data:', jsonObject);
+      console.log('Access key:', jsonObject.access_key);
 
-      status.className = 'form-status success';
-      status.innerHTML = '<strong>Success!</strong> Redirecting to WhatsApp...';
-      status.style.display = 'block';
-
-      // Background email backup
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(jsonObject)
-      }).catch(function() { /* silent fail */ });
-
-      setTimeout(function() {
-        window.open(waLink, '_blank');
-        form.reset();
+      // Submit to Web3Forms (email)
+      var hasAccessKey = jsonObject.access_key && jsonObject.access_key.trim().length > 0;
+      if (hasAccessKey) {
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(jsonObject)
+        })
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+          console.log('Web3Forms response:', data);
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          if (data.success) {
+            status.className = 'form-status success';
+            status.innerHTML = '<strong>Success!</strong> Your message has been sent. We\'ll get back to you soon.';
+            status.style.display = 'block';
+            form.reset();
+          } else {
+            status.className = 'form-status error';
+            status.innerHTML = '<strong>Error:</strong> ' + (data.message || 'Failed to send. Please try again.');
+            status.style.display = 'block';
+          }
+        })
+        .catch(function(err) {
+          console.error('Web3Forms fetch error:', err);
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          status.className = 'form-status error';
+          status.innerHTML = '<strong>Error:</strong> Network error. Please try again.';
+          status.style.display = 'block';
+        });
+      } else {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-      }, 800);
+        status.className = 'form-status error';
+        status.innerHTML = '<strong>Error:</strong> Form configuration missing. Please contact admin.';
+        status.style.display = 'block';
+      }
+    });
+
+    // Clear error styles on input
+    form.querySelectorAll('input, select, textarea').forEach(function(field) {
+      field.addEventListener('input', function() {
+        this.style.borderColor = '';
+        this.style.boxShadow = '';
+      });
     });
   }
 
@@ -678,57 +760,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  window.toggleBlogCreator = function() {
-    var container = document.getElementById('blogCreatorContainer');
-    if (container) {
-      var isHidden = container.style.display === 'none';
-      container.style.display = isHidden ? 'block' : 'none';
-      if (isHidden) container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
-  window.publishLocalBlog = function(event) {
-    event.preventDefault();
-    var title = document.getElementById('blogTitle').value;
-    var category = document.getElementById('blogCategory').value;
-    var author = document.getElementById('blogAuthor').value;
-    var desc = document.getElementById('blogDesc').value;
-    var content = document.getElementById('blogContent').value;
-    var imageUrl = document.getElementById('blogImageUrl').value;
-    var imageFile = document.getElementById('blogImageFile').files[0];
-
-    function saveBlog(imageData) {
-      var newBlog = {
-        id: 'blog-' + Date.now(),
-        title: sanitize(title),
-        category: sanitize(category),
-        author: sanitize(author),
-        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-        desc: sanitize(desc),
-        image: imageData || '',
-        content: sanitizeHTML(content)
-      };
-      var existingBlogs = JSON.parse(localStorage.getItem('gobro_blogs')) || [];
-      existingBlogs.unshift(newBlog);
-      localStorage.setItem('gobro_blogs', JSON.stringify(existingBlogs));
-      document.getElementById('localBlogForm').reset();
-      document.getElementById('blogCreatorContainer').style.display = 'none';
-      renderLocalBlogs();
-      alert('Success! Your blog post has been published.');
-    }
-
-    if (imageFile && imageFile.size < 500000) {
-      var reader = new FileReader();
-      reader.onload = function(e) { saveBlog(e.target.result); };
-      reader.readAsDataURL(imageFile);
-    } else {
-      if (imageFile && imageFile.size >= 500000) {
-        alert('Image must be under 500KB. Using URL instead.');
-      }
-      saveBlog(imageUrl || '');
-    }
-  };
-
   window.renderLocalBlogs = function() {
     var blogs = JSON.parse(localStorage.getItem('gobro_blogs')) || [];
     if (blogs.length === 0) {
@@ -812,67 +843,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  window.checkAdminState = function() {
-    var isAdmin = localStorage.getItem('gobro_admin') === 'true';
-    var uploadBtn = document.getElementById('adminUploadBtn');
-    if (uploadBtn) uploadBtn.style.display = isAdmin ? 'inline-block' : 'none';
-  };
-
-  window.promptAdminAccess = function() {
-    var currentAdmin = localStorage.getItem('gobro_admin') === 'true';
-    if (currentAdmin) {
-      if (confirm('You are currently logged in as Admin. Do you want to logout?')) {
-        localStorage.removeItem('gobro_admin');
-        var btn = document.getElementById('adminUploadBtn');
-        if (btn) btn.style.display = 'none';
-        var creator = document.getElementById('blogCreatorContainer');
-        if (creator) creator.style.display = 'none';
-      }
-      return;
-    }
-
-    var passcode = prompt('Enter Admin Passcode:');
-    if (!passcode) return;
-
-    if (passcode === 'gobro2026') {
-      localStorage.setItem('gobro_admin', 'true');
-      var btn = document.getElementById('adminUploadBtn');
-      if (btn) {
-        btn.style.display = 'inline-block';
-        btn.scrollIntoView({ behavior: 'smooth' });
-      }
-      alert('Access Granted! Blog upload section is now unlocked.');
-    } else {
-      alert('Incorrect passcode. Access Denied.');
-    }
-  };
-
   // Initialize
   renderLocalBlogs();
-  checkAdminState();
-
-  // ==========================================================================
-  // ACTIVE NAVIGATION LINK ON SCROLL
-  // ==========================================================================
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  window.addEventListener('scroll', function() {
-    let current = '';
-    sections.forEach(function(section) {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(function(link) {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
-    });
-  });
 
   // ==========================================================================
   // MICRO-INTERACTIONS
@@ -1045,70 +1017,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   if (!reduceMotion) initCarousel('.identity-track', '.identity-dots', 5000);
-
-  // ==========================================================================
-  // INFINITE CAROUSEL — generic (testimonials section retired; kept for reuse)
-  // ==========================================================================
-  function initInfiniteCarousel(trackSelector, interval) {
-    var track = document.querySelector(trackSelector);
-    if (!track) return;
-
-    var cards = Array.from(track.children);
-    var total = cards.length;
-    if (total < 2) return;
-
-    var visible = window.innerWidth < 680 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-
-    // Clone first `visible` cards → append (trailing buffer)
-    for (var i = 0; i < visible; i++) {
-      track.appendChild(cards[i].cloneNode(true));
-    }
-    // Clone last `visible` cards → prepend (leading buffer)
-    for (var i = total - 1; i >= total - visible; i--) {
-      track.insertBefore(cards[i].cloneNode(true), track.firstChild);
-    }
-
-    var allCards = track.children;
-    var current = visible; // Start at first real slide
-
-    function getOffset() {
-      var gap = 30;
-      var cardWidth = allCards[0].getBoundingClientRect().width;
-      return current * (cardWidth + gap);
-    }
-
-    function update(animate) {
-      if (animate === false) {
-        track.style.transition = 'none';
-      } else {
-        track.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
-      }
-      track.style.transform = 'translateX(-' + getOffset() + 'px)';
-    }
-
-    function snapTo(index) {
-      track.style.transition = 'none';
-      current = index;
-      track.style.transform = 'translateX(-' + getOffset() + 'px)';
-      void track.offsetHeight; // Force reflow
-      track.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
-    }
-
-    update(false);
-
-    setInterval(function() {
-      current++;
-      update(true);
-
-      if (current >= visible + total) {
-        setTimeout(function() {
-          snapTo(visible);
-        }, 800);
-      }
-    }, interval);
-  }
-
-  initInfiniteCarousel('.testimonials-track', 3000); // legacy: section removed, no-op if element absent
 
   // ==========================================================================
   // BLUR-UP IMAGE LOADING
