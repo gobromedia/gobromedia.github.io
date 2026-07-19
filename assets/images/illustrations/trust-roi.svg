@@ -1,19 +1,29 @@
 <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Real ROI focus illustration">
+  <style>
+    .illo-float{animation:illoFloat 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.4s;animation-delay:-.9s}
+    .illo-float.f3{animation-duration:3.1s;animation-delay:-1.7s}
+    .illo-spin{animation:illoSpin 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin{animation:none!important}}
+  </style>
   <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
-  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
-  <circle cx="44" cy="118" r="5" fill="#b89630"/>
-  <!-- coin stacks -->
-  <g>
-    <ellipse cx="62" cy="120" rx="18" ry="6" fill="#b89630"/>
-    <rect x="44" y="104" width="36" height="16" fill="#c9a84c"/>
-    <ellipse cx="62" cy="104" rx="18" ry="6" fill="#dbb95c"/>
-    <rect x="44" y="90" width="36" height="16" fill="#c9a84c"/>
-    <ellipse cx="62" cy="90" rx="18" ry="6" fill="#dbb95c"/>
-    <text x="62" y="95" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">₹</text>
-  </g>
+  <ellipse cx="62" cy="128" rx="26" ry="6" fill="#3a3324" opacity="0.06"/>
+  <!-- coin stack (hero object) -->
+  <path d="M44 104 v12 a18 6 0 0 0 36 0 v-12" fill="#c9a84c" stroke="#3a3324" stroke-width="2.6" stroke-linejoin="round"/>
+  <ellipse cx="62" cy="104" rx="18" ry="6" fill="#e6cf8f" stroke="#3a3324" stroke-width="2.6"/>
+  <path d="M44 90 v12 a18 6 0 0 0 36 0 v-12" fill="#dbb95c" stroke="#3a3324" stroke-width="2.6" stroke-linejoin="round"/>
+  <ellipse cx="62" cy="90" rx="18" ry="6" fill="#f0e2b8" stroke="#3a3324" stroke-width="2.6"/>
+  <text x="62" y="95" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#3a3324" text-anchor="middle">&#8377;</text>
   <!-- upward arrow -->
-  <path d="M78 108 L104 84 L120 96 L146 62" fill="none" stroke="#3a3324" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M136 58 l16 -6 -4 16 z" fill="#3a3324"/>
-  <circle cx="104" cy="84" r="5" fill="#fff" stroke="#3a3324" stroke-width="3"/>
-  <circle cx="120" cy="96" r="5" fill="#fff" stroke="#3a3324" stroke-width="3"/>
+  <path d="M82 108 L104 84 L120 96 L144 64" fill="none" stroke="#3a3324" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M135 60 l14 -5 -3 14 z" fill="#3a3324" stroke="#3a3324" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="104" cy="84" r="4.5" fill="#faf3e0" stroke="#3a3324" stroke-width="2.6"/>
+  <circle cx="120" cy="96" r="4.5" fill="#faf3e0" stroke="#3a3324" stroke-width="2.6"/>
+  <!-- accents -->
+  <g class="illo-spin">
+    <path d="M150 100 l2.8 6.5 6.5 2.8 -6.5 2.8 -2.8 6.5 -2.8 -6.5 -6.5 -2.8 6.5 -2.8 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <g class="illo-float f2"><circle cx="150" cy="46" r="6" fill="#c9a84c" stroke="#3a3324" stroke-width="2"/></g>
 </svg>

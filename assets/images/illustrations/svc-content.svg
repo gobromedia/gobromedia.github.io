@@ -1,23 +1,36 @@
 <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Content creation illustration">
+  <style>
+    .illo-float{animation:illoFloat 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.4s;animation-delay:-.9s}
+    .illo-float.f3{animation-duration:3.1s;animation-delay:-1.7s}
+    .illo-spin{animation:illoSpin 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin{animation:none!important}}
+  </style>
   <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
-  <circle cx="150" cy="44" r="6" fill="#dbb95c"/>
-  <circle cx="46" cy="120" r="5" fill="#b89630"/>
+  <ellipse cx="102" cy="140" rx="40" ry="6.5" fill="#3a3324" opacity="0.06"/>
   <!-- back sheet -->
-  <rect x="60" y="46" width="70" height="88" rx="8" fill="#efe4c4"/>
-  <!-- front sheet -->
-  <rect x="70" y="40" width="70" height="92" rx="8" fill="#ffffff" stroke="#e7dcc0" stroke-width="2"/>
+  <rect x="62" y="46" width="68" height="88" rx="9" fill="#efe4c4" stroke="#3a3324" stroke-width="3.2"/>
+  <!-- front sheet (hero object) -->
+  <rect x="72" y="40" width="68" height="92" rx="9" fill="#faf3e0" stroke="#3a3324" stroke-width="3.2"/>
   <!-- text lines -->
-  <rect x="82" y="56" width="46" height="7" rx="3.5" fill="#c9a84c"/>
-  <rect x="82" y="70" width="42" height="5" rx="2.5" fill="#dbb95c"/>
-  <rect x="82" y="80" width="46" height="5" rx="2.5" fill="#dbb95c"/>
-  <rect x="82" y="90" width="30" height="5" rx="2.5" fill="#dbb95c"/>
+  <rect x="84" y="56" width="44" height="7" rx="3.5" fill="#c9a84c"/>
+  <rect x="84" y="71" width="40" height="5" rx="2.5" fill="#e6cf8f"/>
+  <rect x="84" y="81" width="44" height="5" rx="2.5" fill="#e6cf8f"/>
+  <rect x="84" y="91" width="28" height="5" rx="2.5" fill="#e6cf8f"/>
   <!-- pen -->
-  <g transform="rotate(38 122 108)">
-    <rect x="112" y="70" width="12" height="52" rx="4" fill="#b89630"/>
-    <rect x="112" y="70" width="12" height="14" rx="4" fill="#3a3324"/>
-    <path d="M112 122 L124 122 L118 134 Z" fill="#dbb95c"/>
-    <path d="M116 130 L120 130 L118 134 Z" fill="#3a3324"/>
+  <g transform="rotate(40 120 108)">
+    <rect x="114" y="66" width="12" height="54" rx="5" fill="#dbb95c" stroke="#3a3324" stroke-width="2.4"/>
+    <path d="M114 80 v-9 a5 5 0 0 1 5 -5 h2 a5 5 0 0 1 5 5 v9 z" fill="#3a3324"/>
+    <path d="M114 120 L126 120 L120 133 Z" fill="#f0e2b8" stroke="#3a3324" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M118 128 L122 128 L120 133 Z" fill="#3a3324"/>
   </g>
-  <!-- sparkle -->
-  <path d="M52 52 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#dbb95c"/>
+  <!-- sparkle accent -->
+  <g class="illo-spin">
+    <path d="M50 52 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <!-- dot accents -->
+  <g class="illo-float f2"><circle cx="150" cy="46" r="6" fill="#c9a84c" stroke="#3a3324" stroke-width="2"/></g>
+  <g class="illo-float f3"><circle cx="46" cy="118" r="5" fill="#b89630" stroke="#3a3324" stroke-width="2"/></g>
 </svg>

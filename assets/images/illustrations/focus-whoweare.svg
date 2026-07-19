@@ -1,17 +1,30 @@
 <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Who we are — the team">
+  <style>
+    .illo-float{animation:illoFloat 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.4s;animation-delay:-.9s}
+    .illo-float.f3{animation-duration:3.1s;animation-delay:-1.7s}
+    .illo-spin{animation:illoSpin 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin{animation:none!important}}
+  </style>
   <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
-  <circle cx="152" cy="50" r="6" fill="#dbb95c"/>
-  <circle cx="46" cy="120" r="5" fill="#b89630"/>
-  <!-- left person -->
-  <circle cx="58" cy="78" r="14" fill="#dbb95c"/>
-  <circle cx="58" cy="74" r="6" fill="#fff"/><path d="M44 96 a14 14 0 0 1 28 0 z" fill="#fff"/>
-  <!-- right person -->
-  <circle cx="142" cy="78" r="14" fill="#dbb95c"/>
-  <circle cx="142" cy="74" r="6" fill="#fff"/><path d="M128 96 a14 14 0 0 1 28 0 z" fill="#fff"/>
-  <!-- center person (lead) -->
-  <circle cx="100" cy="72" r="20" fill="#b89630"/>
-  <circle cx="100" cy="66" r="9" fill="#fff"/><path d="M78 100 a22 22 0 0 1 44 0 z" fill="#fff"/>
-  <path d="M78 100 a22 22 0 0 1 44 0 z" fill="#b89630" opacity="0.18"/>
+  <ellipse cx="100" cy="134" rx="50" ry="6.5" fill="#3a3324" opacity="0.06"/>
   <!-- base -->
-  <rect x="46" y="118" width="108" height="10" rx="5" fill="#c9a84c"/>
+  <rect x="46" y="118" width="108" height="11" rx="5.5" fill="#c9a84c" stroke="#3a3324" stroke-width="2.8"/>
+  <!-- left person -->
+  <path d="M44 101 a14 14 0 0 1 28 0 z" fill="#dbb95c" stroke="#3a3324" stroke-width="2.6" stroke-linejoin="round"/>
+  <circle cx="58" cy="80" r="9" fill="#f0e2b8" stroke="#3a3324" stroke-width="2.6"/>
+  <!-- right person -->
+  <path d="M128 101 a14 14 0 0 1 28 0 z" fill="#dbb95c" stroke="#3a3324" stroke-width="2.6" stroke-linejoin="round"/>
+  <circle cx="142" cy="80" r="9" fill="#f0e2b8" stroke="#3a3324" stroke-width="2.6"/>
+  <!-- center person (lead) -->
+  <path d="M78 102 a22 20 0 0 1 44 0 z" fill="#b89630" stroke="#3a3324" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="100" cy="76" r="13" fill="#f0e2b8" stroke="#3a3324" stroke-width="3"/>
+  <!-- accents -->
+  <g class="illo-spin">
+    <path d="M152 50 l2.8 6.5 6.5 2.8 -6.5 2.8 -2.8 6.5 -2.8 -6.5 -6.5 -2.8 6.5 -2.8 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <g class="illo-float f2"><circle cx="46" cy="60" r="5.5" fill="#c9a84c" stroke="#3a3324" stroke-width="2"/></g>
+  <g class="illo-float f3"><circle cx="158" cy="104" r="5" fill="#b89630" stroke="#3a3324" stroke-width="2"/></g>
 </svg>

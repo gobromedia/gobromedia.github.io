@@ -89,14 +89,13 @@
   <!-- Skip Link for Accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation" hidden>
-    <button class="close-menu" onclick="toggleMenu()" aria-label="Close mobile menu">X</button>
-    <a href="index.html" onclick="toggleMenu()">Home</a>
-    <a href="about.html" onclick="toggleMenu()" aria-current="page">About</a>
-    <a href="index.html#services" onclick="toggleMenu()">Services</a>
-    <a href="index.html#insights" onclick="toggleMenu()">Blog</a>
-    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
-  </div>
+  <nav class="mobile-menu-overlay" id="mobileMenu" role="navigation" aria-label="Mobile navigation" hidden>
+    <a href="index.html">Home</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#insights">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
 
   <header id="header" role="banner">
     <nav class="nav-container" aria-label="Main navigation">
@@ -110,7 +109,7 @@
         <li><a href="index.html#insights">Blog</a></li>
         <li><a href="index.html#contact" class="nav-cta">Get Started</a></li>
       </ul>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -292,133 +291,6 @@
   </footer>
 
   <script src="script.js" defer></script>
-  <script>
-    // Mobile Menu Toggle
-    function toggleMenu() {
-      var menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('open');
-      menu.hidden = !menu.classList.contains('open');
-
-      var hamburger = document.querySelector('.hamburger');
-      var isOpen = menu.classList.contains('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-
-      if (isOpen) {
-        hamburger.innerHTML = '<span style="transform: rotate(45deg) translate(6px, 6px)" aria-hidden="true"></span><span style="opacity:0" aria-hidden="true"></span><span style="transform: rotate(-45deg) translate(5px, -5px)" aria-hidden="true"></span>';
-        document.body.style.overflow = 'hidden';
-      } else {
-        hamburger.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>';
-        document.body.style.overflow = '';
-      }
-    }
-
-    // Header Scroll Morph
-    (function() {
-      var header = document.getElementById('header');
-      if (header) {
-        window.addEventListener('scroll', function() {
-          header.classList.toggle('scrolled', window.scrollY > 60);
-        });
-      }
-    })();
-
-    // Custom Cursor (only on hover-capable devices)
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-      var cursor = document.getElementById('cursor');
-      var ring = document.getElementById('cursorRing');
-      var mx = 0, my = 0, rx = 0, ry = 0;
-
-      document.addEventListener('mousemove', function(e) {
-        mx = e.clientX; my = e.clientY;
-        if (cursor) {
-          cursor.style.left = (mx - 5) + 'px';
-          cursor.style.top = (my - 5) + 'px';
-        }
-      });
-
-      function animRing() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
-        if (ring) {
-          ring.style.left = (rx - 18) + 'px';
-          ring.style.top = (ry - 18) + 'px';
-        }
-        requestAnimationFrame(animRing);
-      }
-      animRing();
-
-      document.querySelectorAll('a, button, [tabindex]').forEach(function(el) {
-        el.addEventListener('mouseenter', function() {
-          if (ring) {
-            ring.style.transform = 'scale(2)';
-            ring.style.borderColor = 'rgba(201,168,76,0.6)';
-          }
-        });
-        el.addEventListener('mouseleave', function() {
-          if (ring) {
-            ring.style.transform = 'scale(1)';
-            ring.style.borderColor = 'rgba(201,168,76,0.5)';
-          }
-        });
-      });
-    } else {
-      var c = document.getElementById('cursor');
-      var r = document.getElementById('cursorRing');
-      if (c) c.style.display = 'none';
-      if (r) r.style.display = 'none';
-      document.body.style.cursor = 'auto';
-    }
-
-    // Intersection Observer for reveal animations
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
-    }, {threshold: 0.1});
-
-    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
-
-    // Close mobile menu on link click
-    document.querySelectorAll('.mobile-menu a').forEach(function(link) {
-      link.addEventListener('click', toggleMenu);
-    });
-
-    // Modal functions (shared with index.html)
-    window.openModal = function(modalId) {
-      var modal = document.getElementById('modal-' + modalId);
-      if (modal) {
-        modal.classList.add('open');
-        modal.hidden = false;
-        document.body.style.overflow = 'hidden';
-      }
-    };
-
-    window.closeModal = function(modalId) {
-      var modal = document.getElementById('modal-' + modalId);
-      if (modal) {
-        modal.classList.remove('open');
-        modal.hidden = true;
-        document.body.style.overflow = '';
-      }
-    };
-
-    window.closeModalOutside = function(event, modalId) {
-      var modal = document.getElementById('modal-' + modalId);
-      if (modal && event.target === modal) {
-        closeModal(modalId);
-      }
-    };
-
-    // Escape key to close modals
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        ['privacy', 'terms', 'partnership', 'service', 'blog', 'portfolio', 'localreader'].forEach(function(id) {
-          closeModal(id);
-        });
-        if (typeof closeBlogHub === 'function') closeBlogHub();
-      }
-    });
-  </script>
 
   <!-- Cursor Elements -->
   <div id="cursor" aria-hidden="true"></div>

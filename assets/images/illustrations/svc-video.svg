@@ -1,20 +1,35 @@
 <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Video editing illustration">
+  <style>
+    .illo-float{animation:illoFloat 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.4s;animation-delay:-.9s}
+    .illo-float.f3{animation-duration:3.1s;animation-delay:-1.7s}
+    .illo-spin{animation:illoSpin 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin{animation:none!important}}
+  </style>
   <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
-  <circle cx="152" cy="118" r="6" fill="#dbb95c"/>
-  <circle cx="46" cy="50" r="5" fill="#b89630"/>
-  <!-- film screen -->
-  <rect x="50" y="54" width="100" height="62" rx="9" fill="#ffffff" stroke="#e7dcc0" stroke-width="2"/>
-  <rect x="50" y="54" width="100" height="62" rx="9" fill="none"/>
+  <ellipse cx="100" cy="146" rx="52" ry="7" fill="#3a3324" opacity="0.06"/>
+  <!-- film screen (hero object) -->
+  <rect x="50" y="52" width="100" height="60" rx="11" fill="#faf3e0" stroke="#3a3324" stroke-width="3.2"/>
   <!-- play button -->
-  <circle cx="100" cy="85" r="20" fill="#c9a84c"/>
-  <circle cx="100" cy="85" r="20" fill="none" stroke="#dbb95c" stroke-width="3"/>
-  <path d="M94 76 L112 85 L94 94 Z" fill="#ffffff"/>
+  <circle cx="100" cy="82" r="19" fill="#c9a84c" stroke="#3a3324" stroke-width="2.8"/>
+  <path d="M95 74 L110 82 L95 90 Z" fill="#faf3e0" stroke="#3a3324" stroke-width="2.2" stroke-linejoin="round"/>
   <!-- film strip base -->
-  <rect x="44" y="122" width="112" height="20" rx="4" fill="#b89630"/>
-  <rect x="50" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
-  <rect x="66" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
-  <rect x="82" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
-  <rect x="98" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
-  <rect x="114" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
-  <rect x="130" y="126" width="10" height="12" rx="2" fill="#f3e9cf"/>
+  <rect x="44" y="118" width="112" height="22" rx="5" fill="#b89630" stroke="#3a3324" stroke-width="3.2"/>
+  <rect x="52" y="124" width="9" height="10" rx="2" fill="#f6eccf"/>
+  <rect x="67" y="124" width="9" height="10" rx="2" fill="#f6eccf"/>
+  <rect x="82" y="124" width="9" height="10" rx="2" fill="#f6eccf"/>
+  <rect x="97" y="124" width="9" height="10" rx="2" fill="#f6eccf"/>
+  <rect x="112" y="124" width="9" height="10" rx="2" fill="#f6eccf"/>
+  <rect x="127" y="124" width="9" height="10" rx="2" fill="#f6eccf"/>
+  <!-- star accent -->
+  <g class="illo-spin">
+    <path d="M150 50 l3.2 6.8 7.4 0.8 -5.5 5 1.5 7.3 -6.6 -3.7 -6.6 3.7 1.5 -7.3 -5.5 -5 7.4 -0.8 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.8" stroke-linejoin="round"/>
+  </g>
+  <!-- dot + sparkle accents -->
+  <g class="illo-float f2"><circle cx="46" cy="52" r="5.5" fill="#c9a84c" stroke="#3a3324" stroke-width="2"/></g>
+  <g class="illo-float f3">
+    <path d="M156 108 l2.4 5.6 5.6 2.4 -5.6 2.4 -2.4 5.6 -2.4 -5.6 -5.6 -2.4 5.6 -2.4 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.4" stroke-linejoin="round"/>
+  </g>
 </svg>

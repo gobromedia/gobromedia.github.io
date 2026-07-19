@@ -1,14 +1,29 @@
 <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Direct founder access illustration">
+  <style>
+    .illo-float{animation:illoFloat 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.4s;animation-delay:-.9s}
+    .illo-float.f3{animation-duration:3.1s;animation-delay:-1.7s}
+    .illo-spin{animation:illoSpin 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin{animation:none!important}}
+  </style>
   <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
-  <circle cx="150" cy="120" r="6" fill="#dbb95c"/>
-  <circle cx="48" cy="48" r="5" fill="#b89630"/>
+  <ellipse cx="86" cy="128" rx="46" ry="6.5" fill="#3a3324" opacity="0.06"/>
   <!-- back bubble -->
-  <path d="M108 52 h44 a12 12 0 0 1 12 12 v26 a12 12 0 0 1 -12 12 h-8 l0 12 -14 -12 h-22 a12 12 0 0 1 -12 -12 V64 a12 12 0 0 1 12 -12 z" fill="#efe4c4"/>
-  <!-- front bubble -->
-  <path d="M46 60 h50 a12 12 0 0 1 12 12 v28 a12 12 0 0 1 -12 12 h-24 l-16 14 l0 -14 h-10 a12 12 0 0 1 -12 -12 V72 a12 12 0 0 1 12 -12 z" fill="#c9a84c"/>
-  <circle cx="60" cy="86" r="4.5" fill="#fff"/>
-  <circle cx="76" cy="86" r="4.5" fill="#fff"/>
-  <circle cx="92" cy="86" r="4.5" fill="#fff"/>
-  <!-- lightning = instant/direct -->
-  <path d="M140 66 l-10 16 h7 l-6 14 16 -18 h-7 z" fill="#b89630"/>
+  <path d="M110 50 h42 a12 12 0 0 1 12 12 v24 a12 12 0 0 1 -12 12 h-6 l0 12 -14 -12 h-22 a12 12 0 0 1 -12 -12 V62 a12 12 0 0 1 12 -12 z" fill="#f0e2b8" stroke="#3a3324" stroke-width="3.2" stroke-linejoin="round"/>
+  <!-- front bubble (hero object) -->
+  <path d="M46 58 h50 a12 12 0 0 1 12 12 v26 a12 12 0 0 1 -12 12 h-24 l-16 14 l0 -14 h-10 a12 12 0 0 1 -12 -12 V70 a12 12 0 0 1 12 -12 z" fill="#c9a84c" stroke="#3a3324" stroke-width="3.2" stroke-linejoin="round"/>
+  <circle cx="60" cy="84" r="4.5" fill="#faf3e0"/>
+  <circle cx="76" cy="84" r="4.5" fill="#faf3e0"/>
+  <circle cx="92" cy="84" r="4.5" fill="#faf3e0"/>
+  <!-- lightning accent = instant/direct -->
+  <g class="illo-float">
+    <path d="M142 60 l-12 18 h8 l-7 16 18 -21 h-8 z" fill="#dbb95c" stroke="#3a3324" stroke-width="2.4" stroke-linejoin="round"/>
+  </g>
+  <!-- accents -->
+  <g class="illo-spin">
+    <path d="M48 46 l2.6 6 6 2.6 -6 2.6 -2.6 6 -2.6 -6 -6 -2.6 6 -2.6 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <g class="illo-float f3"><circle cx="150" cy="120" r="5.5" fill="#b89630" stroke="#3a3324" stroke-width="2"/></g>
 </svg>

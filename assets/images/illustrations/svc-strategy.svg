@@ -1,19 +1,32 @@
 <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Brand strategy illustration">
+  <style>
+    .illo-float{animation:illoFloat 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.4s;animation-delay:-.9s}
+    .illo-float.f3{animation-duration:3.1s;animation-delay:-1.7s}
+    .illo-spin{animation:illoSpin 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin{animation:none!important}}
+  </style>
   <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
-  <circle cx="150" cy="118" r="6" fill="#dbb95c"/>
-  <circle cx="46" cy="52" r="5" fill="#b89630"/>
-  <!-- target -->
-  <circle cx="92" cy="90" r="34" fill="#efe4c4"/>
-  <circle cx="92" cy="90" r="34" fill="none" stroke="#b89630" stroke-width="3"/>
-  <circle cx="92" cy="90" r="22" fill="#ffffff"/>
-  <circle cx="92" cy="90" r="22" fill="none" stroke="#dbb95c" stroke-width="3"/>
-  <circle cx="92" cy="90" r="9" fill="#c9a84c"/>
+  <ellipse cx="92" cy="130" rx="40" ry="6.5" fill="#3a3324" opacity="0.06"/>
+  <!-- target (hero object) -->
+  <circle cx="92" cy="90" r="34" fill="#f0e2b8" stroke="#3a3324" stroke-width="3.2"/>
+  <circle cx="92" cy="90" r="22" fill="#faf3e0" stroke="#3a3324" stroke-width="2.6"/>
+  <circle cx="92" cy="90" r="10" fill="#c9a84c" stroke="#3a3324" stroke-width="2.4"/>
   <!-- arrow into bullseye -->
-  <line x1="130" y1="52" x2="96" y2="86" stroke="#3a3324" stroke-width="4" stroke-linecap="round"/>
-  <path d="M126 46 l10 -4 -4 10 z" fill="#3a3324"/>
-  <path d="M92 90 l6 -6" stroke="#3a3324" stroke-width="4" stroke-linecap="round"/>
-  <!-- lightbulb idea -->
-  <circle cx="146" cy="58" r="12" fill="#dbb95c"/>
-  <rect x="141" y="68" width="10" height="6" rx="2" fill="#b89630"/>
-  <path d="M146 50 v-8 M156 58 h8 M136 48 l-5 -5 M156 48 l5 -5" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="132" y1="50" x2="96" y2="86" stroke="#3a3324" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M127 44 l11 -3 -3 11 z" fill="#3a3324" stroke="#3a3324" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M132 50 l7 -2 -2 7 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- lightbulb accent -->
+  <g class="illo-float">
+    <circle cx="150" cy="60" r="12" fill="#dbb95c" stroke="#3a3324" stroke-width="2.6"/>
+    <rect x="144" y="70" width="12" height="6" rx="2" fill="#b89630" stroke="#3a3324" stroke-width="2"/>
+    <path d="M150 44 v-6 M166 60 h6 M138 49 l-4 -4 M162 49 l4 -4" stroke="#c9a84c" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+  <!-- sparkle accent -->
+  <g class="illo-spin">
+    <path d="M46 54 l2.8 6.5 6.5 2.8 -6.5 2.8 -2.8 6.5 -2.8 -6.5 -6.5 -2.8 6.5 -2.8 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <g class="illo-float f3"><circle cx="52" cy="118" r="5" fill="#b89630" stroke="#3a3324" stroke-width="2"/></g>
 </svg>

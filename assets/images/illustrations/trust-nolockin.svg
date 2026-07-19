@@ -1,15 +1,27 @@
 <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No long-term lock-in illustration">
+  <style>
+    .illo-float{animation:illoFloat 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.4s;animation-delay:-.9s}
+    .illo-float.f3{animation-duration:3.1s;animation-delay:-1.7s}
+    .illo-spin{animation:illoSpin 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin{animation:none!important}}
+  </style>
   <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
-  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
-  <circle cx="46" cy="120" r="5" fill="#b89630"/>
-  <!-- open shackle (unlocked, swung open to the left) -->
-  <path d="M92 66 V52 a20 20 0 0 0 -40 0 V70" fill="none" stroke="#b89630" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="100" cy="130" rx="38" ry="6.5" fill="#3a3324" opacity="0.06"/>
+  <!-- open shackle (unlocked) -->
+  <path d="M96 66 V50 a22 22 0 0 0 -44 0 V72" fill="none" stroke="#3a3324" stroke-width="12" stroke-linecap="round"/>
+  <path d="M96 66 V50 a22 22 0 0 0 -44 0 V72" fill="none" stroke="#dbb95c" stroke-width="6.5" stroke-linecap="round"/>
   <!-- lock body -->
-  <rect x="66" y="66" width="68" height="56" rx="12" fill="#c9a84c"/>
-  <rect x="66" y="66" width="68" height="56" rx="12" fill="none" stroke="#dbb95c" stroke-width="3"/>
+  <rect x="64" y="64" width="72" height="58" rx="14" fill="#c9a84c" stroke="#3a3324" stroke-width="3.2"/>
   <!-- keyhole -->
-  <circle cx="100" cy="88" r="8" fill="#fff"/>
-  <rect x="96" y="92" width="8" height="16" rx="3" fill="#fff"/>
-  <!-- freedom sparkle -->
-  <path d="M150 90 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" fill="#dbb95c"/>
+  <circle cx="100" cy="88" r="7.5" fill="#faf3e0" stroke="#3a3324" stroke-width="2.4"/>
+  <path d="M96 93 h8 l-2 15 h-4 z" fill="#faf3e0" stroke="#3a3324" stroke-width="2.4" stroke-linejoin="round"/>
+  <!-- accents -->
+  <g class="illo-spin">
+    <path d="M152 88 l3 7.5 7.5 3 -7.5 3 -3 7.5 -3 -7.5 -7.5 -3 7.5 -3 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <g class="illo-float f2"><circle cx="150" cy="46" r="6" fill="#c9a84c" stroke="#3a3324" stroke-width="2"/></g>
+  <g class="illo-float f3"><circle cx="46" cy="120" r="5" fill="#b89630" stroke="#3a3324" stroke-width="2"/></g>
 </svg>

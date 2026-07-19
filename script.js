@@ -126,13 +126,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ==========================================================================
-  // 3. MOBILE MENU NAVIGATION
+  // 3. MOBILE MENU NAVIGATION (shared module)
   // ==========================================================================
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
+  function initMobileMenu() {
+    // Works for both page structures:
+    // index.html: hamburger#hamburger + mobileMenu.mobile-menu-overlay
+    // about.html: hamburger.hamburger (no ID) + mobileMenu.mobile-menu-overlay
+    const hamburger = document.getElementById('hamburger') || document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
+    if (!hamburger || !mobileMenu) return;
+
+    function toggleMenu() {
       const isOpen = mobileMenu.classList.contains('open');
       mobileMenu.classList.toggle('open');
       mobileMenu.hidden = isOpen;
@@ -148,19 +153,18 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>';
         document.body.style.overflow = '';
       }
-    });
+    }
+
+    // Click handler for hamburger button
+    hamburger.addEventListener('click', toggleMenu);
 
     // Close mobile menu on link click
     mobileMenu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileMenu.classList.remove('open');
-        mobileMenu.hidden = true;
-        hamburger.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>';
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', toggleMenu);
     });
   }
+
+  initMobileMenu();
 
   // ==========================================================================
   // 4. INTERSECTION OBSERVER - REVEAL ON SCROLL ANIMATIONS
@@ -679,6 +683,95 @@ if (!reduceMotion && counters.length) {
 
     return 'https://api.whatsapp.com/send?phone=' + WHATSAPP_NUMBER + '&text=' + encodeURIComponent(msg);
   });
+
+  // ==========================================================================
+  // 8b. INTERNATIONAL PHONE INPUT (intl-tel-input) — contact + partnership forms
+  // ==========================================================================
+  (function initIntlPhones() {
+    // If the CDN is blocked/offline, window.intlTelInput is undefined and the
+    // fields keep working as plain <input type="tel"> — no init, no errors.
+    if (typeof window.intlTelInput !== 'function') return;
+
+    var UTILS = 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/utils.js';
+
+    function attachPhone(inputId) {
+      var input = document.getElementById(inputId);
+      if (!input) return;
+
+      var iti = window.intlTelInput(input, {
+        initialCountry: 'in',       // default India; user can pick any country
+        separateDialCode: true,     // show the dial code next to the flag automatically
+        countrySearch: true,        // searchable country list (built in)
+        loadUtils: function () { return import(UTILS); } // formatting + validation
+      });
+      input._iti = iti;
+
+      // The old numeric-only pattern/maxlength would block international formats.
+      input.removeAttribute('pattern');
+      input.removeAttribute('maxlength');
+
+      // Accessible inline error, placed just below the (now-wrapped) field.
+      var err = document.createElement('div');
+      err.className = 'iti-error';
+      err.id = inputId + '-error';
+      err.setAttribute('role', 'alert');
+      err.hidden = true;
+      input.setAttribute('aria-describedby', err.id);
+      var wrap = input.closest('.iti') || input;
+      wrap.parentNode.insertBefore(err, wrap.nextSibling);
+
+      function clearErr() {
+        err.hidden = true;
+        input.style.borderColor = '';
+        input.style.boxShadow = '';
+      }
+      input.addEventListener('input', clearErr);
+      input.addEventListener('countrychange', clearErr);
+
+      var form = input.closest('form');
+      if (!form) return;
+
+      // Capture phase => runs BEFORE the site's own submit handler, so we can
+      // either block an invalid number or rewrite the field to full E.164
+      // (e.g. +919876543210) that Web3Forms then emails as name="phone".
+      form.addEventListener('submit', function (e) {
+        if (!input.value.trim()) return; // empty is caught by the required-field check
+
+        var full = '';
+        try { full = iti.getNumber(); } catch (ignore) {}
+        var utilsReady = full && full.charAt(0) === '+';
+
+        if (utilsReady && !iti.isValidNumber()) {
+          e.preventDefault();
+          e.stopImmediatePropagation(); // block the site's submit handler
+          input.style.borderColor = '#a83030';
+          input.style.boxShadow = '0 0 0 4px rgba(168, 48, 48, 0.08)';
+          err.textContent = 'Please enter a valid phone number for the selected country.';
+          err.hidden = false;
+          input.focus();
+          return;
+        }
+
+        // Rewrite the field to full E.164 for the email submission. The site's
+        // own handler (next, in the bubble phase) builds the FormData snapshot
+        // synchronously, so restore the friendly national display right after.
+        var display = input.value;
+        if (utilsReady) {
+          input.value = full;
+        } else {
+          // utils still loading: fall back to dial code + digits so the email
+          // still receives the country code.
+          var cc = iti.getSelectedCountryData();
+          input.value = '+' + (cc && cc.dialCode ? cc.dialCode : '') + input.value.replace(/\D/g, '');
+        }
+        var e164 = input.value;
+        setTimeout(function () { if (input.value === e164) input.value = display; }, 0);
+      }, true);
+    }
+
+    attachPhone('phone');     // contact form (#agencyForm)
+    attachPhone('pm-phone');  // partnership form (#pmForm)
+  })();
 
   // ==========================================================================
   // 9. HERO BACKGROUND IMAGE SLIDER

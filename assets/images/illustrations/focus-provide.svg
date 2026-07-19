@@ -1,18 +1,32 @@
 <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What we provide — the toolkit">
+  <style>
+    .illo-float{animation:illoFloat 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.4s;animation-delay:-.9s}
+    .illo-float.f3{animation-duration:3.1s;animation-delay:-1.7s}
+    .illo-spin{animation:illoSpin 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-turn{animation:illoTurn 14s linear infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+    @keyframes illoTurn{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin,.illo-turn{animation:none!important}}
+  </style>
   <circle cx="100" cy="85" r="66" fill="#f3e9cf"/>
-  <circle cx="150" cy="46" r="6" fill="#dbb95c"/>
-  <circle cx="46" cy="118" r="5" fill="#b89630"/>
-  <!-- big gear -->
-  <g transform="translate(78 60)">
-    <path d="M22 -4 h8 l3 10 8 4 10 -4 6 6 -4 10 4 8 10 3 v8 l-10 3 -4 8 4 10 -6 6 -10 -4 -8 4 -3 10 h-8 l-3 -10 -8 -4 -10 4 -6 -6 4 -10 -4 -8 -10 -3 v-8 l10 -3 4 -8 -4 -10 6 -6 10 4 8 -4 z" fill="#c9a84c"/>
-    <circle cx="26" cy="26" r="12" fill="#f3e9cf"/>
-    <circle cx="26" cy="26" r="12" fill="none" stroke="#b89630" stroke-width="3"/>
+  <ellipse cx="100" cy="140" rx="42" ry="6.5" fill="#3a3324" opacity="0.06"/>
+  <!-- big gear (static hero) -->
+  <g transform="translate(76 58)">
+    <path d="M22 -4 h8 l3 10 8 4 10 -4 6 6 -4 10 4 8 10 3 v8 l-10 3 -4 8 4 10 -6 6 -10 -4 -8 4 -3 10 h-8 l-3 -10 -8 -4 -10 4 -6 -6 4 -10 -4 -8 -10 -3 v-8 l10 -3 4 -8 -4 -10 6 -6 10 4 8 -4 z" fill="#c9a84c" stroke="#3a3324" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="26" cy="26" r="12" fill="#f3e9cf" stroke="#3a3324" stroke-width="2.6"/>
   </g>
-  <!-- small gear -->
-  <g transform="translate(120 96)">
-    <path d="M14 -2 h6 l2 7 6 3 7 -3 4 4 -3 7 3 6 7 2 v6 l-7 2 -3 6 3 7 -4 4 -7 -3 -6 3 -2 7 h-6 l-2 -7 -6 -3 -7 3 -4 -4 3 -7 -3 -6 -7 -2 v-6 l7 -2 3 -6 -3 -7 4 -4 7 3 6 -3 z" fill="#dbb95c"/>
-    <circle cx="17" cy="17" r="7" fill="#f3e9cf"/>
+  <!-- small gear (turns) -->
+  <g transform="translate(118 94)">
+    <g class="illo-turn">
+      <path d="M14 -2 h6 l2 7 6 3 7 -3 4 4 -3 7 3 6 7 2 v6 l-7 2 -3 6 3 7 -4 4 -7 -3 -6 3 -2 7 h-6 l-2 -7 -6 -3 -7 3 -4 -4 3 -7 -3 -6 -7 -2 v-6 l7 -2 3 -6 -3 -7 4 -4 7 3 6 -3 z" fill="#dbb95c" stroke="#3a3324" stroke-width="2.6" stroke-linejoin="round"/>
+      <circle cx="17" cy="17" r="7" fill="#f3e9cf" stroke="#3a3324" stroke-width="2.2"/>
+    </g>
   </g>
-  <!-- sparkle -->
-  <path d="M52 58 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" fill="#dbb95c"/>
+  <!-- accents -->
+  <g class="illo-spin">
+    <path d="M50 58 l3 7.5 7.5 3 -7.5 3 -3 7.5 -3 -7.5 -7.5 -3 7.5 -3 z" fill="#dbb95c" stroke="#3a3324" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <g class="illo-float f3"><circle cx="46" cy="118" r="5" fill="#b89630" stroke="#3a3324" stroke-width="2"/></g>
 </svg>

@@ -1,44 +1,48 @@
 <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agency growth illustration">
-  <defs>
-    <radialGradient id="aglow" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#dbb95c" stop-opacity="0.28"/>
-      <stop offset="100%" stop-color="#dbb95c" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <circle cx="210" cy="190" r="185" fill="url(#aglow)"/>
-  <circle cx="360" cy="86" r="7" fill="#dbb95c"/>
-  <circle cx="58" cy="280" r="6" fill="#c9a84c"/>
-  <circle cx="70" cy="90" r="5" fill="#b89630"/>
-
+  <style>
+    .illo-float{animation:illoFloat 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    .illo-float.f2{animation-duration:4.8s;animation-delay:-1.1s}
+    .illo-float.f3{animation-duration:3.4s;animation-delay:-2s}
+    .illo-float.f4{animation-duration:4.4s;animation-delay:-2.8s}
+    .illo-spin{animation:illoSpin 5.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;will-change:transform}
+    @keyframes illoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @keyframes illoSpin{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
+    @media (prefers-reduced-motion:reduce){.illo-float,.illo-spin{animation:none!important}}
+  </style>
+  <circle cx="210" cy="192" r="180" fill="#f3e9cf" opacity="0.5"/>
+  <!-- orbit dots (float) -->
+  <g class="illo-float f2"><circle cx="360" cy="86" r="8" fill="#dbb95c" stroke="#3a3324" stroke-width="2.6"/></g>
+  <g class="illo-float f3"><circle cx="58" cy="280" r="7" fill="#c9a84c" stroke="#3a3324" stroke-width="2.6"/></g>
+  <g class="illo-float f4"><circle cx="70" cy="90" r="6" fill="#b89630" stroke="#3a3324" stroke-width="2.4"/></g>
+  <!-- ground shadow -->
+  <ellipse cx="205" cy="316" rx="150" ry="12" fill="#3a3324" opacity="0.06"/>
   <!-- back panel -->
-  <rect x="120" y="96" width="210" height="150" rx="14" fill="#efe4c4"/>
-  <!-- monitor / board -->
-  <rect x="96" y="120" width="210" height="150" rx="14" fill="#ffffff" stroke="#e7dcc0" stroke-width="2"/>
-  <rect x="96" y="120" width="210" height="30" rx="14" fill="#c9a84c"/>
-  <rect x="96" y="138" width="210" height="12" fill="#c9a84c"/>
+  <rect x="120" y="96" width="210" height="150" rx="16" fill="#efe4c4" stroke="#3a3324" stroke-width="4"/>
+  <!-- monitor / board (static hero) -->
+  <rect x="96" y="120" width="210" height="150" rx="16" fill="#faf3e0" stroke="#3a3324" stroke-width="4"/>
+  <path d="M96 150 v-14 a16 16 0 0 1 16 -16 h178 a16 16 0 0 1 16 16 v14 z" fill="#c9a84c"/>
+  <path d="M96 150 h210" stroke="#3a3324" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="114" cy="135" r="4.2" fill="#f6eccf"/><circle cx="129" cy="135" r="4.2" fill="#f6eccf"/><circle cx="144" cy="135" r="4.2" fill="#f6eccf"/>
   <!-- rising arrow -->
-  <path d="M120 240 L168 208 L204 224 L262 176" fill="none" stroke="#b89630" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M250 170 l20 -6 -4 20 z" fill="#b89630"/>
-  <circle cx="120" cy="240" r="6" fill="#dbb95c"/>
-  <circle cx="168" cy="208" r="6" fill="#dbb95c"/>
-  <circle cx="204" cy="224" r="6" fill="#dbb95c"/>
+  <path d="M120 240 L168 208 L204 224 L262 176" fill="none" stroke="#3a3324" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M251 170 l20 -6 -3 20 z" fill="#3a3324" stroke="#3a3324" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="120" cy="240" r="6" fill="#dbb95c" stroke="#3a3324" stroke-width="3"/>
+  <circle cx="168" cy="208" r="6" fill="#dbb95c" stroke="#3a3324" stroke-width="3"/>
+  <circle cx="204" cy="224" r="6" fill="#dbb95c" stroke="#3a3324" stroke-width="3"/>
   <!-- stand -->
-  <rect x="188" y="270" width="26" height="26" fill="#efe4c4"/>
-  <rect x="156" y="296" width="90" height="12" rx="6" fill="#c9a84c"/>
-
+  <rect x="188" y="270" width="26" height="24" fill="#efe4c4" stroke="#3a3324" stroke-width="3.5"/>
+  <rect x="156" y="294" width="90" height="13" rx="6" fill="#c9a84c" stroke="#3a3324" stroke-width="3.5"/>
   <!-- two teammates -->
-  <g transform="translate(74 250)">
-    <circle cx="30" cy="26" r="20" fill="#dbb95c"/>
-    <circle cx="30" cy="20" r="9" fill="#fff"/>
-    <path d="M8 54 a22 22 0 0 1 44 0 z" fill="#fff"/>
-    <path d="M8 54 a22 22 0 0 1 44 0 z" fill="#c9a84c" opacity="0.25"/>
+  <g transform="translate(70 248)">
+    <path d="M6 56 a24 22 0 0 1 48 0 z" fill="#dbb95c" stroke="#3a3324" stroke-width="3.5" stroke-linejoin="round"/>
+    <circle cx="30" cy="26" r="15" fill="#f0e2b8" stroke="#3a3324" stroke-width="3.5"/>
   </g>
-  <g transform="translate(300 246)">
-    <circle cx="30" cy="26" r="22" fill="#b89630"/>
-    <circle cx="30" cy="20" r="10" fill="#fff"/>
-    <path d="M6 58 a24 24 0 0 1 48 0 z" fill="#fff"/>
-    <path d="M6 58 a24 24 0 0 1 48 0 z" fill="#b89630" opacity="0.2"/>
+  <g transform="translate(298 244)">
+    <path d="M4 60 a26 24 0 0 1 52 0 z" fill="#b89630" stroke="#3a3324" stroke-width="3.5" stroke-linejoin="round"/>
+    <circle cx="30" cy="26" r="16" fill="#f0e2b8" stroke="#3a3324" stroke-width="3.5"/>
   </g>
-  <!-- sparkle -->
-  <path d="M338 150 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" fill="#dbb95c"/>
+  <!-- sparkle (spin) -->
+  <g class="illo-spin">
+    <path d="M338 146 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5 z" fill="#dbb95c" stroke="#3a3324" stroke-width="2.4" stroke-linejoin="round"/>
+  </g>
 </svg>

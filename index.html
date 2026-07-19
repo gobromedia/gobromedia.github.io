@@ -46,6 +46,8 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Lora:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap"></noscript>
   
   <!-- Stylesheets -->
+  <!-- intl-tel-input (international phone field) — loaded before styles.css so theme overrides win -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
   <link rel="stylesheet" href="styles.css">
   
   <!-- Preload Critical Above-the-Fold Assets -->
@@ -415,23 +417,80 @@
       </div>
       
       <div class="process-steps reveal">
+        <!-- Winding "journey" connector: solid gold path draws in on scroll, dashed path flows -->
+        <svg class="process-journey" viewBox="0 0 1000 72" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path class="process-path-line" pathLength="100" d="M125 36 C 210 14, 290 14, 375 36 S 540 58, 625 36 S 790 14, 875 36"/>
+          <path class="process-path-flow" pathLength="100" d="M125 36 C 210 14, 290 14, 375 36 S 540 58, 625 36 S 790 14, 875 36"/>
+        </svg>
+
+        <!-- Floating sparkle & dot accents scattered around the section -->
+        <svg class="process-sparkles" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <!-- 4-point sparkle stars — proper diamond shape with inward curves -->
+          <g class="proc-spark" style="--float-dur:3.4s;--float-delay:0s;--float-y:-8px"><path d="M 120 90 Q 124 90 126 86 Q 128 90 132 90 Q 128 90 126 94 Q 124 90 120 90 Z" fill="#dbb95c"/></g>
+          <g class="proc-spark" style="--float-dur:4.1s;--float-delay:0.8s;--float-y:-12px"><path d="M 280 20 Q 284 20 287 16 Q 290 20 294 20 Q 290 20 287 24 Q 284 20 280 20 Z" fill="#dbb95c"/></g>
+          <g class="proc-spark" style="--float-dur:3.6s;--float-delay:1.6s;--float-y:-7px"><path d="M 520 72 Q 523 72 525 69 Q 527 72 530 72 Q 527 72 525 75 Q 523 72 520 72 Z" fill="#c9a84c"/></g>
+          <g class="proc-spark" style="--float-dur:3.9s;--float-delay:0.4s;--float-y:-11px"><path d="M 680 95 Q 684 95 687 91 Q 690 95 694 95 Q 690 95 687 99 Q 684 95 680 95 Z" fill="#dbb95c"/></g>
+          <g class="proc-spark" style="--float-dur:3.3s;--float-delay:2.0s;--float-y:-9px"><path d="M 850 14 Q 853 14 855 11 Q 857 14 860 14 Q 857 14 855 17 Q 853 14 850 14 Z" fill="#c9a84c"/></g>
+          <g class="proc-spark" style="--float-dur:3.7s;--float-delay:1.1s;--float-y:-10px"><path d="M 410 108 Q 413 108 415 105 Q 417 108 420 108 Q 417 108 415 111 Q 413 108 410 108 Z" fill="#dbb95c"/></g>
+          <g class="proc-spark" style="--float-dur:4.0s;--float-delay:0.5s;--float-y:-6px"><path d="M 750 40 Q 753 40 755 37 Q 757 40 760 40 Q 757 40 755 43 Q 753 40 750 40 Z" fill="#c9a84c"/></g>
+          <!-- Small floating dots scattered above, on, and below the connector -->
+          <g class="proc-dot" style="--float-dur:3.8s;--float-delay:1.2s;--float-y:-10px"><circle cx="180" cy="130" r="2.5" fill="#b89630"/></g>
+          <g class="proc-dot" style="--float-dur:4.2s;--float-delay:0.3s;--float-y:-13px"><circle cx="340" cy="50" r="2" fill="#dbb95c"/></g>
+          <g class="proc-dot" style="--float-dur:3.5s;--float-delay:1.8s;--float-y:-6px"><circle cx="600" cy="15" r="2.5" fill="#c9a84c"/></g>
+          <g class="proc-dot" style="--float-dur:4.0s;--float-delay:0.7s;--float-y:-9px"><circle cx="800" cy="80" r="2" fill="#dbb95c"/></g>
+          <g class="proc-dot" style="--float-dur:3.7s;--float-delay:2.2s;--float-y:-11px"><circle cx="920" cy="120" r="2.5" fill="#b89630"/></g>
+        </svg>
+
         <article class="process-step reveal">
-          <div class="step-circle" aria-hidden="true">01</div>
+          <span class="step-watermark" aria-hidden="true">01</span>
+          <div class="step-circle" aria-hidden="true">
+            <svg class="step-illo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="12" fill="#f0e2b8" stroke="#3a3324" stroke-width="2.6"/>
+              <path d="M14 21 l4 -4 4 3 6 -8" fill="none" stroke="#b89630" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="29" y1="29" x2="40" y2="40" stroke="#3a3324" stroke-width="3.6" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3 class="step-title">Discovery</h3>
           <p class="step-desc">We learn your business, goals, audience, and competition to build a solid foundation.</p>
         </article>
         <article class="process-step reveal reveal-delay-1">
-          <div class="step-circle" aria-hidden="true">02</div>
+          <span class="step-watermark" aria-hidden="true">02</span>
+          <div class="step-circle" aria-hidden="true">
+            <svg class="step-illo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M24 7 a13 13 0 0 1 8 23 c-1.5 1.5 -2 2.5 -2 4.5 h-12 c0 -2 -0.5 -3 -2 -4.5 a13 13 0 0 1 8 -23 z" fill="#dbb95c" stroke="#3a3324" stroke-width="2.6" stroke-linejoin="round"/>
+              <path d="M24 18 v7 M21 20.5 l3 3 3 -3" fill="none" stroke="#3a3324" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="20" y="38" width="8" height="4" rx="1.6" fill="#c9a84c" stroke="#3a3324" stroke-width="2.2"/>
+              <path d="M20.5 35.5 h7" stroke="#3a3324" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3 class="step-title">Strategy</h3>
           <p class="step-desc">We craft a custom digital strategy tailored specifically to your brand and objectives.</p>
         </article>
         <article class="process-step reveal reveal-delay-2">
-          <div class="step-circle" aria-hidden="true">03</div>
+          <span class="step-watermark" aria-hidden="true">03</span>
+          <div class="step-circle" aria-hidden="true">
+            <svg class="step-illo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M24 5 c7 5 10 15 8 25 h-16 c-2 -10 1 -20 8 -25 z" fill="#faf3e0" stroke="#3a3324" stroke-width="2.6" stroke-linejoin="round"/>
+              <circle cx="24" cy="18" r="4" fill="#dbb95c" stroke="#3a3324" stroke-width="2.2"/>
+              <path d="M16 30 l-5 5 6 -1 z" fill="#c9a84c" stroke="#3a3324" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M32 30 l5 5 -6 -1 z" fill="#c9a84c" stroke="#3a3324" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M20 34 h8 c-1 7 -3 9 -4 9 s-3 -2 -4 -9 z" fill="#dbb95c" stroke="#3a3324" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3 class="step-title">Execution</h3>
           <p class="step-desc">Our team executes with precision &mdash; on time, on brand, and within budget.</p>
         </article>
         <article class="process-step reveal reveal-delay-3">
-          <div class="step-circle" aria-hidden="true">04</div>
+          <span class="step-watermark" aria-hidden="true">04</span>
+          <div class="step-circle" aria-hidden="true">
+            <svg class="step-illo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="9" y="29" width="7" height="12" rx="1.6" fill="#dbb95c" stroke="#3a3324" stroke-width="2.4"/>
+              <rect x="20" y="23" width="7" height="18" rx="1.6" fill="#c9a84c" stroke="#3a3324" stroke-width="2.4"/>
+              <rect x="31" y="17" width="7" height="24" rx="1.6" fill="#b89630" stroke="#3a3324" stroke-width="2.4"/>
+              <path d="M11 22 l9 -6 6 3 11 -9" fill="none" stroke="#3a3324" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M33 5 l6 -1 -1 6 z" fill="#3a3324" stroke="#3a3324" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3 class="step-title">Growth</h3>
           <p class="step-desc">We track, analyze and optimize continuously to ensure long-term growth and ROI.</p>
         </article>
@@ -580,6 +639,7 @@
             <span class="price-num count" data-count="24999">0</span>
             <span class="price-period">/month</span>
           </div>
+          <div class="price-usd">&#8776; $299 / month &middot; billed in INR</div>
           <p class="pricing-desc">Perfect for small businesses just starting their digital journey.</p>
           <div class="pricing-divider" aria-hidden="true"></div>
           <ul class="pricing-features" role="list">
@@ -602,6 +662,7 @@
             <span class="price-num count" data-count="49999">0</span>
             <span class="price-period">/month</span>
           </div>
+          <div class="price-usd">&#8776; $599 / month &middot; billed in INR</div>
           <p class="pricing-desc">For growing businesses that want to scale their digital presence fast.</p>
           <div class="pricing-divider" aria-hidden="true"></div>
           <ul class="pricing-features" role="list">
@@ -635,6 +696,7 @@
           <a href="#contact" class="btn btn-outline" style="width:100%;">Get Started</a>
         </article>
       </div>
+      <p class="pricing-note">Packages are priced in Indian Rupees (&#8377;). USD figures are indicative for international brands &mdash; you'll receive a clear, itemised quote in your own currency. No setup fees, no lock-in.</p>
     </section>
 
     <!-- IDENTITY / WHO WE ARE SECTION -->
@@ -840,7 +902,7 @@
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="phone">Phone Number<span class="required" aria-hidden="true">*</span></label>
-                <input type="tel" id="phone" name="phone" class="form-input" placeholder="9876543210" required autocomplete="tel" aria-required="true" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" title="Enter 10-digit phone number">
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 9876543210" required autocomplete="tel" aria-required="true" maxlength="15" pattern="[0-9\s\+\-\(\)]{10,15}" inputmode="tel" title="Enter phone number (10-15 digits, country code optional)">
               </div>
               <div class="form-group">
                 <label class="form-label" for="website">Website URL (Optional)</label>
@@ -1235,7 +1297,7 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="pm-phone">WhatsApp Number</label>
-              <input type="tel" name="partner_phone" id="pm-phone" class="form-input" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" aria-required="true">
+              <input type="tel" name="partner_phone" id="pm-phone" class="form-input" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" aria-required="true" maxlength="15" pattern="[0-9\s\+\-\(\)]{10,15}" inputmode="tel" title="Enter phone number (10-15 digits, country code optional)">
             </div>
           </div>
           
@@ -1314,6 +1376,8 @@
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
 
   <!-- Script Modules -->
+  <!-- intl-tel-input: defer so it runs before script.js (which initialises it) -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js" defer></script>
   <script src="script.js" defer></script>
   <div class="scroll-progress" aria-hidden="true"></div>
 </body>
