@@ -1,8 +1,0 @@
-# robots.txt for GOBRO MEDIA
-# https://gobromedia.github.io/
-
-User-agent: *
-Allow: /
-Disallow: /404.html
-
-Sitemap: https://gobromedia.github.io/sitemap.xml
